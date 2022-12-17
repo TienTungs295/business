@@ -15,7 +15,7 @@ class Image extends Model
      *
      * @var string
      */
-    protected $table = 'project_imgs';
+    protected $table = 'project_img';
 
     protected $fillable = ['id', 'image', 'project_id'];
 

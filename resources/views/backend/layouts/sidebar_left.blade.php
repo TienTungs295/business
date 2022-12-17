@@ -8,12 +8,12 @@
                 <span>Trang chủ</span>
             </a>
         </li>
-{{--        <li class="nav-item {{ (request()->is('quan-tri/don-hang*')) ? 'active' : '' }}">--}}
-{{--            <a class="nav-link collapsed" href="{!! route("orderView") !!}">--}}
-{{--                <i class="bi bi-cart"></i>--}}
-{{--                <span>Đơn hàng</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
+        <li class="nav-item {{ (request()->is('quan-tri/danh-muc-du-an*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("projectCategoryView") !!}">
+                <i class="bi bi-journal-text"></i>
+                <span>Danh mục dự án</span>
+            </a>
+        </li>
 {{--        <li class="nav-item {{ (request()->is('quan-tri/danh-gia*')) ? 'active' : '' }}">--}}
 {{--            <a class="nav-link collapsed" href="{!! route("reviewView") !!}">--}}
 {{--                <i class="bi bi-chat-left-text"></i>--}}

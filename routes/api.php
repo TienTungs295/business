@@ -4,7 +4,7 @@ use App\Http\Controllers\Rests\AuthRestController;
 use App\Http\Controllers\Rests\BlogRestController;
 use App\Http\Controllers\Rests\CategoryRestController;
 use App\Http\Controllers\Rests\CollectionRestController;
-use App\Http\Controllers\Rests\ProductRestController;
+use App\Http\Controllers\Rests\ProjectRestController;
 use App\Http\Controllers\Rests\UploadRestController;
 use App\Http\Controllers\Rests\ReviewRestController;
 use App\Http\Controllers\Rests\CustomerInfoRestController;
@@ -25,22 +25,22 @@ use Illuminate\Support\Facades\Route;
 // Below mention routes are available only for the authenticated users.
 
 //Route::group(['prefix' => 'review'], function () {
-//    Route::get('/find-by-product', [ReviewRestController::class, 'findByProduct']);
+//    Route::get('/find-by-Project', [ReviewRestController::class, 'findByProject']);
 //    Route::get('/count-pending-review', [ReviewRestController::class, 'countPendingReview']);
 //});
 //
 //
 //
-//Route::group(['prefix' => 'product'], function () {
-//    Route::get('/find-by-name', [ProductRestController::class, 'findByName']);
-//    Route::get('/find-by-collection', [ProductRestController::class, 'findByCollection']);
-//    Route::get('/find-all', [ProductRestController::class, 'findAll']);
-//    Route::get('/find-featured', [ProductRestController::class, 'findFeatured']);
-//    Route::get('/find-on-sale', [ProductRestController::class, 'findOnSale']);
-//    Route::get('/find-trending', [ProductRestController::class, 'findTrending']);
-//    Route::get('/find-top-rate', [ProductRestController::class, 'findTopRate']);
-//    Route::get('/find-flash-sale', [ProductRestController::class, 'findFlashSale']);
-//    Route::get('/detail', [ProductRestController::class, 'detail']);
+//Route::group(['prefix' => 'Project'], function () {
+//    Route::get('/find-by-name', [ProjectRestController::class, 'findByName']);
+//    Route::get('/find-by-collection', [ProjectRestController::class, 'findByCollection']);
+//    Route::get('/find-all', [ProjectRestController::class, 'findAll']);
+//    Route::get('/find-featured', [ProjectRestController::class, 'findFeatured']);
+//    Route::get('/find-on-sale', [ProjectRestController::class, 'findOnSale']);
+//    Route::get('/find-trending', [ProjectRestController::class, 'findTrending']);
+//    Route::get('/find-top-rate', [ProjectRestController::class, 'findTopRate']);
+//    Route::get('/find-flash-sale', [ProjectRestController::class, 'findFlashSale']);
+//    Route::get('/detail', [ProjectRestController::class, 'detail']);
 //});
 //Route::group(['prefix' => 'category'], function () {
 //    Route::get('/find-all', [CategoryRestController::class, 'findAll']);

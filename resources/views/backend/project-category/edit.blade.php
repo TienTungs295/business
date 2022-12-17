@@ -4,9 +4,9 @@
         <div class="pagetitle">
             <h4>
                 @if(isset($project_category))
-                    Cập nhật danh mục
+                    Cập nhật danh mục dự án
                 @else
-                    Thêm mới danh mục
+                    Thêm mới danh mục dự án
                 @endif
             </h4>
         </div><!-- End Page Title -->
@@ -17,7 +17,7 @@
                         @include('backend.errors.note')
                         <div class="card-body">
                             <form method="POST"
-                                  action="{!! isset($project_category)? route('updateCategory',['id' => $project_category->id]) : route('createCategory') !!}">
+                                  action="{!! isset($project_category)? route('updateProjectCategory',['id' => $project_category->id]) : route('createProjectCategory') !!}">
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-md-8">
@@ -35,35 +35,6 @@
                                                placeholder="Độ ưu tiên">
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Danh mục cha<span
-                                            class="text-danger">*</span></label>
-                                    <div class="col-sm-10">
-                                        <select class="form-select" name="parent_id" required>
-                                            <option value="0">Không danh mục</option>
-                                            @include('backend.project-category.tree_select',['project_categories' => $project_categories,'selected_id' => isset($project_category) ? $project_category["parent_id"] : '','parent_id' => 0,'prefix'=> ""])
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-md-12">
-                                        <label class="form-label">Ảnh</label>
-                                        <input type="text" id="image"
-                                               value="{!! old('image', isset($project_category->image) ? url('uploads/images/'.$project_category->image) : '')!!}"
-                                               name="image">
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <label class="col-sm-2 col-form-label">Đặc trưng</label>
-                                    <div class="col-sm-10">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input"
-                                                   value="{!! old('is_featured', isset($project_category->is_featured) ? $project_category->is_featured : '')!!}"
-                                                   name="is_featured"
-                                                   {!! old('is_featured', isset($project_category->is_featured) && $project_category->is_featured == 1 ? 'checked' : '')!!} type="checkbox">
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary">
                                         <i class="bi bi-save2 me-1"></i>
@@ -73,7 +44,7 @@
                                             Thêm mới
                                         @endif
                                     </button>
-                                    <a class="btn btn-danger" href="{!! route('categoryView') !!}">
+                                    <a class="btn btn-danger" href="{!! route('projectCategoryView') !!}">
                                         <i class="bi bi-arrow-return-left me-1"></i>
                                         Quay lại
                                     </a>
@@ -85,70 +56,4 @@
             </div>
         </section>
     </div>
-@endsection
-@section('morescripts')
-    <script>
-
-        // IMAGE
-        var image_url = $("#image").val();
-        var config = {
-            ajaxConfig: {
-                url: APP_URL + "/rest/tai-anh",
-                method: "post",
-                paramsBuilder: function (uploaderFile) {
-                    let form = new FormData();
-                    form.append("file", uploaderFile.file);
-                    form.append("sub-folder", "categories");
-                    return form
-                },
-                ajaxRequester: function (config, uploaderFile, progressCallback, successCallback, errorCallback) {
-                    $.ajax({
-                        url: config.url,
-                        contentType: false,
-                        processData: false,
-                        method: config.method,
-                        data: config.paramsBuilder(uploaderFile),
-                        success: function (response) {
-                            let resData = response.data || {};
-                            if (resData.status === "error") toastr.error(resData.message);
-                            successCallback(response)
-                        },
-                        error: function (response) {
-                            console.error("Error", response)
-                            errorCallback("Error")
-                        },
-                        xhr: function () {
-                            let xhr = new XMLHttpRequest();
-                            xhr.upload.addEventListener('progress', function (e) {
-                                let progressRate = (e.loaded / e.total) * 100;
-                                progressCallback(progressRate)
-                            })
-                            return xhr;
-                        }
-                    })
-                },
-                responseConverter: function (uploaderFile, response) {
-                    return {
-                        url: APP_URL + "/" + response.data.file_path,
-                        name: response.data.file_name,
-                    }
-                }
-            }
-        }
-        // if (image_url != null && image_url != "" & image_url != undefined) {
-        //     let start_position = image_url.lastIndexOf("/") + 1;
-        //     let image_name = image_url.substring(start_position, image_url.length);
-        //     config.defaultValue = [{
-        //         name: image_name,
-        //         url: image_url
-        //     }]
-        // }
-        $("#image").uploader(config)
-            .on("upload-success", function (file, data) {
-
-            }).on("file-remove", function () {
-
-        });
-        // END IMAGE
-    </script>
 @endsection

@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Rests\WithListRestController;
@@ -16,16 +16,25 @@ use App\Http\Controllers\Rests\OrderRestController;
 |
 */
 
-Route::group(['middleware' => ['isMember','auth:web','preventBackHistory'], 'prefix' => 'quan-tri'], function () {
+Route::group(['middleware' => ['isMember', 'auth:web', 'preventBackHistory'], 'prefix' => 'quan-tri'], function () {
     Route::get('/', ['as' => 'homeView', 'uses' => 'HomeController@index']);
 
+    Route::group(['prefix' => 'danh-muc-du-an'], function () {
+        Route::get('', ['as' => 'projectCategoryView', 'uses' => 'ProjectCategoryController@index']);
+        Route::get('/them-moi', ['as' => 'createProjectCategoryView', 'uses' => 'ProjectCategoryController@create']);
+        Route::get('/chinh-sua/{id}', ['as' => 'updateProjectCategoryView', 'uses' => 'ProjectCategoryController@edit']);
+        Route::post('/luu-tru', ['as' => 'createProjectCategory', 'uses' => 'ProjectCategoryController@store']);
+        Route::post('/cap-nhat/{id}', ['as' => 'updateProjectCategory', 'uses' => 'ProjectCategoryController@update']);
+        Route::post('/xoa/{id}', ['as' => 'deleteProjectCategory', 'uses' => 'ProjectCategoryController@destroy']);
+    });
+
 //    Route::group(['prefix' => 'danh-muc'], function () {
-//        Route::get('', ['as' => 'categoryView', 'uses' => 'ProductCategoryController@index']);
-//        Route::get('/them-moi', ['as' => 'createCategoryView', 'uses' => 'ProductCategoryController@create']);
-//        Route::get('/chinh-sua/{id}', ['as' => 'updateCategoryView', 'uses' => 'ProductCategoryController@edit']);
-//        Route::post('/luu-tru', ['as' => 'createCategory', 'uses' => 'ProductCategoryController@store']);
-//        Route::post('/cap-nhat/{id}', ['as' => 'updateCategory', 'uses' => 'ProductCategoryController@update']);
-//        Route::post('/xoa/{id}', ['as' => 'deleteCategory', 'uses' => 'ProductCategoryController@destroy']);
+//        Route::get('', ['as' => 'categoryView', 'uses' => 'ProjectCategoryController@index']);
+//        Route::get('/them-moi', ['as' => 'createCategoryView', 'uses' => 'ProjectCategoryController@create']);
+//        Route::get('/chinh-sua/{id}', ['as' => 'updateCategoryView', 'uses' => 'ProjectCategoryController@edit']);
+//        Route::post('/luu-tru', ['as' => 'createCategory', 'uses' => 'ProjectCategoryController@store']);
+//        Route::post('/cap-nhat/{id}', ['as' => 'updateCategory', 'uses' => 'ProjectCategoryController@update']);
+//        Route::post('/xoa/{id}', ['as' => 'deleteCategory', 'uses' => 'ProjectCategoryController@destroy']);
 //    });
 //
 //    Route::group(['prefix' => 'bai-viet'], function () {
@@ -37,12 +46,12 @@ Route::group(['middleware' => ['isMember','auth:web','preventBackHistory'], 'pre
 //        Route::post('/xoa/{id}', ['as' => 'deleteBlog', 'uses' => 'BlogController@destroy']);
 //    });
 //    Route::group(['prefix' => 'san-pham'], function () {
-//        Route::get('', ['as' => 'productView', 'uses' => 'ProductController@index']);
-//        Route::get('/them-moi', ['as' => 'createProductView', 'uses' => 'ProductController@create']);
-//        Route::get('/chinh-sua/{id}', ['as' => 'updateProductView', 'uses' => 'ProductController@edit']);
-//        Route::post('/luu-tru', ['as' => 'createProduct', 'uses' => 'ProductController@store']);
-//        Route::post('/cap-nhat/{id}', ['as' => 'updateProduct', 'uses' => 'ProductController@update']);
-//        Route::post('/xoa/{id}', ['as' => 'deleteProduct', 'uses' => 'ProductController@destroy']);
+//        Route::get('', ['as' => 'ProjectView', 'uses' => 'ProjectController@index']);
+//        Route::get('/them-moi', ['as' => 'createProjectView', 'uses' => 'ProjectController@create']);
+//        Route::get('/chinh-sua/{id}', ['as' => 'updateProjectView', 'uses' => 'ProjectController@edit']);
+//        Route::post('/luu-tru', ['as' => 'createProject', 'uses' => 'ProjectController@store']);
+//        Route::post('/cap-nhat/{id}', ['as' => 'updateProject', 'uses' => 'ProjectController@update']);
+//        Route::post('/xoa/{id}', ['as' => 'deleteProject', 'uses' => 'ProjectController@destroy']);
 //    });
 //
 //    Route::group(['prefix' => 'danh-gia'], function () {

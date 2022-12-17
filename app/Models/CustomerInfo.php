@@ -13,7 +13,7 @@ class CustomerInfo extends Model
 {
     use HasFactory;
 
-    protected $table = 'customer_infos';
+    protected $table = 'customer_info';
     protected $fillable = [
         'name', 'email', 'phone_number'
     ];

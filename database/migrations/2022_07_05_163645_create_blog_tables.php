@@ -13,58 +13,46 @@ class CreateBlogTables extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('category', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 120);
-            $table->integer('parent_id')->unsigned()->default(0);
-            $table->string('description', 400)->nullable();
-            $table->string('status', 60)->default('published');
+            $table->string('name', 255);
             $table->integer('author_id');
             $table->string('author_type', 255);
-            $table->string('icon', 60)->nullable();
-            $table->tinyInteger('order')->default(0);
-            $table->tinyInteger('is_featured')->default(0);
-            $table->tinyInteger('is_default')->unsigned()->default(0);
+            $table->integer('priority')->nullable();
+            $table->integer('user_id');
             $table->timestamps();
         });
 
-        Schema::create('tags', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 120);
-            $table->integer('author_id');
-            $table->string('author_type', 255);
-            $table->string('description', 400)->nullable()->default('');
-            $table->string('status', 60)->default('published');
-
-            $table->timestamps();
-        });
-
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('post', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
             $table->string('slug');
-            $table->string('description', 400)->nullable();
             $table->longText('content')->nullable();
-            $table->string('status', 60)->default('published');
             $table->integer('author_id');
             $table->string('author_type', 255);
-            $table->tinyInteger('is_featured')->unsigned()->default(0);
             $table->string('image', 255)->nullable();
             $table->integer('views')->unsigned()->default(0);
             $table->string('format_type', 30)->nullable();
+            $table->integer('priority')->nullable();
+            $table->integer('user_id');
             $table->timestamps();
         });
 
-        Schema::create('post_tags', function (Blueprint $table) {
+        Schema::create('post_category', function (Blueprint $table) {
             $table->id();
-            $table->integer('tag_id')->unsigned()->references('id')->on('tags')->onDelete('cascade');
-            $table->integer('post_id')->unsigned()->references('id')->on('posts')->onDelete('cascade');
+            $table->integer('category_id')->unsigned()->references('id')->on('category')->onDelete('cascade');
+            $table->integer('post_id')->unsigned()->references('id')->on('post')->onDelete('cascade');
         });
 
-        Schema::create('post_categories', function (Blueprint $table) {
+        Schema::create('comment', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->unsigned()->references('id')->on('categories')->onDelete('cascade');
-            $table->integer('post_id')->unsigned()->references('id')->on('posts')->onDelete('cascade');
+            $table->integer('post_id')->unsigned();
+            $table->string('customer_name', 255);
+            $table->string('customer_email', 255);
+            $table->text('comment');
+            $table->tinyInteger('status')->default(1);
+            $table->integer('user_id')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -76,9 +64,8 @@ class CreateBlogTables extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('post_tags');
         Schema::dropIfExists('post_categories');
         Schema::dropIfExists('posts');
         Schema::dropIfExists('categories');
-        Schema::dropIfExists('tags');    }
+    }
 }
