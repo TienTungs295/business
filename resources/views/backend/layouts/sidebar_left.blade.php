@@ -10,8 +10,14 @@
         </li>
         <li class="nav-item {{ (request()->is('quan-tri/danh-muc-du-an*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("projectCategoryView") !!}">
-                <i class="bi bi-journal-text"></i>
+                <i class="bi bi-list-ul"></i>
                 <span>Danh mục dự án</span>
+            </a>
+        </li>
+        <li class="nav-item {{ (request()->is('quan-tri/danh-muc-bai-viet*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("postCategoryView") !!}">
+                <i class="bi bi-journal-text"></i>
+                <span>Danh mục bài viết</span>
             </a>
         </li>
 {{--        <li class="nav-item {{ (request()->is('quan-tri/danh-gia*')) ? 'active' : '' }}">--}}

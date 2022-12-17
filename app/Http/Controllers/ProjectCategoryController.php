@@ -52,13 +52,13 @@ class ProjectCategoryController extends BaseCustomController
                 'name' => 'required|max:255'
             ],
             [
-                'name.required' => 'Tên danh mục không được phép bỏ trống',
-                'name.max' => 'Tên danh mục không được vượt quá 255 ký tự'
+                'name.required' => 'Tên danh mục dự án không được phép bỏ trống',
+                'name.max' => 'Tên danh mục dự án không được vượt quá 255 ký tự'
             ]);
 
         $count_exist = ProjectCategory::where('name', $request->name)->count();
         if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục đã tồn tại');
+            return redirect()->back()->with('error', 'Tên danh mục dự án đã tồn tại');
         }
 
         $project_category = new ProjectCategory;
@@ -117,13 +117,13 @@ class ProjectCategoryController extends BaseCustomController
                 'name' => 'required|max:255'
             ],
             [
-                'name.required' => 'Tên danh mục không được phép bỏ trống',
-                'name.max' => 'Tên danh mục không được vượt quá 255 ký tự'
+                'name.required' => 'Tên danh mục dự án không được phép bỏ trống',
+                'name.max' => 'Tên danh mục dự án không được vượt quá 255 ký tự'
             ]);
 
         $count_exist = ProjectCategory::where('name', $request->name)->where('id', '<>', $id)->count();
         if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục đã tồn tại');
+            return redirect()->back()->with('error', 'Tên danh mục dự án đã tồn tại');
         }
 
         $project_category->name = $request->input('name');

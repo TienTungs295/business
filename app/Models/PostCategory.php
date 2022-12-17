@@ -14,13 +14,17 @@ class PostCategory extends Model
     protected $fillable = [
         'id',
         'name',
-        'image',
         'priority',
     ];
 
     public function posts()
     {
         return $this->hasMany(Post::class, 'category_id');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 }
