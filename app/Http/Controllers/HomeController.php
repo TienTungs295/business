@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Post;
+use App\Models\CustomerAccount;
+use App\Models\CustomerInfo;
+use App\Models\Order;
+use App\Models\Project;
+use App\Models\ProjectCategory;
+use App\Models\Review;
+use Illuminate\Http\Request;
+
+class HomeController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        $total_pending_order = Order::where('status', 1)->count();
+        $total_pending_review = Review::where('status', 1)->count();
+        $total_project = Project::all()->count();
+        $total_post = Post::all()->count();
+        $total_customer_info = CustomerInfo::all()->count();
+        $total_customer_account = CustomerAccount::all()->count();
+        return View('backend.home.index',
+            compact("total_pending_order",
+                "total_pending_review",
+                "total_project",
+                "total_post",
+                "total_customer_info",
+                "total_customer_account"));
+    }
+
+}
