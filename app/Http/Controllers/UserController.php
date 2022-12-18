@@ -19,7 +19,7 @@ class UserController extends Controller
         $q = $request->input('q');
         if ($q != "") {
             $users = User::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
+                $query->where('name', 'like', '%' . $q . '%')->orWhere('email', 'like', '%' . $q . '%');
             })->orderBy('id', 'DESC')
                 ->paginate(25);
             $users->appends(['q' => $q]);

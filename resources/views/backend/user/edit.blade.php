@@ -64,36 +64,19 @@
                                 <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label">Vai trò</label>
                                     <div class="col-sm-10">
-                                        @if(isset($user) && ((auth()->user()->role & 2) == 0 || auth()->user()->id == $user->id || $user->role == 7))
-                                            <span>
-                                                @if($user->role == 7)
-                                                    Quản trị viên cấp cao
-                                                @elseif($user->role == 3)
-                                                    Quản trị viên
-                                                @elseif($user->role == 1)
-                                                    Nhân viên
-                                                @endif
-                                            </span>
-                                            <input type="hidden" value="{!! $user->role !!}" name="role">
-                                        @else
-                                            <select class="form-select" id="role"
-                                                    name="role">
+                                        <select class="form-select" id="role"
+                                                name="role">
+                                            <option
+                                                value="1" {!! (isset($user) && $user->role == 1) || old('role') == 1 ? 'selected' : ''!!}>
+                                                Nhân viên
+                                            </option>
+                                            @if((auth()->user()->role & 4) > 0)
                                                 <option
-                                                    value="1" {!! isset($user) && $user->role == 1 ? 'selected' : ''!!}>
-                                                    Nhân viên
-                                                </option>
-                                                <option
-                                                    value="3" {!! isset($user) && $user->role == 3 ? 'selected' : ''!!}>
+                                                    value="3" {!! (isset($user) && $user->role == 3) || old('role') == 3 ? 'selected' : ''!!}>
                                                     Quản trị viên
                                                 </option>
-                                                @if( isset($user->id) && $user->role == 7)
-                                                    <option
-                                                        value="7" {!! isset($user) && $user->role == 7 ? 'selected' : ''!!}>
-                                                        Quản trị viên cấp cao
-                                                    </option>
-                                                @endif
-                                            </select>
-                                        @endif
+                                            @endif
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="text-center">

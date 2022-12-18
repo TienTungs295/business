@@ -14,7 +14,7 @@
                             <form method="GET" action="{!! route('userView') !!}" class="row g-3">
                                 <div class="col-md-4">
                                     <div class="input-group mb-3">
-                                        <input type="text" name="q" class="form-control" placeholder="Tên"
+                                        <input type="text" name="q" class="form-control" placeholder="Tên hoặc email"
                                                aria-label="Tên"
                                                aria-describedby="basic-addon2" value="{!! isset($q) ? $q : '' !!}">
                                         <div class="input-group-append">
@@ -66,7 +66,7 @@
                                                       class="d-inline-block" method="GET">
                                                     @csrf
                                                     <button type="submit"
-                                                            class="btn btn-danger btn-sm" {!! (auth()->user()->role & 2) == 0 || ($data->role == 7 &&  $data->id != auth()->user()->id) ? 'disabled' : '' !!}>
+                                                            class="btn btn-danger btn-sm" {!! (auth()->user()->id == $data->id) || (auth()->user()->role <= $data->role)  || ($data->role == 7) ? 'disabled' : '' !!}>
                                                         <i class="bi bi-pencil-square"></i>
                                                     </button>
                                                 </form>
@@ -75,7 +75,7 @@
                                                       class="d-inline-block" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-danger btn-sm"
-                                                            {!! (auth()->user()->role & 2) == 0 || $data->id == auth()->user()->id || $data->role  == 7 ? 'disabled' : '' !!}
+                                                            {!! (auth()->user()->id == $data->id) || (auth()->user()->role <= $data->role)  || ($data->role == 7) ? 'disabled' : '' !!}
                                                             onclick="return confirm('Bạn có chắc chắn cho hành động này không?')">
                                                         <i class="bi bi-trash"></i>
                                                     </button>
