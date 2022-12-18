@@ -20,19 +20,18 @@
                                   action="{!! isset($post_category)? route('updatePostCategory',['id' => $post_category->id]) : route('createPostCategory') !!}">
                                 @csrf
                                 <div class="row mb-3">
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <label class="form-label">Tên danh mục</label>
                                         <input type="text"
                                                value="{!! old('name', isset($post_category->name) ? $post_category->name : '')!!}"
-                                               class="form-control" name="name" maxlength="255" required
+                                               class="form-control" name="name" maxlength="350" required
                                                placeholder="Tên danh mục">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label class="form-label">Độ ưu tiên</label>
                                         <input type="number"
                                                value="{!! old('priority', isset($post_category->priority) ? $post_category->priority : '')!!}"
-                                               class="form-control" name="priority"  min="0"
-                                               placeholder="Độ ưu tiên">
+                                               class="form-control" name="priority"  min="0">
                                     </div>
                                 </div>
                                 <div class="text-center">

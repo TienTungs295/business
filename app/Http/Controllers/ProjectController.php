@@ -2,20 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Project;
 use App\Models\ProjectCategory;
-use App\Models\ProjectCollection;
-use App\Models\ProjectLabel;
-use App\Models\RelatedProject;
-use App\Models\Image;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
+use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use League\CommonMark\Parser\Block\ParagraphParser;
-use function Sodium\add;
-use File;
 
 class ProjectController extends BaseCustomController
 {
@@ -47,10 +41,8 @@ class ProjectController extends BaseCustomController
      */
     public function create()
     {
-        $project_categories = ProjectCategory::all()->toArray();
-        $labels = ProjectLabel::all();
-        $collections = ProjectCollection::all();
-        return view('backend.project.edit', compact('project_categories', 'labels', 'collections'));
+        $project_categories = ProjectCategory::all();
+        return view('backend.project.edit', compact('project_categories'));
     }
 
     /**
@@ -63,65 +55,21 @@ class ProjectController extends BaseCustomController
     {
         $request->validate(
             [
-                'name' => 'required',
+                'name' => 'required|max:350',
             ],
             [
-                'name.required' => 'Tên sản phẩm không được phép bỏ trống',
+                'name.required' => 'Tên dự án không được phép bỏ trống',
+                'name.max' => 'Tên dự án không được phép vượt quá 350 ký tự',
             ]
         );
 
-        $category_id = $request->input('category_id');
-        try {
-            if ($category_id != 0) ProjectCategory::findOrFail($category_id);
-        } catch (ModelNotFoundException $e) {
-            return redirect()->back()->with('error', 'Danh mục không tồn tại hoặc đã bị xóa');
-        }
-
         $project = new Project;
+        $project_categories = $request->input("project_categories");
         $project->name = $request->input('name');
         $project->slug = Str::slug($project->name);;
         $project->content = $request->input('content');
-        $project->description = $request->input('description');
-        $project->category_id = $request->input('category_id');
-        $project->sku = $request->input('sku');
-        $project->is_featured = $request->has('is_featured') ? 1 : 0;
-        $is_contact_price = $request->has('is_contact');
-        if (!$is_contact_price) {
-            $project->price = empty($request->input('price')) ? 0 : $request->input('price');
-            if (!empty($request->input('sale_price'))) {
-                $project->sale_price = $request->input('sale_price');
-            }
-            if ($request->has('apply_time')) {
-                $start_date = $request->input('start_date');
-                $end_date = $request->input('end_date');
-                $is_flash_sale = $request->has('is_flash_sale');
-                if (!empty($start_date) && !empty($end_date)) {
-                    $start_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->timestamp;
-                    $end_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->timestamp;
-                    if ($start_date_to_time_stamp > $end_date_to_time_stamp) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
-                }
-                if (!empty($start_date)) {
-                    $project->start_date = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->format("Y-m-d H:i:s");
-                }
-                if (!empty($end_date)) {
-                    if ($project->start_date == null)
-                        $project->start_date = Carbon::now()->format("Y-m-d H:i:s");
-                    $project->end_date = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->format("Y-m-d H:i:s");
-                    $project->is_flash_sale = $is_flash_sale ? 1 : 0;
-                }
-            }
-        }
-        $with_storehouse_management = $request->has('with_storehouse_management');
-        if (!$is_contact_price && $with_storehouse_management) {
-            $project->with_storehouse_management = 1;
-            $project->quantity = empty($request->input('quantity')) ? 0 : $request->input('quantity');
-            $project->allow_checkout_when_out_of_stock = $request->has('allow_checkout_when_out_of_stock') ? 1 : 0;
-        } else {
-            $project->with_storehouse_management = 0;
-            $project->stock_status = $request->input('stock_status');
-        }
-        $project->is_contact = $is_contact_price ? 1 : 0;
-        $project->is_trending = $request->has('is_trending') ? 1 : 0;
+        $project->priority = $request->input('priority');
+        $project->user_id = auth()->user()->id;
 
         //image
         $upload_path = "/uploads/images/";
@@ -146,27 +94,11 @@ class ProjectController extends BaseCustomController
             }
         }
 
-        $related_project_ids = $request->input('related_project_ids');
-        if ($related_project_ids) {
-            $related_project_ids = explode(",", $related_project_ids);
-        }
-        $labels = $request->input("labels");
-        $collections = $request->input("collections");
-
         DB::beginTransaction();
         try {
             $project->save();
             $project->images()->saveMany($images);
-            $project->projectLabels()->attach($labels);
-            $project->projectCollections()->attach($collections);
-            $related_projects = [];
-            if ($related_project_ids) {
-                foreach ($related_project_ids as $related_project_id) {
-                    array_push($related_projects, ['from_project_id' => $project->id, "to_project_id" => $related_project_id]);
-                }
-            }
-            RelatedProject::insert($related_projects);
-            $this->updateTotalProjectsFromProjectPage($project->category_id, true);
+            $project->projectCategories()->attach($project_categories);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
@@ -209,18 +141,9 @@ class ProjectController extends BaseCustomController
             $project->image = url('uploads/images/' . $project->image);
         }
         $project->images = $image_string;
-        $related_projects = $project->projectsRelated()->get();
-        $project->related_projects = $related_projects;
-        $related_project_ids = $related_projects->pluck("id")->toArray();
-        if (count($related_project_ids) != 0) {
-            $project->related_project_ids = implode(",", $related_project_ids);
-        }
-        $project_categories = ProjectCategory::all()->toArray();
-        $labels = ProjectLabel::all();
-        $collections = ProjectCollection::all();
-        $project->label_ids = $project->projectLabels()->get()->pluck("id")->toArray();
-        $project->collection_ids = $project->projectCollections()->get()->pluck("id")->toArray();
-        return view('backend.project.edit', compact('project', 'project_categories', 'labels', 'collections'));
+        $project->project_category_ids = $project->projectCategories()->get()->pluck("id")->toArray();
+        $project_categories = ProjectCategory::all();
+        return view('backend.project.edit', compact('project', 'project_categories'));
     }
 
     /**
@@ -234,85 +157,25 @@ class ProjectController extends BaseCustomController
     {
         $request->validate(
             [
-                'name' => 'required',
+                'name' => 'required|max:350',
             ],
             [
-                'name.required' => 'Tên sản phẩm không được phép bỏ trống',
+                'name.required' => 'Tên dự án không được phép bỏ trống',
+                'name.max' => 'Tên dự án không được phép vượt quá 350 ký tự'
             ]);
 
         try {
             $project = Project::findOrFail($id);
-            $old_category_id = $project->category_id;
         } catch (ModelNotFoundException $e) {
             return redirect()->route("projectView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $category_id = $request->input('category_id');
-        try {
-            if ($category_id != 0) ProjectCategory::findOrFail($category_id);
-        } catch (ModelNotFoundException $e) {
-            return redirect()->back()->with('error', 'Danh mục không tồn tại hoặc đã bị xóa');
-        }
-
+        $project_categories = $request->input("project_categories");
         $project->name = $request->input('name');
         $project->slug = Str::slug($project->name);
         $project->content = $request->input('content');
-        $project->description = $request->input('description');
-        $project->category_id = $request->input('category_id');
-        $project->sku = $request->input('sku');
-        $project->is_featured = $request->has('is_featured') ? 1 : 0;
-        $is_contact_price = $request->has('is_contact');
-        if ($is_contact_price) {
-            $project->price = null;
-            $project->sale_price = null;
-        } else {
-            $project->price = empty($request->input('price')) ? 0 : $request->input('price');
-            $project->sale_price = empty($request->input('sale_price')) ? null : $request->input('sale_price');
-        }
-
-        if (!$is_contact_price && $request->has('apply_time')) {
-            $start_date = $request->input('start_date');
-            $end_date = $request->input('end_date');
-            $is_flash_sale = $request->has('is_flash_sale');
-            if (!empty($start_date) && !empty($end_date)) {
-                $start_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->timestamp;
-                $end_date_to_time_stamp = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->timestamp;
-                if ($start_date_to_time_stamp > $end_date_to_time_stamp) return redirect()->back()->with('error', 'Ngày kết thúc phải lớn hơn ngày bắt đầu');
-            }
-            if (!empty($start_date)) {
-                $project->start_date = Carbon::createFromFormat('d-m-Y H:i:s', $start_date)->format("Y-m-d H:i:s");
-            } else {
-                $project->start_date = null;
-            }
-            if (!empty($end_date)) {
-                if ($project->start_date == null)
-                    $project->start_date = Carbon::now()->format("Y-m-d H:i:s");
-                $project->end_date = Carbon::createFromFormat('d-m-Y H:i:s', $end_date)->format("Y-m-d H:i:s");
-                $project->is_flash_sale = $is_flash_sale ? 1 : 0;
-            } else {
-                $project->is_flash_sale = 0;
-                $project->end_date = null;
-            }
-        } else {
-            $project->start_date = null;
-            $project->end_date = null;
-            $project->is_flash_sale = 0;
-        }
-
-        $with_storehouse_management = $request->has('with_storehouse_management');
-        if (!$is_contact_price && $with_storehouse_management) {
-            $project->with_storehouse_management = 1;
-            $project->quantity = empty($request->input('quantity')) ? 0 : $request->input('quantity');
-            $project->allow_checkout_when_out_of_stock = $request->has('allow_checkout_when_out_of_stock') ? 1 : 0;
-            $project->stock_status = null;
-        } else {
-            $project->with_storehouse_management = 0;
-            $project->quantity = null;
-            $project->allow_checkout_when_out_of_stock = null;
-            $project->stock_status = $request->input('stock_status');
-        }
-        $project->is_contact = $is_contact_price ? 1 : 0;
-        $project->is_trending = $request->has('is_trending') ? 1 : 0;
+        $project->priority = $request->input('priority');
+        $project->user_id = auth()->user()->id;
 
         //image
         $del_image_names = [];
@@ -364,45 +227,12 @@ class ProjectController extends BaseCustomController
             }
         }
 
-        $related_project_ids = [];
-        if ($request->input('related_project_ids')) {
-            $related_project_ids = explode(",", $request->input('related_project_ids'));
-        }
-
-        $db_to_project_ids = $project->projectsRelated()->get()->pluck("id")->toArray();
-        $new_related_projects = [];
-        $del_related_project_ids = [];
-        if ($related_project_ids) {
-            foreach ($related_project_ids as $id) {
-                if (!in_array($id, $db_to_project_ids)) {
-                    array_push($new_related_projects, ['from_project_id' => $project->id, "to_project_id" => $id]);
-                }
-            }
-        }
-
-        foreach ($db_to_project_ids as $id) {
-            if (!in_array($id, $related_project_ids)) {
-                array_push($del_related_project_ids, $id);
-            }
-        }
-        $labels = $request->input("labels");
-        $collections = $request->input("collections");
-
         DB::beginTransaction();
         try {
             $project->update();
             $project->images()->saveMany($new_images);
             $project->images()->whereIn('id', $del_image_ids)->delete();
-            $project->projectLabels()->sync($labels);
-            $project->projectCollections()->sync($collections);
-            RelatedProject::whereIn('to_project_id', $del_related_project_ids)->delete();
-            RelatedProject::insert($new_related_projects);
-            if ($old_category_id != $project->category_id) {
-                //minus 1
-                $this->updateTotalProjectsFromProjectPage($old_category_id);
-                //plus 1
-                $this->updateTotalProjectsFromProjectPage($project->category_id, true);
-            }
+            $project->projectCategories()->sync($project_categories);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
@@ -440,11 +270,8 @@ class ProjectController extends BaseCustomController
 
         DB::beginTransaction();
         try {
-            $this->updateTotalProjectsFromProjectPage($project->category_id, false, true);
             $project->images()->delete();
-            $project->reviews()->delete();
             $project->delete();
-            RelatedProject::where("from_project_id", $id)->delete();
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();

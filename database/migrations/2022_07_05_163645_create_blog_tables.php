@@ -15,9 +15,9 @@ class CreateBlogTables extends Migration
     {
         Schema::create('category', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
+            $table->string('name', 400);
             $table->integer('author_id');
-            $table->string('author_type', 255);
+            $table->string('author_type', 400);
             $table->integer('priority')->nullable();
             $table->integer('user_id');
             $table->timestamps();
@@ -25,12 +25,12 @@ class CreateBlogTables extends Migration
 
         Schema::create('post', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 255);
+            $table->string('name', 400);
             $table->string('slug');
             $table->longText('content')->nullable();
             $table->integer('author_id');
-            $table->string('author_type', 255);
-            $table->string('image', 255)->nullable();
+            $table->string('author_type', 400);
+            $table->string('image', 400)->nullable();
             $table->integer('views')->unsigned()->default(0);
             $table->string('format_type', 30)->nullable();
             $table->integer('priority')->nullable();
@@ -47,8 +47,8 @@ class CreateBlogTables extends Migration
         Schema::create('comment', function (Blueprint $table) {
             $table->id();
             $table->integer('post_id')->unsigned();
-            $table->string('customer_name', 255);
-            $table->string('customer_email', 255);
+            $table->string('customer_name', 400);
+            $table->string('customer_email', 400);
             $table->text('comment');
             $table->tinyInteger('status')->default(1);
             $table->integer('user_id')->nullable();

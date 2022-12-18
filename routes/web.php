@@ -46,14 +46,15 @@ Route::group(['middleware' => ['isMember', 'auth:web', 'preventBackHistory'], 'p
 //        Route::post('/cap-nhat/{id}', ['as' => 'updateBlog', 'uses' => 'BlogController@update']);
 //        Route::post('/xoa/{id}', ['as' => 'deleteBlog', 'uses' => 'BlogController@destroy']);
 //    });
-//    Route::group(['prefix' => 'san-pham'], function () {
-//        Route::get('', ['as' => 'ProjectView', 'uses' => 'ProjectController@index']);
-//        Route::get('/them-moi', ['as' => 'createProjectView', 'uses' => 'ProjectController@create']);
-//        Route::get('/chinh-sua/{id}', ['as' => 'updateProjectView', 'uses' => 'ProjectController@edit']);
-//        Route::post('/luu-tru', ['as' => 'createProject', 'uses' => 'ProjectController@store']);
-//        Route::post('/cap-nhat/{id}', ['as' => 'updateProject', 'uses' => 'ProjectController@update']);
-//        Route::post('/xoa/{id}', ['as' => 'deleteProject', 'uses' => 'ProjectController@destroy']);
-//    });
+
+    Route::group(['prefix' => 'du-an'], function () {
+        Route::get('', ['as' => 'projectView', 'uses' => 'ProjectController@index']);
+        Route::get('/them-moi', ['as' => 'createProjectView', 'uses' => 'ProjectController@create']);
+        Route::get('/chinh-sua/{id}', ['as' => 'updateProjectView', 'uses' => 'ProjectController@edit']);
+        Route::post('/luu-tru', ['as' => 'createProject', 'uses' => 'ProjectController@store']);
+        Route::post('/cap-nhat/{id}', ['as' => 'updateProject', 'uses' => 'ProjectController@update']);
+        Route::post('/xoa/{id}', ['as' => 'deleteProject', 'uses' => 'ProjectController@destroy']);
+    });
 //
 //    Route::group(['prefix' => 'danh-gia'], function () {
 //        Route::get('', ['as' => 'reviewView', 'uses' => 'ReviewController@index']);

@@ -84,7 +84,7 @@
         toastr.error(msg);
     }
 
-    {{--let APP_URL = {!! json_encode(url('/')) !!};--}}
+    let APP_URL = {!! json_encode(url('/')) !!};
     {{--$.ajax({--}}
     {{--    url: APP_URL + "/rest/order/count-pending-order",--}}
     {{--    contentType: "json",--}}

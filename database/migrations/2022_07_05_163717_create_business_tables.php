@@ -16,7 +16,7 @@ class CreateBusinessTables extends Migration
 
         Schema::create('project_category', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',400);
             $table->text('image')->nullable();
             $table->integer('priority')->nullable();
             $table->integer('user_id');
@@ -25,7 +25,7 @@ class CreateBusinessTables extends Migration
 
         Schema::create('project', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name',400);
             $table->string('slug');
             $table->longText('content')->nullable();
             $table->text('image')->nullable();

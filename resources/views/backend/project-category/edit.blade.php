@@ -20,19 +20,18 @@
                                   action="{!! isset($project_category)? route('updateProjectCategory',['id' => $project_category->id]) : route('createProjectCategory') !!}">
                                 @csrf
                                 <div class="row mb-3">
-                                    <div class="col-md-8">
+                                    <div class="col-md-9">
                                         <label class="form-label">Tên danh mục</label>
                                         <input type="text"
                                                value="{!! old('name', isset($project_category->name) ? $project_category->name : '')!!}"
-                                               class="form-control" name="name" maxlength="255" required
+                                               class="form-control" name="name" maxlength="350" required
                                                placeholder="Tên danh mục">
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <label class="form-label">Độ ưu tiên</label>
                                         <input type="number"
                                                value="{!! old('priority', isset($project_category->priority) ? $project_category->priority : '')!!}"
-                                               class="form-control" name="priority"  min="0"
-                                               placeholder="Độ ưu tiên">
+                                               class="form-control" name="priority"  min="0">
                                     </div>
                                 </div>
                                 <div class="text-center">

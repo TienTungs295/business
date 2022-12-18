@@ -48,11 +48,11 @@ class PostCategoryController extends BaseCustomController
     {
         $request->validate(
             [
-                'name' => 'required|max:255'
+                'name' => 'required|max:350'
             ],
             [
                 'name.required' => 'Tên danh mục không được phép bỏ trống',
-                'name.max' => 'Tên danh mục không được vượt quá 255 ký tự'
+                'name.max' => 'Tên danh mục không được vượt quá 350 ký tự'
             ]);
 
         $count_exist = PostCategory::where('name', $request->name)->count();
@@ -113,11 +113,11 @@ class PostCategoryController extends BaseCustomController
 
         $request->validate(
             [
-                'name' => 'required|max:255'
+                'name' => 'required|max:350'
             ],
             [
                 'name.required' => 'Tên danh mục bài viết không được phép bỏ trống',
-                'name.max' => 'Tên danh mục bài viết không được vượt quá 255 ký tự'
+                'name.max' => 'Tên danh mục bài viết không được vượt quá 350 ký tự'
             ]);
 
         $count_exist = PostCategory::where('name', $request->name)->where('id', '<>', $id)->count();

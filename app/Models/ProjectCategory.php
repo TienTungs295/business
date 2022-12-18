@@ -19,7 +19,12 @@ class ProjectCategory extends Model
 
     public function projects()
     {
-        return $this->hasMany(Project::class, 'category_id');
+        return $this->belongsToMany(
+            Project::class,
+            'project_category_project',
+            'category_id',
+            'project_id'
+        );
     }
 
     public function user()
@@ -27,4 +32,13 @@ class ProjectCategory extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::deleting(function (ProjectCategory $project_category) {
+            $project_category->projects()->detach();
+        });
+    }
 }

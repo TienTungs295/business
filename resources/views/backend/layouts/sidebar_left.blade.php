@@ -10,13 +10,19 @@
         </li>
         <li class="nav-item {{ (request()->is('quan-tri/danh-muc-du-an*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("projectCategoryView") !!}">
-                <i class="bi bi-list-ul"></i>
+                <i class="bi bi-journal-text"></i>
                 <span>Danh mục dự án</span>
+            </a>
+        </li>
+        <li class="nav-item {{ (request()->is('quan-tri/du-an*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("projectView") !!}">
+                <i class="bi bi-bricks"></i>
+                <span>Dự án</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('quan-tri/danh-muc-bai-viet*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("postCategoryView") !!}">
-                <i class="bi bi-journal-text"></i>
+                <i class="bi bi-list-ul"></i>
                 <span>Danh mục bài viết</span>
             </a>
         </li>
@@ -38,12 +44,7 @@
 {{--                <span>Bộ sưu tập</span>--}}
 {{--            </a>--}}
 {{--        </li>--}}
-{{--        <li class="nav-item {{ (request()->is('quan-tri/san-pham*')) ? 'active' : '' }}">--}}
-{{--            <a class="nav-link collapsed" href="{!! route("projectView") !!}">--}}
-{{--                <i class="bi bi-x-diamond-fill"></i>--}}
-{{--                <span>Sản phẩm</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
+
 {{--        <li class="nav-item {{ (request()->is('quan-tri/bai-viet*')) ? 'active' : '' }}">--}}
 {{--            <a class="nav-link collapsed" href="{!! route("postView") !!}">--}}
 {{--                <i class="bi bi-file-earmark-text"></i>--}}

@@ -72,4 +72,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(PostCategory::class, 'user_id');
     }
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class, 'user_id');
+    }
 }
