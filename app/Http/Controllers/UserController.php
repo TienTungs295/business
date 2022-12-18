@@ -51,15 +51,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
         if ((auth()->user()->role & 2) == 0) {
-            return redirect()->back()->with('error', 'Bạn không đủ quyền thực hiện chức năng này');
+            return redirect()->back()->with('error', 'Bạn không đủ quyền thực hiện chức năng này')->withInput();
         }
 
         $request->validate(
             [
                 'name' => 'required|max:255',
                 'email' => 'required|email|max:255',
-                'password' => 'required|min:8|max:255',
-                'password_confirm' => 'required|min:8|max:255|same:password',
+                'new_password' => 'required|min:8|max:255',
+                'password_confirm' => 'required|min:8|max:255|same:new_password',
                 'role' => 'required',
             ],
             [
@@ -68,9 +68,9 @@ class UserController extends Controller
                 'email.required' => 'Email không được phép bỏ trống',
                 'email.email' => 'Email không hợp lệ',
                 'email.max' => 'Email không được vượt quá 255 ký tự',
-                'password.required' => 'Mật khẩu không được phép bỏ trống',
-                'password.min' => 'Mật khẩu phải có ít nhất 8 ký tự',
-                'password.max' => 'Mật khẩu không được vượt quá 255 ký tự',
+                'new_password.required' => 'Mật khẩu không được phép bỏ trống',
+                'new_password.min' => 'Mật khẩu phải có ít nhất 8 ký tự',
+                'new_password.max' => 'Mật khẩu không được vượt quá 255 ký tự',
                 'password_confirm.required' => 'Mật khẩu xác nhận không được phép bỏ trống',
                 'password_confirm.min' => 'Mật khẩu xác nhận phải có ít nhất 8 ký tự',
                 'password_confirm.max' => 'Mật khẩu xác nhận không được vượt quá 255 ký tự',
@@ -80,21 +80,21 @@ class UserController extends Controller
 
         $count_name_exist = User::where('name', $request->name)->count();
         if ($count_name_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên nhân viên đã tồn tại');
+            return redirect()->back()->with('error', 'Tên nhân viên đã tồn tại')->withInput();
         }
 
         $count_email_exist = User::where('email', $request->email)->count();
         if ($count_email_exist >= 1) {
-            return redirect()->back()->with('error', 'Email đã tồn tại');
+            return redirect()->back()->with('error', 'Email đã tồn tại')->withInput();
         }
-        if ($request->input('password') != $request->input('password_confirm')) {
-            return redirect()->back()->with('error', 'Mật khẩu xác nhận không chính xác');
+        if ($request->input('new_password') != $request->input('password_confirm')) {
+            return redirect()->back()->with('error', 'Mật khẩu xác nhận không chính xác')->withInput();
         }
 
         $user = new User;
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('password'));
+        $user->password = bcrypt($request->input('new_password'));
         $user->role = $request->input('role');
         $user->save();
 
@@ -145,13 +145,13 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         if ((auth()->user()->role & 2) == 0) {
-            return redirect()->back()->with('error', 'Bạn không đủ quyền thực hiện chức năng này');
+            return redirect()->back()->with('error', 'Bạn không đủ quyền thực hiện chức năng này')->withInput();
         }
 
         try {
             $user = User::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return redirect()->route("userView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+            return redirect()->route("userView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa')->withInput();
         }
 
         $request->validate(
@@ -167,23 +167,23 @@ class UserController extends Controller
 
         $count_name_exist = User::where('name', $request->name)->where('id', '<>', $id)->count();
         if ($count_name_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên nhân viên đã tồn tại');
+            return redirect()->back()->with('error', 'Tên nhân viên đã tồn tại')->withInput();
         }
-        $password = $request->input("password");
+        $password = $request->input("new_password");
         $password_confirm = $request->input("password_confirm");
         if (!is_null($password)) {
             if (strlen($password) < 8)
-                return redirect()->back()->with('error', 'Mật khẩu phải có ít nhất 8 ký tự');
+                return redirect()->back()->with('error', 'Mật khẩu phải có ít nhất 8 ký tự')->withInput();
             if (strlen($password) > 255)
-                return redirect()->back()->with('error', 'Mật khẩu không được vượt quá 255 ký tự');
+                return redirect()->back()->with('error', 'Mật khẩu không được vượt quá 255 ký tự')->withInput();
             if (is_null($password_confirm)) {
-                return redirect()->back()->with('error', 'Mật khẩu xác nhận không được phép bỏ trống');
+                return redirect()->back()->with('error', 'Mật khẩu xác nhận không được phép bỏ trống')->withInput();
             }
             if ($password != $password_confirm) {
-                return redirect()->back()->with('error', 'Mật khẩu xác nhận không chính xác');
+                return redirect()->back()->with('error', 'Mật khẩu xác nhận không chính xác')->withInput();
             }
 
-            $user->password = bcrypt($request->input('password'));
+            $user->password = bcrypt($request->input('new_password'));
         }
 
         $user->name = $request->input('name');

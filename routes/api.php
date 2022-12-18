@@ -6,7 +6,7 @@ use App\Http\Controllers\Rests\CategoryRestController;
 use App\Http\Controllers\Rests\CollectionRestController;
 use App\Http\Controllers\Rests\ProjectRestController;
 use App\Http\Controllers\Rests\UploadRestController;
-use App\Http\Controllers\Rests\ReviewRestController;
+use App\Http\Controllers\Rests\CommentRestController;
 use App\Http\Controllers\Rests\CustomerInfoRestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,10 +24,10 @@ use Illuminate\Support\Facades\Route;
 
 // Below mention routes are available only for the authenticated users.
 
-//Route::group(['prefix' => 'review'], function () {
-//    Route::get('/find-by-Project', [ReviewRestController::class, 'findByProject']);
-//    Route::get('/count-pending-review', [ReviewRestController::class, 'countPendingReview']);
-//});
+Route::group(['prefix' => 'comment'], function () {
+    Route::get('/find-by-post', [CommentRestController::class, 'findByPost']);
+    Route::get('/count-pending-comment', [CommentRestController::class, 'countPendingComment']);
+});
 //
 //
 //

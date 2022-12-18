@@ -48,8 +48,8 @@
                                             class="text-danger">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="password"
-                                               value=""
-                                               class="form-control" name="password" maxlength="255">
+                                               value="{!! old('new_password') !!}"
+                                               class="form-control" name="new_password" maxlength="255">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -57,7 +57,7 @@
                                             class="text-danger">*</span></label>
                                     <div class="col-sm-10">
                                         <input type="password"
-                                               value=""
+                                               value="{!! old('password_confirm') !!}"
                                                class="form-control" name="password_confirm" maxlength="255">
                                     </div>
                                 </div>

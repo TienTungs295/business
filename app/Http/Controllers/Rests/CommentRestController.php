@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Rests;
 
 use App\Http\Controllers\Controller;
-use App\Models\Review;
+use App\Models\Comment;
 use App\Models\Project;
 use App\Http\Responses\AjaxResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -20,7 +20,7 @@ class CommentRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Sản phẩm không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        $review = new Review();
+        $comment = new Comment();
         $comment = $request->post("comment");
         $star = $request->post("star");
         if (is_null($star) || $star == 0)
@@ -29,31 +29,31 @@ class CommentRestController extends Controller
             return $ajax_response->setMessage("Số sao đánh giá không hợp lệ")->toApiResponse();
         if (!isset($comment))
             return $ajax_response->setMessage("Nội dung đánh giá không được phép bỏ trống")->toApiResponse();
-        $review->comment = $comment;
-        $review->star = $star;
-        $review->status = 1;
-        $review->project_id = $project_id;
-        $review->customer_id = auth()->user()->id;
-        $review->save();
-        return $ajax_response->setData($review)->toApiResponse();
+        $comment->comment = $comment;
+        $comment->star = $star;
+        $comment->status = 1;
+        $comment->project_id = $project_id;
+        $comment->customer_id = auth()->user()->id;
+        $comment->save();
+        return $ajax_response->setData($comment)->toApiResponse();
     }
 
     public function delete(Request $request)
     {
         $ajax_response = new AjaxResponse();
         try {
-            $review = Review::findOrFail($request->input("id"));
+            $comment = Comment::findOrFail($request->input("id"));
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Đánh giá không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        if ($review->customer_id != auth()->user()->id) {
+        if ($comment->customer_id != auth()->user()->id) {
             return $ajax_response->setMessage("Bạn không đủ quyền thực hiện tác vụ này")->toApiResponse();
         }
-        $review->delete();
-        return $ajax_response->setData($review)->toApiResponse();
+        $comment->delete();
+        return $ajax_response->setData($comment)->toApiResponse();
     }
 
-    public function findByProject(Request $request)
+    public function findByPost(Request $request)
     {
         $page_size = 12;
         $hasMorePage = false;
@@ -66,7 +66,7 @@ class CommentRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Sản phẩm không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        $query = Review::with(['customer'])->where(function ($query) use ($project_id, $last_id, $user) {
+        $query = Comment::with(['customer'])->where(function ($query) use ($project_id, $last_id, $user) {
             $query->where('project_id', $project_id);
             if (!is_null($last_id)) $query->where('id', '<', $last_id);
             $query->where(function ($query) use ($last_id, $user) {
@@ -80,14 +80,14 @@ class CommentRestController extends Controller
             });
         });
         $query->orderBy("created_at","DESC");
-        $reviews = $query->take($page_size + 1)->get()->toArray();
-        if (sizeof($reviews) > $page_size) {
+        $comments = $query->take($page_size + 1)->get()->toArray();
+        if (sizeof($comments) > $page_size) {
             $hasMorePage = true;
-            array_pop($reviews);
+            array_pop($comments);
         }
 
-        //count total reviews
-        $totalReviews = Review::where('project_id', $project_id)
+        //count total comments
+        $totalComments = Comment::where('project_id', $project_id)
             ->where(function ($query) use ($user) {
                 $query->where('status', 2);
                 if (!is_null($user)) {
@@ -97,13 +97,13 @@ class CommentRestController extends Controller
                     });
                 }
             })->count();
-        return $ajax_response->setData(array('data' => $reviews, 'hasMorePage' => $hasMorePage, 'totalReviews' => $totalReviews))->toApiResponse();
+        return $ajax_response->setData(array('data' => $comments, 'hasMorePage' => $hasMorePage, 'totalComments' => $totalComments))->toApiResponse();
     }
 
-    public function countPendingReview()
+    public function countPendingComment()
     {
         $ajax_response = new AjaxResponse();
-        $count = Review::where('status', 1)->count();
+        $count = Comment::where('status', 1)->count();
         return $ajax_response->setData($count)->toApiResponse();
     }
 }

@@ -11,26 +11,11 @@
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
-
-            <li class="nav-item d-block d-lg-none">
-                <a class="nav-link nav-icon search-bar-toggle " href="#">
-                    <i class="bi bi-search"></i>
-                </a>
-            </li><!-- End Search Icon-->
-
             <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="#">
-                    <i class="bi bi-cart"></i>
-                    <span class="badge bg-primary badge-number" id="total-order">0</span>
-                </a><!-- End Notification Icon -->
-            </li><!-- End Notification Nav -->
-
-            <li class="nav-item dropdown">
-
-                <a class="nav-link nav-icon" href="#">
+                <a class="nav-link nav-icon" href="{!! route("commentView") !!}">
                     <i class="bi bi-chat-left-text"></i>
-                    <span class="badge bg-success badge-number" id="total-review">0</span>
+                    <span class="badge bg-success badge-number" id="total-pending-comments">0</span>
                 </a><!-- End Messages Icon -->
 
             </li><!-- End Messages Nav -->

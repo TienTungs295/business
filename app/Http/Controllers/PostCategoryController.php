@@ -48,7 +48,7 @@ class PostCategoryController extends BaseCustomController
     {
         $request->validate(
             [
-                'name' => 'required|max:350'
+                'name' => 'required|max:250'
             ],
             [
                 'name.required' => 'Tên danh mục không được phép bỏ trống',
@@ -57,7 +57,7 @@ class PostCategoryController extends BaseCustomController
 
         $count_exist = PostCategory::where('name', $request->name)->count();
         if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục bài viết đã tồn tại');
+            return redirect()->back()->with('error', 'Tên danh mục bài viết đã tồn tại')->withInput();
         }
 
         $post_category = new PostCategory;
@@ -108,7 +108,7 @@ class PostCategoryController extends BaseCustomController
         try {
             $post_category = PostCategory::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return redirect()->route("postCategoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+            return redirect()->route("postCategoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa')->withInput();
         }
 
         $request->validate(
@@ -122,7 +122,7 @@ class PostCategoryController extends BaseCustomController
 
         $count_exist = PostCategory::where('name', $request->name)->where('id', '<>', $id)->count();
         if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục bài viết đã tồn tại');
+            return redirect()->back()->with('error', 'Tên danh mục bài viết đã tồn tại')->withInput();
         }
 
         $post_category->name = $request->input('name');

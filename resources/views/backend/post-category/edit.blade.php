@@ -23,7 +23,7 @@
                                     <div class="col-md-9">
                                         <label class="form-label">Tên danh mục</label>
                                         <input type="text"
-                                               value="{!! old('name', isset($post_category->name) ? $post_category->name : '')!!}"
+                                               value="{{old('name', isset($post_category->name) ? $post_category->name : '')}}"
                                                class="form-control" name="name" maxlength="350" required
                                                placeholder="Tên danh mục">
                                     </div>

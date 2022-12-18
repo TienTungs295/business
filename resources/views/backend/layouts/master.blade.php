@@ -60,9 +60,6 @@
 <script src="{{ asset('vendor/date-picker/js/jquery.ui.datepicker-vi.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
 
-
-
-
 <!-- Template Main JS File -->
 <!--<script src="{{ asset('js/app.js') }}"></script>-->
 <script src="{{ asset('js/main.js') }}"></script>
@@ -85,29 +82,18 @@
     }
 
     let APP_URL = {!! json_encode(url('/')) !!};
-    {{--$.ajax({--}}
-    {{--    url: APP_URL + "/rest/order/count-pending-order",--}}
-    {{--    contentType: "json",--}}
-    {{--    method: "GET",--}}
-    {{--    success: function (res) {--}}
-    {{--        let totalPendingOrder = res.data || 0;--}}
-    {{--        $("#total-order").text(totalPendingOrder);--}}
-    {{--    },--}}
-    {{--    error: function (response) {--}}
-    {{--    }--}}
-    {{--});--}}
 
-    {{--$.ajax({--}}
-    {{--    url: APP_URL + "/rest/review/count-pending-review",--}}
-    {{--    contentType: "json",--}}
-    {{--    method: "GET",--}}
-    {{--    success: function (res) {--}}
-    {{--        let totalPendingReview = res.data || 0;--}}
-    {{--        $("#total-review").text(totalPendingReview);--}}
-    {{--    },--}}
-    {{--    error: function (response) {--}}
-    {{--    }--}}
-    {{--});--}}
+    $.ajax({
+        url: APP_URL + "/rest/comment/count-pending-comment",
+        contentType: "json",
+        method: "GET",
+        success: function (res) {
+            let totalPendingComments = res.data || 0;
+            $("#total-pending-comments").text(totalPendingComments);
+        },
+        error: function (response) {
+        }
+    });
 </script>
 @yield('morescripts')
 </body>

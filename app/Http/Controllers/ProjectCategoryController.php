@@ -58,7 +58,7 @@ class ProjectCategoryController extends BaseCustomController
 
         $count_exist = ProjectCategory::where('name', $request->name)->count();
         if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục dự án đã tồn tại');
+            return redirect()->back()->with('error', 'Tên danh mục dự án đã tồn tại')->withInput();
         }
 
         $project_category = new ProjectCategory;
@@ -109,7 +109,7 @@ class ProjectCategoryController extends BaseCustomController
         try {
             $project_category = ProjectCategory::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return redirect()->route("projectCategoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+            return redirect()->route("projectCategoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa')->withInput();
         }
 
         $request->validate(
@@ -123,7 +123,7 @@ class ProjectCategoryController extends BaseCustomController
 
         $count_exist = ProjectCategory::where('name', $request->name)->where('id', '<>', $id)->count();
         if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục dự án đã tồn tại');
+            return redirect()->back()->with('error', 'Tên danh mục dự án đã tồn tại')->withInput();
         }
 
         $project_category->name = $request->input('name');

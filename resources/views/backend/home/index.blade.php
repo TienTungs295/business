@@ -6,145 +6,128 @@
                 <h1>Trang chủ</h1>
             </div><!-- End Page Title -->
 
-{{--            <section class="section dashboard">--}}
-{{--                <div class="row">--}}
+            <section class="section dashboard">
+                <div class="row">
+                    <!-- Left side columns -->
+                    <div class="col">
+                        <div class="row">
 
-{{--                    <!-- Left side columns -->--}}
-{{--                    <div class="col">--}}
-{{--                        <div class="row">--}}
+                            <!-- Comment -->
+                            <div class="col-xxl-4 col-md-6">
+                                <a class="card info-card revenue-card" href="{!! route("commentView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bình luận đang chờ xử lý</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-chat-left-text"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_pending_comments!!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div><!-- End Comment -->
 
-{{--                            <!-- Order -->--}}
-{{--                            <div class="col-xxl-4 col-md-6">--}}
-{{--                                <div class="card info-card sales-card">--}}
+                            <!-- Project Category -->
+                            <div class="col-xxl-4 col-md-6">
+                                <a class="card info-card sales-card" href="{!! route("projectCategoryView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Danh mục dự án</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi-intersect"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_project_categories !!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Project Category -->
+
+                            <!-- Project -->
+                            <div class="col-xxl-4 col-xl-12">
+                                <a class="card info-card customers-card" href="{!! route("projectView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Dự án</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-building"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_projects!!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div><!-- End Project -->
+
+                            <!-- Post Category -->
+                            <div class="col-xxl-4 col-md-6">
+                                <a class="card info-card sales-card" href="{!! route("postCategoryView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Danh mục bài viết</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-journal-text"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_post_categories !!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Post Category -->
+
+                            <!-- Post -->
+                            <div class="col-xxl-4 col-xl-12">
+                                <a class="card info-card customers-card" href="{!! route("postView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bài viết</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-file-earmark-text"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_posts!!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div><!-- End Post -->
 
 
-{{--                                    <div class="card-body">--}}
-{{--                                        <h5 class="card-title">Đơn hàng đang chờ xử lý</h5>--}}
+                            <!-- Contact -->
+                            <div class="col-xxl-4 col-md-6">
+                                <a class="card info-card revenue-card" href="{!! route("customerInfoView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Liên hệ</h5>
 
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div--}}
-{{--                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">--}}
-{{--                                                <i class="bi bi-cart"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="ps-3">--}}
-{{--                                                <h6>{!! $total_pending_order !!}</h6>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-telephone-plus"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_customer_infos!!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div><!-- End Contact -->
 
-{{--                                </div>--}}
-{{--                            </div><!-- End Order -->--}}
-
-{{--                            <!-- Review -->--}}
-{{--                            <div class="col-xxl-4 col-md-6">--}}
-{{--                                <div class="card info-card revenue-card">--}}
-{{--                                    <div class="card-body">--}}
-{{--                                        <h5 class="card-title">Đánh giá đang chờ xử lý</h5>--}}
-
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div--}}
-{{--                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">--}}
-{{--                                                <i class="bi bi-chat-left-text"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="ps-3">--}}
-{{--                                                <h6>{!! $total_pending_review!!}</h6>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-
-{{--                                </div>--}}
-{{--                            </div><!-- End Review -->--}}
-
-{{--                            <!-- Project -->--}}
-{{--                            <div class="col-xxl-4 col-xl-12">--}}
-
-{{--                                <div class="card info-card customers-card">--}}
-
-{{--                                    <div class="card-body">--}}
-{{--                                        <h5 class="card-title">Sản phẩm</h5>--}}
-
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div--}}
-{{--                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">--}}
-{{--                                                <i class="bi bi-x-diamond-fill"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="ps-3">--}}
-{{--                                                <h6>{!! $total_project!!}</h6>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div><!-- End Project -->--}}
-
-{{--                            <!-- Post -->--}}
-{{--                            <div class="col-xxl-4 col-xl-12">--}}
-
-{{--                                <div class="card info-card customers-card">--}}
-
-{{--                                    <div class="card-body">--}}
-{{--                                        <h5 class="card-title">Bài viết</h5>--}}
-
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div--}}
-{{--                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">--}}
-{{--                                                <i class="bi bi-file-earmark-text"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="ps-3">--}}
-{{--                                                <h6>{!! $total_post!!}</h6>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div><!-- End Post -->--}}
-
-{{--                            <!-- Customer -->--}}
-{{--                            <div class="col-xxl-4 col-xl-12">--}}
-
-{{--                                <div class="card info-card customers-card">--}}
-
-{{--                                    <div class="card-body">--}}
-{{--                                        <h5 class="card-title">Khách hàng</h5>--}}
-
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div--}}
-{{--                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">--}}
-{{--                                                <i class="bi bi-people"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="ps-3">--}}
-{{--                                                <h6>{!! $total_customer_account!!}</h6>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div><!-- End Customer -->--}}
-
-{{--                            <!-- Contact -->--}}
-{{--                            <div class="col-xxl-4 col-xl-12">--}}
-
-{{--                                <div class="card info-card customers-card">--}}
-
-{{--                                    <div class="card-body">--}}
-{{--                                        <h5 class="card-title">Email liên hệ</h5>--}}
-
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div--}}
-{{--                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">--}}
-{{--                                                <i class="bi bi-journal-check"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="ps-3">--}}
-{{--                                                <h6>{!! $total_customer_info!!}</h6>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div><!-- End Contact -->--}}
-{{--                        </div>--}}
-{{--                    </div><!-- End Left side columns -->--}}
-{{--                </div>--}}
-{{--            </section>--}}
-{{--        </div>--}}
+                        </div>
+                    </div><!-- End Left side columns -->
+                </div>
+            </section>
+        </div>
     @include('backend.errors.alert')
 @endsection

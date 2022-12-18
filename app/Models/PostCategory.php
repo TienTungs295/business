@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 
 class PostCategory extends Model
@@ -17,14 +18,31 @@ class PostCategory extends Model
         'priority',
     ];
 
-    public function posts()
-    {
-        return $this->hasMany(Post::class, 'category_id');
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function posts()
+    {
+        return $this->belongsToMany(
+            PostCategory::class,
+            'post_category',
+            'category_id',
+            'post_id'
+        );
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        self::deleting(function (PostCategory $post_category) {
+            $post_category->posts()->detach();
+        });
     }
 
 }

@@ -15,6 +15,6 @@ class CustomerInfo extends Model
 
     protected $table = 'customer_info';
     protected $fillable = [
-        'name', 'email', 'phone_number'
+        'name', 'email', 'phone_number', 'message'
     ];
 }

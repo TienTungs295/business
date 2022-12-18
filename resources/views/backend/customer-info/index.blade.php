@@ -32,7 +32,10 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Tên</th>
                                 <th scope="col">Email</th>
+                                <th scope="col">Số điện thoại</th>
+                                <th scope="col">Lời nhắn</th>
                                 <th scope="col">Ngày đăng ký</th>
                                 <th scope="col">Chức năng</th>
                             </tr>
@@ -42,7 +45,10 @@
                             @foreach($customer_infos as $data)
                             <tr>
                                 <th scope="row">{!!$data->id!!}</th>
+                                <td>{!!$data->name!!}</td>
                                 <td>{!!$data->email!!}</td>
+                                <td>{!!$data->phone_number!!}</td>
+                                <td>{!!$data->message!!}</td>
                                 <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
                                 <td>
                                     <form action="{!! route('deleteCustomerInfo',['id' => $data->id]) !!}"
@@ -58,7 +64,7 @@
                             @endforeach
                             @else
                             <tr>
-                                <td colspan="6">Không có dữ liệu</td>
+                                <td colspan="7">Không có dữ liệu</td>
                             </tr>
                             @endif
                             </tbody>

@@ -167,7 +167,7 @@ class ProjectController extends BaseCustomController
         try {
             $project = Project::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return redirect()->route("projectView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+            return redirect()->route("projectView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa')->withInput();
         }
 
         $project_categories = $request->input("project_categories");
@@ -266,7 +266,7 @@ class ProjectController extends BaseCustomController
         $images = $project->images()->get()->pluck("image")->toArray();
         $image = $project->image;
         $del_images = array_merge($del_images, $images);
-        array($del_images, $image);
+        array_push($del_images, $image);
 
         DB::beginTransaction();
         try {

@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
+use App\Models\CustomerInfo;
+use App\Models\Post;
+use App\Models\PostCategory;
+use App\Models\Project;
+use App\Models\ProjectCategory;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,13 +19,21 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-//        $total_pending_order = Order::where('status', 1)->count();
-//        $total_pending_review = Review::where('status', 1)->count();
-//        $total_project = Project::all()->count();
-//        $total_post = Post::all()->count();
-//        $total_customer_info = CustomerInfo::all()->count();
-//        $total_customer_account = CustomerAccount::all()->count();
-        return View('backend.home.index');
+        $total_pending_comments = Comment::where('status', 1)->count();
+        $total_project_categories = ProjectCategory::all()->count();
+        $total_projects = Project::all()->count();
+        $total_post_categories = PostCategory::all()->count();
+        $total_posts = Post::all()->count();
+        $total_customer_infos = CustomerInfo::all()->count();
+        return View('backend.home.index', compact(
+                'total_pending_comments',
+                'total_project_categories',
+                'total_projects',
+                'total_post_categories',
+                'total_posts',
+                'total_customer_infos',
+            )
+        );
     }
 
 }

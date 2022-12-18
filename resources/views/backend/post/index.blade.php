@@ -39,8 +39,10 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Ảnh</th>
                                     <th scope="col">Tên</th>
-                                    <th scope="col">Ngày cập nhật</th>
-                                    <th scope="col">Chức năng</th>
+                                    <th scope="col">Độ ưu tiên</th>
+                                    <th scope="col" class="text-center">Người cập nhật</th>
+                                    <th scope="col" class="text-center">Ngày cập nhật</th>
+                                    <th scope="col" class="text-center">Chức năng</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -49,11 +51,18 @@
                                         <tr class="align-middle">
                                             <th scope="row">{!!$data->id!!}</th>
                                             <td>
-                                                <img src="{!! url('uploads/images/'.$data->image) !!}" alt="{!! $data->image !!}" width="70" height="70">
+                                                <img src="{!! url('uploads/images/'.$data->image) !!}"
+                                                     alt="{!! $data->image !!}" width="70" height="70">
                                             </td>
                                             <td>{!!$data->name!!}</td>
-                                            <td>{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
-                                            <td>
+                                            <td>{!!$data->priority!!}</td>
+                                            <td class="text-center">
+                                                @if($data->user != null)
+                                                    {!!$data->user->name!!}
+                                                @endif
+                                            </td>
+                                            <td class="text-center">{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
+                                            <td class="text-center">
                                                 <a href="{!! route('updatePostView',['id' => $data->id]) !!}"
                                                    class="btn btn-info btn-sm text-white">
                                                     <i class="bi bi-pencil-square"></i>
@@ -71,7 +80,7 @@
                                     @endforeach
                                 @else
                                     <tr>
-                                        <td colspan="6">Không có dữ liệu</td>
+                                        <td colspan="7">Không có dữ liệu</td>
                                     </tr>
                                 @endif
                                 </tbody>

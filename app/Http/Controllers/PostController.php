@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\PostCategory;
+use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use File;
 
-class PostController extends Controller
+class PostController extends BaseCustomController
 {
     /**
      * Display a listing of the resource.
@@ -27,6 +29,7 @@ class PostController extends Controller
         } else {
             $posts = Post::orderBy('id', 'DESC')->paginate(25);
         }
+
         return View('backend.post.index', compact("posts", "q"));
     }
 
@@ -37,7 +40,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('backend.post.edit');
+        $post_categories = PostCategory::all();
+        return view('backend.post.edit', compact('post_categories'));
     }
 
     /**
@@ -50,32 +54,40 @@ class PostController extends Controller
     {
         $request->validate(
             [
-                'name' => 'required|max:255'
+                'name' => 'required|max:350',
             ],
             [
                 'name.required' => 'Tên bài viết không được phép bỏ trống',
-                'name.max' => 'Tên bài viết không được vượt quá 255 ký tự'
+                'name.max' => 'Tên bài viết không được phép vượt quá 350 ký tự',
             ]
         );
 
         $post = new Post;
+        $post_categories = $request->input("post_categories");
         $post->name = $request->input('name');
-        $post->slug = Str::slug($post->name);
+        $post->slug = Str::slug($post->name);;
         $post->content = $request->input('content');
+        $post->priority = $request->input('priority');
+        $post->user_id = auth()->user()->id;
 
-        $image_url = $request->input('image');
+        //image
         $upload_path = "/uploads/images/";
-        if ($image_url != null && $image_url != "") {
+        $image_url = $request->input('image');
+        if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
-            $image_url = substr($image_url, $start_position, strlen($image_url) - $start_position);
+            $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
+            $post->image = $image_name;
         }
-        $post->image = $image_url;
-        $post->author_id = 1;
-        $post->author_type = 1;
-        $featured = $request->has("is_featured") ? 1 : 0;
-        $post->is_featured = $featured;
-        $post->save();
 
+        DB::beginTransaction();
+        try {
+            $post->save();
+            $post->postCategories()->attach($post_categories);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        }
         return redirect()->route("postView")->with('success', 'Thành công');
     }
 
@@ -103,7 +115,12 @@ class PostController extends Controller
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
-        return view('backend.post.edit', compact('post'));
+        if ($post->image) {
+            $post->image = url('uploads/images/' . $post->image);
+        }
+        $post->post_category_ids = $post->postCategories()->get()->pluck("id")->toArray();
+        $post_categories = PostCategory::all();
+        return view('backend.post.edit', compact('post', 'post_categories'));
     }
 
     /**
@@ -115,44 +132,60 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
-            $post = Post::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
-            return redirect()->route("postView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
-        }
-
         $request->validate(
             [
-                'name' => 'required|max:255',
+                'name' => 'required|max:350',
             ],
             [
                 'name.required' => 'Tên bài viết không được phép bỏ trống',
-                'name.max' => 'Tên bài viết không được vượt quá 255 ký tự'
+                'name.max' => 'Tên bài viết không được phép vượt quá 350 ký tự'
             ]);
 
+        try {
+            $post = Post::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return redirect()->route("postView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa')->withInput();
+        }
+
+        $post_categories = $request->input("post_categories");
         $post->name = $request->input('name');
         $post->slug = Str::slug($post->name);
         $post->content = $request->input('content');
+        $post->priority = $request->input('priority');
+        $post->user_id = auth()->user()->id;
+
+        //image
+        $del_image_names = [];
         $image_url = $request->input('image');
+        $image_name = "";
+        $delete_url = null;
         $upload_path = "/uploads/images/";
-        if ($image_url != null && $image_url != "") {
+        if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
-            $image_url = substr($image_url, $start_position, strlen($image_url) - $start_position);
+            $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
         }
 
-        if ($image_url != $post->image && $post->image != null)
-            $del_image_name = $post->image;
+        if ($post->image != null && $image_name != $post->image) {
+            array_push($del_image_names, $post->image);
+        }
+        $post->image = $image_name;
+        DB::beginTransaction();
+        try {
+            $post->update();
+            $post->postCategories()->sync($post_categories);
+            DB::commit();
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
+        }
 
-        $post->image = $image_url;
-        $featured = $request->has("is_featured") ? 1 : 0;
-        $post->is_featured = $featured;
-        $post->update();
-        if (!empty($del_image_name)) {
+        foreach ($del_image_names as $del_image_name) {
             $delete_url = 'uploads\images\\' . $del_image_name;
             if (File::exists(public_path($delete_url))) {
                 File::delete(public_path($delete_url));
             }
         }
+
         return redirect()->route("postView")->with('success', 'Thành công');
     }
 
@@ -169,8 +202,16 @@ class PostController extends Controller
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
-
+        $del_images = [];
+        $image = $post->image;
+        if (!is_null($image)) array_push($del_images, $image);
         $post->delete();
+
+        foreach ($del_images as $image) {
+            $delete_url = 'uploads\images\\' . $image;
+            if (File::exists(public_path($delete_url)))
+                File::delete(public_path($delete_url));
+        }
 
         return redirect()->back()->with('success', 'Thành công');
     }

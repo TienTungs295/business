@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Review;
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -15,8 +15,8 @@ class CommentController extends Controller
      */
     public function index(Request $request)
     {
-        $reviews = Review::orderBy('id', 'DESC')->paginate(25);
-        return View('backend.review.index', compact("reviews"));
+        $comments = Comment::orderBy('id', 'DESC')->paginate(25);
+        return View('backend.comment.index', compact("comments"));
     }
 
     /**
@@ -62,13 +62,14 @@ class CommentController extends Controller
     public function changeStatus(Request $request, $id)
     {
         try {
-            $review = Review::findOrFail($id);
+            $comment = Comment::findOrFail($id);
         } catch (ModelNotFoundException $e) {
-            return redirect()->route("reviewView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+            return redirect()->route("commentView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
-        $review->status = 2;
-        $review->update();
-        return redirect()->route("reviewView")->with('success', 'Thành công');
+        $comment->status = 2;
+        $comment->user_id = auth()->user()->id;
+        $comment->update();
+        return redirect()->route("commentView")->with('success', 'Thành công');
     }
 
     /**
@@ -80,12 +81,12 @@ class CommentController extends Controller
     public function destroy($id)
     {
         try {
-            $review = Review::findOrFail($id);
+            $comment = Comment::findOrFail($id);
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $review->delete();
+        $comment->delete();
 
         return redirect()->back()->with('success', 'Thành công');
     }
