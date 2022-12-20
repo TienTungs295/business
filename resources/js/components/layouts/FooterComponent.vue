@@ -1,9 +1,8 @@
 <template>
+    <div></div>
 </template>
 
 <script>
-
-import CategoryService from "../../services/CategoryService";
 
 export default {
     name: "Footer",
