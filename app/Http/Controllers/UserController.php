@@ -78,6 +78,10 @@ class UserController extends Controller
                 'role.required' => 'Vai trò nhân viên không được phép bỏ trống',
             ]);
 
+        if ((auth()->user()->role <= $request->input("role"))) {
+            return redirect()->back()->with('error', 'Vai trò nhân viên không hợp lệ')->withInput();
+        }
+
         $count_name_exist = User::where('name', $request->name)->count();
         if ($count_name_exist >= 1) {
             return redirect()->back()->with('error', 'Tên nhân viên đã tồn tại')->withInput();
@@ -89,6 +93,10 @@ class UserController extends Controller
         }
         if ($request->input('new_password') != $request->input('password_confirm')) {
             return redirect()->back()->with('error', 'Mật khẩu xác nhận không chính xác')->withInput();
+        }
+
+        if ($request->input('role') > 3) {
+            return redirect()->back()->with('error', 'Vai trò không hợp lệ')->withInput();
         }
 
         $user = new User;
@@ -131,7 +139,10 @@ class UserController extends Controller
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
 
-        $user->password_confirm = $user->password;
+        if ((auth()->user()->role <= $user->role)) {
+            return redirect()->back()->with('error', 'Bạn không có quyền thực hiện tác vụ này')->withInput();
+        }
+
         return view('backend.user.edit', compact('user'));
     }
 
@@ -165,6 +176,14 @@ class UserController extends Controller
                 'role.required' => 'Vai trò nhân viên không được phép bỏ trống',
             ]);
 
+        if ((auth()->user()->role <= $user->role)) {
+            return redirect()->back()->with('error', 'Bạn không có quyền thực hiện tác vụ này')->withInput();
+        }
+
+        if ((auth()->user()->role <= $request->input("role"))) {
+            return redirect()->back()->with('error', 'Vai trò không hợp lệ')->withInput();
+        }
+
         $count_name_exist = User::where('name', $request->name)->where('id', '<>', $id)->count();
         if ($count_name_exist >= 1) {
             return redirect()->back()->with('error', 'Tên nhân viên đã tồn tại')->withInput();
@@ -186,10 +205,12 @@ class UserController extends Controller
             $user->password = bcrypt($request->input('new_password'));
         }
 
-        $user->name = $request->input('name');
-        if ($user->role != 7 && auth()->user()->id != $user->id) {
-            $user->role = $request->input('role');
+        if ($request->input('role') > 3) {
+            return redirect()->back()->with('error', 'Vai trò không hợp lệ')->withInput();
         }
+
+        $user->name = $request->input('name');
+        $user->role = $request->input('role');
         $user->update();
         return redirect()->route("userView")->with('success', 'Thành công');
     }
@@ -207,7 +228,7 @@ class UserController extends Controller
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
-        if ((auth()->user()->role & 2) == 0 || $user->id == auth()->user()->id || $user->role == 7) {
+        if ((auth()->user()->role & 2) == 0 || $user->id == auth()->user()->id || $user->role == 7 || auth()->user()->role <= $user->role) {
             return redirect()->back()->with('error', 'Bạn không đủ quyền thực hiện chức năng này');
         }
 
