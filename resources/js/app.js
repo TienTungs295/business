@@ -5,6 +5,7 @@
  */
 
 window.Vue = require('vue').default;
+global.jQuery = require('jquery');
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,6 +22,8 @@ window.Vue = require('vue').default;
 import App from './components/App';
 import Vue from 'vue';
 import router from './router';
+import LoadScript from 'vue-plugin-load-script';
+
 // import VueToastr from "vue-toastr";
 // import moment from 'moment';
 // import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem, BProgress} from 'bootstrap-vue';
@@ -76,6 +79,7 @@ Vue.component('footer-component', require('./components/layouts/FooterComponent'
 //     }
 // });
 
+Vue.use(LoadScript);
 
 const app = new Vue({
     store,
@@ -83,4 +87,13 @@ const app = new Vue({
     render: h => h(App),
     router
 });
+
+Vue.loadScript("http://127.0.0.1:8000/assets/js/theme.init.js")
+    .then(() => {
+        // Script is loaded, do something
+    })
+    .catch(() => {
+        // Failed to fetch script
+    });
+
 

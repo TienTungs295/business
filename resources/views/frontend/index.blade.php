@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Demo Construction | Porto - Multipurpose Website Template</title>
+    <title>DMT | MEP Design Ecosystem</title>
 
-    <meta name="keywords" content="WebSite Template" />
-    <meta name="description" content="Porto - Multipurpose Website Template">
-    <meta name="author" content="okler.net">
+    <meta name="keywords" content="MEP Design Ecosystem" />
+    <meta name="description" content="MEP Design Ecosystem">
+{{--    <meta name="author" content="okler.net">--}}
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('assets/img/favicon.ico')}}" type="image/x-icon" />
@@ -52,24 +52,9 @@
     <script src="{{asset('assets/vendor/modernizr/modernizr.min.js')}}"></script>
 
 </head>
-<body>
+<body data-plugin-scroll-spy data-plugin-options="{'target': '#sidebar'}">
 <div id="app">
 </div>
 <script src="{{ asset('js/app.js?version=1') }}"></script>
-
-<!-- Vendor -->
-<script src="{{asset('assets/vendor/plugins/js/plugins.min.js')}}"></script>
-
-<!-- Theme Base, Components and Settings -->
-<script src="{{asset('assets/js/theme.js')}}"></script>
-
-<!-- Current Page Vendor and Views -->
-<script src="{{asset('assets/js/views/view.contact.js')}}"></script>
-
-<!-- Theme Custom -->
-<script src="{{asset('assets/js/custom.js')}}"></script>
-
-<!-- Theme Initialization Files -->
-<script src="{{asset('assets/js/theme.init.js')}}"></script>
 </body>
 </html>

@@ -37,9 +37,12 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </b-modal>-->
-        <header-component></header-component>
-        <router-view :key="$route.fullPath"></router-view>
-        <footer-component></footer-component>
+
+        <div class="body">
+            <header-component></header-component>
+            <router-view :key="$route.fullPath"></router-view>
+            <footer-component></footer-component>
+        </div>
     </div>
 </template>
 <script>
