@@ -28,20 +28,13 @@ Route::group(['prefix' => 'comment'], function () {
     Route::get('/find-by-post', [CommentRestController::class, 'findByPost']);
     Route::get('/count-pending-comment', [CommentRestController::class, 'countPendingComment']);
 });
-//
-//
-//
-//Route::group(['prefix' => 'Project'], function () {
-//    Route::get('/find-by-name', [ProjectRestController::class, 'findByName']);
-//    Route::get('/find-by-collection', [ProjectRestController::class, 'findByCollection']);
-//    Route::get('/find-all', [ProjectRestController::class, 'findAll']);
-//    Route::get('/find-featured', [ProjectRestController::class, 'findFeatured']);
-//    Route::get('/find-on-sale', [ProjectRestController::class, 'findOnSale']);
-//    Route::get('/find-trending', [ProjectRestController::class, 'findTrending']);
-//    Route::get('/find-top-rate', [ProjectRestController::class, 'findTopRate']);
-//    Route::get('/find-flash-sale', [ProjectRestController::class, 'findFlashSale']);
-//    Route::get('/detail', [ProjectRestController::class, 'detail']);
-//});
+
+Route::group(['prefix' => 'project'], function () {
+    Route::get('/find-all', [ProjectRestController::class, 'findAll']);
+    Route::get('/find-random', [ProjectRestController::class, 'findRandom']);
+    Route::get('/detail', [ProjectRestController::class, 'detail']);
+});
+
 //Route::group(['prefix' => 'category'], function () {
 //    Route::get('/find-all', [CategoryRestController::class, 'findAll']);
 //    Route::get('/find-all-without-child', [CategoryRestController::class, 'findAllWithoutChild']);

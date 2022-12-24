@@ -15,23 +15,26 @@ class ProjectRestController extends BaseCustomController
 
     public function findAll(Request $request)
     {
-        $page_size = 7;
+        $category_id = $request->input("category_id");
+        $page_size = $request->input('page_size');
+        if (is_null($page_size)) $page_size = 7;
         $ajax_response = new AjaxResponse();
-        $projects = Project::orderByRaw('ISNULL(priority), priority ASC')->orderBy("updated_at", "DESC")->paginate($page_size);
+        if (!is_null($category_id)) {
+            try {
+                ProjectCategory::findOrFail($category_id);
+            } catch (ModelNotFoundException $e) {
+                return $ajax_response->setMessage("Danh mục dự án không tồn tại hoặc đã bị xóa");
+            }
+        }
+        $projects = Project::where('category_id', $category_id)->orderByRaw('ISNULL(priority), priority ASC')->orderBy("updated_at", "DESC")->simplePaginate($page_size);
         return $ajax_response->setData($projects)->toApiResponse();
     }
 
-    public function findByCategory(Request $request)
+    public function findRandom(Request $request)
     {
-        $category_id = $request->input("category_id");
+        $page_size = 7;
         $ajax_response = new AjaxResponse();
-        if (is_null($category_id)) $ajax_response->setMessage("Danh mục dự án không hợp lệ");
-        try {
-            ProjectCategory::findOrFail($category_id);
-        } catch (ModelNotFoundException $e) {
-            $ajax_response->setMessage("Danh mục dự án không tồn tại hoặc đã bị xóa");
-        }
-        $projects = Project::where('category_id', $category_id)::orderByRaw('ISNULL(priority), priority ASC')->orderBy("updated_at", "DESC")->simplePaginate(9);
+        $projects = Project::inRandomOrder()->limit($page_size)->get();
         return $ajax_response->setData($projects)->toApiResponse();
     }
 

@@ -30,7 +30,7 @@ import LoadScript from 'vue-plugin-load-script';
 import store from './store';
 // import VueStarRating  from 'vue-star-rating';
 // import VueCookies from 'vue-cookies'
-// import VueGallerySlideshow from 'vue-gallery-slideshow';
+import VueGallerySlideshow from 'vue-gallery-slideshow';
 
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
@@ -42,9 +42,9 @@ Vue.component('footer-component', require('./components/layouts/FooterComponent'
 // Vue.component('b-carousel-slide', BCarouselSlide);
 // Vue.component('b-dropdown', BDropdown);
 // Vue.component('b-dropdown-item', BDropdownItem);
-// Vue.component('star-rating', VueStarRating)
-// Vue.component('b-progress', BProgress)
-// Vue.component('vue-gallery-slideshow', VueGallerySlideshow)
+// Vue.component('star-rating', VueStarRating);
+// Vue.component('b-progress', BProgress);
+Vue.component('vue-gallery-slideshow', VueGallerySlideshow);
 
 // Vue.use(VueToastr, {
 //     defaultTimeout: 2000,

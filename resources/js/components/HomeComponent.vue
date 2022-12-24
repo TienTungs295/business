@@ -156,7 +156,8 @@
                 <div class="row mb-5-5">
                     <div class="col">
                         <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation"
-                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">Dịch vụ cung cấp</h2>
+                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">Dịch vụ cung
+                            cấp</h2>
                         <p class="text-4 font-weight-light appear-animation" data-appear-animation="fadeInUpShorterPlus"
                            data-appear-animation-delay="500">Mang đến cho khách hàng sản phẩm và dịch vụ tốt nhất. </p>
                     </div>
@@ -314,79 +315,24 @@
 									</g>
 								</svg>
 
-                        <div class="diamonds-wrapper">
+                        <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
                             <ul class="diamonds mb-0">
-                                <li>
-                                    <a href="img/demos/construction/generic/generic-1-medium.jpg"
-                                       class="diamond lightbox" data-plugin-options="{'type':'image'}">
+                                <li v-for="(item,i) in projectPaginate.data">
+                                    <a class="diamond lightbox" data-plugin-options="{'type':'image'}"
+                                       :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
+                                       @click="showImage(i)">
                                         <div class="content">
-                                            <img src="img/demos/construction/generic/generic-1.jpg"
-                                                 class="img-fluid plugin-random-images" alt="" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-1-medium.jpg'], 'animateIn': 'blurIn', 'accY': -400}"/>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="img/demos/construction/generic/generic-2-big.jpg" class="diamond lightbox"
-                                       data-plugin-options="{'type':'image'}">
-                                        <div class="content">
-                                            <img src="img/demos/construction/generic/generic-2.jpg"
-                                                 class="img-fluid plugin-random-images" alt="" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4200, 'imagesListURL': ['img/demos/construction/generic/generic-3.jpg', 'img/demos/construction/generic/generic-4.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-2-big.jpg'], 'animateIn': 'blurIn', 'accY': -400}"/>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="img/demos/construction/generic/generic-9-medium.jpg"
-                                       class="diamond lightbox" data-plugin-options="{'type':'image'}">
-                                        <div class="content">
-                                            <img src="img/demos/construction/generic/generic-4.jpg"
-                                                 class="img-fluid plugin-random-images" alt="" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4400, 'imagesListURL': ['img/demos/construction/generic/generic-1.jpg', 'img/demos/construction/generic/generic-2.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-1-medium.jpg', 'img/demos/construction/generic/generic-2-medium.jpg', 'img/demos/construction/generic/generic-9-medium.jpg'], 'animateIn': 'blurIn', 'accY': -400}"/>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="img/demos/construction/generic/generic-5-wide.jpg"
-                                       class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
-                                        <div class="content">
-                                            <img src="img/demos/construction/generic/generic-5-small.jpg"
-                                                 class="img-fluid plugin-random-images" alt="" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4600, 'imagesListURL': ['img/demos/construction/generic/generic-6-small.jpg', 'img/demos/construction/generic/generic-10-small-diamond.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-6-medium.jpg', 'img/demos/construction/generic/generic-10-medium.jpg', 'img/demos/construction/generic/generic-5-wide.jpg'], 'animateIn': 'blurIn', 'accY': -400}"/>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="img/demos/construction/generic/generic-3-medium.jpg"
-                                       class="diamond lightbox" data-plugin-options="{'type':'image'}">
-                                        <div class="content">
-                                            <img src="img/demos/construction/generic/generic-3.jpg"
-                                                 class="img-fluid plugin-random-images" alt="" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4800, 'imagesListURL': ['img/demos/construction/generic/generic-2.jpg', 'img/demos/construction/generic/generic-1.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-2-big.jpg', 'img/demos/construction/generic/generic-1-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg'], 'animateIn': 'blurIn', 'accY': -100}"/>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="img/demos/construction/generic/generic-6-medium.jpg"
-                                       class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
-                                        <div class="content">
-                                            <img src="img/demos/construction/generic/generic-6-small.jpg"
-                                                 class="img-fluid plugin-random-images" alt="" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5000, 'imagesListURL': ['img/demos/construction/generic/generic-5-small.jpg', 'img/demos/construction/generic/generic-7-small.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-5-wide.jpg', 'img/demos/construction/generic/generic-10-medium.jpg', 'img/demos/construction/generic/generic-6-medium.jpg'], 'animateIn': 'blurIn', 'accY': -100}"/>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="img/demos/construction/generic/generic-10-medium.jpg"
-                                       class="diamond diamond-sm lightbox" data-plugin-options="{'type':'image'}">
-                                        <div class="content">
-                                            <img src="img/demos/construction/generic/generic-7-small.jpg"
-                                                 class="img-fluid plugin-random-images" alt="" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 5200, 'imagesListURL': ['img/demos/construction/generic/generic-10-small-diamond.jpg', 'img/demos/construction/generic/generic-6-small.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-10-medium.jpg', 'img/demos/construction/generic/generic-6-medium.jpg', 'img/demos/construction/generic/generic-10-medium.jpg'], 'animateIn': 'blurIn', 'accY': -100}"/>
+                                            <img :src="'/uploads/images/'+item.image" data-plugin-random-images
+                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-1-medium.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                                                 class="img-fluid plugin-random-images" alt=""/>
                                         </div>
                                     </a>
                                 </li>
                             </ul>
+                            <div class="preview-image-wrapper">
+                                <vue-gallery-slideshow :images="project_images" :index="index"
+                                                       @close="index = null"></vue-gallery-slideshow>
+                            </div>
                         </div>
 
                     </div>
@@ -396,10 +342,12 @@
             <div class="row">
                 <div class="col-md-8 col-lg-6">
                     <p class="text-3-5 appear-animation mgb-20" data-appear-animation="fadeInUpShorterPlus"
-                       data-appear-animation-delay="600">Bằng việc áp dụng những kỹ thuật mới nhất vào sản xuất và quản lý chất lượng các công trình thiết kế và thi công xây dựng của DMT đã<span
+                       data-appear-animation-delay="600">Bằng việc áp dụng những kỹ thuật mới nhất vào sản xuất và quản
+                        lý chất lượng các công trình thiết kế và thi công xây dựng của DMT đã<span
                             class="highlight highlight-primary highlight-bg-opacity highlight-animated"
                             data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100"
-                            data-plugin-options="{'flagClassOnly': true}">khẳng định niềm tin và chỗ đứng</span>  trong lòng Qúy khách hàng.</p>
+                            data-plugin-options="{'flagClassOnly': true}">khẳng định niềm tin và chỗ đứng</span> trong
+                        lòng Qúy khách hàng.</p>
                     <a href="demo-construction-projects.html"
                        class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
@@ -476,9 +424,11 @@
             <div class="row">
                 <div class="col">
                     <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation"
-                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">Tin tức & sự kiện</h2>
+                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">Tin tức & sự
+                        kiện</h2>
                     <p class="text-4 font-weight-light mb-5-5 appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">Tin tức sự kiện nóng mới nhất, cập nhật liên tục. </p>
+                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">Tin tức sự kiện
+                        nóng mới nhất, cập nhật liên tục. </p>
                 </div>
             </div>
             <div class="row row-gutter-sm justify-content-center mb-4 appear-animation"
@@ -610,15 +560,59 @@
 </template>
 
 <script>
+import ProjectService from "../services/ProjectService";
 
 
 export default {
     name: "Home",
     data() {
-        return {};
+        return {
+            isLoadingProject: true,
+            projectPaginate: {
+                data: []
+            },
+            timer: null,
+            project_images: [],
+            index: null
+        };
     },
-    methods: {},
+    methods: {
+        initProjectImage() {
+            this.project_images = [];
+            if (this.projectPaginate.data.length > 0) {
+                for (const project of this.projectPaginate.data) {
+                    if (project.image == null) continue;
+                    let image_url = window.location.protocol + "//" + window.location.host + '/uploads/images/' + project.image;
+                    this.project_images.push(image_url);
+                }
+            }
+        },
+
+        showImage(i) {
+            this.index = i;
+            this.initProjectImage();
+        }
+    },
     mounted() {
+        ProjectService.findAll().then(response => {
+            this.projectPaginate = response || {};
+            this.isLoadingProject = false;
+        }).catch(e => {
+            this.isLoadingProject = false;
+        });
+
+        this.timer = setInterval(() => {
+            ProjectService.findRandom().then(response => {
+                this.projectPaginate.data = response || {};
+                this.isLoadingProject = false;
+            }).catch(e => {
+                this.isLoadingProject = false;
+            });
+        }, 5000);
+    },
+    beforeDestroy() {
+        clearInterval(this.timer);
+        this.timer = null;
     }
 }
 </script>
