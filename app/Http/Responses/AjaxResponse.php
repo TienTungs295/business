@@ -4,7 +4,6 @@
 namespace App\Http\Responses;
 
 
-use Botble\Base\Http\Responses\BaseHttpResponse;
 
 class AjaxResponse
 {

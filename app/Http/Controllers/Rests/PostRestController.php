@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Rests;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\AjaxResponse;
 use App\Models\Post;
+use App\Models\PostCategory;
+use App\Models\Project;
+use App\Models\ProjectCategory;
 use App\Models\ProjectCollection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -14,10 +17,19 @@ class PostRestController extends Controller
 
     public function findAll(Request $request)
     {
-        $page_size = $request->input("page_size");
-        if (!isset($page_size)) $page_size = 3;
         $ajax_response = new AjaxResponse();
-        $posts = Post::orderBy("updated_at", "DESC")->paginate($page_size);
+        $category_id = $request->input("category_id");
+        $page_size = 3;
+        $query = Post::where('id', '>', 0);
+        if (!is_null($category_id)) {
+            try {
+                PostCategory::findOrFail($category_id);
+            } catch (ModelNotFoundException $e) {
+                $ajax_response->setMessage("Danh mục không tồn tại hoặc đã bị xóa");
+            }
+            $query->where('category_id', $category_id);
+        }
+        $posts = $query->orderBy("updated_at", "DESC")->paginate($page_size);
         return $ajax_response->setData($posts)->toApiResponse();
     }
 
@@ -32,7 +44,7 @@ class PostRestController extends Controller
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
         $next_post = Post::where('id', '>', $id)->first();
-        $prev_post = Post::where('id', '<', $id)->orderBy('id','DESC')->first();
+        $prev_post = Post::where('id', '<', $id)->orderBy('id', 'DESC')->first();
         return $ajax_response->setData(array(
             'prev_post' => $prev_post,
             'post' => $post,
