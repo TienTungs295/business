@@ -18,40 +18,28 @@ class CommentRestController extends Controller
         try {
             Project::findOrFail($project_id);
         } catch (ModelNotFoundException $e) {
-            return $ajax_response->setMessage("Sản phẩm không tồn tại hoặc đã bị xóa")->toApiResponse();
+            return $ajax_response->setMessage("Dự án không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
         $comment = new Comment();
-        $comment = $request->post("comment");
-        $star = $request->post("star");
-        if (is_null($star) || $star == 0)
-            return $ajax_response->setMessage("Vui lòng chọn số sao đánh giá")->toApiResponse();
-        if ($star < 1 || $star > 5)
-            return $ajax_response->setMessage("Số sao đánh giá không hợp lệ")->toApiResponse();
-        if (!isset($comment))
-            return $ajax_response->setMessage("Nội dung đánh giá không được phép bỏ trống")->toApiResponse();
-        $comment->comment = $comment;
-        $comment->star = $star;
+        $text_comment = $request->post("comment");
+        $customer_name = $request->post("customer_name");
+        $customer_email = $request->post("customer_email");
+        if (!isset($customer_name))
+            return $ajax_response->setMessage("Vui lòng nhập tên")->toApiResponse();
+        if (!isset($customer_email))
+            return $ajax_response->setMessage("Vui lòng nhập email")->toApiResponse();
+        if (!isset($text_comment))
+            return $ajax_response->setMessage("Vui lòng nhập nội dung bình luận")->toApiResponse();
+
+        $comment->comment = $text_comment;
         $comment->status = 1;
+        $comment->customer_name = $customer_name;
+        $comment->customer_email = $customer_email;
         $comment->project_id = $project_id;
-        $comment->customer_id = auth()->user()->id;
         $comment->save();
         return $ajax_response->setData($comment)->toApiResponse();
     }
 
-    public function delete(Request $request)
-    {
-        $ajax_response = new AjaxResponse();
-        try {
-            $comment = Comment::findOrFail($request->input("id"));
-        } catch (ModelNotFoundException $e) {
-            return $ajax_response->setMessage("Đánh giá không tồn tại hoặc đã bị xóa")->toApiResponse();
-        }
-        if ($comment->customer_id != auth()->user()->id) {
-            return $ajax_response->setMessage("Bạn không đủ quyền thực hiện tác vụ này")->toApiResponse();
-        }
-        $comment->delete();
-        return $ajax_response->setData($comment)->toApiResponse();
-    }
 
     public function findByPost(Request $request)
     {
@@ -60,26 +48,16 @@ class CommentRestController extends Controller
         $last_id = $request->input("last_id");
         $ajax_response = new AjaxResponse();
         $project_id = $request->input("project_id");
-        $user = auth()->user();
         try {
             Project::findOrFail($project_id);
         } catch (ModelNotFoundException $e) {
-            return $ajax_response->setMessage("Sản phẩm không tồn tại hoặc đã bị xóa")->toApiResponse();
+            return $ajax_response->setMessage("Dự án không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-        $query = Comment::with(['customer'])->where(function ($query) use ($project_id, $last_id, $user) {
-            $query->where('project_id', $project_id);
-            if (!is_null($last_id)) $query->where('id', '<', $last_id);
-            $query->where(function ($query) use ($last_id, $user) {
-                $query->where('status', 2);
-                if ($user != null) {
-                    $query->orWhere(function ($query) use ($user) {
-                        $query->where('status', 1);
-                        $query->where('customer_id', $user->id);
-                    });
-                }
-            });
-        });
-        $query->orderBy("created_at","DESC");
+
+        //paginate comments
+        $query = Comment::where('project_id', $project_id)->where('status', 2);
+        if (!is_null($last_id)) $query->where('id', '<', $last_id);
+        $query->orderBy("created_at", "DESC");
         $comments = $query->take($page_size + 1)->get()->toArray();
         if (sizeof($comments) > $page_size) {
             $hasMorePage = true;
@@ -87,23 +65,7 @@ class CommentRestController extends Controller
         }
 
         //count total comments
-        $totalComments = Comment::where('project_id', $project_id)
-            ->where(function ($query) use ($user) {
-                $query->where('status', 2);
-                if (!is_null($user)) {
-                    $query->orWhere(function ($query) use ($user) {
-                        $query->where('status', 1);
-                        $query->where('customer_id', $user->id);
-                    });
-                }
-            })->count();
+        $totalComments = Comment::where('project_id', $project_id)->where('status', 2)->count();
         return $ajax_response->setData(array('data' => $comments, 'hasMorePage' => $hasMorePage, 'totalComments' => $totalComments))->toApiResponse();
-    }
-
-    public function countPendingComment()
-    {
-        $ajax_response = new AjaxResponse();
-        $count = Comment::where('status', 1)->count();
-        return $ajax_response->setData($count)->toApiResponse();
     }
 }
