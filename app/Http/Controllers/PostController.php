@@ -65,7 +65,7 @@ class PostController extends BaseCustomController
         $post = new Post;
         $post_categories = $request->input("post_categories");
         $post->name = $request->input('name');
-        $post->slug = Str::slug($post->name);;
+        $post->slug = Str::slug($post->name);
         $post->content = $request->input('content');
         $post->priority = $request->input('priority');
         $post->user_id = auth()->user()->id;

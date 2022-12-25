@@ -20,7 +20,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
 
     <!-- Web Fonts  -->
-    <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
+    <link id="googleFonts" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900&display=swap" rel="stylesheet" type="text/css">
 
     <!-- Vendor CSS -->
     <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.min.css')}}">
@@ -32,19 +32,16 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.min.css')}}">
 
     <!-- Theme CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/theme-elements.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/theme-blog.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/theme-shop.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('assets/css/theme-elements.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('assets/css/theme-blog.css')}}">--}}
+{{--    <link rel="stylesheet" href="{{asset('assets/css/theme-shop.css')}}">--}}
 
     <!-- Demo CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/demos/demo-construction.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('assets/css/demos/demo-construction.css')}}">--}}
 
     <!-- Skin CSS -->
-    <link id="skinCSS" rel="stylesheet" href="{{asset('assets/css/skins/skin-construction.css')}}">
-
-    <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="{{asset('assets/css/custom.css')}}">
+{{--    <link id="skinCSS" rel="stylesheet" href="{{asset('assets/css/skins/skin-construction.css')}}">--}}
 
     <link rel="stylesheet" href="{{ asset('css/app.css?version=1') }}">
 

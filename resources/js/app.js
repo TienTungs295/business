@@ -25,7 +25,7 @@ import router from './router';
 import LoadScript from 'vue-plugin-load-script';
 
 // import VueToastr from "vue-toastr";
-// import moment from 'moment';
+import moment from 'moment';
 // import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem, BProgress} from 'bootstrap-vue';
 import store from './store';
 // import VueStarRating  from 'vue-star-rating';
@@ -35,6 +35,7 @@ import VueGallerySlideshow from 'vue-gallery-slideshow';
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
 Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
+Vue.component('post-item-component', require('./components/posts/PostItemComponent').default);
 // Vue.component('b-tabs', BTabs);
 // Vue.component('b-tab', BTab);
 // Vue.component('b-modal', BModal);
@@ -57,7 +58,52 @@ Vue.component('vue-gallery-slideshow', VueGallerySlideshow);
 
 // Vue.use(VueCookies, { expires: '60d'})
 
-// Vue.prototype.moment = moment;
+Vue.prototype.moment = moment;
+
+Vue.filter('getDay', function (value) {
+    if (value) {
+        return moment(String(value)).format('DD');
+    }
+});
+
+Vue.filter('getMonth', function (value) {
+    if (value) {
+        let month = moment(String(value)).format('MM');
+        switch (month) {
+            case "01":
+                return "TH1";
+            case "02":
+                return "TH2";
+            case "03":
+                return "TH3";
+            case "04":
+                return "TH4";
+            case "05":
+                return "TH5";
+            case "06":
+                return "TH6";
+            case "07":
+                return "TH7";
+            case "08":
+                return "TH8";
+            case "09":
+                return "TH9";
+            case "10":
+                return "TH10";
+            case "11":
+                return "TH11";
+            case "12":
+                return "TH12";
+        }
+    }
+});
+
+Vue.filter('getYear', function (value) {
+    if (value) {
+        return moment(String(value)).format('YYYY');
+    }
+});
+
 
 // Vue.filter('dateFormat', function (value) {
 //     if (value) {

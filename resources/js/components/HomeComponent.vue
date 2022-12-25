@@ -13,38 +13,33 @@
                         <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
                              data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
                              data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
-                             style="background-image: url(img/demos/construction/slides/slide-1.jpg); background-size: cover; background-position: center;"></div>
+                             style="background-image: url(assets/img/business-image/slider/slider-eastin-ha-long.jpg); background-size: cover; background-position: center;"></div>
                         <div class="container position-relative z-index-1 h-100">
-                            <div class="row align-items-center h-100">
-                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">
-                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"
-                                        data-appear-animation="fadeInRightShorterPlus"
-                                        data-appear-animation-delay="500">
-												<span
-                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">
-													<span
-                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"
-                                                        data-appear-animation="fadeInRightShorterPlus"
-                                                        data-appear-animation-delay="1300">BUILDING</span>
-												</span>
-                                        BUILDING<br> DREAMS
-                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">
-													<span
-                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"
-                                                        data-appear-animation="fadeInRightShorterPlus"
-                                                        data-appear-animation-delay="1300">DREAMS</span>
-												</span>
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="position-absolute left-100pct bottom-0 transform3dx-n50 w-75 ms-5">
-                                <img src="img/demos/construction/slides/slide-1-engineer.png"
-                                     class="img-fluid mw-100 w-auto appear-animation" alt="Engineer Image"
-                                     data-appear-animation="fadeIn" data-appear-animation-delay="100"/>
-                            </div>
+<!--                            <div class="row align-items-center h-100">-->
+<!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
+<!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
+<!--                                        data-appear-animation="fadeInRightShorterPlus"-->
+<!--                                        data-appear-animation-delay="500">-->
+<!--												<span-->
+<!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
+<!--													<span-->
+<!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+<!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+<!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
+<!--												</span>-->
+<!--                                        BUILDING<br> DREAMS-->
+<!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
+<!--													<span-->
+<!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+<!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+<!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
+<!--												</span>-->
+<!--                                    </h1>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span class="d-block position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                      data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1900">#1 Fastest-Growing Company</span>
+                                      data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1900">Eastin Phát Linh Hạ Long</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-primary mt-1 appear-animation"
                                                  data-appear-animation="fadeInLeftShorterPlus"
@@ -61,29 +56,29 @@
 
                     <!-- Carousel Slide 2 -->
                     <div class="owl-item position-relative"
-                         style="background-image: url(img/demos/construction/slides/slide-2.jpg); background-size: cover; background-position: center;">
+                         style="background-image: url(assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
                         <div class="container position-relative z-index-1 h-100">
-                            <div class="row align-items-center h-100 pt-5">
-                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">
-                                    <h2 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 custom-big-text-style-1-variation text-center text-lg-end pt-4 mt-5 appear-animation"
-                                        data-appear-animation="fadeInRightShorterPlus"
-                                        data-appear-animation-delay="1000">
-												<span
-                                                    class="d-block position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-5 ps-5">
-													<span
-                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"
-                                                        data-appear-animation="fadeInRightShortePlus"
-                                                        data-appear-animation-delay="2000">
-														<span class="d-block pt-5">MODERNITY</span></span>
-												</span>
-                                        MODERNITY
-                                    </h2>
-                                </div>
-                            </div>
+<!--                            <div class="row align-items-center h-100 pt-5">-->
+<!--                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">-->
+<!--                                    <h2 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 custom-big-text-style-1-variation text-center text-lg-end pt-4 mt-5 appear-animation"-->
+<!--                                        data-appear-animation="fadeInRightShorterPlus"-->
+<!--                                        data-appear-animation-delay="1000">-->
+<!--												<span-->
+<!--                                                    class="d-block position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-5 ps-5">-->
+<!--													<span-->
+<!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+<!--                                                        data-appear-animation="fadeInRightShortePlus"-->
+<!--                                                        data-appear-animation-delay="2000">-->
+<!--														<span class="d-block pt-5">MODERNITY</span></span>-->
+<!--												</span>-->
+<!--                                        MODERNITY-->
+<!--                                    </h2>-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="2200">Modern Building Design</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="2200">Tổ hợp chung cư văn phòng TTTM NEWTACO</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-dark appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
@@ -144,7 +139,7 @@
                        class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="3400">
                         Xem thêm
-                        <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon
+                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                     </a>
                 </div>
@@ -167,7 +162,7 @@
                          data-appear-animation-delay="550">
                         <div class="d-flex">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="img/demos/construction/icons/faucet.svg" alt="" data-icon
+                                 src="assets/img/demos/construction/icons/faucet.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 300, 'accY': 400, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -177,7 +172,7 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -188,7 +183,7 @@
                          data-appear-animation-delay="750">
                         <div class="d-flex">
                             <img class="flex-0-0-auto" width="70" height="70"
-                                 src="img/demos/construction/icons/winch.svg" alt="" data-icon
+                                 src="assets/img/demos/construction/icons/winch.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 600, 'accY': 400, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-3">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">General
@@ -198,7 +193,7 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -209,7 +204,7 @@
                          data-appear-animation-delay="950">
                         <div class="d-flex">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="img/demos/construction/icons/paint-brush.svg" alt="" data-icon
+                                 src="assets/img/demos/construction/icons/paint-brush.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 900, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -219,7 +214,7 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -230,7 +225,7 @@
                          data-appear-animation-delay="1150">
                         <div class="d-flex">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="img/demos/construction/icons/pushcart.svg" alt="" data-icon
+                                 src="assets/img/demos/construction/icons/pushcart.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -240,7 +235,7 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -322,8 +317,7 @@
                                        :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
                                        @click="showImage(i)">
                                         <div class="content">
-                                            <img :src="'/uploads/images/'+item.image" data-plugin-random-images
-                                                 data-plugin-options="{'minWindowWidth': 1200, 'random': false, 'delay': 4000, 'imagesListURL': ['img/demos/construction/generic/generic-4.jpg', 'img/demos/construction/generic/generic-3.jpg'], 'lightboxImagesListURL': ['img/demos/construction/generic/generic-9-medium.jpg', 'img/demos/construction/generic/generic-3-medium.jpg', 'img/demos/construction/generic/generic-1-medium.jpg'], 'animateIn': 'blurIn', 'accY': -400}"
+                                            <img :src="'/uploads/images/'+item.image"
                                                  class="img-fluid plugin-random-images" alt=""/>
                                         </div>
                                     </a>
@@ -352,37 +346,83 @@
                        class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                         Xem thêm
-                        <img width="27" height="27" src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon
+                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
                     </a>
                 </div>
             </div>
         </div>
 
+        <section class="parallax section section-text-light section-parallax section-center my-0 company-counter" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}" data-image-src="assets/img/business-image/background-3.jpg">
+            <div class="container position-relative">
+                <div class="row py-5 counters counters-text-light">
+                    <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
+                        <div class="counter">
+                            <img width="44" height="50" src="assets/img/business-icons/buildings.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}" />
+                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="1">0</strong>
+                            <label class="pt-2 text-4 opacity-7">Văn phòng</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
+                        <div class="counter">
+                            <img width="60" height="50" src="assets/img/business-icons/house-plant.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}" />
+                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240" data-append="+">0</strong>
+                            <label class="pt-2 text-4 opacity-7">Dự án hoàn thành</label>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
+                        <div class="counter">
+                            <img width="60" height="50" src="assets/img/demos/law-firm/icons/satisfied-clients.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}" />
+                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="20" data-append="+">0</strong>
+                            <label class="pt-2 text-4 opacity-7">Nhân viên</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="section parallax border-0 pt-5 py-0 m-0" data-plugin-parallax
                  data-plugin-options="{'spped': '1.5', 'parallaxHeight': '125%', 'fadeIn': true}"
-                 data-image-src="img/demos/construction/backgrounds/background-1.jpg">
-            <div class="container">
-                <div class="row gy-5">
-                    <div class="col-lg-6 text-center order-2 order-lg-1">
-                        <img src="img/demos/construction/authors/author-1-big.png" class="img-fluid"
-                             alt="Woman testimonial from Porto Magazine company"/>
+                 data-image-src="assets/img/business-image/background-1.jpg">
+            <div class="container mgb-40">
+                <div class="row mb-5-5">
+                    <div class="col">
+                        <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation"
+                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">Đội ngũ lãnh đạo</h2>
+                        <p class="text-4 font-weight-light appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                           data-appear-animation-delay="500">Truyền cảm hứng cho công ty để biến tầm nhìn thành hiện thực. </p>
                     </div>
-                    <div class="col-lg-6 align-self-center pb-lg-5 order-1 order-lg-2 ps-5 ps-lg-0">
-                        <div
-                            class="testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote testimonial-quotes-dark custom-testimonial-quote-position-1 mb-0">
-                            <blockquote>
-                                <p class="alternative-font-4 font-weight-medium text-start text-4 px-2 mb-0"
-                                   data-plugin-animated-letters
-                                   data-plugin-options="{'startDelay': 1000, 'minWindowWidth': 0, 'animationName': 'typeWriter', 'animationSpeed': 25}">
-                                    Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel
-                                    efficitur felis ultrices non cras a elit sit amet leo acun volutpat. Suspendisse
-                                    hendrerit vehicula leo, vel efficitur fel.</p>
-                            </blockquote>
-                            <div class="testimonial-author text-start ps-3 ms-1">
-                                <strong class="text-4-5 negative-ls-1">Anne Doe Smith</strong>
-                                <p class="text-color-default text-start mb-0">Porto Magazine</p>
-                            </div>
+                </div>
+                <div class="row gy-5">
+                    <div class="col-lg-6 text-center">
+                        <img src="assets/img/business-image/people/Picture2.png" class="img-fluid"
+                             alt="Director"/>
+                        <div class="testimonial-author text-start ps-3 ms-1 text-center">
+                            <strong class="text-4-5 negative-ls-1 text-111">NGÔ TRÍ LÊ MINH</strong>
+                            <p class="text-color-default mb-0">Tổng giám đốc</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 pb-lg-5 ps-5">
+                        <div class="fz-16">
+                            <ul style="list-style: disc outside;">
+                                <li>
+                                    Tư vấn thiết kế, bao gồm các lĩnh vực
+                                    <ul class="pdl-20" style="list-style: circle outside;">
+                                        <li>Thiết kế Quy hoạch khu đô thị, khu nghỉ dưỡng, khu công nghiệp</li>
+                                        <li>Thiết kế kiến trúc và kết cấu công trình dân dụng và công nghiệp</li>
+                                        <li>Thiết kế điện công trình, đường dây và trạm biến áp</li>
+                                        <li>Thiết kế hệ thống điện công trình dân dụng, công nghiệp</li>
+                                        <li>Thiết kế hệ thống cấp thoát nước công trình dân dụng, nhà cao tầng, trung tâm thương mại, khách sạn, nhà máy…</li>
+                                        <li>Thiết kế hệ thống điều hòa không khí, thông gió cho công trình dân dụng, công nghiệp</li>
+                                        <li>Thiết kế hệ thống cấp thoát nước, điện hạ tầng, khu đô thị, khu công nghiệp, khu chế xuất</li>
+                                        <li>Thiết kế xây dựng mô hình Bim – Revit cho các dự án cơ điện</li>
+                                        <li>Tư vấn chuyển giao công nghệ</li>
+                                    </ul>
+                                </li>
+                                <li>Quản lý dự án</li>
+                                <li>Giám sát thi công</li>
+                                <li>Dịch vụ thẩm định thiết kế, kiểm định chất lượng công trình</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -391,34 +431,65 @@
 
         <div class="container">
             <div class="row align-items-center text-center py-5 my-3">
-                <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                    <img src="img/logos/logo-8.png" alt class="img-fluid" style="max-width: 90px;"/>
+                <div class="col-md-4">
+                    <h2 class="text-color-dark font-weight-bold text-7 line-height-1 appear-animation text-left"
+                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">Đối tác liên kết</h2>
                 </div>
-                <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                    <img src="img/logos/logo-9.png" alt class="img-fluid" style="max-width: 140px;"/>
+                <div class="col-md-4 text-center">
+                    <a href="https://varchi.vn/"  class="appear-animation"  data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">
+                        <img src="assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt class="img-fluid d-inline-block" style="max-width: 140px;"/>
+                    </a>
                 </div>
-                <div class="col-sm-4 col-xl-2 mb-5 mb-xl-0">
-                    <img src="img/logos/logo-10.png" alt class="img-fluid" style="max-width: 140px;"/>
-                </div>
-                <div class="col-sm-4 col-xl-2 mb-5 mb-lg-0">
-                    <img src="img/logos/logo-11.png" alt class="img-fluid" style="max-width: 140px;"/>
-                </div>
-                <div class="col-sm-4 col-xl-2 mb-5 mb-lg-0">
-                    <img src="img/logos/logo-12.png" alt class="img-fluid" style="max-width: 100px;"/>
-                </div>
-                <div class="col-sm-4 col-xl-2">
-                    <img src="img/logos/logo-13.png" alt class="img-fluid" style="max-width: 100px;"/>
+                <div class="col-md-4 text-center">
+                    <a href="#" class="appear-animation"  data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">
+                        <img src="assets/img/business-image/partner/sld.png" alt class="img-fluid d-inline-block" style="max-width: 90px;"/>
+                    </a>
                 </div>
             </div>
         </div>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col px-0">
-                    <hr class="my-0">
+        <section class="section section-height-3 border-0 m-0 lazyload" data-bg-src="assets/img/demos/business-consulting-3/backgrounds/background-3.jpg">
+            <div class="container py-4">
+                <div class="row">
+                    <div class="col text-center">
+                        <h3 class="text-9 line-height-3 text-transform-none font-weight-semibold text-color-dark pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Khách hàng nói gì về chúng tôi</h3>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-11 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
+                        <div class="owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 bg-light box-shadow-4 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true}, '768': {'items': 1}, '992': {'items': 1, 'nav': true, 'dots': false}, '1200': {'items': 1, 'nav': true, 'dots': false}}, 'loop': false, 'autoHeight': true}">
+                            <div class="py-5 px-lg-5">
+                                <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3">
+                                    <img width="40" height="40" src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 40px;" />
+                                    <blockquote>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. Suspendisse hendrerit vehicula leo, vel efficitur fel.</p>
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <p>
+                                            <strong class="font-weight-bold text-5-5 negative-ls-1">- John Doe</strong>
+                                        <p class="text-color-dark mb-0">Porto Founder</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="py-5 px-lg-5">
+                                <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3">
+                                    <img width="40" height="40" src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 40px;" />
+                                    <blockquote>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                    </blockquote>
+                                    <div class="testimonial-author">
+                                        <p>
+                                            <strong class="font-weight-bold text-5-5 negative-ls-1">- John Smith</strong>
+                                        <p class="text-color-dark mb-0">Porto Founder</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
 
         <div class="container mt-5 pt-4 mb-5 mb-lg-4 mb-xl-0 pb-3 pb-xl-0">
             <div class="row">
@@ -433,116 +504,8 @@
             </div>
             <div class="row row-gutter-sm justify-content-center mb-4 appear-animation"
                  data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
-                <div class="col-sm-9 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <a href="demo-construction-blog-post.html" class="text-decoration-none"
-                       data-cursor-effect-hover="plus">
-                        <div class="card border-0">
-                            <div class="card-img-top position-relative overlay">
-                                <div
-                                    class="position-absolute bottom-10 right-0 d-flex justify-content-end w-100 py-3 px-4 z-index-3">
-											<span
-                                                class="text-center bg-primary text-color-light font-weight-semibold text-5-5 line-height-2 px-3 py-2">
-												<span class="position-relative z-index-2">
-													18
-													<span
-                                                        class="d-block custom-font-size-1 positive-ls-2 px-1">FEB</span>
-												</span>
-											</span>
-                                </div>
-                                <img src="img/demos/construction/blog/blog-thumb-1.jpg" class="img-fluid"
-                                     alt="Lorem Ipsum Dolor"/>
-                            </div>
-                            <div class="card-body py-4 px-0">
-                                <span
-                                    class="d-block text-color-grey font-weight-semibold positive-ls-2 text-2">BY ADMIN</span>
-                                <h3 class="text-transform-none font-weight-bold text-5 text-color-hover-primary mb-2">
-                                    Two-thirds of construction firms report strong Q4 turnover</h3>
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
-                                    quidem similique... </p>
-                                <span class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
-											View More
-											<img width="27" height="27"
-                                                 src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon
-                                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"
-                                                 style="width: 27px;"/>
-										</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-9 col-md-6 col-lg-4 mb-4 mb-lg-0">
-                    <a href="demo-construction-blog-post.html" class="text-decoration-none"
-                       data-cursor-effect-hover="plus">
-                        <div class="card border-0">
-                            <div class="card-img-top position-relative overlay">
-                                <div
-                                    class="position-absolute bottom-10 right-0 d-flex justify-content-end w-100 py-3 px-4 z-index-3">
-											<span
-                                                class="text-center bg-primary text-color-light font-weight-semibold text-5-5 line-height-2 px-3 py-2">
-												<span class="position-relative z-index-2">
-													15
-													<span
-                                                        class="d-block custom-font-size-1 positive-ls-2 px-1">FEB</span>
-												</span>
-											</span>
-                                </div>
-                                <img src="img/demos/construction/blog/blog-thumb-2.jpg" class="img-fluid"
-                                     alt="Lorem Ipsum Dolor"/>
-                            </div>
-                            <div class="card-body py-4 px-0">
-                                <span
-                                    class="d-block text-color-grey font-weight-semibold positive-ls-2 text-2">BY ADMIN</span>
-                                <h3 class="text-transform-none font-weight-bold text-5 text-color-hover-primary mb-2">
-                                    Creating buildings is great and we want more people involved</h3>
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
-                                    quidem similique... </p>
-                                <span class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
-											View More
-											<img width="27" height="27"
-                                                 src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon
-                                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"
-                                                 style="width: 27px;"/>
-										</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-9 col-md-6 col-lg-4">
-                    <a href="demo-construction-blog-post.html" class="text-decoration-none"
-                       data-cursor-effect-hover="plus">
-                        <div class="card border-0">
-                            <div class="card-img-top position-relative overlay">
-                                <div
-                                    class="position-absolute bottom-10 right-0 d-flex justify-content-end w-100 py-3 px-4 z-index-3">
-											<span
-                                                class="text-center bg-primary text-color-light font-weight-semibold text-5-5 line-height-2 px-3 py-2">
-												<span class="position-relative z-index-2">
-													12
-													<span
-                                                        class="d-block custom-font-size-1 positive-ls-2 px-1">FEB</span>
-												</span>
-											</span>
-                                </div>
-                                <img src="img/demos/construction/blog/blog-thumb-3.jpg" class="img-fluid"
-                                     alt="Lorem Ipsum Dolor"/>
-                            </div>
-                            <div class="card-body py-4 px-0">
-                                <span
-                                    class="d-block text-color-grey font-weight-semibold positive-ls-2 text-2">BY ADMIN</span>
-                                <h3 class="text-transform-none font-weight-bold text-5 text-color-hover-primary mb-2">
-                                    Construction is offering greater choice for daylight provision</h3>
-                                <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis,
-                                    quidem similique... </p>
-                                <span class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
-											View More
-											<img width="27" height="27"
-                                                 src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon
-                                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"
-                                                 style="width: 27px;"/>
-										</span>
-                            </div>
-                        </div>
-                    </a>
+                <div class="col-sm-9 col-md-6 col-lg-4 mb-4 mb-lg-0" v-for="item in posts">
+                    <post-item-component v-bind:item="item"></post-item-component>
                 </div>
             </div>
         </div>
@@ -561,6 +524,7 @@
 
 <script>
 import ProjectService from "../services/ProjectService";
+import PostService from "../services/PostService";
 
 
 export default {
@@ -573,7 +537,9 @@ export default {
             },
             timer: null,
             project_images: [],
-            index: null
+            index: null,
+            posts: [],
+            isLoadingBlog: true
         };
     },
     methods: {
@@ -601,14 +567,23 @@ export default {
             this.isLoadingProject = false;
         });
 
+        PostService.findAll().then(response => {
+            this.posts = response.data || [];
+            this.isLoadingBlog = false;
+        }).catch(e => {
+            this.isLoadingBlog = false;
+        });
+
         this.timer = setInterval(() => {
-            ProjectService.findRandom().then(response => {
-                this.projectPaginate.data = response || {};
-                this.isLoadingProject = false;
-            }).catch(e => {
-                this.isLoadingProject = false;
-            });
-        }, 5000);
+            if (!this.isLoadingProject) {
+                ProjectService.findRandom().then(response => {
+                    this.projectPaginate.data = response || {};
+                    this.isLoadingProject = false;
+                }).catch(e => {
+                    this.isLoadingProject = false;
+                });
+            }
+        }, 6000);
     },
     beforeDestroy() {
         clearInterval(this.timer);

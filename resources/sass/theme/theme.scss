@@ -1,8 +1,4 @@
-/*
-Name: 			theme.css
-Written by: 	Okler Themes - (http://www.okler.net)
-Theme Version:	9.9.0
-*/
+
 html {
 	direction: ltr;
 	overflow-x: hidden;
@@ -18,7 +14,7 @@ html {
 
 body {
 	background-color: #FFF;
-	color: #777;
+	color: #5e5e5e;
 	font-family: "Roboto", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 26px;
@@ -1560,7 +1556,7 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 
 	#header .header-nav-main nav > ul > li.dropdown .dropdown-menu li a {
 		border-bottom: 1px solid #f7f7f7;
-		color: #777;
+		color: $text-color;
 		font-size: 0.83em;
 		font-weight: 400;
 		padding: 6px 18px 6px 18px;
@@ -1699,7 +1695,7 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 	#header .header-nav-main nav > ul > li.dropdown-mega .dropdown-mega-sub-nav > li > a {
 		border: 0 none;
 		border-radius: 4px;
-		color: #777;
+		color: $text-color;
 		display: block;
 		font-size: 0.83em;
 		font-weight: normal;
@@ -4992,7 +4988,7 @@ html[xmlns] .clearfix {
 
 /* Vertical Lines */
 .vertical-lines:not(.vertical-lines-after) {
-	background-image: url(../img/vertical-lines.svg);
+	background-image: url(../../../public/assets/img/vertical-lines.svg);
 	background-repeat: repeat;
 	background-position: 50%;
 	pointer-events: none;
@@ -5007,7 +5003,7 @@ html[xmlns] .clearfix {
 	display: block;
 	position: absolute;
 	z-index: 1;
-	background-image: url(../img/vertical-lines.svg);
+	background-image: url(../../../public/assets/img/vertical-lines.svg);
 	background-repeat: repeat;
 	background-position: 50%;
 	top: 0;
@@ -10093,7 +10089,7 @@ a.text-light:focus, a.text-light:hover {
 }
 
 #footer a:not(.btn):not(.no-footer-css) {
-	color: #777;
+	color: $text-color;
 	transition: all 0.1s ease-in-out;
 }
 
@@ -10119,7 +10115,7 @@ a.text-light:focus, a.text-light:hover {
 }
 
 #footer a:not(.btn):not(.no-footer-css).text-color-default {
-	color: #777 !important;
+	color: $text-color !important;
 }
 
 #footer a:not(.btn):not(.no-footer-css).text-color-default:hover {
@@ -10829,23 +10825,23 @@ html.dark section.section-custom-map section.section {
 }
 
 html.dark .home-concept {
-	background-image: url(../img/home/home-concept-dark.png);
+	background-image: url(../../../public/assets/img/home/home-concept-dark.png);
 }
 
 html.dark .home-concept .process-image {
-	background-image: url(../img/home/home-concept-item-dark.png);
+	background-image: url(../../../public/assets/img/home/home-concept-item-dark.png);
 }
 
 html.dark .home-concept .project-image {
-	background-image: url(../img/home/home-concept-item-dark.png);
+	background-image: url(../../../public/assets/img/home/home-concept-item-dark.png);
 }
 
 html.dark .home-concept .sun {
-	background-image: url(../img/home/home-concept-icons-dark.png);
+	background-image: url(../../../public/assets/img/home/home-concept-icons-dark.png);
 }
 
 html.dark .home-concept .cloud {
-	background-image: url(../img/home/home-concept-icons-dark.png);
+	background-image: url(../../../public/assets/img/home/home-concept-icons-dark.png);
 }
 
 html.dark .page-header {
@@ -10994,7 +10990,7 @@ html.dark .progress {
 }
 
 html.dark .arrow {
-	background-image: url(../img/arrows-dark.png);
+	background-image: url(../../../public/assets/img/arrows-dark.png);
 }
 
 html.dark .thumbnail,
@@ -11120,7 +11116,7 @@ html.dark .table-striped > tbody > tr:nth-child(2n+1) > th {
 html.dark pre {
 	background-color: #2c3237;
 	border-color: #2c3237;
-	color: #777;
+	color: $text-color;
 }
 
 html.dark .show-grid [class*="col-lg-"] .show-grid-block {
@@ -11273,7 +11269,7 @@ html.dark .pricing-table h3 span {
 	background: #2c3237;
 	border-color: #282d31;
 	box-shadow: 0 5px 20px #282d31 inset, 0 3px 0 #2c3237 inset;
-	color: #777;
+	color: $text-color;
 }
 
 html.dark .pricing-table .most-popular {
@@ -11293,7 +11289,7 @@ html.dark .pricing-table .plan-ribbon {
 html.dark .pricing-table .plan {
 	background: #2c3237;
 	border: 1px solid #2c3237;
-	color: #777;
+	color: $text-color;
 	text-shadow: none;
 }
 
@@ -11332,7 +11328,7 @@ html.dark .modal-header {
 }
 
 html.dark .modal-header h1, html.dark .modal-header h2, html.dark .modal-header h3, html.dark .modal-header h4, html.dark .modal-header h5, html.dark .modal-header h6 {
-	color: #777;
+	color: $text-color;
 }
 
 html.dark .modal-header .close {
@@ -11360,7 +11356,7 @@ html.dark .sort-destination-loader:after {
 html.dark #footer .newsletter form .btn-light {
 	background-color: #262a2f;
 	border-color: #262a2f;
-	color: #777;
+	color: $text-color;
 }
 
 html.dark #footer .newsletter form .form-control {

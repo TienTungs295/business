@@ -7,6 +7,7 @@ use App\Http\Controllers\Rests\CollectionRestController;
 use App\Http\Controllers\Rests\ProjectRestController;
 use App\Http\Controllers\Rests\UploadRestController;
 use App\Http\Controllers\Rests\CommentRestController;
+use App\Http\Controllers\Rests\PostRestController;
 use App\Http\Controllers\Rests\CustomerInfoRestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'comment'], function () {
     Route::get('/find-by-post', [CommentRestController::class, 'findByPost']);
-    Route::get('/count-pending-comment', [CommentRestController::class, 'countPendingComment']);
 });
 
 Route::group(['prefix' => 'project'], function () {
@@ -41,12 +41,12 @@ Route::group(['prefix' => 'project'], function () {
 ////    Route::get('/find-featured', [CategoryRestController::class, 'findFeatured']);
 //    Route::get('/find-top', [CategoryRestController::class, 'findTop']);
 //});
-//Route::group(['prefix' => 'blog'], function () {
-//    Route::get('/find-all', [BlogRestController::class, 'findAll']);
-//    Route::get('/detail', [BlogRestController::class, 'detail']);
-//    Route::get('/related', [BlogRestController::class, 'related']);
-//    Route::get('/recent', [BlogRestController::class, 'recent']);
-//});
+Route::group(['prefix' => 'post'], function () {
+    Route::get('/find-all', [PostRestController::class, 'findAll']);
+    Route::get('/detail', [PostRestController::class, 'detail']);
+    Route::get('/related', [PostRestController::class, 'related']);
+    Route::get('/recent', [PostRestController::class, 'recent']);
+});
 //
 //
 //Route::group(['prefix' => 'contact'], function () {

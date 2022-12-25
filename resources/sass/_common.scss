@@ -95,6 +95,9 @@
 .o-05 {
     opacity: 0.5;
 }
+.text-111{
+    color:#111;
+}
 
 .center-bg-img {
     background-position: center;
@@ -111,6 +114,10 @@
 
 .border-ccc {
     border: 1px solid #ccc !important;
+}
+
+.border-bottom-ccc {
+    border-bottom: 1px solid #ccc !important;
 }
 
 @for $i from 0 through 20 {
@@ -176,5 +183,13 @@
     }
     .pdb-#{$i * 5}-i {
         padding-bottom: #{$i * 5}px !important;
+    }
+
+    .fz-#{$i * 2} {
+        font-size: #{$i * 2}px;
+    }
+
+    .fz-#{$i * 2}-i {
+        font-size: #{$i * 2}px !important;
     }
 }

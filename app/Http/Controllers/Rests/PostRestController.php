@@ -6,9 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Responses\AjaxResponse;
 use App\Models\Post;
 use App\Models\PostCategory;
-use App\Models\Project;
-use App\Models\ProjectCategory;
-use App\Models\ProjectCollection;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
@@ -20,7 +17,7 @@ class PostRestController extends Controller
         $ajax_response = new AjaxResponse();
         $category_id = $request->input("category_id");
         $page_size = 3;
-        $query = Post::where('id', '>', 0);
+        $query = Post::with("user");
         if (!is_null($category_id)) {
             try {
                 PostCategory::findOrFail($category_id);

@@ -1,0 +1,71 @@
+@import "theme/theme";
+@import "theme/theme-elements";
+@import "theme/theme-blog";
+@import "theme/theme-shop";
+@import "theme/demo-construction";
+@import "theme/skin-construction";
+
+.diamonds-wrapper {
+    .content {
+        img {
+            display: inline;
+            aspect-ratio: 1/1;
+        }
+    }
+
+    .diamond {
+        .content {
+            height: 360px;
+        }
+
+        &.diamond-sm .content {
+            height: 195px;
+        }
+    }
+}
+
+body .body {
+    line-height: 26px;
+}
+
+.preview-image-wrapper {
+    .vgs__container {
+        width: 100%;
+        max-width: inherit;
+        background-color: transparent;
+        @media (min-width: 768px) {
+            height: 75%;
+        }
+    }
+}
+
+.blog-item {
+    .card-img-top {
+        img {
+            aspect-ratio: 3/2;
+            width: 100%;
+        }
+    }
+}
+
+.company-counter {
+    .counter {
+        img {
+            display: inline;
+
+            path {
+                fill: $light-color;
+            }
+        }
+    }
+}
+.header-logo{
+    img{
+        display: inline;
+    }
+}
+
+[data-icon] {
+    opacity: inherit;
+}
+
