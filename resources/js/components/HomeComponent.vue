@@ -15,35 +15,36 @@
                              data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
                              style="background-image: url(assets/img/business-image/slider/slider-eastin-ha-long.jpg); background-size: cover; background-position: center;"></div>
                         <div class="container position-relative z-index-1 h-100">
-<!--                            <div class="row align-items-center h-100">-->
-<!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
-<!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
-<!--                                        data-appear-animation="fadeInRightShorterPlus"-->
-<!--                                        data-appear-animation-delay="500">-->
-<!--												<span-->
-<!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
-<!--													<span-->
-<!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-<!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-<!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
-<!--												</span>-->
-<!--                                        BUILDING<br> DREAMS-->
-<!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
-<!--													<span-->
-<!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-<!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-<!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
-<!--												</span>-->
-<!--                                    </h1>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <!--                            <div class="row align-items-center h-100">-->
+                            <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
+                            <!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
+                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                        data-appear-animation-delay="500">-->
+                            <!--												<span-->
+                            <!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
+                            <!--													<span-->
+                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
+                            <!--												</span>-->
+                            <!--                                        BUILDING<br> DREAMS-->
+                            <!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
+                            <!--													<span-->
+                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
+                            <!--												</span>-->
+                            <!--                                    </h1>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
-                                <span class="d-block position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                      data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="1900">Eastin Phát Linh Hạ Long</span>
+                                <span
+                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="2200">Eastin Phát Linh Hạ Long</span>
                                 <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-primary mt-1 appear-animation"
-                                                 data-appear-animation="fadeInLeftShorterPlus"
-                                                 data-appear-animation-delay="1200" xmlns="http://www.w3.org/2000/svg"
+											<svg class="svg-fill-color-dark appear-animation"
+                                                 data-appear-animation="fadeInLeftShorter"
+                                                 data-appear-animation-delay="1600" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                  viewBox="0 0 859.45 88.44" xml:space="preserve"
                                                  preserveAspectRatio="none">
@@ -58,23 +59,23 @@
                     <div class="owl-item position-relative"
                          style="background-image: url(assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
                         <div class="container position-relative z-index-1 h-100">
-<!--                            <div class="row align-items-center h-100 pt-5">-->
-<!--                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">-->
-<!--                                    <h2 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 custom-big-text-style-1-variation text-center text-lg-end pt-4 mt-5 appear-animation"-->
-<!--                                        data-appear-animation="fadeInRightShorterPlus"-->
-<!--                                        data-appear-animation-delay="1000">-->
-<!--												<span-->
-<!--                                                    class="d-block position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-5 ps-5">-->
-<!--													<span-->
-<!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-<!--                                                        data-appear-animation="fadeInRightShortePlus"-->
-<!--                                                        data-appear-animation-delay="2000">-->
-<!--														<span class="d-block pt-5">MODERNITY</span></span>-->
-<!--												</span>-->
-<!--                                        MODERNITY-->
-<!--                                    </h2>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <!--                            <div class="row align-items-center h-100 pt-5">-->
+                            <!--                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">-->
+                            <!--                                    <h2 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 custom-big-text-style-1-variation text-center text-lg-end pt-4 mt-5 appear-animation"-->
+                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                        data-appear-animation-delay="1000">-->
+                            <!--												<span-->
+                            <!--                                                    class="d-block position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-5 ps-5">-->
+                            <!--													<span-->
+                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+                            <!--                                                        data-appear-animation="fadeInRightShortePlus"-->
+                            <!--                                                        data-appear-animation-delay="2000">-->
+                            <!--														<span class="d-block pt-5">MODERNITY</span></span>-->
+                            <!--												</span>-->
+                            <!--                                        MODERNITY-->
+                            <!--                                    </h2>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
@@ -105,10 +106,10 @@
             <div class="row justify-content-between align-items-center flex-lg-nowrap gy-3">
                 <div class="col-lg-4">
                     <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation"
-                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">Chúng tôi là
+                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="500">Chúng tôi là
                         ai</h2>
                     <p class="text-4 font-weight-light mb-0 appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2200"> Công ty CP Tư vấn
+                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800"> Công ty CP Tư vấn
                         Thiết kế Quản lý dự án và phát triển công nghệ DMT xin gửi lời chúc sức khỏe và lời chào trân
                         trọng nhất đến toàn thể Quý khách hàng. </p>
                 </div>
@@ -119,27 +120,28 @@
                          data-appear-animation-svg="true">
 								<line stroke="#a2a2a2" stroke-dasharray="8" x1="14.75" y1="132.9" x2="133.81" y2="12.05"
                                       class="appear-animation" data-appear-animation="fadeIn"
-                                      data-appear-animation-delay="2400" data-appear-animation-duration="100ms"/>
+                                      data-appear-animation-delay="1000" data-appear-animation-duration="100ms"/>
                         <line stroke="#FFF" stroke-dasharray="8" stroke-width="2" x1="14.75" y1="132.9" x2="133.81"
                               y2="12.05" class="appear-animation" data-appear-animation="customLineDividerAnim"
-                              data-appear-animation-delay="2400" data-appear-animation-duration="2.2s"/>
+                              data-appear-animation-delay="1000" data-appear-animation-duration="700ms"/>
 							</svg>
                 </div>
                 <div class="col-lg-6">
                     <p class="font-weight-medium text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                       data-appear-animation-delay="3200">DMT được thành lập năm 2008 với phạm vi hoạt động tại Việt Nam
+                       data-appear-animation-delay="1500">DMT được thành lập năm 2008 với phạm vi hoạt động tại Việt Nam
                         và Quốc tế về <span
                             class="highlight highlight-primary highlight-bg-opacity highlight-animated"
-                            data-appear-animation="highlight-animated-start" data-appear-animation-delay="4000"
+                            data-appear-animation="highlight-animated-start" data-appear-animation-delay="2700"
                             data-plugin-options="{'flagClassOnly': true}">lĩnh vực tư vấn thiết kế công trình</span> .
                         Với đội ngũ nhân viên giàu kinh nghiệm, năng động và sáng tạo ,trong thời gian qua chúng tôi đã
                         hoàn thành thiết kế nhiều công trình có giá trị...
                     </p>
                     <a href="demo-construction-company.html"
                        class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="3400">
+                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">
                         Xem thêm
-                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon
+                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt=""
+                             data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                     </a>
                 </div>
@@ -172,7 +174,8 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -193,7 +196,8 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -214,7 +218,8 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -235,7 +240,8 @@
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     View More
-                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg"
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -310,25 +316,28 @@
 									</g>
 								</svg>
 
-                        <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
-                            <ul class="diamonds mb-0">
-                                <li v-for="(item,i) in projectPaginate.data">
-                                    <a class="diamond lightbox" data-plugin-options="{'type':'image'}"
-                                       :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
-                                       @click="showImage(i)">
-                                        <div class="content">
-                                            <img :src="'/uploads/images/'+item.image"
-                                                 class="img-fluid plugin-random-images" alt=""/>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="preview-image-wrapper">
-                                <vue-gallery-slideshow :images="project_images" :index="index"
-                                                       @close="index = null"></vue-gallery-slideshow>
+                        <div class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                             data-appear-animation-delay="300"
+                             data-appear-animation-duration="600ms">
+                            <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0" >
+                                <ul class="diamonds mb-0">
+                                    <li v-for="(item,i) in projectPaginate.data">
+                                        <a class="diamond lightbox" data-plugin-options="{'type':'image'}"
+                                           :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
+                                           @click="showImage(i)">
+                                            <div class="content">
+                                                <img :src="'/uploads/images/'+item.image"
+                                                     class="img-fluid plugin-random-images" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="preview-image-wrapper">
+                                    <vue-gallery-slideshow :images="project_images" :index="index"
+                                                           @close="index = null"></vue-gallery-slideshow>
+                                </div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
@@ -346,34 +355,43 @@
                        class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                         Xem thêm
-                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon
+                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt=""
+                             data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
                     </a>
                 </div>
             </div>
         </div>
 
-        <section class="parallax section section-text-light section-parallax section-center my-0 company-counter" data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}" data-image-src="assets/img/business-image/background-3.jpg">
+        <section class="parallax section section-text-light section-parallax section-center my-0 company-counter"
+                 data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}"
+                 data-image-src="assets/img/business-image/background-3.jpg">
             <div class="container position-relative">
                 <div class="row py-5 counters counters-text-light">
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter">
-                            <img width="44" height="50" src="assets/img/business-icons/buildings.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}" />
+                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">
+                            <img width="44" height="50" src="assets/img/business-icons/buildings.svg" alt="" data-icon
+                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}"/>
                             <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="1">0</strong>
                             <label class="pt-2 text-4 opacity-7">Văn phòng</label>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter">
-                            <img width="60" height="50" src="assets/img/business-icons/house-plant.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}" />
-                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240" data-append="+">0</strong>
+                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">
+                            <img width="60" height="50" src="assets/img/business-icons/house-plant.svg" alt="" data-icon
+                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
+                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240"
+                                    data-append="+">0</strong>
                             <label class="pt-2 text-4 opacity-7">Dự án hoàn thành</label>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter">
-                            <img width="60" height="50" src="assets/img/demos/law-firm/icons/satisfied-clients.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}" />
-                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="20" data-append="+">0</strong>
+                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">
+                            <img width="60" height="50" src="assets/img/demos/law-firm/icons/satisfied-clients.svg"
+                                 alt="" data-icon
+                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
+                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="20"
+                                    data-append="+">0</strong>
                             <label class="pt-2 text-4 opacity-7">Nhân viên</label>
                         </div>
                     </div>
@@ -388,9 +406,11 @@
                 <div class="row mb-5-5">
                     <div class="col">
                         <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation"
-                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">Đội ngũ lãnh đạo</h2>
+                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">Đội ngũ lãnh
+                            đạo</h2>
                         <p class="text-4 font-weight-light appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                           data-appear-animation-delay="500">Truyền cảm hứng cho công ty để biến tầm nhìn thành hiện thực. </p>
+                           data-appear-animation-delay="500">Truyền cảm hứng cho công ty để biến tầm nhìn thành hiện
+                            thực. </p>
                     </div>
                 </div>
                 <div class="row gy-5">
@@ -412,9 +432,15 @@
                                         <li>Thiết kế kiến trúc và kết cấu công trình dân dụng và công nghiệp</li>
                                         <li>Thiết kế điện công trình, đường dây và trạm biến áp</li>
                                         <li>Thiết kế hệ thống điện công trình dân dụng, công nghiệp</li>
-                                        <li>Thiết kế hệ thống cấp thoát nước công trình dân dụng, nhà cao tầng, trung tâm thương mại, khách sạn, nhà máy…</li>
-                                        <li>Thiết kế hệ thống điều hòa không khí, thông gió cho công trình dân dụng, công nghiệp</li>
-                                        <li>Thiết kế hệ thống cấp thoát nước, điện hạ tầng, khu đô thị, khu công nghiệp, khu chế xuất</li>
+                                        <li>Thiết kế hệ thống cấp thoát nước công trình dân dụng, nhà cao tầng, trung
+                                            tâm thương mại, khách sạn, nhà máy…
+                                        </li>
+                                        <li>Thiết kế hệ thống điều hòa không khí, thông gió cho công trình dân dụng,
+                                            công nghiệp
+                                        </li>
+                                        <li>Thiết kế hệ thống cấp thoát nước, điện hạ tầng, khu đô thị, khu công nghiệp,
+                                            khu chế xuất
+                                        </li>
                                         <li>Thiết kế xây dựng mô hình Bim – Revit cho các dự án cơ điện</li>
                                         <li>Tư vấn chuyển giao công nghệ</li>
                                     </ul>
@@ -433,36 +459,54 @@
             <div class="row align-items-center text-center py-5 my-3">
                 <div class="col-md-4">
                     <h2 class="text-color-dark font-weight-bold text-7 line-height-1 appear-animation text-left"
-                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">Đối tác liên kết</h2>
+                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">Đối tác liên
+                        kết</h2>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a href="https://varchi.vn/"  class="appear-animation"  data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">
-                        <img src="assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt class="img-fluid d-inline-block" style="max-width: 140px;"/>
+                    <a href="https://varchi.vn/" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                       data-appear-animation-delay="200">
+                        <img src="assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt
+                             class="img-fluid d-inline-block" style="max-width: 140px;"/>
                     </a>
                 </div>
                 <div class="col-md-4 text-center">
-                    <a href="#" class="appear-animation"  data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">
-                        <img src="assets/img/business-image/partner/sld.png" alt class="img-fluid d-inline-block" style="max-width: 90px;"/>
+                    <a href="#" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                       data-appear-animation-delay="200">
+                        <img src="assets/img/business-image/partner/sld.png" alt class="img-fluid d-inline-block"
+                             style="max-width: 90px;"/>
                     </a>
                 </div>
             </div>
         </div>
 
-        <section class="section section-height-3 border-0 m-0 lazyload" data-bg-src="assets/img/demos/business-consulting-3/backgrounds/background-3.jpg">
+        <section class="section section-height-3 border-0 m-0 lazyload"
+                 data-bg-src="assets/img/demos/business-consulting-3/backgrounds/background-3.jpg">
             <div class="container py-4">
                 <div class="row">
                     <div class="col text-center">
-                        <h3 class="text-9 line-height-3 text-transform-none font-weight-semibold text-color-dark pb-3 mb-4 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Khách hàng nói gì về chúng tôi</h3>
+                        <h3 class="text-9 line-height-3 text-transform-none font-weight-semibold text-color-dark pb-3 mb-4 appear-animation"
+                            data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500">Khách hàng nói gì
+                            về chúng tôi</h3>
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-lg-11 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750">
-                        <div class="owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 bg-light box-shadow-4 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true}, '768': {'items': 1}, '992': {'items': 1, 'nav': true, 'dots': false}, '1200': {'items': 1, 'nav': true, 'dots': false}}, 'loop': false, 'autoHeight': true}">
+                    <div class="col-lg-11 appear-animation" data-appear-animation="fadeInUpShorter"
+                         data-appear-animation-delay="750">
+                        <div
+                            class="owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 bg-light box-shadow-4 mb-0"
+                            data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true}, '768': {'items': 1}, '992': {'items': 1, 'nav': true, 'dots': false}, '1200': {'items': 1, 'nav': true, 'dots': false}}, 'loop': false, 'autoHeight': true}">
                             <div class="py-5 px-lg-5">
                                 <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3">
-                                    <img width="40" height="40" src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 40px;" />
+                                    <img width="40" height="40"
+                                         src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt=""
+                                         data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
+                                         style="width: 40px;"/>
                                     <blockquote>
-                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. Suspendisse hendrerit vehicula leo, vel efficitur fel.</p>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Cras a
+                                            elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo,
+                                            vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat.
+                                            Suspendisse hendrerit vehicula leo, vel efficitur fel.</p>
                                     </blockquote>
                                     <div class="testimonial-author">
                                         <p>
@@ -473,13 +517,21 @@
                             </div>
                             <div class="py-5 px-lg-5">
                                 <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3">
-                                    <img width="40" height="40" src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}" style="width: 40px;" />
+                                    <img width="40" height="40"
+                                         src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt=""
+                                         data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
+                                         style="width: 40px;"/>
                                     <blockquote>
-                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta, tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Lorem
+                                            ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta,
+                                            tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor
+                                            sit amet, consectetur adipiscing elit.</p>
                                     </blockquote>
                                     <div class="testimonial-author">
                                         <p>
-                                            <strong class="font-weight-bold text-5-5 negative-ls-1">- John Smith</strong>
+                                            <strong class="font-weight-bold text-5-5 negative-ls-1">- John
+                                                Smith</strong>
                                         <p class="text-color-dark mb-0">Porto Founder</p>
                                     </div>
                                 </div>
