@@ -148,7 +148,7 @@
             </div>
         </div>
 
-        <section class="section position-relative overflow-hidden border-0 m-0">
+        <section class="section position-relative overflow-hidden border-0 m-0 pdb-30-i">
             <div class="container pt-5-5 pb-5 mb-3">
                 <div class="row mb-5-5">
                     <div class="col">
@@ -160,86 +160,230 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6 mb-5 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="550">
-                        <div class="d-flex">
+                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="500">
+                        <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/demos/construction/icons/faucet.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 300, 'accY': 400, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Plumbing</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    View More
-                                    <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-5 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="750">
-                        <div class="d-flex">
-                            <img class="flex-0-0-auto" width="70" height="70"
-                                 src="assets/img/demos/construction/icons/winch.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 600, 'accY': 400, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-3">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">General
-                                    Construction</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    View More
-                                    <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-5 mb-md-0 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="950">
-                        <div class="d-flex">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/demos/construction/icons/paint-brush.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 900, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Painting</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    View More
-                                    <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="1150">
-                        <div class="d-flex">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/demos/construction/icons/pushcart.svg" alt="" data-icon
+                                 src="assets/img/business-image/services/horizontal-distribute-center.svg" alt=""
+                                 data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Pre-Construction</h3>
+                                    Tư vấn thiết kế cơ điện</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
                                 <a href="demo-construction-services-detail.html"
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    View More
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="600">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/house-plant.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Tư vấn thiết kế quy hoạch công trình</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="700">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="70" height="70"
+                                 src="assets/img/business-image/services/pencil-ruler.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-3">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Tư vấn
+                                    thiết kế kiến trúc và kết cấu công trình</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="800">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/icon-plumbing.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Tư vấn thiết kế hệ thống cấp thoát nước</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="900">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/indent-firstline.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Tư vấn thiết kế hệ thống điều hòa không khí, thông gió</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="1000">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/transform-bezier.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Thiết kế xây dựng mô hình Bim – Revit</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center" v-show="!isLoadMoreService">
+                        <a @click="loadMoreService()"
+                           class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
+                           data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
+                            Xem thêm
+                            <img width="27" height="27" src="assets/img/business-icons/arrow-down.svg" alt=""
+                                 data-icon
+                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
+                        </a>
+                    </div>
+                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
+                         data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="100">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/share.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Tư vấn chuyển giao công nghệ</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="150">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/todolist-pen.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Quản lý dự án</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="200">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/magnifier.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Giám sát thi công</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
+                                    <img width="27" height="27"
+                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         alt="" data-icon
+                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                         data-appear-animation-delay="250">
+                        <div class="d-flex align-items-start">
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="assets/img/business-image/services/square-check.svg" alt="" data-icon
+                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Thẩm định thiết kế, kiểm định chất lượng công trình</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
+                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <a href="demo-construction-services-detail.html"
+                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                    Xem thêm
                                     <img width="27" height="27"
                                          src="assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
@@ -319,7 +463,7 @@
                         <div class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
                              data-appear-animation-delay="300"
                              data-appear-animation-duration="600ms">
-                            <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0" >
+                            <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
                                 <ul class="diamonds mb-0">
                                     <li v-for="(item,i) in projectPaginate.data">
                                         <a class="diamond lightbox" data-plugin-options="{'type':'image'}"
@@ -369,7 +513,8 @@
             <div class="container position-relative">
                 <div class="row py-5 counters counters-text-light">
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">
+                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                             data-appear-animation-delay="300">
                             <img width="44" height="50" src="assets/img/business-icons/buildings.svg" alt="" data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}"/>
                             <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="1">0</strong>
@@ -377,7 +522,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">
+                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                             data-appear-animation-delay="300">
                             <img width="60" height="50" src="assets/img/business-icons/house-plant.svg" alt="" data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
                             <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240"
@@ -386,7 +532,8 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">
+                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                             data-appear-animation-delay="300">
                             <img width="60" height="50" src="assets/img/demos/law-firm/icons/satisfied-clients.svg"
                                  alt="" data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
@@ -591,7 +738,8 @@ export default {
             project_images: [],
             index: null,
             posts: [],
-            isLoadingBlog: true
+            isLoadingBlog: true,
+            isLoadMoreService: false
         };
     },
     methods: {
@@ -609,6 +757,9 @@ export default {
         showImage(i) {
             this.index = i;
             this.initProjectImage();
+        },
+        loadMoreService() {
+            this.isLoadMoreService = true;
         }
     },
     mounted() {
