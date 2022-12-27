@@ -38,7 +38,7 @@
 <!--            </div>-->
 <!--        </b-modal>-->
 
-        <div class="body">
+        <div class="body" data-plugin-scroll-spy data-plugin-options="{'target': '#sidebar'}">
             <header-component></header-component>
             <router-view :key="$route.fullPath"></router-view>
             <footer-component></footer-component>

@@ -31,18 +31,6 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.min.css')}}">
 
-    <!-- Theme CSS -->
-{{--    <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('assets/css/theme-elements.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('assets/css/theme-blog.css')}}">--}}
-{{--    <link rel="stylesheet" href="{{asset('assets/css/theme-shop.css')}}">--}}
-
-    <!-- Demo CSS -->
-{{--    <link rel="stylesheet" href="{{asset('assets/css/demos/demo-construction.css')}}">--}}
-
-    <!-- Skin CSS -->
-{{--    <link id="skinCSS" rel="stylesheet" href="{{asset('assets/css/skins/skin-construction.css')}}">--}}
-
     <link rel="stylesheet" href="{{ asset('css/app.css?version=1') }}">
 
     <!-- Head Libs -->
@@ -53,5 +41,11 @@
 <div id="app">
 </div>
 <script src="{{ asset('js/app.js?version=1') }}"></script>
+
+<!-- Latest jQuery -->
+{{--<script src="{{asset('assets/js/jquery/jquery-3.6.0.min.js')}}"></script>--}}
+
+<!-- owl-carousel min js  -->
+{{--<script src="{{asset('assets/owlcarousel/js/owl.carousel.min.js')}}"></script>--}}
 </body>
 </html>

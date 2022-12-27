@@ -298,7 +298,7 @@
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                             Xem thêm
-                            <img width="27" height="27" src="assets/img/business-icons/arrow-down.svg" alt=""
+                            <img class="mgl-5" width="15" height="15" src="assets/img/business-icons/arrow-down.svg" alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
                         </a>
@@ -326,7 +326,8 @@
                             </div>
                         </div>
                     </div>
-                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
+                         data-appear-animation="fadeInUpShorterPlus"
                          data-appear-animation-delay="150">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
@@ -348,7 +349,8 @@
                             </div>
                         </div>
                     </div>
-                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
+                         data-appear-animation="fadeInUpShorterPlus"
                          data-appear-animation-delay="200">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
@@ -370,7 +372,8 @@
                             </div>
                         </div>
                     </div>
-                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
+                         data-appear-animation="fadeInUpShorterPlus"
                          data-appear-animation-delay="250">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
@@ -597,6 +600,23 @@
                                 <li>Dịch vụ thẩm định thiết kế, kiểm định chất lượng công trình</li>
                             </ul>
                         </div>
+                        <div class="progress-bars mgt-20 pb-4">
+                            <div class="progress-label d-flex justify-content-between">
+                                <span class="text-color-dark font-weight-semibold">Uy tín</span>
+                                <span class="text-color-dark font-weight-semibold">100%</span>
+                            </div>
+                            <div class="progress progress-xs progress-no-border-radius bg-color-light-scale-1 mb-4">
+                                <div class="progress-bar progress-bar-primary" data-appear-progress-animation="100%"></div>
+                            </div>
+                            <hr class="my-0">
+                            <div class="progress-label d-flex justify-content-between pt-2">
+                                <span class="text-color-dark font-weight-semibold">An toàn</span>
+                                <span class="text-color-dark font-weight-semibold">100%</span>
+                            </div>
+                            <div class="progress progress-xs progress-no-border-radius bg-color-light-scale-1 mb-4">
+                                <div class="progress-bar progress-bar-primary" data-appear-progress-animation="100%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -604,8 +624,8 @@
 
         <div class="container">
             <div class="row align-items-center text-center py-5 my-3">
-                <div class="col-md-4">
-                    <h2 class="text-color-dark font-weight-bold text-7 line-height-1 appear-animation text-left"
+                <div class="col-md-4 align-items-center">
+                    <h2 class="mgb-0 text-color-dark font-weight-bold text-7 line-height-1 appear-animation text-left"
                         data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">Đối tác liên
                         kết</h2>
                 </div>
@@ -643,42 +663,36 @@
                             class="owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 bg-light box-shadow-4 mb-0"
                             data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true}, '768': {'items': 1}, '992': {'items': 1, 'nav': true, 'dots': false}, '1200': {'items': 1, 'nav': true, 'dots': false}}, 'loop': false, 'autoHeight': true}">
                             <div class="py-5 px-lg-5">
-                                <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3">
-                                    <img width="40" height="40"
-                                         src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt=""
-                                         data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
+                                <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3 text-center">
+                                    <img width="40" height="40" class="d-inline-block"
+                                         src="assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
-                                    <blockquote>
+                                    <div>
                                         <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Cras a
                                             elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo,
                                             vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat.
                                             Suspendisse hendrerit vehicula leo, vel efficitur fel.</p>
-                                    </blockquote>
+                                    </div>
                                     <div class="testimonial-author">
-                                        <p>
-                                            <strong class="font-weight-bold text-5-5 negative-ls-1">- John Doe</strong>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- John Doe</strong>
                                         <p class="text-color-dark mb-0">Porto Founder</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="py-5 px-lg-5">
-                                <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3">
-                                    <img width="40" height="40"
-                                         src="assets/img/demos/business-consulting-3/icons/left-quote.svg" alt=""
-                                         data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary'}"
+                                <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3 text-center">
+                                    <img width="40" height="40" class="d-inline-block"
+                                         src="assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
-                                    <blockquote>
+                                    <div>
                                         <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Lorem
                                             ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta,
                                             tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor
                                             sit amet, consectetur adipiscing elit.</p>
-                                    </blockquote>
+                                    </div>
                                     <div class="testimonial-author">
-                                        <p>
-                                            <strong class="font-weight-bold text-5-5 negative-ls-1">- John
-                                                Smith</strong>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- John
+                                            Smith</strong>
                                         <p class="text-color-dark mb-0">Porto Founder</p>
                                     </div>
                                 </div>
