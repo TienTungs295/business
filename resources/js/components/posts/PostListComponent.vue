@@ -206,7 +206,7 @@ export default {
         changePage: function (page) {
             let queryParams = {};
             queryParams.page = page;
-            let category_id = this.$route.query.page;
+            let category_id = this.$route.query.category_id;
             if (category_id != null) queryParams.category_id = category_id;
             this.processRedirect(queryParams);
         },
