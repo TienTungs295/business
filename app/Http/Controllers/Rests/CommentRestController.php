@@ -4,38 +4,54 @@ namespace App\Http\Controllers\Rests;
 
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
-use App\Models\Project;
+use App\Models\Post;
 use App\Http\Responses\AjaxResponse;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Validator;
 
 class CommentRestController extends Controller
 {
     public function save(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        $project_id = $request->post("project_id");
+        $post_id = $request->post("post_id");
         try {
-            Project::findOrFail($project_id);
+            Post::findOrFail($post_id);
         } catch (ModelNotFoundException $e) {
-            return $ajax_response->setMessage("Dự án không tồn tại hoặc đã bị xóa")->toApiResponse();
+            return $ajax_response->setMessage("Bài viết không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
+
+        $validator = Validator::make($request->all(),
+            [
+                'customer_name' => 'required|string|max:200',
+                'customer_email' => 'required|string|email|max:200',
+                'comment' => 'required|string|max:5000',
+            ],
+            [
+                'customer_name.required' => 'Họ & tên không được phép bỏ trống',
+                'customer_email.required' => 'Email không được phép bỏ trống',
+                'comment.required' => 'Nội dung bình luận không được phép bỏ trống',
+                'customer_name.max' => 'Họ & tên không được phép vượt quá 200 ký tự',
+                'customer_email.max' => 'Email không được phép vượt quá 200 ký tự',
+                'comment.max' => 'Nội dung bình luận không được phép vượt quá 5000 ký tự',
+                'customer_email.email' => 'Email không hợp lệ',
+            ]);
+
+        if ($validator->fails()) {
+            return $ajax_response->setErrors($validator->errors())->toApiResponse();
+        }
+
         $comment = new Comment();
         $text_comment = $request->post("comment");
         $customer_name = $request->post("customer_name");
         $customer_email = $request->post("customer_email");
-        if (!isset($customer_name))
-            return $ajax_response->setMessage("Vui lòng nhập tên")->toApiResponse();
-        if (!isset($customer_email))
-            return $ajax_response->setMessage("Vui lòng nhập email")->toApiResponse();
-        if (!isset($text_comment))
-            return $ajax_response->setMessage("Vui lòng nhập nội dung bình luận")->toApiResponse();
 
         $comment->comment = $text_comment;
         $comment->status = 1;
         $comment->customer_name = $customer_name;
         $comment->customer_email = $customer_email;
-        $comment->project_id = $project_id;
+        $comment->post_id = $post_id;
         $comment->save();
         return $ajax_response->setData($comment)->toApiResponse();
     }
@@ -47,15 +63,15 @@ class CommentRestController extends Controller
         $hasMorePage = false;
         $last_id = $request->input("last_id");
         $ajax_response = new AjaxResponse();
-        $project_id = $request->input("project_id");
+        $post_id = $request->input("post_id");
         try {
-            Project::findOrFail($project_id);
+            Post::findOrFail($post_id);
         } catch (ModelNotFoundException $e) {
-            return $ajax_response->setMessage("Dự án không tồn tại hoặc đã bị xóa")->toApiResponse();
+            return $ajax_response->setMessage("Bài viết không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
 
         //paginate comments
-        $query = Comment::where('project_id', $project_id)->where('status', 2);
+        $query = Comment::where('post_id', $post_id)->where('status', 2);
         if (!is_null($last_id)) $query->where('id', '<', $last_id);
         $query->orderBy("created_at", "DESC");
         $comments = $query->take($page_size + 1)->get()->toArray();
@@ -65,7 +81,7 @@ class CommentRestController extends Controller
         }
 
         //count total comments
-        $totalComments = Comment::where('project_id', $project_id)->where('status', 2)->count();
+        $totalComments = Comment::where('post_id', $post_id)->where('status', 2)->count();
         return $ajax_response->setData(array('data' => $comments, 'hasMorePage' => $hasMorePage, 'totalComments' => $totalComments))->toApiResponse();
     }
 }

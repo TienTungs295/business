@@ -6,9 +6,9 @@
                     <div class="header-column">
                         <div class="header-row">
                             <div class="header-logo custom-header-logo">
-                                <img class="logo" alt="DMT" width="123" height="48" src="assets/img/business-image/logo/dmt-white-logo.png">
+                                <img class="logo" alt="DMT" width="123" height="48" src="/assets/img/business-image/logo/dmt-white-logo.png">
                                 <a href="demo-construction.html">
-                                    <img class="logo-sticky" alt="DMT" width="123" height="48" src="assets/img/business-image/logo/dmt-logo.png">
+                                    <img class="logo-sticky" alt="DMT" width="123" height="48" src="/assets/img/business-image/logo/dmt-logo.png">
                                 </a>
                             </div>
                         </div>

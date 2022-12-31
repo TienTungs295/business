@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-inner">
         <div class="pagetitle">
-            <h4>Đánh giá</h4>
+            <h4>Bình luận</h4>
         </div><!-- End Page Title -->
         <section class="section">
             <div class="row">
@@ -12,16 +12,6 @@
                         <div class="card-body">
                             <!-- Table with stripped rows -->
                             <form method="GET" action="{!! route('commentView') !!}" class="row g-3">
-                                <div class="col-md-4">
-                                    <div class="input-group mb-3">
-                                        <input type="text" name="q" class="form-control" placeholder="Tên"
-                                               aria-label="Tên"
-                                               aria-describedby="basic-addon2" value="{!! isset($q) ? $q : '' !!}">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-primary" type="submit">Tìm kiếm</button>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="col-md-8 text-end">
                                     <a href="{!! route('commentView') !!}" class="btn btn-primary btn-sm"><i
                                             class="bi bi-arrow-repeat me-1"></i> Làm mới
@@ -32,7 +22,7 @@
                             <table class="table table-hover table-bordered text-center mt-4">
                                 <thead>
                                 <tr>
-                                    <th scope="col">#</th>
+                                    <th scope="col">Mã bình luận</th>
                                     <th scope="col">Bài viết</th>
                                     <th scope="col">Nội dung</th>
                                     <th scope="col">Trạng thái</th>

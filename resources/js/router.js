@@ -14,6 +14,11 @@ const routes = [
         name: "postList",
         component: () => import("./components/posts/PostListComponent"),
     },
+    {
+        path: '/chi-tiet-tin-tuc-su-kien/:slug/:id',
+        name: "postDetail",
+        component: () => import("./components/posts/PostDetailComponent"),
+    },
 ];
 const router = new VueRouter({
     mode: 'history',

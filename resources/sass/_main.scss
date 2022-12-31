@@ -71,23 +71,26 @@ body .body {
 }
 
 //Post
-.dmt-post-list {
-    .post-item {
+.dmt-post {
+    .post-image, .post-item {
         img {
             width: 100%;
             aspect-ratio: 2 / 1;
         }
     }
-}
 
-.post-category {
-    .nav-list {
-        .nav-link.active-link {
-            color: $primary-color;
+    .post-category {
+        .nav-list {
+            .nav-link.active-link {
+                color: $primary-color;
+            }
         }
     }
 }
 
 #header .header-nav.header-nav-links nav .nav-link.router-link-exact-active.router-link-active {
     color: #d80d07;
+}
+.invalid-feedback{
+    font-size: 14px;
 }

@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'comment'], function () {
     Route::get('/find-by-post', [CommentRestController::class, 'findByPost']);
+    Route::post('/save', [CommentRestController::class, 'save']);
 });
 
 Route::group(['prefix' => 'project'], function () {

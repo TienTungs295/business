@@ -44,7 +44,7 @@ class PostRestController extends Controller
         $id = $request->input("id");
         $post = null;
         try {
-            $post = Post::findOrFail($id);
+            $post = Post::with("user")->findOrFail($id);
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Đối tượng không tồn tại hoặc đã bị xóa")->toApiResponse();
         }

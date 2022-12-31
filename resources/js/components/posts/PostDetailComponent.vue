@@ -1,9 +1,208 @@
 <template>
+    <div class="dmt-post">
+        <section class="section section-height-3 border-0 m-0">
+            <div class="container position-relative pt-5 pb-5-5 mt-5 mb-5">
+                <div class="row justify-content-end pt-1 mt-lg-5">
+                    <div class="col-7 col-md-5 position-relative">
+                        <ul class="breadcrumb d-block ps-2 ">
+                            <li>
+                                <router-link class="fz-12-i" :to="{ name: 'home'}">
+                                    Trang chủ
+                                </router-link>
+                            </li>
+                            <li class="active fz-12-i">{{ post.name }}</li>
+                        </ul>
+                        <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
+                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">{{ post.name }}</span>
+                            <span class="custom-svg-position-1 custom-svg-position-1-variation">
+				                        <svg class="svg-fill-color-dark mt-1 "
+                                             xmlns="http://www.w3.org/2000/svg"
+                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                             viewBox="0 0 859.45 88.44" xml:space="preserve" preserveAspectRatio="none">
+				                            <polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
+				                        </svg>
+				                    </span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container pt-4 pb-5 my-5">
+            <div class="row">
+                <div class="col-lg-8 mb-5 mb-lg-0">
 
+                    <article>
+                        <div class="card border-0">
+                            <div class="card-body z-index-1 p-0">
+                                <p class="text-uppercase text-1 mb-3 text-color-default fz-12">
+                                    <time>{{ post.updated_at | dateFormat }}</time>
+                                    <span class="opacity-3 d-inline-block px-2">|</span>
+                                    {{ post.total_comments }} Bình luận
+                                    <span v-if="post.user != null" class="opacity-3 d-inline-block px-2">|</span>
+                                    <span v-if="post.user != null">{{ post.user.name }}</span>
+                                </p>
+                                <div class="post-image pb-4">
+                                    <img class="card-img-top custom-border-radius-1"
+                                         :src="'/uploads/images/'+post.image" @error="setDefaultImg" alt="DMT Image">
+                                </div>
+
+                                <div class="card-body p-0">
+                                    <p v-html="post.content"></p>
+                                    <hr class="my-5">
+                                    <div id="comments" class="post-block post-comments">
+                                        <h3 class="text-color-primary text-capitalize font-weight-bold text-5 m-0 mb-3">
+                                            {{ post.total_comments }} bình luận cho bài viết</h3>
+                                        <ul class="comments">
+                                            <li>
+                                                <div class="comment">
+                                                    <div
+                                                        class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
+                                                        <img class="avatar rounded-circle" alt=""
+                                                             src="/assets/img/avatars/avatar.jpg">
+                                                    </div>
+                                                    <div class="comment-block">
+                                                        <div class="comment-arrow"></div>
+                                                        <span class="comment-by">
+																	<strong class="text-dark">John Doe</strong>
+																	<span class="float-end">
+																		<span> <a href="#"><i class="fas fa-reply"></i> Reply</a></span>
+																	</span>
+																</span>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                        <span class="date float-end">January 12, 2022 at 1:38 pm</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                        <h3 class="text-color-primary text-capitalize font-weight-bold text-5 m-0 mb-3 mt-5">
+                                            Để lại bình luận</h3>
+
+                                        <div class="custom-form-simple-validation p-4 rounded bg-color-grey">
+                                            <div class="p-2">
+                                                <div class="row">
+                                                    <div class="form-group col-lg-6">
+                                                        <label
+                                                            class="form-label required mb-1 font-weight-bold text-dark">Họ
+                                                            và tên</label>
+                                                        <input type="text" maxlength="200"
+                                                               :class="{'is-invalid': errors.customer_name}"
+                                                               v-model="comment.customer_name"
+                                                               class="form-control py-3 px-3 border-0 box-shadow-none"
+                                                               name="name" id="name">
+                                                        <div class="invalid-feedback" v-if="errors.customer_name">
+                                                            <span v-for="error in errors.customer_name" class="d-block">{{ error }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col-lg-6">
+                                                        <label
+                                                            class="form-label mb-1 font-weight-bold text-dark">Email</label>
+                                                        <input type="email" v-model="comment.customer_email"
+                                                               :class="{'is-invalid': errors.customer_email}"
+                                                               maxlength="200"
+                                                               class="form-control py-3 px-3 border-0 box-shadow-none"
+                                                               name="email" id="email">
+                                                        <div class="invalid-feedback" v-if="errors.customer_email">
+                                                            <span v-for="error in errors.customer_email" class="d-block">{{ error }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col">
+                                                        <label
+                                                            class="form-label mb-1 font-weight-bold text-dark">Nội
+                                                            dung</label>
+                                                        <textarea maxlength="5000" rows="8" v-model="comment.comment"
+                                                                  :class="{'is-invalid': errors.comment}"
+                                                                  class="form-control p-3 border-0 box-shadow-none"
+                                                                  name="message" id="message"></textarea>
+                                                        <div class="invalid-feedback" v-if="errors.comment">
+                                                            <span v-for="error in errors.comment" class="d-block">{{ error }}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col mb-0">
+                                                        <button type="button" @click="sendComment()"
+                                                                class="btn btn-primary custom-btn-style-1 font-weight-semibold btn-px-4 btn-py-2 text-3-5">
+                                                            Gửi
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+                <div class="blog-sidebar col-lg-4 pt-4 pt-lg-0">
+                    <aside class="sidebar">
+                        <div class="px-3 mt-4">
+                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3">Bài viết
+                                gần đây</h3>
+                            <div class="pb-2 mb-1">
+                                <div v-for="item in recentPosts">
+                                         <span
+                                             class="text-color-default text-uppercase fz-12 mb-0 d-block text-decoration-none">
+                                                {{ item.updated_at | dateFormat }}
+                                             <span class="opacity-3 d-inline-block px-2">|</span>
+                                             {{ item.total_comments }} Bình luận
+                                             <span v-if="item.user != null"
+                                                   class="opacity-3 d-inline-block px-2">|</span>
+                                             <span v-if="item.user != null">{{ item.user.name }}</span>
+                                </span>
+                                    <router-link
+                                        class="text-color-dark text-hover-primary font-weight-bold d-block pb-3 line-height-4"
+                                        :to="{ name: 'postDetail', params: { slug: item.slug,id:item.id }}">
+                                        {{ item.name }}
+                                    </router-link>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-1 clearfix">
+                            <hr class="my-2">
+                        </div>
+                        <div class="px-3 mt-4 post-category">
+                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0">Danh mục bài
+                                viết</h3>
+                            <ul class="nav nav-list flex-column mt-2 mb-0 p-relative right-9 ">
+                                <li class="nav-item">
+                                    <a class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
+                                       @click="changePostCategory(null)">
+                                        Tất cả ({{ totalPosts }})
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
+                                        @click="changePostCategory(0)">
+                                        Không danh mục ({{ totalUncategoryPosts }})
+                                    </a>
+                                </li>
+                                <li class="nav-item" v-for="item in postCategories">
+                                    <a
+                                        class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
+                                        @click="changePostCategory(item.id)">{{ item.name }}
+                                        ({{ item.total_posts }})
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 import PostService from "../../services/PostService";
+import CommentService from "../../services/CommentService";
+import {mapGetters} from "vuex";
+import PostCategoryService from "../../services/PostCategoryService";
 
 export default {
     name: "PostDetail",
@@ -12,16 +211,42 @@ export default {
             post: {},
             nextPost: {},
             prevPost: {},
-            relatedPosts: [],
-            recentPosts: [],
             isLoading: true,
-            isRelatedLoading: true,
             isRecentLoading: true,
+            comment: {},
+            errors: {},
         };
     },
+    computed: {
+        ...mapGetters([
+            'totalPosts',
+            'totalUncategoryPosts',
+            'recentPosts',
+            'postCategories'
+        ])
+    },
     methods: {
-        setDefaultImg(event){
-            event.target.src = window.location.protocol + "//" + window.location.host+'/assets/images/default/placeholder.png'
+        setDefaultImg(event) {
+            event.target.src = window.location.protocol + "//" + window.location.host + '/assets/images/default/placeholder.png'
+        },
+        changePostCategory(category_id) {
+            let queryParams = {};
+            if (category_id != null) queryParams.category_id = category_id;
+            this.processRedirect(queryParams);
+        },
+
+        processRedirect(queryParams) {
+            this.$router.push({name: 'postList', query: queryParams}).catch(() => {
+            });
+        },
+        sendComment() {
+            this.comment.post_id = this.post.id;
+            CommentService.save(this.comment).then(response => {
+                this.errors={};
+                this.comment={};
+            }).catch(response => {
+                this.errors = response.errors || {};
+            });
         }
     },
     mounted() {
@@ -35,18 +260,25 @@ export default {
             this.isLoading = false;
         });
 
-        PostService.related(this.$route.params.id).then(response => {
-            this.relatedPosts = response || [];
-            this.isRelatedLoading = false;
+        PostService.recent(this.$route.params.id).then(response => {
+            let recentPosts = response || [];
+            this.$store.commit("setRecentPosts", recentPosts);
+            this.isRecentLoading = false;
         }).catch(e => {
-            this.isRelatedLoading = false;
+            this.isRecentLoading = false;
         });
 
-        PostService.recent(this.$route.params.id).then(response => {
-            this.recentPosts = response || [];
-            this.isRecentLoading = false;
+        PostService.countAll().then(response => {
+            let resData = response || {}
+            this.$store.commit("setTotalPosts", resData.total_posts);
+            this.$store.commit("setTotalUncategoryPosts", resData.total_uncategory_posts);
         }).catch(e => {
-            this.isRecentLoading = false;
+        });
+
+        PostCategoryService.findAll().then(response => {
+            let postCategories = response || [];
+            this.$store.commit("setPostCategories", postCategories);
+        }).catch(e => {
         });
     }
 }

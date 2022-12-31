@@ -1,10 +1,10 @@
 <template>
-    <footer id="footer" class="overflow-hidden border-0 m-0" style="background-image: url(assets/img/demos/construction/backgrounds/background-2.jpg); background-repeat: no-repeat; background-position: center bottom;">
+    <footer id="footer" class="overflow-hidden border-0 m-0" style="background-image: url(/assets/img/demos/construction/backgrounds/background-2.jpg); background-repeat: no-repeat; background-position: center bottom;">
         <div class="container pt-5">
             <div class="row pt-4 mb-5 gy-4">
                 <div class="col-lg-2 align-self-center">
                     <a href="demo-construction.html">
-                        <img alt="Porto" class="img-fluid logo" width="123" height="48" src="assets/img/business-image/logo/dmt-logo.png">
+                        <img alt="Porto" class="img-fluid logo" width="123" height="48" src="/assets/img/business-image/logo/dmt-logo.png">
                     </a>
                 </div>
                 <div class="col-lg-4 offset-lg-1">
@@ -53,18 +53,18 @@
                             <div class="input-group">
                                 <input class="form-control border-0" placeholder="Email Address..." name="newsletterEmail" id="newsletterEmail" type="email">
                                 <button class="btn btn-primary px-3" type="submit">
-                                    <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 27px;" />
+                                    <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}" style="width: 27px;" />
                                 </button>
                             </div>
                         </form>
                     </div>
                     <ul class="list list-unstyled list-inline">
                         <li class="list-inline-item d-inline-flex align-items-center">
-                            <img width="23" height="23" src="assets/img/demos/construction/icons/phone.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}" />
+                            <img width="23" height="23" src="/assets/img/demos/construction/icons/phone.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}" />
                             <a href="tel:0123456789" class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">(+84) 912628197</a>
                         </li>
                         <li class="list-inline-item d-inline-flex align-items-center ms-0 ms-sm-4 ms-lg-1 ms-xl-4">
-                            <img width="23" height="23" src="assets/img/demos/construction/icons/email.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}" />
+                            <img width="23" height="23" src="/assets/img/demos/construction/icons/email.svg" alt="" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}" />
                             <a href="mailto:0123456789" class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">minh@dmt.net.vn</a>
                         </li>
                     </ul>

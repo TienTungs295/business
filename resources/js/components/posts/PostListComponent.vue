@@ -37,8 +37,8 @@
                         <div class="card bg-transparent border-0 custom-border-radius-1">
                             <div class="card-body p-0 z-index-1">
 
-                                <router-link data-cursor-effect-hover="plus"
-                                             :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
+                                <router-link
+                                             :to="{ name: 'postDetail', params: { slug: item.slug,id:item.id }}">
                                     <img class="card-img-top custom-border-radius-1 mb-2"
                                          :src="'/uploads/images/'+item.image" :alt="item.image" @error="setDefaultImg"
                                          alt="DMT Image">
@@ -55,7 +55,7 @@
                                     <h4 class="card-title text-5 font-weight-bold pb-1 mb-2">
                                         <router-link
                                             class="text-color-dark text-color-hover-primary text-decoration-none"
-                                            :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
+                                            :to="{ name: 'postDetail', params: { slug: item.slug,id:item.id }}">
                                             {{ item.name }}
                                         </router-link>
                                     </h4>
@@ -65,7 +65,7 @@
                                                     class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
 													Xem thêm
 													<img width="27" height="27"
-                                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                                          alt="" data-icon
                                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"
                                                          style="width: 27px;"/>
@@ -88,28 +88,26 @@
                         class="custom-pagination-style-1 pagination pagination-rounded pagination-md justify-content-center">
                         <li class="page-item" :class="paginate.prev_page_url == null ? 'disabled' : ''">
                             <a v-if="paginate.prev_page_url != null" class="page-link cursor-pointer"
-                               @click="changePage(paginate.current_page - 1)" data-cursor-effect-hover="fit">
+                               @click="changePage(paginate.current_page - 1)">
                                 <i class="fas fa-angle-left"></i>
                             </a>
-                            <a class="page-link" v-else data-cursor-effect-hover="fit">
+                            <a class="page-link" v-else>
                                 <i class="fas fa-angle-left"></i>
                             </a>
                         </li>
                         <li class="page-item" :class="paginate.current_page == i ? 'active' :''"
                             v-for="i in paginate.last_page">
                             <a class="page-link cursor-pointer" v-if="paginate.current_page != i"
-                               data-cursor-effect-hover="fit"
                                @click="changePage(i)">{{ i }}</a>
-                            <a class="page-link cursor-default" data-cursor-effect-hover="fit" v-else>{{ i }}</a>
+                            <a class="page-link cursor-default" v-else>{{ i }}</a>
                         </li>
 
                         <li class="page-item" :class="paginate.next_page_url == null ? 'disabled' : ''">
                             <a v-if="paginate.next_page_url != null" class="page-link cursor-pointer"
-                               data-cursor-effect-hover="fit"
                                @click="changePage(paginate.current_page + 1)">
                                 <i class="fas fa-angle-right"></i>
                             </a>
-                            <a class="page-link" data-cursor-effect-hover="fit" v-else>
+                            <a class="page-link" v-else>
                                 <i class="fas fa-angle-right"></i>
                             </a>
                         </li>
@@ -134,7 +132,7 @@
                                 </span>
                                     <router-link
                                         class="text-color-dark text-hover-primary font-weight-bold d-block pb-3 line-height-4"
-                                        :to="{ name: 'blogDetail', params: { slug: item.slug,id:item.id }}">
+                                        :to="{ name: 'postDetail', params: { slug: item.slug,id:item.id }}">
                                         {{ item.name }}
                                     </router-link>
                                 </div>

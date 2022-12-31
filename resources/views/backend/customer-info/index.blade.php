@@ -2,7 +2,7 @@
 @section('content')
 <div class="main-inner">
     <div class="pagetitle">
-        <h4>Email liên hệ</h4>
+        <h4>Liên hệ</h4>
     </div><!-- End Page Title -->
     <section class="section">
         <div class="row">

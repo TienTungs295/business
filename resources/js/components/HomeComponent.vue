@@ -13,7 +13,7 @@
                         <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
                              data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
                              data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
-                             style="background-image: url(assets/img/business-image/slider/slider-eastin-ha-long.jpg); background-size: cover; background-position: center;"></div>
+                             style="background-image: url(/assets/img/business-image/slider/slider-eastin-ha-long.jpg); background-size: cover; background-position: center;"></div>
                         <div class="container position-relative z-index-1 h-100">
                             <!--                            <div class="row align-items-center h-100">-->
                             <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
@@ -57,7 +57,7 @@
 
                     <!-- Carousel Slide 2 -->
                     <div class="owl-item position-relative"
-                         style="background-image: url(assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
+                         style="background-image: url(/assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
                         <div class="container position-relative z-index-1 h-100">
                             <!--                            <div class="row align-items-center h-100 pt-5">-->
                             <!--                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">-->
@@ -140,7 +140,7 @@
                        class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">
                         Xem thêm
-                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt=""
+                        <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
                              data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                     </a>
@@ -164,7 +164,7 @@
                          data-appear-animation-delay="500">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/horizontal-distribute-center.svg" alt=""
+                                 src="/assets/img/business-image/services/horizontal-distribute-center.svg" alt=""
                                  data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
@@ -176,7 +176,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -187,7 +187,7 @@
                          data-appear-animation-delay="600">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/house-plant.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/house-plant.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -198,7 +198,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -209,7 +209,7 @@
                          data-appear-animation-delay="700">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="70" height="70"
-                                 src="assets/img/business-image/services/pencil-ruler.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/pencil-ruler.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-3">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Tư vấn
@@ -220,7 +220,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -231,7 +231,7 @@
                          data-appear-animation-delay="800">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/icon-plumbing.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/icon-plumbing.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -242,7 +242,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -253,7 +253,7 @@
                          data-appear-animation-delay="900">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/indent-firstline.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/indent-firstline.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -264,7 +264,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -275,7 +275,7 @@
                          data-appear-animation-delay="1000">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/transform-bezier.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/transform-bezier.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -286,7 +286,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -298,7 +298,7 @@
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                             Xem thêm
-                            <img class="mgl-5" width="15" height="15" src="assets/img/business-icons/arrow-down.svg"
+                            <img class="mgl-5" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
                                  alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
@@ -309,7 +309,7 @@
                          data-appear-animation-delay="100">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/share.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/share.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -320,7 +320,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -332,7 +332,7 @@
                          data-appear-animation-delay="150">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/todolist-pen.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/todolist-pen.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -343,7 +343,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -355,7 +355,7 @@
                          data-appear-animation-delay="200">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/magnifier.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/magnifier.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -366,7 +366,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -378,7 +378,7 @@
                          data-appear-animation-delay="250">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="assets/img/business-image/services/square-check.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/square-check.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
@@ -389,7 +389,7 @@
                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
-                                         src="assets/img/demos/construction/icons/arrow-right.svg"
+                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                                 </a>
@@ -503,7 +503,7 @@
                        class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                         Xem thêm
-                        <img width="27" height="27" src="assets/img/demos/construction/icons/arrow-right.svg" alt=""
+                        <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
                              data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
                     </a>
@@ -513,13 +513,13 @@
 
         <section class="parallax section section-text-light section-parallax section-center my-0 company-counter"
                  data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}"
-                 data-image-src="assets/img/business-image/background-3.jpg">
+                 data-image-src="/assets/img/business-image/background-3.jpg">
             <div class="container position-relative">
                 <div class="row py-5 counters counters-text-light">
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
                         <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
                              data-appear-animation-delay="300">
-                            <img width="44" height="50" src="assets/img/business-icons/buildings.svg" alt="" data-icon
+                            <img width="44" height="50" src="/assets/img/business-icons/buildings.svg" alt="" data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}"/>
                             <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="1">0</strong>
                             <label class="pt-2 text-4 opacity-7">Văn phòng</label>
@@ -528,7 +528,7 @@
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
                         <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
                              data-appear-animation-delay="300">
-                            <img width="60" height="50" src="assets/img/business-icons/house-plant.svg" alt="" data-icon
+                            <img width="60" height="50" src="/assets/img/business-icons/house-plant.svg" alt="" data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
                             <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240"
                                     data-append="+">0</strong>
@@ -538,7 +538,7 @@
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
                         <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
                              data-appear-animation-delay="300">
-                            <img width="60" height="50" src="assets/img/demos/law-firm/icons/satisfied-clients.svg"
+                            <img width="60" height="50" src="/assets/img/demos/law-firm/icons/satisfied-clients.svg"
                                  alt="" data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
                             <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="20"
@@ -552,7 +552,7 @@
 
         <section class="section parallax border-0 pt-5 py-0 m-0" data-plugin-parallax
                  data-plugin-options="{'spped': '1.5', 'parallaxHeight': '125%', 'fadeIn': true}"
-                 data-image-src="assets/img/business-image/background-1.jpg">
+                 data-image-src="/assets/img/business-image/background-1.jpg">
             <div class="container mgb-40">
                 <div class="row mb-5-5">
                     <div class="col">
@@ -566,7 +566,7 @@
                 </div>
                 <div class="row gy-5">
                     <div class="col-lg-6 text-center">
-                        <img src="assets/img/business-image/people/Picture2.png" class="img-fluid"
+                        <img src="/assets/img/business-image/people/Picture2.png" class="img-fluid"
                              alt="Director"/>
                         <div class="testimonial-author text-start ps-3 ms-1 text-center">
                             <strong class="text-4-5 negative-ls-1 text-111">NGÔ TRÍ LÊ MINH</strong>
@@ -635,14 +635,14 @@
                 <div class="col-md-4 text-center">
                     <a href="https://varchi.vn/" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
                        data-appear-animation-delay="200">
-                        <img src="assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt
+                        <img src="/assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt
                              class="img-fluid d-inline-block" style="max-width: 140px;"/>
                     </a>
                 </div>
                 <div class="col-md-4 text-center">
                     <a href="#" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
                        data-appear-animation-delay="200">
-                        <img src="assets/img/business-image/partner/sld.png" alt class="img-fluid d-inline-block"
+                        <img src="/assets/img/business-image/partner/sld.png" alt class="img-fluid d-inline-block"
                              style="max-width: 90px;"/>
                     </a>
                 </div>
@@ -650,7 +650,7 @@
         </div>
 
         <section class="section section-height-3 border-0 m-0 lazyload"
-                 data-bg-src="assets/img/demos/business-consulting-3/backgrounds/background-3.jpg">
+                 data-bg-src="/assets/img/demos/business-consulting-3/backgrounds/background-3.jpg">
             <div class="container py-4">
                 <div class="row">
                     <div class="col text-center">
@@ -668,7 +668,7 @@
                             <div class="py-5 px-lg-5">
                                 <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3 text-center">
                                     <img width="40" height="40" class="d-inline-block"
-                                         src="assets/img/business-icons/left-quote.svg" alt=""
+                                         src="/assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
                                     <div>
                                         <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Cras a
@@ -685,7 +685,7 @@
                             <div class="py-5 px-lg-5">
                                 <div class="testimonial testimonial-style-2 px-4 mx-xl-5 my-3 text-center">
                                     <img width="40" height="40" class="d-inline-block"
-                                         src="assets/img/business-icons/left-quote.svg" alt=""
+                                         src="/assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
                                     <div>
                                         <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Lorem
