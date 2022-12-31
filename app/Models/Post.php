@@ -19,12 +19,20 @@ class Post extends Model
         'priority'
     ];
 
+    protected $appends = ['total_comments'];
+
+
     /**
      * @return HasMany
      */
     public function comments()
     {
         return $this->hasMany(Comment::class, 'post_id');
+    }
+
+    public function getTotalCommentsAttribute()
+    {
+        return $this->comments()->where('status',2)->count();
     }
 
     public function user()

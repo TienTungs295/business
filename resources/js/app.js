@@ -24,12 +24,12 @@ import Vue from 'vue';
 import router from './router';
 import LoadScript from 'vue-plugin-load-script';
 
-// import VueToastr from "vue-toastr";
+import VueToastr from "vue-toastr";
 import moment from 'moment';
 // import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem, BProgress} from 'bootstrap-vue';
 import store from './store';
 // import VueStarRating  from 'vue-star-rating';
-// import VueCookies from 'vue-cookies'
+import VueCookies from 'vue-cookies'
 import VueGallerySlideshow from 'vue-gallery-slideshow';
 
 
@@ -47,16 +47,16 @@ Vue.component('post-item-component', require('./components/posts/PostItemCompone
 // Vue.component('b-progress', BProgress);
 Vue.component('vue-gallery-slideshow', VueGallerySlideshow);
 
-// Vue.use(VueToastr, {
-//     defaultTimeout: 2000,
-//     defaultProgressBar: false,
-//     defaultPosition: "toast-top-right",
-//     defaultCloseOnHover: true,
-//     clickClose: true,
-//     defaultStyle: {"top": "50px"},
-// });
+Vue.use(VueToastr, {
+    defaultTimeout: 2000,
+    defaultProgressBar: false,
+    defaultPosition: "toast-top-right",
+    defaultCloseOnHover: true,
+    clickClose: true,
+    defaultStyle: {"top": "50px"},
+});
 
-// Vue.use(VueCookies, { expires: '60d'})
+Vue.use(VueCookies, { expires: '60d'})
 
 Vue.prototype.moment = moment;
 
@@ -105,25 +105,25 @@ Vue.filter('getYear', function (value) {
 });
 
 
-// Vue.filter('dateFormat', function (value) {
-//     if (value) {
-//         return moment(String(value)).format('DD/MM/YYYY')
-//     }
-// });
-//
-// Vue.filter('dateTimeFormat', function (value) {
-//     if (value) {
-//         return moment(String(value)).format('H:MM DD/MM/YYYY')
-//     }
-// });
-//
-// Vue.filter('commaFormat', function (value) {
-//     if (value != null) {
-//         value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//         value += ' đ';
-//         return value;
-//     }
-// });
+Vue.filter('dateFormat', function (value) {
+    if (value) {
+        return moment(String(value)).format('DD/MM/YYYY')
+    }
+});
+
+Vue.filter('dateTimeFormat', function (value) {
+    if (value) {
+        return moment(String(value)).format('H:MM DD/MM/YYYY')
+    }
+});
+
+Vue.filter('commaFormat', function (value) {
+    if (value != null) {
+        value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        value += ' đ';
+        return value;
+    }
+});
 
 Vue.use(LoadScript);
 

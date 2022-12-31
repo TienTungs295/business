@@ -8,6 +8,8 @@ use App\Http\Controllers\Rests\ProjectRestController;
 use App\Http\Controllers\Rests\UploadRestController;
 use App\Http\Controllers\Rests\CommentRestController;
 use App\Http\Controllers\Rests\PostRestController;
+use App\Http\Controllers\Rests\ProjectCategoryRestController;
+use App\Http\Controllers\Rests\PostCategoryRestController;
 use App\Http\Controllers\Rests\CustomerInfoRestController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -35,18 +37,22 @@ Route::group(['prefix' => 'project'], function () {
     Route::get('/detail', [ProjectRestController::class, 'detail']);
 });
 
-//Route::group(['prefix' => 'category'], function () {
-//    Route::get('/find-all', [CategoryRestController::class, 'findAll']);
-//    Route::get('/find-all-without-child', [CategoryRestController::class, 'findAllWithoutChild']);
-////    Route::get('/find-featured', [CategoryRestController::class, 'findFeatured']);
-//    Route::get('/find-top', [CategoryRestController::class, 'findTop']);
-//});
+
+Route::group(['prefix' => 'post-category'], function () {
+    Route::get('/find-all', [PostCategoryRestController::class, 'findAll']);
+});
+
 Route::group(['prefix' => 'post'], function () {
     Route::get('/find-all', [PostRestController::class, 'findAll']);
     Route::get('/detail', [PostRestController::class, 'detail']);
     Route::get('/related', [PostRestController::class, 'related']);
     Route::get('/recent', [PostRestController::class, 'recent']);
+    Route::get('/count-all', [PostRestController::class, 'countAll']);
 });
+Route::group(['prefix' => 'project-category'], function () {
+    Route::get('/find-all', [ProjectCategoryRestController::class, 'findAll']);
+});
+
 //
 //
 //Route::group(['prefix' => 'contact'], function () {

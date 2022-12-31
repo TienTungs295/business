@@ -18,6 +18,9 @@ class PostCategory extends Model
         'priority',
     ];
 
+    protected $appends = ['total_posts'];
+
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -34,6 +37,11 @@ class PostCategory extends Model
             'category_id',
             'post_id'
         );
+    }
+
+    public function getTotalPostsAttribute()
+    {
+        return $this->posts()->count();
     }
 
     protected static function boot()

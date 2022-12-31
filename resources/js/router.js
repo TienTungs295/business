@@ -9,6 +9,11 @@ const routes = [
         name: "home",
         component: () => import("./components/HomeComponent"),
     },
+    {
+        path: '/tin-tuc-su-kien',
+        name: "postList",
+        component: () => import("./components/posts/PostListComponent"),
+    },
 ];
 const router = new VueRouter({
     mode: 'history',

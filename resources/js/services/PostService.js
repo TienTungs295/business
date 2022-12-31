@@ -25,6 +25,11 @@ class PostService {
         if (id != undefined) url += "?id=" + id;
         return http.get(url, {alert: alert});
     }
+
+    countAll(alert) {
+        let url = PREFIX_URL + "count-all";
+        return http.get(url, {alert: alert});
+    };
 }
 
 export default new PostService();

@@ -16,7 +16,7 @@ class PostRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $category_id = $request->input("category_id");
-        $page_size = 3;
+        $page_size = 1;
         $query = Post::with("user");
         if (!is_null($category_id)) {
             try {
@@ -24,7 +24,13 @@ class PostRestController extends Controller
             } catch (ModelNotFoundException $e) {
                 $ajax_response->setMessage("Danh mục không tồn tại hoặc đã bị xóa");
             }
-            $query->where('category_id', $category_id);
+            if ($category_id != 0) {
+                $query->whereHas('postCategories', function ($query) use ($category_id) {
+                    $query->where('category_id', $category_id);
+                });
+            } else {
+                $query->whereDoesntHave('postCategories');
+            }
         }
         $posts = $query->orderBy("updated_at", "DESC")->paginate($page_size);
         return $ajax_response->setData($posts)->toApiResponse();
@@ -61,9 +67,17 @@ class PostRestController extends Controller
     {
         $id = $request->input("id");
         $ajax_response = new AjaxResponse();
-        $query = Post::where('id', '>', 1);
+        $query = Post::with("user");
         if (isset($id)) $query->where('id', '!=', $id);
         $posts = $query->orderBy('updated_at', 'DESC')->take(3)->get();
         return $ajax_response->setData($posts)->toApiResponse();
+    }
+
+    public function countAll(Request $request)
+    {
+        $total_posts = Post::count();
+        $total_uncategory_posts = Post::whereDoesntHave('postCategories')->count();
+        $ajax_response = new AjaxResponse();
+        return $ajax_response->setData(array("total_posts" => $total_posts, "total_uncategory_posts" => $total_uncategory_posts))->toApiResponse();
     }
 }

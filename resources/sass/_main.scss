@@ -69,3 +69,13 @@ body .body {
     opacity: inherit;
 }
 
+//Post
+.dmt-post-list{
+    .post-item{
+        img{
+            width: 100%;
+            aspect-ratio: 2 / 1;
+        }
+    }
+}
+
