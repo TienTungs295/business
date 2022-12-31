@@ -59,8 +59,9 @@ body .body {
         }
     }
 }
-.header-logo{
-    img{
+
+.header-logo {
+    img {
         display: inline;
     }
 }
@@ -70,12 +71,23 @@ body .body {
 }
 
 //Post
-.dmt-post-list{
-    .post-item{
-        img{
+.dmt-post-list {
+    .post-item {
+        img {
             width: 100%;
             aspect-ratio: 2 / 1;
         }
     }
 }
 
+.post-category {
+    .nav-list {
+        .nav-link.active-link {
+            color: $primary-color;
+        }
+    }
+}
+
+#header .header-nav.header-nav-links nav .nav-link.router-link-exact-active.router-link-active {
+    color: #d80d07;
+}

@@ -16,7 +16,9 @@ class PostRestController extends Controller
     {
         $ajax_response = new AjaxResponse();
         $category_id = $request->input("category_id");
-        $page_size = 1;
+        $page_size = 5;
+        $page_size_param = $request->input("page_size");
+        if (!is_null($page_size_param)) $page_size = $page_size_param;
         $query = Post::with("user");
         if (!is_null($category_id)) {
             try {

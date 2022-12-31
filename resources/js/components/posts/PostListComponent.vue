@@ -16,7 +16,7 @@
                             <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Tin tức & sự kiện</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
 				                        <svg class="svg-fill-color-dark mt-1 "
-                                              xmlns="http://www.w3.org/2000/svg"
+                                             xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                              viewBox="0 0 859.45 88.44" xml:space="preserve" preserveAspectRatio="none">
 				                            <polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
@@ -28,11 +28,12 @@
             </div>
         </section>
 
-        <div class="container pt-4 pb-5 my-5" >
+        <div class="container pt-4 pb-5 my-5">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
 
-                    <article class="mb-5 post-item" v-if="!isLoading && paginate.data.length" v-for="item in paginate.data">
+                    <article class="mb-5 post-item" v-if="!isLoading && paginate.data.length"
+                             v-for="item in paginate.data">
                         <div class="card bg-transparent border-0 custom-border-radius-1">
                             <div class="card-body p-0 z-index-1">
 
@@ -142,27 +143,28 @@
                         <div class="py-1 clearfix">
                             <hr class="my-2">
                         </div>
-                        <div class="px-3 mt-4">
+                        <div class="px-3 mt-4 post-category">
                             <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0">Danh mục bài
                                 viết</h3>
                             <ul class="nav nav-list flex-column mt-2 mb-0 p-relative right-9 ">
                                 <li class="nav-item">
                                     <a class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
+                                       :class="category_id == null ? 'active-link' :''"
                                        @click="changePostCategory(null)">
                                         Tất cả ({{ totalPosts }})
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a
-                                        class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
-                                        @click="changePostCategory(0)">
+                                    <a :class="category_id == 0 ? 'active-link' :''"
+                                       class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
+                                       @click="changePostCategory(0)">
                                         Không danh mục ({{ totalUncategoryPosts }})
                                     </a>
                                 </li>
                                 <li class="nav-item" v-for="item in postCategories">
-                                    <a
-                                        class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
-                                        @click="changePostCategory(item.id)">{{ item.name }}
+                                    <a :class="category_id == item.id ? 'active-link' :''"
+                                       class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
+                                       @click="changePostCategory(item.id)">{{ item.name }}
                                         ({{ item.total_posts }})
                                     </a>
                                 </li>
@@ -186,19 +188,25 @@
 <script>
 import PostService from "../../services/PostService";
 import PostCategoryService from "../../services/PostCategoryService";
+import {mapGetters} from "vuex";
 
 export default {
     name: "PostList",
     data() {
         return {
             paginate: {},
-            recentPosts: [],
             isLoading: true,
-            isRecentLoading: true,
-            totalPosts: 0,
-            totalUncategoryPosts: 0,
-            postCategories: [],
+            category_id: null,
+            isRecentLoading: true
         };
+    },
+    computed: {
+        ...mapGetters([
+            'totalPosts',
+            'totalUncategoryPosts',
+            'recentPosts',
+            'postCategories'
+        ])
     },
     methods: {
         changePage: function (page) {
@@ -225,11 +233,11 @@ export default {
     },
     mounted() {
         let page = this.$route.query.page || 1;
-        let category_id = this.$route.query.category_id;
+        this.category_id = this.$route.query.category_id;
         let param = {
             page: page,
         };
-        if (category_id != null) param.category_id = category_id;
+        if (this.category_id != null) param.category_id = this.category_id;
         PostService.findAll(param).then(response => {
             this.paginate = response || [];
             this.isLoading = false;
@@ -239,18 +247,20 @@ export default {
 
         PostService.countAll().then(response => {
             let resData = response || {}
-            this.totalPosts = resData.total_posts;
-            this.totalUncategoryPosts = resData.total_uncategory_posts;
+            this.$store.commit("setTotalPosts", resData.total_posts);
+            this.$store.commit("setTotalUncategoryPosts", resData.total_uncategory_posts);
         }).catch(e => {
         });
 
         PostCategoryService.findAll().then(response => {
-            this.postCategories = response || [];
+            let postCategories = response || [];
+            this.$store.commit("setPostCategories", postCategories);
         }).catch(e => {
         });
 
         PostService.recent().then(response => {
-            this.recentPosts = response || [];
+            let recentPosts = response || [];
+            this.$store.commit("setRecentPosts", recentPosts);
             this.isRecentLoading = false;
         }).catch(e => {
             this.isRecentLoading = false;

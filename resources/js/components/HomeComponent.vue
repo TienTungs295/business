@@ -298,7 +298,8 @@
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                             Xem thêm
-                            <img class="mgl-5" width="15" height="15" src="assets/img/business-icons/arrow-down.svg" alt=""
+                            <img class="mgl-5" width="15" height="15" src="assets/img/business-icons/arrow-down.svg"
+                                 alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
                         </a>
@@ -606,7 +607,8 @@
                                 <span class="text-color-dark font-weight-semibold">100%</span>
                             </div>
                             <div class="progress progress-xs progress-no-border-radius bg-color-light-scale-1 mb-4">
-                                <div class="progress-bar progress-bar-primary" data-appear-progress-animation="100%"></div>
+                                <div class="progress-bar progress-bar-primary"
+                                     data-appear-progress-animation="100%"></div>
                             </div>
                             <hr class="my-0">
                             <div class="progress-label d-flex justify-content-between pt-2">
@@ -614,7 +616,8 @@
                                 <span class="text-color-dark font-weight-semibold">100%</span>
                             </div>
                             <div class="progress progress-xs progress-no-border-radius bg-color-light-scale-1 mb-4">
-                                <div class="progress-bar progress-bar-primary" data-appear-progress-animation="100%"></div>
+                                <div class="progress-bar progress-bar-primary"
+                                     data-appear-progress-animation="100%"></div>
                             </div>
                         </div>
                     </div>
@@ -784,7 +787,7 @@ export default {
             this.isLoadingProject = false;
         });
 
-        PostService.findAll().then(response => {
+        PostService.findAll({page_size:3}).then(response => {
             this.posts = response.data || [];
             this.isLoadingBlog = false;
         }).catch(e => {
@@ -801,6 +804,16 @@ export default {
                 });
             }
         }, 6000);
+
+        const script_url = window.location.protocol + "//" + window.location.host + '/assets/js/theme.init.js';
+        const script = document.createElement("script");
+        script.setAttribute(
+            "src",
+            script_url
+        );
+        document.head.appendChild(script);
+
+
     },
     beforeDestroy() {
         clearInterval(this.timer);
