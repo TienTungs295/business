@@ -4,18 +4,19 @@
             <div class="container position-relative pt-5 pb-5-5 mt-5 mb-5">
                 <div class="row justify-content-end pt-1 mt-lg-5">
                     <div class="col-7 col-md-5 position-relative">
-                        <ul class="breadcrumb d-block ps-2 appear-animation"
-                            data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="200">
-                            <li><a href="demo-construction.html">Trang chủ</a></li>
-                            <li class="active">Tin tức & sự kiện</li>
+                        <ul class="breadcrumb d-block ps-2 ">
+                            <li>
+                                <router-link class="fz-12-i" :to="{ name: 'home'}">
+                                    Trang chủ
+                                </router-link>
+                            </li>
+                            <li class="active fz-12-i">Tin tức & sự kiện</li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3 appear-animation"
-                                  data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="800">Tin tức & sự kiện</span>
+                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Tin tức & sự kiện</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
-				                        <svg class="svg-fill-color-dark mt-1 appear-animation"
-                                             data-appear-animation="fadeInLeftShorterPlus"
-                                             data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
+				                        <svg class="svg-fill-color-dark mt-1 "
+                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                              viewBox="0 0 859.45 88.44" xml:space="preserve" preserveAspectRatio="none">
 				                            <polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
@@ -29,8 +30,7 @@
 
         <div class="container pt-4 pb-5 my-5" >
             <div class="row">
-                <div class="col-lg-8 mb-5 mb-lg-0 appear-animation" data-appear-animation="fadeInUpShorter"
-                     data-appear-animation-delay="1600">
+                <div class="col-lg-8 mb-5 mb-lg-0">
 
                     <article class="mb-5 post-item" v-if="!isLoading && paginate.data.length" v-for="item in paginate.data">
                         <div class="card bg-transparent border-0 custom-border-radius-1">
@@ -115,8 +115,7 @@
                     </ul>
 
                 </div>
-                <div class="blog-sidebar col-lg-4 pt-4 pt-lg-0 appear-animation" data-appear-animation="fadeInUpShorter"
-                     data-appear-animation-delay="1800">
+                <div class="blog-sidebar col-lg-4 pt-4 pt-lg-0">
                     <aside class="sidebar">
                         <div class="px-3 mt-4">
                             <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3">Bài viết
@@ -176,8 +175,7 @@
 
         <div class="position-relative pb-5 d-none d-xl-block">
             <div class="position-absolute transform3dy-n50 left-0">
-                <div class="appear-animation" data-appear-animation="fadeInRightShorterPlus"
-                     data-appear-animation-delay="1500" data-appear-animation-duration="1500ms">
+                <div>
                     <div class="custom-square-1 bg-primary mt-0 mb-5"></div>
                 </div>
             </div>

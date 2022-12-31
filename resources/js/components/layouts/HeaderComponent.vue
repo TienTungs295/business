@@ -20,9 +20,9 @@
                                     <nav class="collapse px-3-5">
                                         <ul class="nav nav-pills" id="mainNav">
                                             <li>
-                                                <a class="nav-link active" href="demo-construction.html">
+                                                <router-link class="nav-link" :to="{ name: 'home'}">
                                                     Trang chủ
-                                                </a>
+                                                </router-link>
                                             </li>
                                             <li>
                                                 <a class="nav-link" href="demo-construction-company.html">
@@ -46,9 +46,9 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a class="nav-link" href="demo-construction-blog.html">
+                                                <router-link class="nav-link" :to="{ name: 'postList'}">
                                                     Tin tức & sự kiện
-                                                </a>
+                                                </router-link>
                                             </li>
                                             <li>
                                                 <a class="nav-link" href="demo-construction-contact.html">
