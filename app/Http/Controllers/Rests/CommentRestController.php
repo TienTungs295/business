@@ -29,10 +29,10 @@ class CommentRestController extends Controller
                 'comment' => 'required|string|max:5000',
             ],
             [
-                'customer_name.required' => 'Họ & tên không được phép bỏ trống',
+                'customer_name.required' => 'Họ và tên không được phép bỏ trống',
                 'customer_email.required' => 'Email không được phép bỏ trống',
                 'comment.required' => 'Nội dung bình luận không được phép bỏ trống',
-                'customer_name.max' => 'Họ & tên không được phép vượt quá 200 ký tự',
+                'customer_name.max' => 'Họ và tên không được phép vượt quá 200 ký tự',
                 'customer_email.max' => 'Email không được phép vượt quá 200 ký tự',
                 'comment.max' => 'Nội dung bình luận không được phép vượt quá 5000 ký tự',
                 'customer_email.email' => 'Email không hợp lệ',
@@ -53,7 +53,7 @@ class CommentRestController extends Controller
         $comment->customer_email = $customer_email;
         $comment->post_id = $post_id;
         $comment->save();
-        return $ajax_response->setData($comment)->toApiResponse();
+        return $ajax_response->setData($comment)->setMessage("Bình luận thành công, vui lòng chờ xác nhận của quản trị viên")->toApiResponse();
     }
 
 
@@ -81,7 +81,6 @@ class CommentRestController extends Controller
         }
 
         //count total comments
-        $totalComments = Comment::where('post_id', $post_id)->where('status', 2)->count();
-        return $ajax_response->setData(array('data' => $comments, 'hasMorePage' => $hasMorePage, 'totalComments' => $totalComments))->toApiResponse();
+        return $ajax_response->setData(array('data' => $comments, 'hasMorePage' => $hasMorePage))->toApiResponse();
     }
 }

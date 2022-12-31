@@ -215,7 +215,7 @@ export default {
             this.processRedirect(queryParams);
         },
         setDefaultImg(event) {
-            event.target.src = window.location.protocol + "//" + window.location.host + '/assets/images/default/placeholder.png'
+            event.target.src = window.location.protocol + "//" + window.location.host + '/assets/img/business-image/default/placeholder.png'
         },
 
         changePostCategory(category_id) {

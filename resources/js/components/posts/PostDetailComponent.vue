@@ -53,23 +53,27 @@
                                         <h3 class="text-color-primary text-capitalize font-weight-bold text-5 m-0 mb-3">
                                             {{ post.total_comments }} bình luận cho bài viết</h3>
                                         <ul class="comments">
-                                            <li>
+                                            <li v-for="item in commentData.data">
                                                 <div class="comment">
                                                     <div
                                                         class="img-thumbnail img-thumbnail-no-borders d-none d-sm-block">
-                                                        <img class="avatar rounded-circle" alt=""
-                                                             src="/assets/img/avatars/avatar.jpg">
+                                                        <img class="avatar rounded-circle"
+                                                             src="/assets/img/business-image/default/default-user-image.png"
+                                                             alt="user"/>
                                                     </div>
                                                     <div class="comment-block">
                                                         <div class="comment-arrow"></div>
                                                         <span class="comment-by">
-																	<strong class="text-dark">John Doe</strong>
-																	<span class="float-end">
-																		<span> <a href="#"><i class="fas fa-reply"></i> Reply</a></span>
-																	</span>
+																	<strong
+                                                                        class="text-dark">{{
+                                                                            item.customer_name
+                                                                        }}</strong>
 																</span>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                                        <span class="date float-end">January 12, 2022 at 1:38 pm</span>
+                                                        <p>{{ item.comment }}</p>
+                                                        <span
+                                                            class="date float-end">{{
+                                                                item.created_at| dateTimeFormat
+                                                            }}</span>
                                                     </div>
                                                 </div>
                                             </li>
@@ -91,7 +95,9 @@
                                                                class="form-control py-3 px-3 border-0 box-shadow-none"
                                                                name="name" id="name">
                                                         <div class="invalid-feedback" v-if="errors.customer_name">
-                                                            <span v-for="error in errors.customer_name" class="d-block">{{ error }}</span>
+                                                            <span v-for="error in errors.customer_name" class="d-block">{{
+                                                                    error
+                                                                }}</span>
                                                         </div>
                                                     </div>
                                                     <div class="form-group col-lg-6">
@@ -103,7 +109,8 @@
                                                                class="form-control py-3 px-3 border-0 box-shadow-none"
                                                                name="email" id="email">
                                                         <div class="invalid-feedback" v-if="errors.customer_email">
-                                                            <span v-for="error in errors.customer_email" class="d-block">{{ error }}</span>
+                                                            <span v-for="error in errors.customer_email"
+                                                                  class="d-block">{{ error }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -117,7 +124,8 @@
                                                                   class="form-control p-3 border-0 box-shadow-none"
                                                                   name="message" id="message"></textarea>
                                                         <div class="invalid-feedback" v-if="errors.comment">
-                                                            <span v-for="error in errors.comment" class="d-block">{{ error }}</span>
+                                                            <span v-for="error in errors.comment"
+                                                                  class="d-block">{{ error }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -214,7 +222,13 @@ export default {
             isLoading: true,
             isRecentLoading: true,
             comment: {},
+            comments: {},
+            isLoadingComment: true,
             errors: {},
+            commentData: {
+                data: [],
+                hasMorePage: false
+            }
         };
     },
     computed: {
@@ -227,7 +241,7 @@ export default {
     },
     methods: {
         setDefaultImg(event) {
-            event.target.src = window.location.protocol + "//" + window.location.host + '/assets/images/default/placeholder.png'
+            event.target.src = window.location.protocol + "//" + window.location.host + '/assets/img/business-image/default/placeholder.png'
         },
         changePostCategory(category_id) {
             let queryParams = {};
@@ -241,9 +255,9 @@ export default {
         },
         sendComment() {
             this.comment.post_id = this.post.id;
-            CommentService.save(this.comment).then(response => {
-                this.errors={};
-                this.comment={};
+            CommentService.save(this.comment, true).then(response => {
+                this.errors = {};
+                this.comment = {};
             }).catch(response => {
                 this.errors = response.errors || {};
             });
@@ -279,6 +293,13 @@ export default {
             let postCategories = response || [];
             this.$store.commit("setPostCategories", postCategories);
         }).catch(e => {
+        });
+
+        CommentService.findByPost({post_id: this.$route.params.id}).then(response => {
+            this.commentData = response || {};
+            this.isLoadingComment = false;
+        }).catch(response => {
+            this.isLoadingComment = false;
         });
     }
 }
