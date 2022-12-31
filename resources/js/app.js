@@ -112,7 +112,7 @@ Vue.filter('dateFormat', function (value) {
 
 Vue.filter('dateTimeFormat', function (value) {
     if (value) {
-        return moment(String(value)).format('H:MM DD/MM/YYYY')
+        return moment(String(value)).format('H:MM:ss DD/MM/YYYY')
     }
 });
 

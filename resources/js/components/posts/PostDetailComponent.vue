@@ -79,6 +79,15 @@
                                             </li>
                                         </ul>
 
+                                        <div class="text-center pdt-25" v-if="commentData.hasMorePage && !isLoadingComment">
+                                            <a @click="paginate()"
+                                               class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2">
+                                                Xem thêm
+                                                <img class="mgl-5" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
+                                                     alt="DMT button"/>
+                                            </a>
+                                        </div>
+
                                         <h3 class="text-color-primary text-capitalize font-weight-bold text-5 m-0 mb-3 mt-5">
                                             Để lại bình luận</h3>
 
@@ -144,6 +153,8 @@
                             </div>
                         </div>
                     </article>
+
+
 
                 </div>
                 <div class="blog-sidebar col-lg-4 pt-4 pt-lg-0">
@@ -261,7 +272,21 @@ export default {
             }).catch(response => {
                 this.errors = response.errors || {};
             });
-        }
+        },
+        paginate() {
+            this.isLoadingComment = true;
+            let last_id = null;
+            if (this.commentData.data.length > 0) last_id = this.commentData.data[this.commentData.data.length - 1].id;
+            CommentService.findByPost({post_id: this.post.id, last_id: last_id}).then(response => {
+                let resData = response || {};
+                let comments = resData.data || [];
+                this.commentData.data = this.commentData.data.concat(comments);
+                this.commentData.hasMorePage = resData.hasMorePage;
+                this.isLoadingComment = false;
+            }).catch(e => {
+                this.isLoadingComment = false;
+            });
+        },
     },
     mounted() {
         PostService.detail(this.$route.params.id).then(response => {

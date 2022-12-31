@@ -59,7 +59,7 @@ class CommentRestController extends Controller
 
     public function findByPost(Request $request)
     {
-        $page_size = 12;
+        $page_size = 10;
         $hasMorePage = false;
         $last_id = $request->input("last_id");
         $ajax_response = new AjaxResponse();
@@ -73,7 +73,7 @@ class CommentRestController extends Controller
         //paginate comments
         $query = Comment::where('post_id', $post_id)->where('status', 2);
         if (!is_null($last_id)) $query->where('id', '<', $last_id);
-        $query->orderBy("created_at", "DESC");
+        $query->orderBy("id", "DESC");
         $comments = $query->take($page_size + 1)->get()->toArray();
         if (sizeof($comments) > $page_size) {
             $hasMorePage = true;
