@@ -219,7 +219,7 @@
                 'table paste'
             ],
             toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | ' +
-                'bullist numlist outdent indent | link image | preview media fullscreen | ' +
+                'outdent indent | link image | preview media fullscreen | ' +
                 'forecolor backcolor emoticons',
             menubar: 'file edit insert format table',
             paste_as_text: true,
@@ -248,7 +248,7 @@
 
                 input.click();
             },
-            content_style: 'body {  font-family: Roboto, sans-serif; font-size:14px }'
+            content_style: 'body {  font-family: Roboto, sans-serif; font-size:14px } p {margin-bottom: 2px; margin-top: 0}'
         });
     </script>
 @endsection

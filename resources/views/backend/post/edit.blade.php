@@ -165,6 +165,7 @@
             image_title: true,
             automatic_uploads: true,
             file_picker_types: 'image',
+            content_style: "p {margin: 0}",
             file_picker_callback: function (cb, value, meta) {
                 var input = document.createElement('input');
                 input.setAttribute('type', 'file');
@@ -187,7 +188,7 @@
 
                 input.click();
             },
-            content_style: 'body {  font-family: Roboto, sans-serif; font-size:14px }'
+            content_style: 'body {  font-family: Roboto, sans-serif; font-size:14px; } p {margin-bottom: 2px; margin-top: 0}'
         });
     </script>
 @endsection

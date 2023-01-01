@@ -60,7 +60,7 @@
                     <div class="text-center text-sm-start mb-4 mb-sm-0">
                         <p class="font-weight-bold line-height-1 text-color-dark fz-22">{{project.name}}</p>
                     </div>
-                    <p class="text-3-5 mb-4" v-if="project" v-html="project.content"></p>
+                    <p class="text-3-5 mb-4 content-wrapper" v-if="project" v-html="project.content"></p>
                 </div>
             </div>
         </div>
