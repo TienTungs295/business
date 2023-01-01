@@ -35,6 +35,7 @@ import VueGallerySlideshow from 'vue-gallery-slideshow';
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
 Vue.component('footer-component', require('./components/layouts/FooterComponent').default);
 Vue.component('post-item-component', require('./components/posts/PostItemComponent').default);
+Vue.component('loading-component', require('./components/common/LoadingComponent').default);
 // Vue.component('b-tabs', BTabs);
 // Vue.component('b-tab', BTab);
 // Vue.component('b-modal', BModal);

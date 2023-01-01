@@ -1,71 +1,107 @@
 <template>
     <div class="d-flex-center loading-wrapper" v-if="loading" :class="center ?'center-loading':''">
-        <div class="loadingio-spinner-ripple-ikacqqmjs2n" >
-            <div class="ldio-xwg8kc27gf">
-                <div></div>
-                <div></div>
-            </div>
-        </div>
+        <div class="loadingio-spinner-double-ring-4szlxkw6kod"><div class="ldio-a0x39i9c6fb">
+            <div></div>
+            <div></div>
+            <div><div></div></div>
+            <div><div></div></div>
+        </div></div>
     </div>
 </template>
 
-<style lang="css" scoped>
-@keyframes ldio-xwg8kc27gf {
-    0% {
-        top: 47px;
-        left: 47px;
-        width: 0;
-        height: 0;
-        opacity: 1;
-    }
-    100% {
-        top: 8.5px;
-        left: 8.5px;
-        width: 77px;
-        height: 77px;
-        opacity: 0;
-    }
+<style  lang="css" scoped>
+@keyframes ldio-a0x39i9c6fb {
+    0% { transform: rotate(0) }
+    100% { transform: rotate(360deg) }
 }
-
-.ldio-xwg8kc27gf div {
+.ldio-a0x39i9c6fb div { box-sizing: border-box!important }
+.ldio-a0x39i9c6fb > div {
     position: absolute;
-    border-width: 3px;
-    border-style: solid;
-    opacity: 1;
+    width: 74px;
+    height: 74px;
+    top: 13px;
+    left: 13px;
     border-radius: 50%;
-    animation: ldio-xwg8kc27gf 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    border: 4px solid #000;
+    border-color: #d80d07 transparent #d80d07 transparent;
+    animation: ldio-a0x39i9c6fb 0.9090909090909091s linear infinite;
 }
 
-.ldio-xwg8kc27gf div:nth-child(1) {
-    border-color: #e90c59;
-    animation-delay: 0s;
+.ldio-a0x39i9c6fb > div:nth-child(2), .ldio-a0x39i9c6fb > div:nth-child(4) {
+    width: 64px;
+    height: 64px;
+    top: 18px;
+    left: 18px;
+    animation: ldio-a0x39i9c6fb 0.9090909090909091s linear infinite reverse;
+}
+.ldio-a0x39i9c6fb > div:nth-child(2) {
+    border-color: transparent #1246ab transparent #1246ab
+}
+.ldio-a0x39i9c6fb > div:nth-child(3) { border-color: transparent }
+.ldio-a0x39i9c6fb > div:nth-child(3) div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+}
+.ldio-a0x39i9c6fb > div:nth-child(3) div:before, .ldio-a0x39i9c6fb > div:nth-child(3) div:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: -4px;
+    left: 31px;
+    background: #d80d07;
+    border-radius: 50%;
+    box-shadow: 0 70px 0 0 #d80d07;
+}
+.ldio-a0x39i9c6fb > div:nth-child(3) div:after {
+    left: -4px;
+    top: 31px;
+    box-shadow: 70px 0 0 0 #d80d07;
 }
 
-.ldio-xwg8kc27gf div:nth-child(2) {
-    border-color: #339059;
-    animation-delay: -0.5s;
+.ldio-a0x39i9c6fb > div:nth-child(4) { border-color: transparent; }
+.ldio-a0x39i9c6fb > div:nth-child(4) div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
 }
-
-.loadingio-spinner-ripple-ikacqqmjs2n {
-    width: 100px;
-    height: 100px;
+.ldio-a0x39i9c6fb > div:nth-child(4) div:before, .ldio-a0x39i9c6fb > div:nth-child(4) div:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: -4px;
+    left: 26px;
+    background: #1246ab;
+    border-radius: 50%;
+    box-shadow: 0 60px 0 0 #1246ab;
+}
+.ldio-a0x39i9c6fb > div:nth-child(4) div:after {
+    left: -4px;
+    top: 26px;
+    box-shadow: 60px 0 0 0 #1246ab;
+}
+.loadingio-spinner-double-ring-4szlxkw6kod {
+    width: 80px;
+    height: 80px;
     display: inline-block;
     overflow: hidden;
-    background: transparent;
+    background: #ffffff;
 }
-
-.ldio-xwg8kc27gf {
+.ldio-a0x39i9c6fb {
     width: 100%;
     height: 100%;
     position: relative;
-    transform: translateZ(0) scale(1);
+    transform: translateZ(0) scale(0.8);
     backface-visibility: hidden;
-    transform-origin: 0 0;
+    transform-origin: 0 0; /* see note above */
 }
-
-.ldio-xwg8kc27gf div {
-    box-sizing: content-box;
-}
+.ldio-a0x39i9c6fb div { box-sizing: content-box; }
 
 .center-loading {
     z-index: 200;

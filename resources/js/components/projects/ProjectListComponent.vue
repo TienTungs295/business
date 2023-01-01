@@ -27,10 +27,9 @@
                 </div>
             </div>
         </section>
-
         <div class="container pb-5 pb-sm-0 my-5">
             <div class="row">
-                <div class="col-12" >
+                <div class="col-12 position-relative" >
                     <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center justify-content-md-start text-3-5 pb-2 mb-4">
                         <li class="nav-item cursor-pointer" :class="category_id == null ? 'active' : ''"
                             @click="findProjects(null,true)">
@@ -45,7 +44,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div>
+                    <div v-if="projectPaginate.data.length && !isLoading">
                         <div class="row sort-destination g-4 px-0">
                             <div class="col-sm-6 col-md-4 isotope-item" v-for="item in projectPaginate.data">
                                 <div class="portfolio-item">
@@ -75,6 +74,8 @@
                             </div>
                         </div>
                     </div>
+                    <loading-component v-bind:loading="isLoading"></loading-component>
+
                     <div class="text-center pdt-25" v-if="projectPaginate.next_page_url != null && !isLoading">
                         <a @click="loadMore()"
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-2">
@@ -126,7 +127,7 @@ export default {
     methods: {
         findProjects(category_id, isChangeCategory) {
             this.category_id = category_id;
-            if (jQuery.isEmptyObject(this.projectPaginate) && !isChangeCategory) this.isLoading = true;
+            if (this.projectPaginate.data.length == 0 || isChangeCategory) this.isLoading = true;
             let param = {};
             if (category_id != undefined && category_id != null) param.category_id = category_id;
             ProjectService.findAll(param).then(response => {
