@@ -29,6 +29,11 @@ const routes = [
         name: "projectDetail",
         component: () => import("./components/projects/ProjectDetailComponent"),
     },
+    {
+        path: '/lien-he',
+        name: "contactUs",
+        component: () => import("./components/ContactUsComponent"),
+    }
 ];
 const router = new VueRouter({
     mode: 'history',

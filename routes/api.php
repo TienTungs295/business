@@ -54,11 +54,11 @@ Route::group(['prefix' => 'project-category'], function () {
     Route::get('/find-all', [ProjectCategoryRestController::class, 'findAll']);
 });
 
-//
-//
-//Route::group(['prefix' => 'contact'], function () {
-//    Route::post('/save', [CustomerInfoRestController::class, 'store']);
-//});
+
+Route::group(['prefix' => 'contact'], function () {
+    Route::post('/save', [CustomerInfoRestController::class, 'store']);
+    Route::post('/saveInfo', [CustomerInfoRestController::class, 'storeInfo']);
+});
 
 Route::post('/tai-anh', ['as' => 'uploadImage', UploadRestController::class, 'storeImage']);
 

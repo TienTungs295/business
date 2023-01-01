@@ -51,9 +51,9 @@
                                                 </router-link>
                                             </li>
                                             <li>
-                                                <a class="nav-link" href="demo-construction-contact.html">
+                                                <router-link class="nav-link" :to="{ name: 'contactUs'}">
                                                     Liên hệ
-                                                </a>
+                                                </router-link>
                                             </li>
                                         </ul>
                                     </nav>
