@@ -67,8 +67,7 @@
 
         <div class="position-relative pb-5 d-sm-none d-xl-block">
             <div class="position-absolute transform3dy-n50 left-0">
-                <div class="appear-animation" data-appear-animation="fadeInRightShorterPlus"
-                     data-appear-animation-delay="1500" data-appear-animation-duration="1500ms">
+                <div>
                     <div class="custom-square-1 bg-primary mt-0 mb-5"></div>
                 </div>
             </div>

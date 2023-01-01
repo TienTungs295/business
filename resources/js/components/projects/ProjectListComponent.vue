@@ -30,7 +30,7 @@
 
         <div class="container pb-5 pb-sm-0 my-5">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" >
                     <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center justify-content-md-start text-3-5 pb-2 mb-4">
                         <li class="nav-item cursor-pointer" :class="category_id == null ? 'active' : ''"
                             @click="findProjects(null,true)">
@@ -82,6 +82,11 @@
                             <img class="mgl-5" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
                                  alt="DMT button"/>
                         </a>
+                    </div>
+                </div>
+                <div class="col-12" v-if="projectPaginate.data.length ==0 && !isLoading">
+                    <div class="row text-center">
+                        <span class="fz-16">Không có dữ liệu</span>
                     </div>
                 </div>
             </div>

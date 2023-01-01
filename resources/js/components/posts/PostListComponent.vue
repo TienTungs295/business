@@ -1,5 +1,5 @@
 <template>
-    <div class="dmt-post-list">
+    <div class="dmt-post">
         <section class="section section-height-3 border-0 m-0">
             <div class="container position-relative pt-5 pb-5-5 mt-5 mb-5">
                 <div class="row justify-content-end pt-1 mt-lg-5">
@@ -59,18 +59,18 @@
                                             {{ item.name }}
                                         </router-link>
                                     </h4>
-                                    <a href="demo-construction-blog-post.html"
-                                       class="text-decoration-none custom-link-hover-effects">
-												<span
-                                                    class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
+                                    <router-link
+                                        class="text-decoration-none custom-link-hover-effects"
+                                        :to="{ name: 'postDetail', params: { slug: item.slug,id:item.id }}">
+                                       	<span
+                                            class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
 													Xem thêm
 													<img width="27" height="27"
                                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                                         alt="" data-icon
-                                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"
+                                                         alt="DMT Image"
                                                          style="width: 27px;"/>
 												</span>
-                                    </a>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
