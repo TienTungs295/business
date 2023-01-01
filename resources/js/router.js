@@ -33,6 +33,11 @@ const routes = [
         path: '/lien-he',
         name: "contactUs",
         component: () => import("./components/ContactUsComponent"),
+    },
+    {
+        path: '/ve-chung-toi',
+        name: "aboutUs",
+        component: () => import("./components/AboutUsComponent"),
     }
 ];
 const router = new VueRouter({

@@ -136,14 +136,14 @@
                         Với đội ngũ nhân viên giàu kinh nghiệm, năng động và sáng tạo ,trong thời gian qua chúng tôi đã
                         hoàn thành thiết kế nhiều công trình có giá trị...
                     </p>
-                    <a href="demo-construction-company.html"
+                    <router-link :to="{ name: 'aboutUs'}"
                        class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">
                         Xem thêm
                         <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
                              data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
