@@ -36,24 +36,23 @@
                                                 </router-link>
                                             </li>
                                             <li class="dropdown">
-                                                <a class="nav-link dropdown-toggle"
-                                                   href="demo-construction-services.html">
+                                                <router-link class="nav-link" :to="{ name: 'service'}">
                                                     Dịch vụ
-                                                </a>
-                                                <ul class="dropdown-menu">
-                                                    <li><a class="dropdown-item"
-                                                           href="demo-construction-services-detail.html">Pre-Construction</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item"
-                                                           href="demo-construction-services-detail.html">General
-                                                        Construction</a></li>
-                                                    <li><a class="dropdown-item"
-                                                           href="demo-construction-services-detail.html">Plumbing</a>
-                                                    </li>
-                                                    <li><a class="dropdown-item"
-                                                           href="demo-construction-services-detail.html">Painting</a>
-                                                    </li>
-                                                </ul>
+                                                </router-link>
+<!--                                                <ul class="dropdown-menu">-->
+<!--                                                    <li><a class="dropdown-item"-->
+<!--                                                           href="demo-construction-services-detail.html">Pre-Construction</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li><a class="dropdown-item"-->
+<!--                                                           href="demo-construction-services-detail.html">General-->
+<!--                                                        Construction</a></li>-->
+<!--                                                    <li><a class="dropdown-item"-->
+<!--                                                           href="demo-construction-services-detail.html">Plumbing</a>-->
+<!--                                                    </li>-->
+<!--                                                    <li><a class="dropdown-item"-->
+<!--                                                           href="demo-construction-services-detail.html">Painting</a>-->
+<!--                                                    </li>-->
+<!--                                                </ul>-->
                                             </li>
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'projectList'}">
