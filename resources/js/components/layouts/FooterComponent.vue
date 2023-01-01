@@ -10,7 +10,7 @@
                     </a>
                 </div>
                 <div class="col-lg-4 offset-lg-1">
-                    <h4 class="text-color-dark font-weight-bold mb-4-5">Navigation</h4>
+                    <h4 class="text-color-dark font-weight-bold mb-4-5">Cung cấp</h4>
                     <ul class="list list-unstyled columns-lg-2">
                         <li>
                             <a href="demo-construction.html" class="text-color-hover-primary">
@@ -45,13 +45,13 @@
                     </ul>
                 </div>
                 <div class="col-lg-5">
-                    <h4 class="text-color-dark font-weight-bold mb-4-5">Newsletter</h4>
+                    <h4 class="text-color-dark font-weight-bold mb-4-5">Email liên hệ</h4>
                     <div class="newsletter">
                         <div class="alert alert-success d-none" id="newsletterSuccess">
                             <strong>Success!</strong> You've been added to our email list.
                         </div>
                         <div class="alert alert-danger d-none" id="newsletterError"></div>
-                        <form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST" class="mb-4-5">
+                        <div id="newsletterForm" action="php/newsletter-subscribe.php" method="POST" class="mb-4-5">
                             <div class="input-group">
                                 <input class="form-control border-0" placeholder="Email Address..."
                                        name="newsletterEmail" id="newsletterEmail" type="email">
@@ -62,7 +62,7 @@
                                          style="width: 27px;"/>
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <ul class="list list-unstyled list-inline">
                         <li class="list-inline-item d-inline-flex align-items-center">
@@ -89,7 +89,7 @@
             <div class="footer-copyright bg-transparent mt-5-5">
                 <div class="row pb-5">
                     <div class="col text-center mb-5">
-                        <p class="text-color-grey text-3 mb-3">DMT Design © 2023. All Rights Reserved.</p>
+                        <p class="text-color-grey text-3 mb-3">DMT © 2023. All Rights Reserved.</p>
                         <ul class="footer-social-icons social-icons social-icons-clean social-icons-medium mb-5">
                             <li class="social-icons-instagram">
                                 <a href="http://www.instagram.com/" target="_blank" title="Instagram"><i
@@ -106,8 +106,9 @@
                         </ul>
                     </div>
                 </div>
-                <p class="text-color-grey text-3 mb-3 text-center">Phát triển và vận hành bởi <a
-                    href="https://www.facebook.com/tientung2206">Tien Luu</a>.</p>
+                <p class="text-color-grey text-3 mb-3 text-center" id="developer">Phát triển và vận hành bởi <a
+                    href="https://www.facebook.com/tientung2206">Tien
+                    Luu</a>.</p>
             </div>
 
         </div>

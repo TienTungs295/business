@@ -741,6 +741,7 @@
 <script>
 import ProjectService from "../services/ProjectService";
 import PostService from "../services/PostService";
+import ProjectCategoryService from "../services/ProjectCategoryService";
 
 
 export default {
@@ -813,7 +814,18 @@ export default {
         );
         document.head.appendChild(script);
 
-
+        setTimeout(() => {
+            ProjectCategoryService.findAll().then(response => {
+                let projectCategories = response || [];
+                this.$store.commit("setProjectCategories", projectCategories);
+            }).catch(e => {
+            });
+            ProjectService.findAll().then(response => {
+                let projectPaginate = response || {};
+                this.$store.commit("setProjectPaginate", projectPaginate);
+            }).catch(e => {
+            });
+        }, 5000);
     },
     beforeDestroy() {
         clearInterval(this.timer);

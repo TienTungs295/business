@@ -219,8 +219,17 @@ body .body {
 }
 
 //MENU
-#mainNav{
-    li a.nav-link{
+#mainNav {
+    li a.nav-link {
         text-transform: uppercase !important;
+    }
+}
+
+#developer {
+    a {
+        color: #444 !important;
+        &:hover {
+            text-decoration: underline !important;
+        }
     }
 }
