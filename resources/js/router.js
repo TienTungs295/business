@@ -19,6 +19,16 @@ const routes = [
         name: "postDetail",
         component: () => import("./components/posts/PostDetailComponent"),
     },
+    {
+        path: '/du-an',
+        name: "projectList",
+        component: () => import("./components/projects/ProjectListComponent"),
+    },
+    {
+        path: '/chi-tiet-du-an/:slug/:id',
+        name: "projectDetail",
+        component: () => import("./components/projects/ProjectDetailComponent"),
+    },
 ];
 const router = new VueRouter({
     mode: 'history',

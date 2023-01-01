@@ -8,14 +8,20 @@ export default new Vuex.Store({
             totalPosts: 0,
             totalUncategoryPosts: 0,
             recentPosts: [],
-            postCategories: []
+            postCategories: [],
+            projectPaginate: {
+                data: []
+            },
+            projectCategories: []
         }
     },
     getters: {
         totalPosts: state => state.object.totalPosts,
         totalUncategoryPosts: state => state.object.totalUncategoryPosts,
         recentPosts: state => state.object.recentPosts,
-        postCategories: state => state.object.postCategories
+        postCategories: state => state.object.postCategories,
+        projectPaginate: state => state.object.projectPaginate,
+        projectCategories: state => state.object.projectCategories
     },
     mutations: {
         setTotalPosts(state, newValue) {
@@ -29,6 +35,12 @@ export default new Vuex.Store({
         },
         setPostCategories(state, newValue) {
             state.object.postCategories = newValue;
+        },
+        setProjectPaginate(state, newValue) {
+            state.object.projectPaginate = newValue;
+        },
+        setProjectCategories(state, newValue) {
+            state.object.projectCategories = newValue;
         }
     }
 })

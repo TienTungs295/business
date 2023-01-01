@@ -35,7 +35,7 @@ class CreateBusinessTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('project_category_project', function (Blueprint $table) {
+        Schema::create('project_project_category', function (Blueprint $table) {
             $table->id();
             $table->integer('category_id')->unsigned()->index();
             $table->integer('project_id')->unsigned()->index();

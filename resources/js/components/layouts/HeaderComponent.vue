@@ -41,9 +41,9 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a class="nav-link" href="demo-construction-projects.html">
+                                                <router-link class="nav-link" :to="{ name: 'projectList'}">
                                                     Dự án
-                                                </a>
+                                                </router-link>
                                             </li>
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'postList'}">

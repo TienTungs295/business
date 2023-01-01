@@ -91,6 +91,14 @@ body .body {
 #header .header-nav.header-nav-links nav .nav-link.router-link-exact-active.router-link-active {
     color: #d80d07;
 }
+
 .invalid-feedback{
     font-size: 14px;
+}
+
+.dmt-portfolio{
+    .portfolio-item img{
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
 }

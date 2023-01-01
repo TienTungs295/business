@@ -1,17 +1,13 @@
 import http from "../http-common";
+import base from "../base";
 
 const PREFIX_URL = "/rest/project/"
 
 class ProjectService {
-    findAll(param, page, alert) {
+    findAll(param, alert) {
         let url = PREFIX_URL + "find-all";
-        if (page != undefined) url += "?page=" + page;
-        let config = {
-            alert: alert,
-            params: {}
-        }
-        if (param != null) config.params.param = JSON.stringify(param);
-        return http.get(url, config);
+        if (param != undefined) url = base.object2Param(url, param);
+        return http.get(url, alert);
     }
 
     findRandom(alert) {

@@ -38,8 +38,8 @@ class Project extends Model
     public function projectCategories()
     {
         return $this->belongsToMany(
-            Project::class,
-            'project_category_project',
+            ProjectCategory::class,
+            'project_project_category',
             'project_id',
             'category_id'
         );

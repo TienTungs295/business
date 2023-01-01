@@ -60,8 +60,6 @@ class CommentRestController extends Controller
     public function findByPost(Request $request)
     {
         $page_size = 10;
-        $hasMorePage = false;
-        $last_id = $request->input("last_id");
         $ajax_response = new AjaxResponse();
         $post_id = $request->input("post_id");
         try {
@@ -69,18 +67,8 @@ class CommentRestController extends Controller
         } catch (ModelNotFoundException $e) {
             return $ajax_response->setMessage("Bài viết không tồn tại hoặc đã bị xóa")->toApiResponse();
         }
-
         //paginate comments
-        $query = Comment::where('post_id', $post_id)->where('status', 2);
-        if (!is_null($last_id)) $query->where('id', '<', $last_id);
-        $query->orderBy("id", "DESC");
-        $comments = $query->take($page_size + 1)->get()->toArray();
-        if (sizeof($comments) > $page_size) {
-            $hasMorePage = true;
-            array_pop($comments);
-        }
-
-        //count total comments
-        return $ajax_response->setData(array('data' => $comments, 'hasMorePage' => $hasMorePage))->toApiResponse();
+        $comments = Comment::where('post_id', $post_id)->where('status', 2)->orderBy("id", "DESC")->simplePaginate($page_size);
+        return $ajax_response->setData($comments)->toApiResponse();
     }
 }

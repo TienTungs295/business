@@ -16,17 +16,22 @@ class ProjectRestController extends BaseCustomController
     public function findAll(Request $request)
     {
         $category_id = $request->input("category_id");
-        $page_size = $request->input('page_size');
-        if (is_null($page_size)) $page_size = 7;
+        $page_size = 12;
+        $page_size_param = $request->input("page_size");
+        if (!is_null($page_size_param)) $page_size = $page_size_param;
         $ajax_response = new AjaxResponse();
+        $query = Project::where('id', '>', 1);
         if (!is_null($category_id)) {
             try {
                 ProjectCategory::findOrFail($category_id);
             } catch (ModelNotFoundException $e) {
                 return $ajax_response->setMessage("Danh mục dự án không tồn tại hoặc đã bị xóa");
             }
+            $query->whereHas('projectCategories', function ($query2) use ($category_id) {
+                $query2->where('category_id', $category_id);
+            });
         }
-        $projects = Project::where('category_id', $category_id)->orderByRaw('ISNULL(priority), priority ASC')->orderBy("updated_at", "DESC")->simplePaginate($page_size);
+        $projects = $query->orderByRaw('ISNULL(priority), priority ASC')->orderBy("updated_at", "DESC")->simplePaginate($page_size);
         return $ajax_response->setData($projects)->toApiResponse();
     }
 
