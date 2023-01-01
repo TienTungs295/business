@@ -13,7 +13,7 @@
                             <li class="active fz-12-i">{{ post.name }}</li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">{{ post.name }}</span>
+                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Chi tiết bài viết</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
 				                        <svg class="svg-fill-color-dark mt-1 "
                                              xmlns="http://www.w3.org/2000/svg"
