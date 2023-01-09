@@ -566,16 +566,20 @@
                 </div>
                 <div class="row gy-5">
                     <div class="col-lg-6 text-center">
-                        <img src="/assets/img/business-image/people/Picture2.png" class="img-fluid"
+                        <img src="/assets/img/business-image/people/Picture2.png" class="img-fluid appear-animation"
+                             data-appear-animation="fadeInUpShorterPlus"
+                             data-appear-animation-delay="500"
                              alt="Director"/>
-                        <div class="testimonial-author text-start ps-3 ms-1 text-center">
+                        <div class="testimonial-author text-start ps-3 ms-1 text-center appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                             data-appear-animation-delay="550">
                             <strong class="text-4-5 negative-ls-1 text-111">NGÔ TRÍ LÊ MINH</strong>
                             <p class="text-color-default mb-0">Tổng giám đốc</p>
                         </div>
                     </div>
                     <div class="col-lg-6 pb-lg-5 ps-5">
                         <div class="fz-16">
-                            <ul style="list-style: disc outside;">
+                            <ul style="list-style: disc outside;" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                                data-appear-animation-delay="500">
                                 <li>
                                     Tư vấn thiết kế, bao gồm các lĩnh vực
                                     <ul class="pdl-20" style="list-style: circle outside;">
@@ -629,7 +633,7 @@
             <div class="row align-items-center text-center py-5 my-3">
                 <div class="col-md-4 align-items-center">
                     <h2 class="mgb-0 text-color-dark font-weight-bold text-7 line-height-1 appear-animation text-left"
-                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">Đối tác liên
+                        data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="200">Đối tác liên
                         kết</h2>
                 </div>
                 <div class="col-md-4 text-center">
