@@ -464,9 +464,7 @@
 									</g>
 								</svg>
 
-                        <div class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                             data-appear-animation-delay="300"
-                             data-appear-animation-duration="600ms">
+                        <div>
                             <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
                                 <ul class="diamonds mb-0">
                                     <li v-for="(item,i) in projectPaginate.data">
@@ -493,15 +491,15 @@
             <div class="row">
                 <div class="col-md-8 col-lg-6">
                     <p class="text-3-5 appear-animation mgb-20" data-appear-animation="fadeInUpShorterPlus"
-                       data-appear-animation-delay="600">Bằng việc áp dụng những kỹ thuật mới nhất vào sản xuất và quản
+                       data-appear-animation-delay="500">Bằng việc áp dụng những kỹ thuật mới nhất vào sản xuất và quản
                         lý chất lượng các công trình thiết kế và thi công xây dựng của DMT đã<span
                             class="highlight highlight-primary highlight-bg-opacity highlight-animated"
-                            data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100"
+                            data-appear-animation="highlight-animated-start" data-appear-animation-delay="1000"
                             data-plugin-options="{'flagClassOnly': true}">khẳng định niềm tin và chỗ đứng</span> trong
                         lòng Qúy khách hàng.</p>
                     <a href="demo-construction-projects.html"
                        class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
+                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="700">
                         Xem thêm
                         <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
                              data-icon
@@ -773,6 +771,7 @@ export default {
                     let image_url = window.location.protocol + "//" + window.location.host + '/uploads/images/' + project.image;
                     this.project_images.push(image_url);
                 }
+                console.log(this.project_images);
             }
         },
 
