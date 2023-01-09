@@ -137,8 +137,8 @@
                         hoàn thành thiết kế nhiều công trình có giá trị...
                     </p>
                     <router-link :to="{ name: 'aboutUs'}"
-                       class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">
+                                 class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
+                                 data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">
                         Xem thêm
                         <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
                              data-icon
@@ -172,14 +172,14 @@
                                     Tư vấn thiết kế cơ điện</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -194,14 +194,14 @@
                                     Tư vấn thiết kế quy hoạch công trình</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -216,14 +216,14 @@
                                     thiết kế kiến trúc và kết cấu công trình</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -238,14 +238,14 @@
                                     Tư vấn thiết kế hệ thống cấp thoát nước</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -260,14 +260,14 @@
                                     Tư vấn thiết kế hệ thống điều hòa không khí, thông gió</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -282,14 +282,14 @@
                                     Thiết kế xây dựng mô hình Bim – Revit</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -316,14 +316,14 @@
                                     Tư vấn chuyển giao công nghệ</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -339,14 +339,14 @@
                                     Quản lý dự án</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -362,14 +362,14 @@
                                     Giám sát thi công</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -385,14 +385,14 @@
                                     Thẩm định thiết kế, kiểm định chất lượng công trình</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <a href="demo-construction-services-detail.html"
-                                   class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
+                                <router-link :to="{ name: 'service'}"
+                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -468,7 +468,8 @@
                             <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
                                 <ul class="diamonds mb-0">
                                     <li v-for="(item,i) in projectPaginate.data">
-                                        <a class="diamond lightbox" data-plugin-options="{'type':'image'}"
+                                        <a class="diamond lightbox cursor-pointer"
+                                           data-plugin-options="{'type':'image'}"
                                            :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
                                            @click="showImage(i)">
                                             <div class="content">
@@ -480,7 +481,7 @@
                                 </ul>
                                 <div class="preview-image-wrapper">
                                     <vue-gallery-slideshow :images="project_images" :index="index"
-                                                           @close="index = null"></vue-gallery-slideshow>
+                                                           @close="onClose"></vue-gallery-slideshow>
                                 </div>
                             </div>
                         </div>
@@ -526,7 +527,8 @@
                     <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
                         <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
                              data-appear-animation-delay="300">
-                            <img width="60" height="50" src="/assets/img/business-icons/house-plant.svg" alt="" data-icon
+                            <img width="60" height="50" src="/assets/img/business-icons/house-plant.svg" alt=""
+                                 data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
                             <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240"
                                     data-append="+">0</strong>
@@ -568,15 +570,17 @@
                              data-appear-animation="fadeInUpShorterPlus"
                              data-appear-animation-delay="500"
                              alt="Director"/>
-                        <div class="testimonial-author text-start ps-3 ms-1 text-center appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                             data-appear-animation-delay="550">
+                        <div class="testimonial-author text-start ps-3 ms-1 text-center appear-animation"
+                             data-appear-animation="fadeInUpShorterPlus"
+                             data-appear-animation-delay="300">
                             <strong class="text-4-5 negative-ls-1 text-111">NGÔ TRÍ LÊ MINH</strong>
                             <p class="text-color-default mb-0">Tổng giám đốc</p>
                         </div>
                     </div>
                     <div class="col-lg-6 pb-lg-5 ps-5">
                         <div class="fz-16">
-                            <ul style="list-style: disc outside;" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                            <ul style="list-style: disc outside;" class="appear-animation"
+                                data-appear-animation="fadeInUpShorterPlus"
                                 data-appear-animation-delay="500">
                                 <li>
                                     Tư vấn thiết kế, bao gồm các lĩnh vực
@@ -673,14 +677,14 @@
                                          src="/assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
                                     <div>
-                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Cras a
-                                            elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo,
-                                            vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat.
-                                            Suspendisse hendrerit vehicula leo, vel efficitur fel.</p>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Dịch vụ
+                                            của công ty rất tốt, chất lượng công trình rất đảm bảo, đội ngũ thi công
+                                            chuyên nghiệp. Tôi sẽ tiếp tục sử dụng các dịch vụ của DMT trong thời gian
+                                            tới</p>
                                     </div>
                                     <div class="testimonial-author">
-                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- John Doe</strong>
-                                        <p class="text-color-dark mb-0">Porto Founder</p>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Anh Linh</strong>
+                                        <p class="text-color-dark mb-0">Kỹ sư xây dựng</p>
                                     </div>
                                 </div>
                             </div>
@@ -690,15 +694,14 @@
                                          src="/assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
                                     <div>
-                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Lorem
-                                            ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta,
-                                            tincidunt turpis at, interdum tortor. Suspendisse potenti. Lorem ipsum dolor
-                                            sit amet, consectetur adipiscing elit.</p>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">Tôi rất
+                                            hài lòng với phong cách làm việc chuyên nghiệp, thời gian chính xác. Cách bố
+                                            trí đường điện, nước, hệ thống điều hòa thông gió của các bạn rất thông minh
+                                            nên không gian vô cùng thoáng đãng.</p>
                                     </div>
                                     <div class="testimonial-author">
-                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- John
-                                            Smith</strong>
-                                        <p class="text-color-dark mb-0">Porto Founder</p>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Cô Lê</strong>
+                                        <p class="text-color-dark mb-0">Nhân viên văn phòng</p>
                                     </div>
                                 </div>
                             </div>
@@ -771,7 +774,6 @@ export default {
                     let image_url = window.location.protocol + "//" + window.location.host + '/uploads/images/' + project.image;
                     this.project_images.push(image_url);
                 }
-                console.log(this.project_images);
             }
         },
 
@@ -781,6 +783,10 @@ export default {
         },
         loadMoreService() {
             this.isLoadMoreService = true;
+        },
+        onClose() {
+            this.index = null;
+            this.project_images = [];
         }
     },
     mounted() {
@@ -791,7 +797,7 @@ export default {
             this.isLoadingProject = false;
         });
 
-        PostService.findAll({page_size:3}).then(response => {
+        PostService.findAll({page_size: 3}).then(response => {
             this.posts = response.data || [];
             this.isLoadingBlog = false;
         }).catch(e => {
