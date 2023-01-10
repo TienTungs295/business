@@ -57,8 +57,8 @@
                                        id="newsletterEmail"
                                        type="email">
                                 <button class="btn btn-primary px-3" type="button" @click="saveEmail(contact)">
-                                    <img width="27" height="27"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon
+                                    <img width="27" height="27" class="arrow-icon"
+                                         src="/assets/img/demos/construction/icons/arrow-right-white.svg" alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}"
                                          style="width: 27px;"/>
                                 </button>

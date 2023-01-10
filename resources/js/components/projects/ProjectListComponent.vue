@@ -80,7 +80,7 @@
                         <a @click="loadMore()"
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-2">
                             Xem thêm
-                            <img class="mgl-5" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
+                            <img class="mgl-5 arrow-icon-down" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
                                  alt="DMT button"/>
                         </a>
                     </div>
@@ -94,7 +94,7 @@
         </div>
 
 
-        <div class="position-relative pb-5 d-sm-none d-xl-block">
+        <div class="position-relative pb-5 d-sm-none d-xl-block pdt-60">
             <div class="position-absolute transform3dy-n50 left-0">
                 <div>
                     <div class="custom-square-1 bg-primary mt-0 mb-5"></div>

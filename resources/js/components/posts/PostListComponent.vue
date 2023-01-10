@@ -65,7 +65,7 @@
                                        	<span
                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
 													Xem thêm
-													<img width="27" height="27"
+													<img width="27" height="27" class="arrow-icon"
                                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                                          alt="DMT Image"
                                                          style="width: 27px;"/>

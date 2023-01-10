@@ -127,8 +127,8 @@
                                         @click="saveContact"
                                         class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2">
                                     Gửi
-                                    <img width="27" height="27"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""/>
+                                    <img width="27" height="27" class="arrow-icon"
+                                         src="/assets/img/demos/construction/icons/arrow-right-white.svg" alt=""/>
                                 </button>
                             </div>
                         </div>
@@ -143,7 +143,7 @@
             </div>
         </div>
 
-        <div class="position-relative pb-5 d-none d-xl-block">
+        <div class="position-relative pb-5 d-none d-xl-block pdt-60">
             <div class="position-absolute transform3dy-n50 left-0">
                 <div>
                     <div class="custom-square-1 bg-primary mt-0 mb-5"></div>

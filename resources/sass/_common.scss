@@ -117,7 +117,30 @@
 }
 
 .border-bottom-ccc {
-    border-bottom: 1px solid #ccc !important;
+    border-bottom: 1px solid #cccccc !important;
+}
+.dmt-transition{
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.arrow-icon,.arrow-icon-down{
+    margin-left: 5px;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+a, button{
+    &:hover{
+        .arrow-icon {
+            transform: translateX(5px);
+        }
+        .arrow-icon-down {
+            transform: translateY(1px);
+        }
+    }
 }
 
 @for $i from 0 through 20 {

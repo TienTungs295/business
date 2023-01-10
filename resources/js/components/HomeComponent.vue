@@ -140,7 +140,7 @@
                                  class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
                                  data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">
                         Xem thêm
-                        <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
+                        <img width="27" height="27" class="arrow-icon" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
                              data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                     </router-link>
@@ -175,7 +175,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -197,7 +197,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -219,7 +219,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -241,7 +241,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -263,7 +263,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -285,7 +285,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -298,7 +298,7 @@
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                             Xem thêm
-                            <img class="mgl-5" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
+                            <img class="mgl-5 arrow-icon-down" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
                                  alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
@@ -319,7 +319,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -342,7 +342,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -365,7 +365,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -388,7 +388,7 @@
                                 <router-link :to="{ name: 'service'}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
-                                    <img width="27" height="27"
+                                    <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
@@ -497,14 +497,14 @@
                             data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100"
                             data-plugin-options="{'flagClassOnly': true}">khẳng định niềm tin và chỗ đứng</span> trong
                         lòng Qúy khách hàng.</p>
-                    <a href="demo-construction-projects.html"
+                    <router-link :to="{ name: 'projectList'}"
                        class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="700">
                         Xem thêm
-                        <img width="27" height="27" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
+                        <img width="27" height="27" class="arrow-icon" src="/assets/img/demos/construction/icons/arrow-right-white.svg" alt=""
                              data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
-                    </a>
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -730,7 +730,7 @@
             </div>
         </div>
 
-        <div class="position-relative pb-5 d-sm-none d-xl-block">
+        <div class="position-relative pb-5 d-sm-none d-xl-block pdt-60">
             <div class="position-absolute transform3dy-n50 left-0">
                 <div class="appear-animation" data-appear-animation="fadeInRightShorterPlus"
                      data-appear-animation-delay="1500" data-appear-animation-duration="1500ms">

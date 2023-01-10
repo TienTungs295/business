@@ -65,7 +65,7 @@
             </div>
         </div>
 
-        <div class="position-relative pb-5 d-sm-none d-xl-block">
+        <div class="position-relative pb-5 d-sm-none d-xl-block pdt-60">
             <div class="position-absolute transform3dy-n50 left-0">
                 <div>
                     <div class="custom-square-1 bg-primary mt-0 mb-5"></div>
