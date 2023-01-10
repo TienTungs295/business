@@ -833,7 +833,7 @@ export default {
                 this.$store.commit("setProjectPaginate", projectPaginate);
             }).catch(e => {
             });
-        }, 5000);
+        }, 2000);
     },
     beforeDestroy() {
         clearInterval(this.timer);
