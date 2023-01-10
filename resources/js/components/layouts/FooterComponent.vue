@@ -47,15 +47,16 @@
                 <div class="col-lg-5">
                     <h4 class="text-color-dark font-weight-bold mb-4-5">Email liên hệ</h4>
                     <div class="newsletter">
-                        <div class="alert alert-success d-none" id="newsletterSuccess">
-                            <strong>Success!</strong> You've been added to our email list.
-                        </div>
                         <div class="alert alert-danger d-none" id="newsletterError"></div>
-                        <div id="newsletterForm" action="php/newsletter-subscribe.php" method="POST" class="mb-4-5">
+                        <div id="newsletterForm" class="mb-4-5">
                             <div class="input-group">
-                                <input class="form-control border-0" placeholder="Email Address..."
-                                       name="newsletterEmail" id="newsletterEmail" type="email">
-                                <button class="btn btn-primary px-3" type="submit">
+                                <input class="form-control border-0"
+                                       placeholder="Email của bạn"
+                                       v-model="contact.email"
+                                       name="newsletterEmail"
+                                       id="newsletterEmail"
+                                       type="email">
+                                <button class="btn btn-primary px-3" type="button" @click="saveEmail(contact)">
                                     <img width="27" height="27"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg" alt="" data-icon
                                          data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light'}"
@@ -122,12 +123,27 @@
 
 <script>
 
+import ContactService from "../../services/ContactService";
+
 export default {
     name: "Footer",
     data() {
-        return {};
+        return {
+            contact: {
+                showMessage: true
+            }
+        };
     },
     mounted() {
+    },
+    methods: {
+        saveEmail(contact) {
+            if (contact.email == null || contact.email == "" || contact.email == undefined) return;
+            ContactService.saveEmail(this.contact, true).then(response => {
+                this.contact = {};
+            }).catch(response => {
+            });
+        }
     }
 }
 </script>

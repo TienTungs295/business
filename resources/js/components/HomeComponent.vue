@@ -469,7 +469,6 @@
                                 <ul class="diamonds mb-0">
                                     <li v-for="(item,i) in projectPaginate.data">
                                         <a class="diamond lightbox cursor-pointer"
-                                           data-plugin-options="{'type':'image'}"
                                            :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
                                            @click="showImage(i)">
                                             <div class="content">
@@ -495,7 +494,7 @@
                        data-appear-animation-delay="500">Bằng việc áp dụng những kỹ thuật mới nhất vào sản xuất và quản
                         lý chất lượng các công trình thiết kế và thi công xây dựng của DMT đã<span
                             class="highlight highlight-primary highlight-bg-opacity highlight-animated"
-                            data-appear-animation="highlight-animated-start" data-appear-animation-delay="1000"
+                            data-appear-animation="highlight-animated-start" data-appear-animation-delay="1100"
                             data-plugin-options="{'flagClassOnly': true}">khẳng định niềm tin và chỗ đứng</span> trong
                         lòng Qúy khách hàng.</p>
                     <a href="demo-construction-projects.html"

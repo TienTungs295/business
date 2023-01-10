@@ -7,6 +7,11 @@ class ContactService {
         let url = PREFIX_URL + "save";
         return http.post(url, object, {alert: alert});
     }
+
+    saveEmail(object, alert) {
+        let url = PREFIX_URL + "save-email";
+        return http.post(url, object, {alert: alert});
+    }
 }
 
 export default new ContactService();

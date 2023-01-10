@@ -54,7 +54,7 @@ class CustomerInfoRestController extends BaseCustomController
         return $ajax_response->setMessage("Thành công")->setStatus(2)->toApiResponse();
     }
 
-    public function storeInfo(Request $request)
+    public function storeEmail(Request $request)
     {
         $ajax_response = new AjaxResponse();
         if ($request->post("showMessage")) {

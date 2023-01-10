@@ -57,7 +57,7 @@ Route::group(['prefix' => 'project-category'], function () {
 
 Route::group(['prefix' => 'contact'], function () {
     Route::post('/save', [CustomerInfoRestController::class, 'store']);
-    Route::post('/saveInfo', [CustomerInfoRestController::class, 'storeInfo']);
+    Route::post('/save-email', [CustomerInfoRestController::class, 'storeEmail']);
 });
 
 Route::post('/tai-anh', ['as' => 'uploadImage', UploadRestController::class, 'storeImage']);
