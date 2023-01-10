@@ -40,11 +40,11 @@
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="2200">Eastin Phát Linh Hạ Long</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Eastin Phát Linh Hạ Long</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-dark appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
-                                                 data-appear-animation-delay="1600" xmlns="http://www.w3.org/2000/svg"
+                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                  viewBox="0 0 859.45 88.44" xml:space="preserve"
                                                  preserveAspectRatio="none">
@@ -79,11 +79,11 @@
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="2200">Tổ hợp chung cư văn phòng TTTM NEWTACO</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tổ hợp chung cư văn phòng TTTM NEWTACO</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-dark appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
-                                                 data-appear-animation-delay="1600" xmlns="http://www.w3.org/2000/svg"
+                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                  viewBox="0 0 859.45 88.44" xml:space="preserve"
                                                  preserveAspectRatio="none">
