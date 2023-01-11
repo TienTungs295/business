@@ -509,40 +509,44 @@
             </div>
         </div>
 
-        <section class="parallax section section-text-light section-parallax section-center my-0 company-counter"
-                 data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}"
-                 data-image-src="/assets/img/business-image/background-3.jpg">
-            <div class="container position-relative">
-                <div class="row py-5 counters counters-text-light">
-                    <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                             data-appear-animation-delay="300">
-                            <img width="44" height="50" src="/assets/img/business-icons/buildings.svg" alt="" data-icon
-                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}"/>
-                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="1">0</strong>
-                            <label class="pt-2 text-4 opacity-7">Văn phòng</label>
+        <section>
+            <div class="parallax section section-text-light section-parallax section-center my-0 company-counter pd-0-i"
+                     data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}"
+                     data-image-src="/assets/img/business-image/he-thong-cap-nuoc-chung-cu-4-min.jpg">
+                <div class="__overlay">
+                </div>
+                <div class="container position-relative pdt-50 pdb-50">
+                    <div class="row py-5 counters counters-text-light">
+                        <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
+                            <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                                 data-appear-animation-delay="300">
+                                <img width="44" height="50" src="/assets/img/business-icons/buildings.svg" alt="" data-icon
+                                     data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}"/>
+                                <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="1">0</strong>
+                                <label class="pt-2 text-4 opacity-7">Văn phòng</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                             data-appear-animation-delay="300">
-                            <img width="60" height="50" src="/assets/img/business-icons/house-plant.svg" alt=""
-                                 data-icon
-                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
-                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240"
-                                    data-append="+">0</strong>
-                            <label class="pt-2 text-4 opacity-7">Dự án hoàn thành</label>
+                        <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
+                            <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                                 data-appear-animation-delay="300">
+                                <img width="60" height="50" src="/assets/img/business-icons/house-plant.svg" alt=""
+                                     data-icon
+                                     data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
+                                <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240"
+                                        data-append="+">0</strong>
+                                <label class="pt-2 text-4 opacity-7">Dự án hoàn thành</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
-                        <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                             data-appear-animation-delay="300">
-                            <img width="60" height="50" src="/assets/img/demos/law-firm/icons/satisfied-clients.svg"
-                                 alt="" data-icon
-                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
-                            <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="20"
-                                    data-append="+">0</strong>
-                            <label class="pt-2 text-4 opacity-7">Nhân viên</label>
+                        <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
+                            <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
+                                 data-appear-animation-delay="300">
+                                <img width="60" height="50" src="/assets/img/demos/law-firm/icons/satisfied-clients.svg"
+                                     alt="" data-icon
+                                     data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
+                                <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="20"
+                                        data-append="+">0</strong>
+                                <label class="pt-2 text-4 opacity-7">Nhân viên</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -682,7 +686,7 @@
                                             tới</p>
                                     </div>
                                     <div class="testimonial-author">
-                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Anh Linh</strong>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Anh Trung</strong>
                                         <p class="text-color-dark mb-0">Kỹ sư xây dựng</p>
                                     </div>
                                 </div>
@@ -699,7 +703,7 @@
                                             nên không gian vô cùng thoáng đãng.</p>
                                     </div>
                                     <div class="testimonial-author">
-                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Cô Lê</strong>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Chị Thúy</strong>
                                         <p class="text-color-dark mb-0">Nhân viên văn phòng</p>
                                     </div>
                                 </div>
