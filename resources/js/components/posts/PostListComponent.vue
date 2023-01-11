@@ -31,8 +31,8 @@
         <div class="container pt-4 pb-5 my-5">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
-
-                    <article class="mb-5 post-item" v-if="!isLoading && paginate.data.length"
+                    <loading-component v-bind:loading="isLoading"></loading-component>
+                    <article class="mb-5 post-item position-relative" v-if="!isLoading && paginate.data.length"
                              v-for="item in paginate.data">
                         <div class="card bg-transparent border-0 custom-border-radius-1">
                             <div class="card-body p-0 z-index-1">

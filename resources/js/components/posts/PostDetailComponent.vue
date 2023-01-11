@@ -30,14 +30,14 @@
         <div class="container pt-4 pb-5 my-5">
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
-
+                    <loading-component v-bind:loading="isLoading"></loading-component>
                     <article>
                         <div class="card border-0">
                             <div class="card-body z-index-1 p-0">
-                                <p class="text-uppercase text-1 mb-3 text-color-default fz-12">
+                                <p class="text-uppercase text-1 mb-3 text-color-default fz-12" v-if="post != null">
                                     <time>{{ post.updated_at | dateFormat }}</time>
                                     <span class="opacity-3 d-inline-block px-2">|</span>
-                                    {{ post.total_comments }} Bình luận
+                                    <span v-if="post.total_comments != null">{{ post.total_comments }} Bình luận</span>
                                     <span v-if="post.user != null" class="opacity-3 d-inline-block px-2">|</span>
                                     <span v-if="post.user != null">{{ post.user.name }}</span>
                                 </p>
@@ -78,7 +78,9 @@
                                                 </div>
                                             </li>
                                         </ul>
-
+                                        <div>
+                                            <loading-component v-bind:loading="isLoadingComment"></loading-component>
+                                        </div>
                                         <div class="text-center pdt-25"
                                              v-if="commentData.next_page_url != null && !isLoadingComment">
                                             <a @click="paginate()"
@@ -158,8 +160,6 @@
                             </div>
                         </div>
                     </article>
-
-
                 </div>
                 <div class="blog-sidebar col-lg-4 pt-4 pt-lg-0">
                     <aside class="sidebar">

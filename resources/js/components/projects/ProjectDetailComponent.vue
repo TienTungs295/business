@@ -29,7 +29,8 @@
         </section>
 
         <div class="container pb-5 pb-sm-0 my-5">
-            <div class="row">
+            <div class="row position-relative">
+                <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
                 <div class="col-lg-6" v-if="project">
                     <div>
                         <VueSlickCarousel ref="c1" :asNavFor="c2" :touchMove="true"
