@@ -38,21 +38,17 @@
                                             <li class="dropdown">
                                                 <router-link class="nav-link" :to="{ name: 'service'}">
                                                     Dịch vụ
+                                                    <i class="icon-arrow-down icons mgl-5 fz-12"></i>
                                                 </router-link>
-<!--                                                <ul class="dropdown-menu">-->
-<!--                                                    <li><a class="dropdown-item"-->
-<!--                                                           href="demo-construction-services-detail.html">Pre-Construction</a>-->
-<!--                                                    </li>-->
-<!--                                                    <li><a class="dropdown-item"-->
-<!--                                                           href="demo-construction-services-detail.html">General-->
-<!--                                                        Construction</a></li>-->
-<!--                                                    <li><a class="dropdown-item"-->
-<!--                                                           href="demo-construction-services-detail.html">Plumbing</a>-->
-<!--                                                    </li>-->
-<!--                                                    <li><a class="dropdown-item"-->
-<!--                                                           href="demo-construction-services-detail.html">Painting</a>-->
-<!--                                                    </li>-->
-<!--                                                </ul>-->
+
+                                                <ul class="dropdown-menu">
+                                                    <li v-for="(item,index) in services">
+                                                        <router-link class="dropdown-item"
+                                                                     :to="{ name: 'serviceDetail',params: {id:item.id }}">
+                                                            {{item.shortTitle}}
+                                                        </router-link>
+                                                    </li>
+                                                </ul>
                                             </li>
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'projectList'}">
@@ -91,28 +87,28 @@
                                         class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
-<!--                            <div-->
-<!--                                class="header-nav-features header-nav-features-no-border header-nav-features-sm-show-border ms-3 ps-4 order-2 order-lg-3">-->
-<!--                                <div class="header-nav-feature header-nav-features-search d-inline-flex">-->
-<!--                                    <a href="#" class="header-nav-features-toggle text-decoration-none"-->
-<!--                                       data-focus="headerSearch">-->
-<!--                                        <i class="icons icon-magnifier header-nav-top-icon text-3-5 text-color-dark text-color-hover-primary font-weight-semibold top-3"></i>-->
-<!--                                    </a>-->
-<!--                                    <div-->
-<!--                                        class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0"-->
-<!--                                        id="headerSearchDropdown">-->
-<!--                                        <form role="search" action="page-search-results.html" method="get">-->
-<!--                                            <div class="simple-search input-group">-->
-<!--                                                <input class="form-control text-1" id="headerSearch" name="q"-->
-<!--                                                       type="search" value="" placeholder="Search...">-->
-<!--                                                <button class="btn" type="submit">-->
-<!--                                                    <i class="icons icon-magnifier header-nav-top-icon text-color-dark text-color-hover-primary top-2"></i>-->
-<!--                                                </button>-->
-<!--                                            </div>-->
-<!--                                        </form>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <!--                            <div-->
+                            <!--                                class="header-nav-features header-nav-features-no-border header-nav-features-sm-show-border ms-3 ps-4 order-2 order-lg-3">-->
+                            <!--                                <div class="header-nav-feature header-nav-features-search d-inline-flex">-->
+                            <!--                                    <a href="#" class="header-nav-features-toggle text-decoration-none"-->
+                            <!--                                       data-focus="headerSearch">-->
+                            <!--                                        <i class="icons icon-magnifier header-nav-top-icon text-3-5 text-color-dark text-color-hover-primary font-weight-semibold top-3"></i>-->
+                            <!--                                    </a>-->
+                            <!--                                    <div-->
+                            <!--                                        class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0"-->
+                            <!--                                        id="headerSearchDropdown">-->
+                            <!--                                        <form role="search" action="page-search-results.html" method="get">-->
+                            <!--                                            <div class="simple-search input-group">-->
+                            <!--                                                <input class="form-control text-1" id="headerSearch" name="q"-->
+                            <!--                                                       type="search" value="" placeholder="Search...">-->
+                            <!--                                                <button class="btn" type="submit">-->
+                            <!--                                                    <i class="icons icon-magnifier header-nav-top-icon text-color-dark text-color-hover-primary top-2"></i>-->
+                            <!--                                                </button>-->
+                            <!--                                            </div>-->
+                            <!--                                        </form>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -125,12 +121,18 @@
 <script>
 
 
+import {mapGetters} from "vuex";
+
 export default {
     name: "Header",
     data() {
         return {};
     },
-    computed: {},
+    computed: {
+        ...mapGetters([
+            'services',
+        ])
+    },
     methods: {},
     mounted() {
     }
