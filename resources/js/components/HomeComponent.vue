@@ -164,15 +164,14 @@
                          data-appear-animation-delay="500">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/horizontal-distribute-center.svg" alt=""
-                                 data-icon
+                                 src="/assets/img/business-image/services/house-plant.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Tư vấn thiết kế cơ điện</h3>
+                                    Tư vấn thiết kế quy hoạch công trình</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:1 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -186,15 +185,15 @@
                     <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
                          data-appear-animation-delay="600">
                         <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/house-plant.svg" alt="" data-icon
+                            <img class="flex-0-0-auto" width="70" height="70"
+                                 src="/assets/img/business-image/services/pencil-ruler.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Tư vấn thiết kế quy hoạch công trình</h3>
+                            <div class="ps-3">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Tư vấn
+                                    thiết kế kiến trúc và kết cấu công trình</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:2 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -208,15 +207,16 @@
                     <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
                          data-appear-animation-delay="700">
                         <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="70" height="70"
-                                 src="/assets/img/business-image/services/pencil-ruler.svg" alt="" data-icon
+                            <img class="flex-0-0-auto" width="60" height="60"
+                                 src="/assets/img/business-image/services/horizontal-distribute-center.svg" alt=""
+                                 data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-3">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Tư vấn
-                                    thiết kế kiến trúc và kết cấu công trình</h3>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    Tư vấn thiết kế cơ điện</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:3 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -238,7 +238,7 @@
                                     Tư vấn thiết kế hệ thống cấp thoát nước</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:4 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -260,7 +260,7 @@
                                     Tư vấn thiết kế hệ thống điều hòa không khí, thông gió</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:5 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -282,7 +282,7 @@
                                     Thiết kế xây dựng mô hình Bim – Revit</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:6 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -316,7 +316,7 @@
                                     Tư vấn chuyển giao công nghệ</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:7 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -339,7 +339,7 @@
                                     Quản lý dự án</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:8 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -362,7 +362,7 @@
                                     Giám sát thi công</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:9 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -385,7 +385,7 @@
                                     Thẩm định thiết kế, kiểm định chất lượng công trình</h3>
                                 <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
                                     adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'service'}"
+                                <router-link :to="{ name: 'serviceDetail',params: {id:10 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
                                     <img width="27" height="27" class="arrow-icon"
@@ -746,6 +746,7 @@
 import ProjectService from "../services/ProjectService";
 import PostService from "../services/PostService";
 import ProjectCategoryService from "../services/ProjectCategoryService";
+import {mapGetters} from "vuex";
 
 
 export default {
@@ -763,6 +764,11 @@ export default {
             isLoadingBlog: true,
             isLoadMoreService: false
         };
+    },
+    computed: {
+        ...mapGetters([
+            'services',
+        ])
     },
     methods: {
         initProjectImage() {

@@ -10,10 +10,15 @@
                                     Trang chủ
                                 </router-link>
                             </li>
-                            <li class="active fz-12-i">Dịch vụ cung cấp</li>
+                            <li>
+                                <router-link class="fz-12-i" :to="{ name: 'service'}">
+                                    Dịch vụ
+                                </router-link>
+                            </li>
+                            <li class="active fz-12-i" v-if="serviceDetail">{{serviceDetail.shortTitle}}</li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Dịch vụ cung cấp</span>
+                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Dịch vụ</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
 				                        <svg class="svg-fill-color-dark mt-1 "
                                              xmlns="http://www.w3.org/2000/svg"
@@ -31,28 +36,19 @@
             <div class="row gy-5 gy-lg-0">
                 <div class="col-lg-8 order-lg-2 mt-0 ">
                     <div class="row">
-                        <div class="col-12">
-                            <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-4">Dịch vụ cung cấp</h2>
+                        <div v-if="serviceDetail != null">
+                            <div class="d-flex justify-content-center mgb-30">
+                                <img width="100" height="100"
+                                     :src="serviceDetail.icon" alt=""/>
+                            </div>
+                            <div class="ps-4">
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                    {{ serviceDetail.title }}</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">{{ serviceDetail.content }} </p>
+                            </div>
                         </div>
-                        <div class="col-12 mgb-20" v-for="(item,index) in services">
-                            <div class="d-flex align-items-start">
-                                <img class="flex-0-0-auto" width="60" height="60"
-                                     :src="item.icon" alt=""/>
-                                <div class="ps-4">
-                                    <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">{{item.title}}</h3>
-                                    <p class="font-weight-light text-3-5 mb-3-5">{{item.excerpt}}</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <router-link :to="{ name: 'serviceDetail',params: {id:item.id }}"
-                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    Xem thêm
-                                    <img width="27" height="27" class="arrow-icon"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </router-link>
-                            </div>
+                        <div v-else class="text-center">
+                            <p class="fz-16">Dịch vụ không tồn tại</p>
                         </div>
                     </div>
                 </div>
@@ -150,12 +146,12 @@ import ContactService from "../../services/ContactService";
 import {mapGetters} from "vuex";
 
 export default {
-    name: "ServiceList",
-
+    name: "ServiceDetail",
     data() {
         return {
             contact: {},
-            errors: {}
+            errors: {},
+            serviceDetail: null
         };
     },
     computed: {
@@ -174,6 +170,7 @@ export default {
         }
     },
     mounted() {
-    },
+        this.serviceDetail = this.services[this.$route.params.id];
+    }
 }
 </script>
