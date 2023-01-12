@@ -118,6 +118,7 @@
                 <div class="custom-square-1 custom-square-1-big bg-dark mt-0 mb-5 me-5"></div>
             </div>
         </div>
+        <phone-ring-component></phone-ring-component>
     </footer>
 </template>
 
