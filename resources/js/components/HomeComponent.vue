@@ -686,7 +686,7 @@
                                             tới</p>
                                     </div>
                                     <div class="testimonial-author">
-                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Anh Trung</strong>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Anh Bình</strong>
                                         <p class="text-color-dark mb-0">Kỹ sư xây dựng</p>
                                     </div>
                                 </div>
@@ -703,7 +703,7 @@
                                             nên không gian vô cùng thoáng đãng.</p>
                                     </div>
                                     <div class="testimonial-author">
-                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Chị Thúy</strong>
+                                        <strong class="font-weight-bold text-5-5 negative-ls-1">- Chị Ngọc</strong>
                                         <p class="text-color-dark mb-0">Nhân viên văn phòng</p>
                                     </div>
                                 </div>
