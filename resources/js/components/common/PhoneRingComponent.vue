@@ -21,8 +21,8 @@
 .coccoc-alo-ph-circle {
     width: 120px;
     height: 120px;
-    left: 0;
-    bottom: 0;
+    left: -10px;
+    bottom: -10px;
     position: absolute;
     background-color: transparent;
     -webkit-border-radius: 100%;
@@ -65,8 +65,8 @@
 .coccoc-alo-ph-circle-fill {
     width: 100px;
     height: 100px;
-    left: 10px;
-    bottom: 10px;
+    left: 0;
+    bottom: 0;
     position: absolute;
     background-color: #000;
     -webkit-border-radius: 100%;
@@ -88,10 +88,10 @@
 .coccoc-alo-ph-img-circle {
     width: 60px;
     height: 60px;
-    bottom: 30px;
-    left: 30px;
+    bottom: 20px;
+    left: 20px;
     position: absolute;
-    background: rgba(30, 30, 30, 0.1) url('/assets/img/business-image/phone.png') no-repeat center center;
+    background: rgba(30, 30, 30, 0.1) url('/assets/images/phone.png') no-repeat center center;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
