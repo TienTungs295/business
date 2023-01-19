@@ -91,7 +91,7 @@
     bottom: 20px;
     left: 20px;
     position: absolute;
-    background: rgba(30, 30, 30, 0.1) url('/assets/images/phone.png') no-repeat center center;
+    background: rgba(30, 30, 30, 0.1) url('/assets/img/business-image/phone.png') no-repeat center center;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     border-radius: 100%;
