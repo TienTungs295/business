@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.min.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('css/app.css?version=4') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css?version=5') }}">
 
     <!-- Head Libs -->
     <script src="{{asset('assets/vendor/modernizr/modernizr.min.js')}}"></script>
@@ -41,7 +41,7 @@
 <body data-plugin-scroll-spy data-plugin-options="{'target': '#sidebar'}">
 <div id="app">
 </div>
-<script src="{{ asset('js/app.js?version=4') }}"></script>
+<script src="{{ asset('js/app.js?version=5') }}"></script>
 
 <!-- Latest jQuery -->
 {{--<script src="{{asset('assets/js/jquery/jquery-3.6.0.min.js')}}"></script>--}}

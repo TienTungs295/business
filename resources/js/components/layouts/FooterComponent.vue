@@ -70,7 +70,7 @@
                             <img width="23" height="23" src="/assets/img/demos/construction/icons/phone.svg" alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}"/>
-                            <a href="tel:0123456789"
+                            <a href="tel:0912628197"
                                class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">(+84)
                                 912628197</a>
                         </li>
@@ -78,7 +78,7 @@
                             <img width="23" height="23" src="/assets/img/demos/construction/icons/email.svg" alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark'}"/>
-                            <a href="mailto:0123456789"
+                            <a href="mailto:0912628197"
                                class="text-decoration-none text-color-dark text-color-hover-primary font-weight-bold text-3-5 ms-2">minh@dmt.net.vn</a>
                         </li>
                     </ul>
