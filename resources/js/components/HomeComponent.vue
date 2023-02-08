@@ -9,53 +9,6 @@
                 <div class="owl-stage">
 
                     <!-- Carousel Slide 1 -->
-                    <div class="owl-item position-relative">
-                        <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
-                             data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
-                             data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
-                             style="background-image: url(/assets/img/business-image/slider/slider-eastin-ha-long.jpg); background-size: cover; background-position: center;"></div>
-                        <div class="container position-relative z-index-1 h-100">
-                            <!--                            <div class="row align-items-center h-100">-->
-                            <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
-                            <!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
-                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                        data-appear-animation-delay="500">-->
-                            <!--												<span-->
-                            <!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
-                            <!--													<span-->
-                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
-                            <!--												</span>-->
-                            <!--                                        BUILDING<br> DREAMS-->
-                            <!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
-                            <!--													<span-->
-                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
-                            <!--												</span>-->
-                            <!--                                    </h1>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
-                                <span
-                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Eastin Phát Linh Hạ Long</span>
-                                <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-dark appear-animation"
-                                                 data-appear-animation="fadeInLeftShorter"
-                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                 viewBox="0 0 859.45 88.44" xml:space="preserve"
-                                                 preserveAspectRatio="none">
-												<polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
-											</svg>
-										</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Carousel Slide 2 -->
                     <div class="owl-item position-relative"
                          style="background-image: url(/assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
                         <div class="container position-relative z-index-1 h-100">
@@ -94,6 +47,52 @@
                         </div>
                     </div>
 
+                    <!-- Carousel Slide 2 -->
+                    <div class="owl-item position-relative">
+                        <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
+                             data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
+                             data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
+                             style="background-image: url(/assets/img/business-image/slider/tnr.jpg); background-size: cover; background-position: center;"></div>
+                        <div class="container position-relative z-index-1 h-100">
+                            <!--                            <div class="row align-items-center h-100">-->
+                            <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
+                            <!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
+                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                        data-appear-animation-delay="500">-->
+                            <!--												<span-->
+                            <!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
+                            <!--													<span-->
+                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
+                            <!--												</span>-->
+                            <!--                                        BUILDING<br> DREAMS-->
+                            <!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
+                            <!--													<span-->
+                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
+                            <!--												</span>-->
+                            <!--                                    </h1>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
+                                <span
+                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tổ hợp chung cư , văn phòng TNR The Nosta</span>
+                                <span class="custom-svg-position-1">
+											<svg class="svg-fill-color-dark appear-animation"
+                                                 data-appear-animation="fadeInLeftShorter"
+                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                 viewBox="0 0 859.45 88.44" xml:space="preserve"
+                                                 preserveAspectRatio="none">
+												<polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
+											</svg>
+										</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="owl-nav mt-5">
@@ -532,7 +531,7 @@
                                 <img width="60" height="50" src="/assets/img/business-icons/house-plant.svg" alt=""
                                      data-icon
                                      data-plugin-options="{'onlySVG': true, 'extraClass': 'd-inline-block ms-2 p-relative bottom-1'}"/>
-                                <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="240"
+                                <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="80"
                                         data-append="+">0</strong>
                                 <label class="pt-2 text-4 opacity-7">Dự án hoàn thành</label>
                             </div>

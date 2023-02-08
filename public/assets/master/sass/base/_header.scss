@@ -112,7 +112,7 @@
 						color: #333;
 					}
 				}
-				.feature-box { 
+				.feature-box {
 					p {
 						margin: 0;
 					}
@@ -319,7 +319,7 @@
 						padding-#{$left}: 0;
 					}
 				}
-				
+
 				// Show nav item left border with responsive levels
 				@each $breakpoint in map-keys($grid-breakpoints) {
 					@include media-breakpoint-up($breakpoint) {
@@ -447,7 +447,7 @@
 
 		&:not(.header-nav-features-no-border):before,
 		&:not(.header-nav-features-no-border):after {
-			content: ''; 
+			content: '';
 		}
 
 		&:not(.header-nav-features-no-border):after {
@@ -465,7 +465,7 @@
 			    }
 			}
 		}
-		
+
 		&.header-nav-features-start {
 			padding-#{$left}: 0;
 			margin-#{$left}: 0;
@@ -483,7 +483,7 @@
 			padding-#{$right}: 20px;
 			margin-#{$right}: 10px;
 			&:not(.header-nav-features-no-border):before {
-				
+
 			}
 			&:after {
 				display: block;
@@ -764,7 +764,7 @@
 				min-width: 420px;
 				padding: 35px;
 			}
-	
+
 			@media(max-width: 767px) {
 				.header-nav-features-dropdown {
 					min-width: 320px;
@@ -1122,7 +1122,7 @@
 
 // Floating
 html:not(.boxed) {
-	
+
 	#header {
 		&.header-floating-bar {
 			position: absolute;
@@ -1154,7 +1154,7 @@ html:not(.boxed) {
 		@media(max-width: 991px) {
 			&.header-floating-bar {
 				top: 0;
-			}	
+			}
 		}
 	}
 
@@ -1169,7 +1169,7 @@ html:not(.boxed) {
 					.header-nav-main:before {
 						display: none;
 					}
-				}	
+				}
 			}
 		}
 
@@ -1294,7 +1294,7 @@ html {
 			}
 			&.header-semi-transparent-light {
 				.header-body {
-					background-color: rgba(255,255,255,.8) !important;
+					background-color: rgba(255,255,255,.9) !important;
 				}
 			}
 			&.header-semi-transparent-dark {
@@ -1555,7 +1555,7 @@ html[dir="rtl"] {
 			}
 		}
 		.custom-header-1-extra-links {
-			
+
 		}
 	}
 }

@@ -1,5 +1,5 @@
 <template>
-    <a href="#" class="text-decoration-none blog-item"
+    <router-link :to="{ name: 'postDetail', params: { slug: item.slug,id:item.id }}" class="text-decoration-none blog-item"
        data-cursor-effect-hover="plus">
         <div class="card border-0">
             <div class="card-img-top position-relative overlay">
@@ -34,7 +34,7 @@
 <!--										</span>-->
             </div>
         </div>
-    </a>
+    </router-link>
 
 </template>
 <script>
