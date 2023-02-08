@@ -8,6 +8,7 @@
 
     <title>DMT | MEP Design Ecosystem</title>
 
+    <meta property="og:image" content="https://dmt.net.vn/assets/img/business-image/slider/banner1.png" />
     <meta name="keywords" content="MEP Design Ecosystem" />
     <meta name="description" content="MEP Design Ecosystem">
 {{--    <meta name="author" content="okler.net">--}}
@@ -31,7 +32,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.min.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('css/app.css?version=1') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css?version=2') }}">
 
     <!-- Head Libs -->
     <script src="{{asset('assets/vendor/modernizr/modernizr.min.js')}}"></script>
@@ -40,7 +41,7 @@
 <body data-plugin-scroll-spy data-plugin-options="{'target': '#sidebar'}">
 <div id="app">
 </div>
-<script src="{{ asset('js/app.js?version=1') }}"></script>
+<script src="{{ asset('js/app.js?version=2') }}"></script>
 
 <!-- Latest jQuery -->
 {{--<script src="{{asset('assets/js/jquery/jquery-3.6.0.min.js')}}"></script>--}}
