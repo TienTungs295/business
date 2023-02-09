@@ -96,7 +96,7 @@ body .body {
     font-size: 14px;
 }
 
-.dmt-portfolio {
+.dmt-portfolio, .dmt-project {
     .portfolio-item img {
         width: 100%;
         aspect-ratio: 4 / 3;
@@ -247,4 +247,24 @@ body .body {
 }
 .bg-primary{
     background-color: $primary-color !important;
+}
+.dropdown{
+    .dmt-dropdown-menu{
+        top: auto !important;
+        display: none !important;
+        opacity: 0 !important;
+        background-color: rgba(255, 255, 255, 0.9) !important;
+    }
+    &:hover{
+        .dmt-dropdown-menu{
+            top: auto !important;
+            display: block !important;
+            opacity: 1 !important;
+        }
+    }
+}
+@media (max-width:991px) {
+    .header-nav-main{
+        border:1px solid #ccc;
+    }
 }

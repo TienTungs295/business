@@ -3,8 +3,8 @@
 
         <div
             class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover nav-style-diamond nav-with-transparency nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0"
-            data-plugin-options="{'autoplay': false, 'autoplayTimeout': 7000}"
-            data-dynamic-height="['700px','700px','600px','500px','410px']" style="height: 700px;">
+            data-plugin-options="{'autoplay': false, 'autoplayTimeout': 3000}"
+            data-dynamic-height="['750px','750px','650px','550px','450px']" style="height: 750px;">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
                     <!-- Carousel Slide 1 -->
@@ -487,18 +487,26 @@
                     </div>
                 </div>
             </div>
-            <div class="__mobile" v-if="projectPaginate.data.length > 0">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4 isotope-item mgb-5" v-for="(item,i) in projectPaginate.data" >
-                        <div class="project-mobile-item" >
-                            <a @click="showImage(i)" class="cur-pointer">
-                                <img :src="'/uploads/images/'+item.image" :alt="item.image"
-                                     @error="setDefaultImg"
-                                     class="img-fluid" alt="DMT Image">
+            <div class="__mobile dmt-project" v-if="projectPaginate.data.length > 0">
+                <div class="row sort-destination g-4 px-0">
+                    <div class="col-sm-6 isotope-item" v-for="(item,i) in projectPaginate.data">
+                        <div class="portfolio-item">
+                            <a @click="showImage(i)"
+                                class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons mb-3-5 cursor-pointer">
+                                <div class="thumb-info-wrapper">
+                                    <img :src="'/uploads/images/'+item.image" :alt="item.image"
+                                         @error="setDefaultImg"
+                                         class="img-fluid" alt="DMT Image">
+                                    <div class="thumb-info-action">
+                                        <a class="cursor-pointer thumb-info-action-icon thumb-info-action-icon-light">
+                                            <i class="fa fa-search-plus text-dark"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </a>
-                            <h6 class="font-weight-bold text-5-5 line-height-3 pdt-10">
+                            <h6 class="font-weight-bold text-5-5 line-height-3">
                                 <router-link
-                                    class="text-center text-color-dark text-color-hover-primary text-decoration-none fz-20"
+                                    class="text-color-dark text-color-hover-primary text-decoration-none fz-20"
                                     :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}">
                                     {{ item.name }}
                                 </router-link>

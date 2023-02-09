@@ -40,12 +40,11 @@
                                                     Dịch vụ
                                                     <i class="icon-arrow-down icons mgl-5 fz-12"></i>
                                                 </router-link>
-
-                                                <ul class="dropdown-menu">
+                                                <ul class="dropdown-menu dmt-dropdown-menu">
                                                     <li v-for="(item,index) in services">
                                                         <router-link class="dropdown-item"
                                                                      :to="{ name: 'serviceDetail',params: {id:item.id }}">
-                                                            {{item.shortTitle}}
+                                                            {{ item.shortTitle }}
                                                         </router-link>
                                                     </li>
                                                 </ul>

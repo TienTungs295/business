@@ -1645,11 +1645,9 @@ html.sticky-header-enabled.sticky-header-active #header .header-logo-sticky-chan
 		border-bottom: 5px solid #CCC;
 	}
 
-	#header .header-nav-main nav > ul > li.dropdown.open > .dropdown-menu, #header .header-nav-main nav > ul > li.dropdown.accessibility-open > .dropdown-menu, #header .header-nav-main nav > ul > li.dropdown:hover > .dropdown-menu {
-		top: auto;
-		display: block;
-		opacity: 1;
-	}
+	//#header .header-nav-main nav > ul > li.dropdown.open > .dropdown-menu, #header .header-nav-main nav > ul > li.dropdown > .dropdown-menu, #header .header-nav-main nav > ul > li.dropdown:hover > .dropdown-menu {
+    //
+	//}
 
 	#header .header-nav-main nav > ul > li.dropdown.dropdown-reverse > .dropdown-menu {
 		left: auto;
