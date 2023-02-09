@@ -143,6 +143,32 @@ a, button{
     }
 }
 
+.svg-fill-color-primary{
+    fill:$primary-color !important;
+}
+.project-mobile-item{
+    img{
+        width: 100%;
+        aspect-ratio: 4 / 3;
+    }
+}
+
+.main{
+    .__pc,.__mobile{
+        display: none;
+    }
+    @media (min-width: 992px) {
+        .__pc {
+            display: block;
+        }
+    }
+    @media (max-width: 991px) {
+        .__mobile {
+            display: block;
+        }
+    }
+}
+
 @for $i from 0 through 20 {
     .mg-#{$i * 5} {
         margin: #{$i * 5}px;

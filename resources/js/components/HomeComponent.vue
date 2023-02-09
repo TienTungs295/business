@@ -7,47 +7,7 @@
             data-dynamic-height="['700px','700px','600px','500px','410px']" style="height: 700px;">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
-
                     <!-- Carousel Slide 1 -->
-                    <div class="owl-item position-relative"
-                         style="background-image: url(/assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
-                        <div class="container position-relative z-index-1 h-100">
-                            <!--                            <div class="row align-items-center h-100 pt-5">-->
-                            <!--                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">-->
-                            <!--                                    <h2 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 custom-big-text-style-1-variation text-center text-lg-end pt-4 mt-5 appear-animation"-->
-                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                        data-appear-animation-delay="1000">-->
-                            <!--												<span-->
-                            <!--                                                    class="d-block position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-5 ps-5">-->
-                            <!--													<span-->
-                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShortePlus"-->
-                            <!--                                                        data-appear-animation-delay="2000">-->
-                            <!--														<span class="d-block pt-5">MODERNITY</span></span>-->
-                            <!--												</span>-->
-                            <!--                                        MODERNITY-->
-                            <!--                                    </h2>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
-                                <span
-                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tổ hợp chung cư văn phòng TTTM NEWTACO</span>
-                                <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-dark appear-animation"
-                                                 data-appear-animation="fadeInLeftShorter"
-                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                 viewBox="0 0 859.45 88.44" xml:space="preserve"
-                                                 preserveAspectRatio="none">
-												<polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
-											</svg>
-										</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Carousel Slide 2 -->
                     <div class="owl-item position-relative">
                         <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
                              data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
@@ -81,7 +41,46 @@
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
                                     data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tổ hợp chung cư , văn phòng TNR The Nosta</span>
                                 <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-dark appear-animation"
+											<svg class="svg-fill-color-primary appear-animation"
+                                                 data-appear-animation="fadeInLeftShorter"
+                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                 viewBox="0 0 859.45 88.44" xml:space="preserve"
+                                                 preserveAspectRatio="none">
+												<polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
+											</svg>
+										</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Slide 2 -->
+                    <div class="owl-item position-relative"
+                         style="background-image: url(/assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
+                        <div class="container position-relative z-index-1 h-100">
+                            <!--                            <div class="row align-items-center h-100 pt-5">-->
+                            <!--                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">-->
+                            <!--                                    <h2 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 custom-big-text-style-1-variation text-center text-lg-end pt-4 mt-5 appear-animation"-->
+                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                        data-appear-animation-delay="1000">-->
+                            <!--												<span-->
+                            <!--                                                    class="d-block position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-5 ps-5">-->
+                            <!--													<span-->
+                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+                            <!--                                                        data-appear-animation="fadeInRightShortePlus"-->
+                            <!--                                                        data-appear-animation-delay="2000">-->
+                            <!--														<span class="d-block pt-5">MODERNITY</span></span>-->
+                            <!--												</span>-->
+                            <!--                                        MODERNITY-->
+                            <!--                                    </h2>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
+                                <span
+                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tổ hợp chung cư văn phòng TTTM NEWTACO</span>
+                                <span class="custom-svg-position-1">
+											<svg class="svg-fill-color-primary appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
                                                  data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -139,7 +138,8 @@
                                  class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none appear-animation"
                                  data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="2000">
                         Xem thêm
-                        <img width="27" height="27" class="arrow-icon" src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
+                        <img width="27" height="27" class="arrow-icon"
+                             src="/assets/img/demos/construction/icons/arrow-right.svg" alt=""
                              data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
                     </router-link>
@@ -297,7 +297,8 @@
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                            data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
                             Xem thêm
-                            <img class="mgl-5 arrow-icon-down" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
+                            <img class="mgl-5 arrow-icon-down" width="15" height="15"
+                                 src="/assets/img/business-icons/arrow-down.svg"
                                  alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
@@ -418,14 +419,16 @@
                     <p class="text-4 font-weight-light">Các dự án tiêu biểu của chúng tôi. </p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="position-relative">
-
-                        <svg class="diamonds-svg-line position-absolute bottom-0 left-15 mb-4 ms-5 d-none d-xl-block"
-                             width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                             x="0px" y="0px" viewBox="0 0 1145.86 508.13" xml:space="preserve"
-                             data-appear-animation-svg="true">
+            <div class="__pc">
+                <div class="row">
+                    <div class="col">
+                        <div class="position-relative">
+                            <svg
+                                class="diamonds-svg-line position-absolute bottom-0 left-15 mb-4 ms-5 d-none d-xl-block"
+                                width="100%" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" viewBox="0 0 1145.86 508.13" xml:space="preserve"
+                                data-appear-animation-svg="true">
 									<g>
 										<path d="M13.87,32.36c1.07,0.55,2.37-0.28,2.4-1.49c0.04-1.58,0.27-2.87,0.5-3.82c0.56-2.35,1.48-4.1,2.65-6.33
 											c1.7-3.25,1.95-2.85,2.46-4.35c1.47-4.3-0.36-8.19-0.47-8.41c-0.36-0.74-1.54-3.15-4.06-4.44c-3.71-1.9-8.87-0.94-11.91,2.46
@@ -435,14 +438,14 @@
                                         <circle cx="12.65" cy="12.54" r="4.29"/>
                                         <circle fill="#FFF" cx="12.65" cy="12.54" r="2.44"/>
 									</g>
-                            <g>
+                                <g>
 										<path d="M1121.72,505.34c0.44,1.12,1.97,1.35,2.79,0.47c1.08-1.16,2.1-1.98,2.9-2.54c1.98-1.4,3.82-2.11,6.17-3.01 c3.43-1.32,3.35-0.86,4.71-1.64c3.94-2.26,5.13-6.39,5.19-6.63c0.22-0.79,0.92-3.38-0.12-6.02c-1.53-3.87-6.04-6.56-10.57-6.01 c-3.93,0.47-6.97,3.27-8.11,6.08c-0.28,0.69-0.12,2.56-0.4,5.97c-0.49,6.05-0.42,5.66-0.89,7.24c-0.89,2.98-2.35,4.3-1.68,6.07
 										C1121.71,505.32,1121.71,505.33,1121.72,505.34z"/>
-                                <circle fill="#FFF" cx="1133.88" cy="489.64" r="6.34"/>
-                                <circle cx="1133.88" cy="489.64" r="4.29"/>
-                                <circle fill="#FFF" cx="1133.88" cy="489.64" r="2.44"/>
+                                    <circle fill="#FFF" cx="1133.88" cy="489.64" r="6.34"/>
+                                    <circle cx="1133.88" cy="489.64" r="4.29"/>
+                                    <circle fill="#FFF" cx="1133.88" cy="489.64" r="2.44"/>
 									</g>
-                            <g>
+                                <g>
 										<g>
 											<path class="appear-animation" data-appear-animation="fadeIn"
                                                   data-appear-animation-delay="300"
@@ -463,28 +466,55 @@
 									</g>
 								</svg>
 
-                        <div>
-                            <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
-                                <ul class="diamonds mb-0">
-                                    <li v-for="(item,i) in projectPaginate.data">
-                                        <a class="diamond lightbox cursor-pointer"
-                                           :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
-                                           @click="showImage(i)">
-                                            <div class="content">
-                                                <img :src="'/uploads/images/'+item.image"
-                                                     class="img-fluid plugin-random-images" alt=""/>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="preview-image-wrapper">
-                                    <vue-gallery-slideshow :images="project_images" :index="index"
-                                                           @close="onClose"></vue-gallery-slideshow>
+                            <div>
+                                <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
+                                    <ul class="diamonds mb-0">
+                                        <li v-for="(item,i) in projectPaginate.data">
+                                            <a class="diamond lightbox cursor-pointer"
+                                               :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
+                                               @click="showImage(i)">
+                                                <div class="content">
+                                                    <img :src="'/uploads/images/'+item.image"
+                                                         class="img-fluid plugin-random-images" alt=""/>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
+                </div>
+            </div>
+            <div class="__mobile" v-if="projectPaginate.data.length > 0">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 isotope-item mgb-5" v-for="(item,i) in projectPaginate.data" >
+                        <div class="project-mobile-item" >
+                            <a @click="showImage(i)" class="cur-pointer">
+                                <img :src="'/uploads/images/'+item.image" :alt="item.image"
+                                     @error="setDefaultImg"
+                                     class="img-fluid" alt="DMT Image">
+                            </a>
+                            <h6 class="font-weight-bold text-5-5 line-height-3 pdt-10">
+                                <router-link
+                                    class="text-center text-color-dark text-color-hover-primary text-decoration-none fz-20"
+                                    :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}">
+                                    {{ item.name }}
+                                </router-link>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="position-relative">
+                        <div class="preview-image-wrapper">
+                            <vue-gallery-slideshow :images="project_images" :index="index"
+                                                   @close="onClose"></vue-gallery-slideshow>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -497,10 +527,11 @@
                             data-plugin-options="{'flagClassOnly': true}">khẳng định niềm tin và chỗ đứng</span> trong
                         lòng Qúy khách hàng.</p>
                     <router-link :to="{ name: 'projectList'}"
-                       class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="700">
+                                 class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
+                                 data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="700">
                         Xem thêm
-                        <img width="27" height="27" class="arrow-icon" src="/assets/img/demos/construction/icons/arrow-right-white.svg" alt=""
+                        <img width="27" height="27" class="arrow-icon"
+                             src="/assets/img/demos/construction/icons/arrow-right-white.svg" alt=""
                              data-icon
                              data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
                     </router-link>
@@ -510,8 +541,8 @@
 
         <section>
             <div class="parallax section section-text-light section-parallax section-center my-0 company-counter pd-0-i"
-                     data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}"
-                     data-image-src="/assets/img/business-image/he-thong-cap-nuoc-chung-cu-4-min.jpg">
+                 data-plugin-parallax data-plugin-options="{'speed': 1.5, 'parallaxHeight': '200%'}"
+                 data-image-src="/assets/img/business-image/he-thong-cap-nuoc-chung-cu-4-min.jpg">
                 <div class="__overlay">
                 </div>
                 <div class="container position-relative pdt-50 pdb-50">
@@ -519,7 +550,8 @@
                         <div class="col-sm-6 col-md-4 mb-4 mb-md-0">
                             <div class="counter appear-animation" data-appear-animation="fadeInUpShorterPlus"
                                  data-appear-animation-delay="300">
-                                <img width="44" height="50" src="/assets/img/business-icons/buildings.svg" alt="" data-icon
+                                <img width="44" height="50" src="/assets/img/business-icons/buildings.svg" alt=""
+                                     data-icon
                                      data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light d-inline-block ms-2 p-relative bottom-1'}"/>
                                 <strong class="pt-3 custom-font-secondary font-weight-bold" data-to="1">0</strong>
                                 <label class="pt-2 text-4 opacity-7">Văn phòng</label>
@@ -795,7 +827,10 @@ export default {
         onClose() {
             this.index = null;
             this.project_images = [];
-        }
+        },
+        setDefaultImg(event) {
+            event.target.src = window.location.protocol + "//" + window.location.host + '/assets/img/business-image/default/placeholder.png'
+        },
     },
     mounted() {
         ProjectService.findAll().then(response => {
