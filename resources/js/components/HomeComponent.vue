@@ -3,7 +3,7 @@
 
         <div
             class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover nav-style-diamond nav-with-transparency nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0"
-            data-plugin-options="{'autoplay': false, 'autoplayTimeout': 3000}"
+            data-plugin-options="{'autoplay': true, 'autoplayTimeout': 3000}"
             data-dynamic-height="['750px','750px','650px','550px','450px']" style="height: 750px;">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
