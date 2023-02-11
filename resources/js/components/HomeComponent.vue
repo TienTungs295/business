@@ -293,16 +293,16 @@
                         </div>
                     </div>
                     <div class="col-12 text-center" v-show="!isLoadMoreService">
-                        <a @click="loadMoreService()"
+                        <router-link :to="{ name: 'service'}"
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
-                           data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">
+                           data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="700">
                             Xem thêm
                             <img class="mgl-5 arrow-icon-down" width="15" height="15"
                                  src="/assets/img/business-icons/arrow-down.svg"
                                  alt=""
                                  data-icon
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
-                        </a>
+                        </router-link>
                     </div>
                     <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
                          data-appear-animation="fadeInUpShorterPlus"
