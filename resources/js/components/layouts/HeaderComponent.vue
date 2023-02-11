@@ -21,8 +21,8 @@
                         <div class="header-row">
                             <div class="header-nav header-nav-links order-3 order-lg-1">
                                 <div
-                                    class="header-nav-main header-nav-main-square header-nav-main-text-capitalize header-nav-main-effect-1 header-nav-main-sub-effect-1">
-                                    <nav class="collapse px-3-5">
+                                    class="header-nav-main header-nav-main-square header-nav-main-text-capitalize header-nav-main-effect-1 header-nav-main-sub-effect-1" :class="isShowMenu ? 'show' : ''">
+                                    <nav class="collapse px-3-5" :class="isShowMenu ? 'show' : 'closed'">
                                         <ul class="nav nav-pills" id="mainNav">
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'home'}">
@@ -35,11 +35,16 @@
                                                 </router-link>
                                             </li>
                                             <li class="dropdown">
-                                                <router-link class="nav-link" :to="{ name: 'service'}">
-                                                    Dịch vụ
-                                                    <i class="icon-arrow-down icons mgl-5 fz-12"></i>
+                                                <router-link class="nav-link dmt-dropdown-item"
+                                                             :to="{ name: 'service'}">
+                                                    <span class="__page">
+                                                        Dịch vụ
+                                                    </span>
+                                                    <i class="icon-arrow-down icons mgl-5 fz-12 __icon"
+                                                       @click.stop.prevent="toggleServiceMenu"></i>
                                                 </router-link>
-                                                <ul class="dropdown-menu dmt-dropdown-menu">
+                                                <ul class="dropdown-menu dmt-dropdown-menu"
+                                                    :class="isShowServiceMenu ? 'show' : ''">
                                                     <li v-for="(item,index) in services">
                                                         <router-link class="dropdown-item"
                                                                      :to="{ name: 'serviceDetail',params: {id:item.id }}">
@@ -66,9 +71,8 @@
                                         </ul>
                                     </nav>
                                 </div>
-                                <button class="btn header-btn-collapse-nav" data-bs-toggle="collapse"
-                                        data-bs-target=".header-nav-main nav">
-                                    <i class="fas fa-bars"></i>
+                                <button class="btn header-btn-collapse-nav __hamburger" @click="toggleMenu">
+                                    <i class="fas" :class="isShowMenu ? 'fa-times': 'fa-bars'"></i>
                                 </button>
                             </div>
                             <div
@@ -129,9 +133,18 @@ export default {
     computed: {
         ...mapGetters([
             'services',
+            'isShowMenu',
+            'isShowServiceMenu',
         ])
     },
-    methods: {},
+    methods: {
+        toggleMenu() {
+            this.$store.commit("setIsShowMenu", !this.isShowMenu)
+        },
+        toggleServiceMenu() {
+            this.$store.commit("setIsShowServiceMenu", !this.isShowServiceMenu);
+        }
+    },
     mounted() {
     }
 }

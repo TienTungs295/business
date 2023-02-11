@@ -94,7 +94,9 @@ export default new Vuex.Store({
                     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia.",
                     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia."
                 },
-            }
+            },
+            isShowMenu:false,
+            isShowServiceMenu:false,
         }
     },
     getters: {
@@ -104,7 +106,9 @@ export default new Vuex.Store({
         postCategories: state => state.object.postCategories,
         projectPaginate: state => state.object.projectPaginate,
         projectCategories: state => state.object.projectCategories,
-        services: state => state.object.services
+        services: state => state.object.services,
+        isShowMenu: state => state.object.isShowMenu,
+        isShowServiceMenu: state => state.object.isShowServiceMenu
     },
     mutations: {
         setTotalPosts(state, newValue) {
@@ -124,6 +128,12 @@ export default new Vuex.Store({
         },
         setProjectCategories(state, newValue) {
             state.object.projectCategories = newValue;
+        },
+        setIsShowMenu(state, newValue) {
+            state.object.isShowMenu = newValue;
+        },
+        setIsShowServiceMenu(state, newValue) {
+            state.object.isShowServiceMenu = newValue;
         }
     }
 })

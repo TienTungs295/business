@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import store from './store'
+import store from './store'
 
 Vue.use(VueRouter);
 const routes = [
@@ -57,6 +57,8 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
     if (from.name != to.name) window.scrollTo(0, 0);
+    store.commit("setIsShowMenu", false);
+    store.commit("setIsShowServiceMenu", false);
     next();
 });
 
