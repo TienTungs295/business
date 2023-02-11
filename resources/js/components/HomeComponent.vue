@@ -398,13 +398,13 @@
                     </div>
                 </div>
             </div>
-            <div class="position-absolute transform3dy-n50 right-0 pe-5 me-4">
+            <div class="d-none d-lg-block position-absolute transform3dy-n50 right-0 pe-5 me-4">
                 <div class="appear-animation" data-appear-animation="fadeInRightShorterPlus"
                      data-appear-animation-delay="1700" data-appear-animation-duration="750ms">
                     <div class="custom-square-1 bg-primary mb-5"></div>
                 </div>
             </div>
-            <div class="position-absolute transform3dy-n50 right-15 pe-5 me-5">
+            <div class="d-none d-lg-block position-absolute transform3dy-n50 right-15 pe-5 me-5">
                 <div class="appear-animation" data-appear-animation="fadeInRightShorterPlus"
                      data-appear-animation-delay="1500" data-appear-animation-duration="750ms">
                     <div class="custom-square-1 bg-dark pe-5 me-5 mt-4 mb-5"></div>
