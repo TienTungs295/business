@@ -56,7 +56,21 @@ export default {
             notShow: false
         }
     },
+    created() {
+        window.addEventListener('scroll', this.handleScroll);
+    },
+    destroyed() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
     methods: {
+        handleScroll(event) {
+            let yPosition = window.scrollY;
+            if (yPosition > 0) {
+                jQuery("#header").addClass("is-sticky");
+            } else {
+                jQuery("#header").removeClass("is-sticky");
+            }
+        }
         // checkTokenExpire: function () {
         //     setInterval(function () {
         //         AuthService.userProfile().then(response => {

@@ -223,8 +223,9 @@ body .body {
     li a.nav-link {
         text-transform: uppercase !important;
     }
-    .dropdown-menu{
-        .dropdown-item{
+
+    .dropdown-menu {
+        .dropdown-item {
             text-transform: uppercase !important;
         }
     }
@@ -233,6 +234,7 @@ body .body {
 #developer {
     a {
         color: #444 !important;
+
         &:hover {
             text-decoration: underline !important;
         }
@@ -245,26 +247,83 @@ body .body {
     width: 100%;
     height: 100%;
 }
-.bg-primary{
+
+.bg-primary {
     background-color: $primary-color !important;
 }
-.dropdown{
-    .dmt-dropdown-menu{
+
+.dropdown {
+    .dmt-dropdown-menu {
         top: auto !important;
         display: none !important;
         opacity: 0 !important;
         background-color: rgba(255, 255, 255, 0.9) !important;
     }
-    &:hover{
-        .dmt-dropdown-menu{
+
+    &:hover {
+        .dmt-dropdown-menu {
             top: auto !important;
             display: block !important;
             opacity: 1 !important;
         }
     }
 }
-@media (max-width:991px) {
-    .header-nav-main{
-        border:1px solid #ccc;
+
+@media (max-width: 991px) {
+    .header-nav-main {
+        border: 1px solid #ccc;
+    }
+}
+
+#header {
+    .header-body {
+        transition: all .3s ease;
+
+        .header-container {
+            transition: all .3s ease;
+        }
+
+        .header-logo.custom-header-logo:before {
+            transition: all .3s ease;
+            visibility: visible;
+
+        }
+    }
+
+    &.is-sticky {
+        .header-body {
+            top: 0;
+            position: fixed;
+            transition: all .3s ease;
+
+            .header-container {
+                height: 90px;
+                transition: all .3s ease;
+            }
+
+            .header-logo.custom-header-logo {
+                &:before {
+                    opacity: 0;
+                    transform: rotate(45deg) translate3d(0, -20px, 0);
+                    transition: all .3s ease;
+                    visibility: hidden;
+                }
+
+                .logo-sticky {
+                    opacity: 1;
+                    transform: translate3d(-100%, 0, 0);
+                    transition: all .3s ease;
+                    visibility: visible;
+                }
+
+                .logo {
+                    opacity: 0;
+                    transform: translate3d(20px, -20px, 0);
+                    transition: all .3s ease;
+                    visibility: hidden;
+                }
+            }
+
+        }
     }
 }

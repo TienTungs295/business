@@ -1,6 +1,5 @@
 <template>
-    <header id="header" class="header-transparent header-semi-transparent header-semi-transparent-light"
-            data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 1, 'stickySetTop': '1'}">
+    <header id="header" class="header-transparent header-semi-transparent header-semi-transparent-light">
         <div class="header-body border-0">
             <div class="header-container container">
                 <div class="header-row">
