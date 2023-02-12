@@ -16,34 +16,34 @@
                     <h4 class="text-color-dark font-weight-bold mb-4-5">Cung cấp</h4>
                     <ul class="list list-unstyled columns-lg-2">
                         <li>
-                            <a href="demo-construction.html" class="text-color-hover-primary">
+                            <router-link :to="{ name: 'home'}" class="text-color-hover-primary">
                                 Trang chủ
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="demo-construction-company.html" class="text-color-hover-primary">
+                            <router-link :to="{ name: 'aboutUs'}" class="text-color-hover-primary">
                                 Về chúng tôi
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="demo-construction-services.html" class="text-color-hover-primary">
+                            <router-link :to="{ name: 'service'}" class="text-color-hover-primary">
                                 Dịch vụ
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="demo-construction-projects.html" class="text-color-hover-primary">
+                            <router-link :to="{ name: 'projectList'}" class="text-color-hover-primary">
                                 Dự án
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="demo-construction-blog.html" class="text-color-hover-primary">
+                            <router-link :to="{ name: 'postList'}" class="text-color-hover-primary">
                                 Tin tức & sự kiện
-                            </a>
+                            </router-link>
                         </li>
                         <li>
-                            <a href="demo-construction-contact.html" class="text-color-hover-primary">
+                            <router-link :to="{ name: 'contactUs'}" class="text-color-hover-primary">
                                 Liên hệ
-                            </a>
+                            </router-link>
                         </li>
                     </ul>
                 </div>
