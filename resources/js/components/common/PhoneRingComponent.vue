@@ -12,7 +12,7 @@
 
 <style  lang="css" scoped>
 .ring-wrapper{
-    bottom: 0;
+    bottom: 100px;
     display: block;
     position: fixed;
     left: 5px;
