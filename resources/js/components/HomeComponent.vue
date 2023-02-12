@@ -470,14 +470,13 @@
                                 <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
                                     <ul class="diamonds mb-0">
                                         <li v-for="(item,i) in projectPaginate.data">
-                                            <a class="diamond lightbox cursor-pointer"
-                                               :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i"
-                                               @click="showImage(i)">
+                                            <router-link class="diamond lightbox" :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}"
+                                               :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''" :key="i">
                                                 <div class="content">
                                                     <img :src="'/uploads/images/'+item.image"
                                                          class="img-fluid plugin-random-images" alt=""/>
                                                 </div>
-                                            </a>
+                                            </router-link>
                                         </li>
                                     </ul>
                                 </div>
@@ -491,19 +490,14 @@
                 <div class="row sort-destination g-4 px-0">
                     <div class="col-sm-6 isotope-item" v-for="(item,i) in projectPaginate.data">
                         <div class="portfolio-item">
-                            <a @click="showImage(i)"
-                                class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons mb-3-5 cursor-pointer">
-                                <div class="thumb-info-wrapper">
+                            <div
+                                class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons mb-3-5">
+                                <router-link class="thumb-info-wrapper" :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}">
                                     <img :src="'/uploads/images/'+item.image" :alt="item.image"
                                          @error="setDefaultImg"
                                          class="img-fluid" alt="DMT Image">
-                                    <div class="thumb-info-action">
-                                        <a class="cursor-pointer thumb-info-action-icon thumb-info-action-icon-light">
-                                            <i class="fa fa-search-plus text-dark"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </a>
+                                </router-link>
+                            </div>
                             <h6 class="font-weight-bold text-5-5 line-height-3">
                                 <router-link
                                     class="text-color-dark text-color-hover-primary text-decoration-none fz-20"
@@ -680,7 +674,7 @@
                         data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="200">Đối tác liên
                         kết</h2>
                 </div>
-                <div class="col-md-4 text-center">
+                <div class="col-md-4 text-center pdt-15 pdb-15">
                     <a href="https://varchi.vn/" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
                        data-appear-animation-delay="200">
                         <img src="/assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt
