@@ -419,7 +419,7 @@
                     <p class="text-4 font-weight-light">Các dự án tiêu biểu của chúng tôi. </p>
                 </div>
             </div>
-            <div class="__pc">
+            <div class="__pc" v-if="projectPaginate.data.length > 0">
                 <div class="row">
                     <div class="col">
                         <div class="position-relative">
@@ -465,7 +465,6 @@
 										</g>
 									</g>
 								</svg>
-
                             <div>
                                 <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
                                     <ul class="diamonds mb-0">
@@ -482,7 +481,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -835,7 +833,7 @@ export default {
         },
     },
     mounted() {
-        ProjectService.findAll().then(response => {
+        ProjectService.findAll({page_size:7}).then(response => {
             this.projectPaginate = response || {};
             this.isLoadingProject = false;
         }).catch(e => {
