@@ -368,3 +368,9 @@ body .body {
         display: inline-block;
     }
 }
+
+.before-o-1{
+    &:before{
+        opacity: 1 !important;
+    }
+}

@@ -1,21 +1,22 @@
 <template>
     <div class="project-detail">
-        <section class="section section-height-3 border-0 m-0">
+        <section class="section section-height-3 border-0 m-0"
+                 style="background-image: url(/assets/img/business-image/our-service.png);  background-repeat:   no-repeat; background-size: cover; background-position: center center;">
             <div class="container position-relative pt-5 pb-5-5 mt-5 mb-5">
                 <div class="row justify-content-end pt-1 mt-lg-5">
                     <div class="col-7 col-md-5 position-relative">
-                        <ul class="breadcrumb d-block ps-2 ">
+                        <ul class="breadcrumb d-block ps-2 text-color-light">
                             <li>
                                 <router-link class="fz-12-i" :to="{ name: 'home'}">
                                     Trang chủ
                                 </router-link>
                             </li>
-                            <li class="active fz-12-i" v-if="project">{{ project.name }}</li>
+                            <li class="active fz-12-i before-o-1" v-if="project">{{ project.name }}</li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
                             <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Chi tiết dự án</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
-				                        <svg class="svg-fill-color-dark mt-1 "
+				                        <svg class="svg-fill-color-primary mt-1 "
                                              xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                              viewBox="0 0 859.45 88.44" xml:space="preserve" preserveAspectRatio="none">
