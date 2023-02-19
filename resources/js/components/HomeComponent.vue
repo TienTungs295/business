@@ -673,7 +673,7 @@
                 </div>
                 <div data-appear-animation="fadeInUpShorterPlus"
                      data-appear-animation-delay="200"
-                    class="d-flex align-items-center appear-animation partner owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 bg-light mb-0"
+                    class="d-flex align-items-center appear-animation partner owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 mb-0"
                     data-plugin-options="{'responsive': {'0': {'items': 2, 'nav': false, 'dots': false}, '768': {'items': 3, 'nav': false, 'dots': false}, '992': {'items': 4, 'nav': false, 'dots': false}, '1200': {'items': 5, 'nav': false, 'dots': false}}, 'loop': false, 'autoHeight': false}">
                     <div class="text-center">
                         <div class="pdl-5 pdr-5">
