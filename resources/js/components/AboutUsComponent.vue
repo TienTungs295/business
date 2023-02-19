@@ -34,8 +34,10 @@
                     <div id="who-we-are" class="row">
                         <div class="col">
                             <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-4">Chúng tôi là ai</h2>
-                            <img src="/assets/img/business-image/about-us.jpg" class="img-fluid mb-4"
-                                 alt="Engineer Man"/>
+                            <div class="common-aspect">
+                                <img src="/assets/img/business-image/about-us/about-us-3.jpg" class="img-fluid mb-4"
+                                     alt="DMT"/>
+                            </div>
                             <div>
                                 <p class="fz-16">
                                     Công ty CP Tư vấn Thiết kế Quản lý dự án và phát triển công nghệ DMT xin
@@ -69,6 +71,10 @@
                 <!-- Sidebar -->
                 <div class="col-lg-4 order-lg-1 position-relative">
                     <aside class="sidebar" id="sidebar">
+                        <div class="mgb-10">
+                            <h3 class="text-color-dark font-weight-bold text-transform-none text-5-5 line-height-1 mgb-10">Profile</h3>
+                            <a href="/assets/pdf/PROFILE.pdf">PROFILE.PDF</a>
+                        </div>
                         <h3 class="text-color-dark font-weight-bold text-transform-none text-5-5 line-height-1 mgb-30">
                             Để lại lời nhắn</h3>
                         <div class="contact-form form-style-3">

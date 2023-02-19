@@ -374,3 +374,19 @@ body .body {
         opacity: 1 !important;
     }
 }
+.partner{
+    img{
+        width: 100%;
+    }
+    .owl-stage{
+        display: flex;
+        align-items: center;
+    }
+}
+
+.common-aspect{
+    img{
+        width: 100%;
+        aspect-ratio:3/2;
+    }
+}

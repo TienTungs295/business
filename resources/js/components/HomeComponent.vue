@@ -12,7 +12,7 @@
                         <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
                              data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
                              data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
-                             style="background-image: url(/assets/img/business-image/slider/tnr.jpg); background-size: cover; background-position: center;"></div>
+                             style="background-image: url(/assets/img/business-image/slider/slider-1.jpg); background-size: cover; background-position: center;"></div>
                         <div class="container position-relative z-index-1 h-100">
                             <!--                            <div class="row align-items-center h-100">-->
                             <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
@@ -39,7 +39,7 @@
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tổ hợp chung cư , văn phòng TNR The Nosta</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tối ưu thiết kế trên mô hình BIM</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-primary appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
@@ -55,30 +55,38 @@
                     </div>
 
                     <!-- Carousel Slide 2 -->
-                    <div class="owl-item position-relative"
-                         style="background-image: url(/assets/img/business-image/slider/Chung-cu-Newtatco-Xuan-Dinh-02.jpg); background-size: cover; background-position: center;">
+                    <div class="owl-item position-relative">
+                        <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
+                             data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
+                             data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
+                             style="background-image: url(/assets/img/business-image/our-service.png); background-size: cover; background-position: center;"></div>
                         <div class="container position-relative z-index-1 h-100">
-                            <!--                            <div class="row align-items-center h-100 pt-5">-->
-                            <!--                                <div class="col-xl-8 position-relative ms-auto mt-5 pt-5">-->
-                            <!--                                    <h2 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 custom-big-text-style-1-variation text-center text-lg-end pt-4 mt-5 appear-animation"-->
+                            <!--                            <div class="row align-items-center h-100">-->
+                            <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
+                            <!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
                             <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                        data-appear-animation-delay="1000">-->
+                            <!--                                        data-appear-animation-delay="500">-->
                             <!--												<span-->
-                            <!--                                                    class="d-block position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-5 ps-5">-->
+                            <!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
                             <!--													<span-->
                             <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShortePlus"-->
-                            <!--                                                        data-appear-animation-delay="2000">-->
-                            <!--														<span class="d-block pt-5">MODERNITY</span></span>-->
+                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
                             <!--												</span>-->
-                            <!--                                        MODERNITY-->
-                            <!--                                    </h2>-->
+                            <!--                                        BUILDING<br> DREAMS-->
+                            <!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
+                            <!--													<span-->
+                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
+                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
+                            <!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
+                            <!--												</span>-->
+                            <!--                                    </h1>-->
                             <!--                                </div>-->
                             <!--                            </div>-->
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tổ hợp chung cư văn phòng TTTM NEWTACO</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tiết kiện chi phí đầu tư và vận hành</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-primary appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
@@ -102,14 +110,12 @@
 
         <div class="container py-5 my-3">
             <div class="row justify-content-between align-items-center flex-lg-nowrap gy-3">
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation"
                         data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="500">Chúng tôi là
                         ai</h2>
                     <p class="text-4 font-weight-light mb-0 appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800"> Công ty CP Tư vấn
-                        Thiết kế Quản lý dự án và phát triển công nghệ DMT xin gửi lời chúc sức khỏe và lời chào trân
-                        trọng nhất đến toàn thể Quý khách hàng. </p>
+                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="800">Công ty CP Tư vấn Thiết kế Quản lý dự án và phát triển công nghệ DMT là đơn vị hàng đầu trong thiết kế công trình, không những vậy DMT còn tham gia các lĩnh vực khác như tư vấn lập dự án, tư vấn đấu thầu, thi công..., mỗi lĩnh vực đều có những sản phẩm nhận được đánh giá cao từ khách hàng.</p>
                 </div>
                 <div class="col-auto d-none d-lg-block">
                     <svg width="145" height="147" xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +130,7 @@
                               data-appear-animation-delay="1000" data-appear-animation-duration="700ms"/>
 							</svg>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <p class="font-weight-medium text-3-5 appear-animation" data-appear-animation="fadeInUpShorterPlus"
                        data-appear-animation-delay="1500">DMT được thành lập năm 2008 với phạm vi hoạt động tại Việt Nam
                         và Quốc tế về <span
@@ -163,13 +169,12 @@
                          data-appear-animation-delay="500">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/house-plant.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/horizontal-distribute-center.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
                                 <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Tư vấn thiết kế quy hoạch công trình</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                    Tư vấn thiết kế Cơ điện</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Hạng mục cơ điện là một hệ thống hoàn chỉnh và đồng bộ, bao gồm nhiều thành phần hệ thống bên trong như: Hệ thống điện, điện phụ trợ, hệ thống điều hòa thông gió...</p>
                                 <router-link :to="{ name: 'serviceDetail',params: {id:1 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
@@ -185,13 +190,11 @@
                          data-appear-animation-delay="600">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="70" height="70"
-                                 src="/assets/img/business-image/services/pencil-ruler.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/indent-firstline.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-3">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Tư vấn
-                                    thiết kế kiến trúc và kết cấu công trình</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Tư vấn thiết kế Phòng cháy chữa cháy</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Phòng cháy - chữa cháy (fire life safety) là một giải pháp tổng thể bao gồm nhiều hạng mục khác nhau, không chỉ gói gọn trong hệ thống báo cháy và chữa cháy...</p>
                                 <router-link :to="{ name: 'serviceDetail',params: {id:2 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
@@ -207,14 +210,12 @@
                          data-appear-animation-delay="700">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/horizontal-distribute-center.svg" alt=""
+                                 src="/assets/img/business-image/services/transform-bezier.svg" alt=""
                                  data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Tư vấn thiết kế cơ điện</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Triển khai mô hình BIM REVIT MEP</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Để hoàn thiện một đồ án thiết kế, thì công cụ thiết kế đóng một vai trò hết sức quan trọng, mà ở đó, trong lĩnh vực xây dựng, BIM Revit là một trong những công cụ kiện toàn trong việc triển khai hồ sơ thiết kế...</p>
                                 <router-link :to="{ name: 'serviceDetail',params: {id:3 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
@@ -230,13 +231,11 @@
                          data-appear-animation-delay="800">
                         <div class="d-flex align-items-start">
                             <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/icon-plumbing.svg" alt="" data-icon
+                                 src="/assets/img/business-image/services/magnifier.svg" alt="" data-icon
                                  data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
                             <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Tư vấn thiết kế hệ thống cấp thoát nước</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
+                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">Tư vấn thẩm tra Thiết kế cơ điện</h3>
+                                <p class="font-weight-light text-3-5 mb-3-5">Một thiết kế dù hoàn thiện tới đâu cũng không thể tránh được các thiếu sót không mong muốn, các thiếu sót có thể đến từ việc thể hiện hồ sơ...</p>
                                 <router-link :to="{ name: 'serviceDetail',params: {id:4 }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
                                     Xem thêm
@@ -248,50 +247,50 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="900">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/indent-firstline.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Tư vấn thiết kế hệ thống điều hòa không khí, thông gió</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'serviceDetail',params: {id:5 }}"
-                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    Xem thêm
-                                    <img width="27" height="27" class="arrow-icon"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="1000">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/transform-bezier.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Thiết kế xây dựng mô hình Bim – Revit</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'serviceDetail',params: {id:6 }}"
-                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    Xem thêm
-                                    <img width="27" height="27" class="arrow-icon"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"-->
+<!--                         data-appear-animation-delay="900">-->
+<!--                        <div class="d-flex align-items-start">-->
+<!--                            <img class="flex-0-0-auto" width="60" height="60"-->
+<!--                                 src="/assets/img/business-image/services/indent-firstline.svg" alt="" data-icon-->
+<!--                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>-->
+<!--                            <div class="ps-4">-->
+<!--                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">-->
+<!--                                    Tư vấn thiết kế hệ thống điều hòa không khí, thông gió</h3>-->
+<!--                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur-->
+<!--                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>-->
+<!--                                <router-link :to="{ name: 'serviceDetail',params: {id:5 }}"-->
+<!--                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">-->
+<!--                                    Xem thêm-->
+<!--                                    <img width="27" height="27" class="arrow-icon"-->
+<!--                                         src="/assets/img/demos/construction/icons/arrow-right.svg"-->
+<!--                                         alt="" data-icon-->
+<!--                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>-->
+<!--                                </router-link>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6 mgb-20 appear-animation" data-appear-animation="fadeInUpShorterPlus"-->
+<!--                         data-appear-animation-delay="1000">-->
+<!--                        <div class="d-flex align-items-start">-->
+<!--                            <img class="flex-0-0-auto" width="60" height="60"-->
+<!--                                 src="/assets/img/business-image/services/transform-bezier.svg" alt="" data-icon-->
+<!--                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>-->
+<!--                            <div class="ps-4">-->
+<!--                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">-->
+<!--                                    Thiết kế xây dựng mô hình Bim – Revit</h3>-->
+<!--                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur-->
+<!--                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>-->
+<!--                                <router-link :to="{ name: 'serviceDetail',params: {id:6 }}"-->
+<!--                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">-->
+<!--                                    Xem thêm-->
+<!--                                    <img width="27" height="27" class="arrow-icon"-->
+<!--                                         src="/assets/img/demos/construction/icons/arrow-right.svg"-->
+<!--                                         alt="" data-icon-->
+<!--                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>-->
+<!--                                </router-link>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="col-12 text-center" v-show="!isLoadMoreService">
                         <router-link :to="{ name: 'service'}"
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
@@ -304,98 +303,98 @@
                                  data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-light ms-2'}"/>
                         </router-link>
                     </div>
-                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
-                         data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="100">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/share.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Tư vấn chuyển giao công nghệ</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'serviceDetail',params: {id:7 }}"
-                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    Xem thêm
-                                    <img width="27" height="27" class="arrow-icon"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
-                         data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="150">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/todolist-pen.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Quản lý dự án</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'serviceDetail',params: {id:8 }}"
-                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    Xem thêm
-                                    <img width="27" height="27" class="arrow-icon"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
-                         data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="200">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/magnifier.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Giám sát thi công</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'serviceDetail',params: {id:9 }}"
-                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    Xem thêm
-                                    <img width="27" height="27" class="arrow-icon"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
-                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"
-                         data-appear-animation="fadeInUpShorterPlus"
-                         data-appear-animation-delay="250">
-                        <div class="d-flex align-items-start">
-                            <img class="flex-0-0-auto" width="60" height="60"
-                                 src="/assets/img/business-image/services/square-check.svg" alt="" data-icon
-                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>
-                            <div class="ps-4">
-                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
-                                    Thẩm định thiết kế, kiểm định chất lượng công trình</h3>
-                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>
-                                <router-link :to="{ name: 'serviceDetail',params: {id:10 }}"
-                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    Xem thêm
-                                    <img width="27" height="27" class="arrow-icon"
-                                         src="/assets/img/demos/construction/icons/arrow-right.svg"
-                                         alt="" data-icon
-                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>
-                                </router-link>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"-->
+<!--                         data-appear-animation="fadeInUpShorterPlus"-->
+<!--                         data-appear-animation-delay="100">-->
+<!--                        <div class="d-flex align-items-start">-->
+<!--                            <img class="flex-0-0-auto" width="60" height="60"-->
+<!--                                 src="/assets/img/business-image/services/share.svg" alt="" data-icon-->
+<!--                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>-->
+<!--                            <div class="ps-4">-->
+<!--                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">-->
+<!--                                    Tư vấn chuyển giao công nghệ</h3>-->
+<!--                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur-->
+<!--                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>-->
+<!--                                <router-link :to="{ name: 'serviceDetail',params: {id:7 }}"-->
+<!--                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">-->
+<!--                                    Xem thêm-->
+<!--                                    <img width="27" height="27" class="arrow-icon"-->
+<!--                                         src="/assets/img/demos/construction/icons/arrow-right.svg"-->
+<!--                                         alt="" data-icon-->
+<!--                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>-->
+<!--                                </router-link>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"-->
+<!--                         data-appear-animation="fadeInUpShorterPlus"-->
+<!--                         data-appear-animation-delay="150">-->
+<!--                        <div class="d-flex align-items-start">-->
+<!--                            <img class="flex-0-0-auto" width="60" height="60"-->
+<!--                                 src="/assets/img/business-image/services/todolist-pen.svg" alt="" data-icon-->
+<!--                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>-->
+<!--                            <div class="ps-4">-->
+<!--                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">-->
+<!--                                    Quản lý dự án</h3>-->
+<!--                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur-->
+<!--                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>-->
+<!--                                <router-link :to="{ name: 'serviceDetail',params: {id:8 }}"-->
+<!--                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">-->
+<!--                                    Xem thêm-->
+<!--                                    <img width="27" height="27" class="arrow-icon"-->
+<!--                                         src="/assets/img/demos/construction/icons/arrow-right.svg"-->
+<!--                                         alt="" data-icon-->
+<!--                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>-->
+<!--                                </router-link>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"-->
+<!--                         data-appear-animation="fadeInUpShorterPlus"-->
+<!--                         data-appear-animation-delay="200">-->
+<!--                        <div class="d-flex align-items-start">-->
+<!--                            <img class="flex-0-0-auto" width="60" height="60"-->
+<!--                                 src="/assets/img/business-image/services/magnifier.svg" alt="" data-icon-->
+<!--                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>-->
+<!--                            <div class="ps-4">-->
+<!--                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">-->
+<!--                                    Giám sát thi công</h3>-->
+<!--                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur-->
+<!--                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>-->
+<!--                                <router-link :to="{ name: 'serviceDetail',params: {id:9 }}"-->
+<!--                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">-->
+<!--                                    Xem thêm-->
+<!--                                    <img width="27" height="27" class="arrow-icon"-->
+<!--                                         src="/assets/img/demos/construction/icons/arrow-right.svg"-->
+<!--                                         alt="" data-icon-->
+<!--                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>-->
+<!--                                </router-link>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div v-show="isLoadMoreService" class="col-md-6 mgb-20 appear-animation"-->
+<!--                         data-appear-animation="fadeInUpShorterPlus"-->
+<!--                         data-appear-animation-delay="250">-->
+<!--                        <div class="d-flex align-items-start">-->
+<!--                            <img class="flex-0-0-auto" width="60" height="60"-->
+<!--                                 src="/assets/img/business-image/services/square-check.svg" alt="" data-icon-->
+<!--                                 data-plugin-options="{'animated': true, 'delay': 1200, 'strokeBased': true, 'extraClass': 'svg-stroke-color-dark'}"/>-->
+<!--                            <div class="ps-4">-->
+<!--                                <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">-->
+<!--                                    Thẩm định thiết kế, kiểm định chất lượng công trình</h3>-->
+<!--                                <p class="font-weight-light text-3-5 mb-3-5">Lorem ipsum dolor sit amet, consectetur-->
+<!--                                    adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia. </p>-->
+<!--                                <router-link :to="{ name: 'serviceDetail',params: {id:10 }}"-->
+<!--                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">-->
+<!--                                    Xem thêm-->
+<!--                                    <img width="27" height="27" class="arrow-icon"-->
+<!--                                         src="/assets/img/demos/construction/icons/arrow-right.svg"-->
+<!--                                         alt="" data-icon-->
+<!--                                         data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"/>-->
+<!--                                </router-link>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
             </div>
             <div class="d-none d-lg-block position-absolute transform3dy-n50 right-0 pe-5 me-4">
@@ -666,25 +665,167 @@
         </section>
 
         <div class="container">
-            <div class="row align-items-center text-center py-5 my-3">
-                <div class="col-md-4 align-items-center">
-                    <h2 class="mgb-0 text-color-dark font-weight-bold text-7 line-height-1 appear-animation text-left"
+            <div class="row align-items-center text-center pdt-40 pdb-20">
+                <div class="col">
+                    <h2 class="mgb-30 text-color-dark font-weight-bold text-7 line-height-1 appear-animation text-center"
                         data-appear-animation="fadeInRightShorterPlus" data-appear-animation-delay="200">Đối tác liên
                         kết</h2>
                 </div>
-                <div class="col-md-4 text-center pdt-15 pdb-15">
-                    <a href="https://varchi.vn/" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                       data-appear-animation-delay="200">
-                        <img src="/assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt
-                             class="img-fluid d-inline-block" style="max-width: 140px;"/>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center">
-                    <a href="#" class="appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                       data-appear-animation-delay="200">
-                        <img src="/assets/img/business-image/partner/sld.png" alt class="img-fluid d-inline-block"
-                             style="max-width: 90px;"/>
-                    </a>
+                <div data-appear-animation="fadeInUpShorterPlus"
+                     data-appear-animation-delay="200"
+                    class="d-flex align-items-center appear-animation partner owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 bg-light mb-0"
+                    data-plugin-options="{'responsive': {'0': {'items': 2, 'nav': false, 'dots': false}, '768': {'items': 3, 'nav': false, 'dots': false}, '992': {'items': 4, 'nav': false, 'dots': false}, '1200': {'items': 5, 'nav': false, 'dots': false}}, 'loop': false, 'autoHeight': false}">
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-vinfast-inkythuatso-21-11-08-55.jpg" alt
+                                 class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div  class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/t-t-group.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div  class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-tnr-holdings.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div  class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/vietinbank.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/tsg.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/aiwado.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/an-khanh-jvc.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/anh-nguyen.jfif" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/ariyana.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/artc.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/ceo.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/cuc-doi-ngoai.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/dong-phat.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/dong-phong.webp" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/flamingo.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/fresson.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/gammon.jfif" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/hai-quan-quang-ninh.jfif" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/hasky.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/Hoabinh.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/hoang-long.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/hoc-vien-nong-nghiep.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/HQ.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/hung-ngan.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/kln.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/lms.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-an-thinh-group-02.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-entity.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-geleximco.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-hd-mon-holdings.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
