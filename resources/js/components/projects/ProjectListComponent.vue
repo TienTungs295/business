@@ -34,9 +34,9 @@
                     <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center justify-content-md-start text-3-5 pb-2 mb-4">
                         <li class="nav-item cursor-pointer" :class="category_id == null ? 'active' : ''"
                             @click="findProjects(null,true)">
-                            <a class="nav-link font-weight-semibold text-color-dark text-color-hover-primary px-0"
+                            <a class="nav-link font-weight-semibold text-color-dark text-color-hover-primary px-0 text-uppercase"
                                :class="category_id == null ? 'active' : ''">Tất cả</a></li>
-                        <li class="nav-item ms-4 cursor-pointer" v-for="item in projectCategories"
+                        <li class="nav-item ms-4 cursor-pointer text-uppercase" v-for="item in projectCategories"
                             @click="findProjects(item.id,true)"
                             :class="category_id == item.id ? 'active' : ''">
                             <a class="nav-link font-weight-semibold text-color-dark text-color-hover-primary px-0"
@@ -76,8 +76,9 @@
                         </div>
                     </div>
                     <loading-component v-bind:loading="isLoading"></loading-component>
+                    <loading-component v-bind:loading="isLoadingLoadMore"></loading-component>
 
-                    <div class="text-center pdt-25" v-if="projectPaginate.next_page_url != null && !isLoading">
+                    <div class="text-center pdt-25" v-if="projectPaginate.next_page_url != null && (!isLoadingLoadMore && !isLoading)">
                         <a @click="loadMore()"
                            class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-2">
                             Xem thêm
@@ -116,6 +117,7 @@ export default {
     data() {
         return {
             isLoading: false,
+            isLoadingLoadMore: false,
             category_id: null
         };
     },
@@ -144,7 +146,7 @@ export default {
         },
 
         loadMore() {
-            this.isLoading = true;
+            this.isLoadingLoadMore = true;
             let param = {};
             param.page = this.projectPaginate.current_page + 1;
             if (this.category_id != null) param.category_id = this.category_id;
@@ -155,9 +157,9 @@ export default {
                 this.projectPaginate.next_page_url = projectPaginate.next_page_url;
                 this.projectPaginate.current_page = projectPaginate.current_page;
                 this.$store.commit("setProjectPaginate", this.projectPaginate);
-                this.isLoading = false;
+                this.isLoadingLoadMore = false;
             }).catch(e => {
-                this.isLoading = false;
+                this.isLoadingLoadMore = false;
             });
         },
     },

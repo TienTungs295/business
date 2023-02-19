@@ -15,7 +15,7 @@
 											</span>
                 </div>
                 <img :src="'/uploads/images/'+item.image" class="img-fluid"
-                     :alt="item.image"/>
+                     :alt="DMTImage" @error="setDefaultImg"/>
             </div>
             <div class="card-body py-4 px-0">
                                 <span
@@ -46,7 +46,7 @@ export default {
     methods: {
         setDefaultImg(event){
             event.target.src = window.location.protocol + "//" + window.location.host + '/assets/img/business-image/default/placeholder.png'
-        }
+        },
     },
     mounted() {
     }
