@@ -82,4 +82,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class, 'user_id');
     }
+
+    public function projectAreas()
+    {
+        return $this->hasMany(ProjectArea::class, 'user_id');
+    }
+
+    public function projectFields()
+    {
+        return $this->hasMany(ProjectField::class, 'user_id');
+    }
 }

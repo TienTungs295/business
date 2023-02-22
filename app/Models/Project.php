@@ -45,10 +45,29 @@ class Project extends Model
         );
     }
 
+    /**
+     * @return BelongsToMany
+     */
+    public function projectFields()
+    {
+        return $this->belongsToMany(
+            ProjectField::class,
+            'project_project_field',
+            'project_id',
+            'project_field_id'
+        );
+    }
+
     public function images()
     {
         return $this->hasMany(Image::class, 'project_id');
     }
+
+    public function projectArea()
+    {
+        return $this->belongsTo(ProjectArea::class, 'project_area_id');
+    }
+
 
     protected static function boot()
     {
@@ -56,6 +75,9 @@ class Project extends Model
 
         self::deleting(function (Project $project) {
             $project->projectCategories()->detach();
+        });
+        self::deleting(function (Project $project) {
+            $project->projectFields()->detach();
         });
     }
 }

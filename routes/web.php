@@ -75,6 +75,24 @@ Route::group(['middleware' => ['isMember', 'auth:web', 'preventBackHistory'], 'p
         Route::post('/cap-nhat/{id}', ['as' => 'updateUser', 'uses' => 'UserController@update']);
         Route::post('/xoa/{id}', ['as' => 'deleteUser', 'uses' => 'UserController@destroy']);
     });
+
+    Route::group(['prefix' => 'linh-vuc'], function () {
+        Route::get('', ['as' => 'projectFieldView', 'uses' => 'ProjectFieldController@index']);
+        Route::get('/them-moi', ['as' => 'createProjectFieldView', 'uses' => 'ProjectFieldController@create']);
+        Route::get('/chinh-sua/{id}', ['as' => 'updateProjectFieldView', 'uses' => 'ProjectFieldController@edit']);
+        Route::post('/luu-tru', ['as' => 'createProjectField', 'uses' => 'ProjectFieldController@store']);
+        Route::post('/cap-nhat/{id}', ['as' => 'updateProjectField', 'uses' => 'ProjectFieldController@update']);
+        Route::post('/xoa/{id}', ['as' => 'deleteProjectField', 'uses' => 'ProjectFieldController@destroy']);
+    });
+
+    Route::group(['prefix' => 'khu-vuc'], function () {
+        Route::get('', ['as' => 'projectAreaView', 'uses' => 'ProjectAreaController@index']);
+        Route::get('/them-moi', ['as' => 'createProjectAreaView', 'uses' => 'ProjectAreaController@create']);
+        Route::get('/chinh-sua/{id}', ['as' => 'updateProjectAreaView', 'uses' => 'ProjectAreaController@edit']);
+        Route::post('/luu-tru', ['as' => 'createProjectArea', 'uses' => 'ProjectAreaController@store']);
+        Route::post('/cap-nhat/{id}', ['as' => 'updateProjectArea', 'uses' => 'ProjectAreaController@update']);
+        Route::post('/xoa/{id}', ['as' => 'deleteProjectArea', 'uses' => 'ProjectAreaController@destroy']);
+    });
 });
 
 Route::any('{all}', function () {

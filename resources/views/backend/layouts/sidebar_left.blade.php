@@ -14,6 +14,18 @@
                 <span>Danh mục dự án</span>
             </a>
         </li>
+        <li class="nav-item {{ (request()->is('quan-tri/linh-vuc*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("projectFieldView") !!}">
+                <i class="bi bi-peace-fill"></i>
+                <span>Lĩnh vực</span>
+            </a>
+        </li>
+        <li class="nav-item {{ (request()->is('quan-tri/khu-vuc*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("projectAreaView") !!}">
+                <i class="bi bi-pin-map-fill"></i>
+                <span>Khu vực</span>
+            </a>
+        </li>
         <li class="nav-item {{ (request()->is('quan-tri/du-an*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("projectView") !!}">
                 <i class="bi bi-building"></i>
