@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Project;
+use App\Models\ProjectArea;
 use App\Models\ProjectCategory;
+use App\Models\ProjectField;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -42,7 +44,9 @@ class ProjectController extends BaseCustomController
     public function create()
     {
         $project_categories = ProjectCategory::all();
-        return view('backend.project.edit', compact('project_categories'));
+        $project_fields = ProjectField::all();
+        $project_areas = ProjectArea::all();
+        return view('backend.project.edit', compact('project_categories','project_fields','project_areas'));
     }
 
     /**
@@ -65,10 +69,12 @@ class ProjectController extends BaseCustomController
 
         $project = new Project;
         $project_categories = $request->input("project_categories");
+        $project_fields = $request->input("project_fields");
         $project->name = $request->input('name');
         $project->slug = Str::slug($project->name);;
         $project->content = $request->input('content');
         $project->priority = $request->input('priority');
+        $project->project_area_id = $request->input('project_area_id');
         $project->user_id = auth()->user()->id;
 
         //image
@@ -99,6 +105,7 @@ class ProjectController extends BaseCustomController
             $project->save();
             $project->images()->saveMany($images);
             $project->projectCategories()->attach($project_categories);
+            $project->projectFields()->attach($project_fields);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();
@@ -142,8 +149,11 @@ class ProjectController extends BaseCustomController
         }
         $project->images = $image_string;
         $project->project_category_ids = $project->projectCategories()->get()->pluck("id")->toArray();
+        $project->project_field_ids = $project->projectFields()->get()->pluck("id")->toArray();
         $project_categories = ProjectCategory::all();
-        return view('backend.project.edit', compact('project', 'project_categories'));
+        $project_fields = ProjectField::all();
+        $project_areas = ProjectArea::all();
+        return view('backend.project.edit', compact('project', 'project_categories','project_fields','project_areas'));
     }
 
     /**
@@ -171,10 +181,12 @@ class ProjectController extends BaseCustomController
         }
 
         $project_categories = $request->input("project_categories");
+        $project_fields = $request->input("project_fields");
         $project->name = $request->input('name');
         $project->slug = Str::slug($project->name);
         $project->content = $request->input('content');
         $project->priority = $request->input('priority');
+        $project->project_area_id = $request->input('project_area_id');
         $project->user_id = auth()->user()->id;
 
         //image
@@ -233,6 +245,7 @@ class ProjectController extends BaseCustomController
             $project->images()->saveMany($new_images);
             $project->images()->whereIn('id', $del_image_ids)->delete();
             $project->projectCategories()->sync($project_categories);
+            $project->projectFields()->sync($project_fields);
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();

@@ -56,6 +56,38 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col">
+                                        <label class="form-label d-block">Lĩnh vực</label>
+                                        @if(!empty($project_fields))
+                                            @foreach($project_fields as $data)
+                                                <div class="form-check d-inline-flex mr-10">
+                                                    <input class="form-check-input" type="checkbox"
+                                                           value="{!! $data->id !!}"
+                                                           name="project_fields[]"
+                                                        {!! isset($project->project_field_ids) && in_array($data->id, $project->project_field_ids) ? 'checked' : ''!!}>
+                                                    <label class="ml-10 form-check-label">
+                                                        {!! $data->name !!}
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label class="form-label">Khu vực</label>
+                                        <select class="form-select" name="project_area_id">
+                                            <option value="">-----</option>
+                                            @if(!empty($project_areas))
+                                                @foreach($project_areas as $data)
+                                                    <option
+                                                        value="{!! $data["id"] !!}" {!! isset($project->id) && $project->project_area_id == $data["id"] ? 'selected' : ''!!}>{!! $data["name"] !!}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
                                         <label class="form-label">Nội dung</label>
                                         <textarea class="3m-editor" name="content">
                                             {!! old('content', isset($project->content) ? $project->content : '') !!}
