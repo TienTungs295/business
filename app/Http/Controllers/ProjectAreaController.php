@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Models\ProjectArea;
+use Illuminate\Support\Facades\DB;
 
 class ProjectAreaController extends BaseCustomController
 {
@@ -140,11 +142,17 @@ class ProjectAreaController extends BaseCustomController
      */
     public function destroy($id)
     {
+        DB::beginTransaction();
         try {
             $project_area = ProjectArea::findOrFail($id);
             $project_area->delete();
+            Project::where('project_area_id', $id)->update(['project_area_id' => 0]);
+            DB::commit();
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw $e;
         }
         return redirect()->back()->with('success', 'Thành công');
     }
