@@ -11,7 +11,7 @@
         <li class="nav-item {{ (request()->is('quan-tri/danh-muc-du-an*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("projectCategoryView") !!}">
                 <i class="bi bi-intersect"></i>
-                <span>Danh mục dự án</span>
+                <span>Loại hình</span>
             </a>
         </li>
         <li class="nav-item {{ (request()->is('quan-tri/linh-vuc*')) ? 'active' : '' }}">

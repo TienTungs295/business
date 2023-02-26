@@ -34,7 +34,7 @@
                             <div class="col-xxl-4 col-md-6">
                                 <a class="card info-card sales-card" href="{!! route("projectCategoryView") !!}">
                                     <div class="card-body">
-                                        <h5 class="card-title">Danh mục dự án</h5>
+                                        <h5 class="card-title">Loại hình</h5>
                                         <div class="d-flex align-items-center">
                                             <div
                                                 class="card-icon rounded-circle d-flex align-items-center justify-content-center">

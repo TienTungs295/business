@@ -2,7 +2,7 @@
 @section('content')
     <div class="main-inner">
         <div class="pagetitle">
-            <h4>Danh mục dự án</h4>
+            <h4>Loại hình</h4>
         </div><!-- End Page Title -->
         <section class="section">
             <div class="row">
@@ -24,7 +24,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Tên danh mục</th>
+                                    <th scope="col">Tên loại hình</th>
                                     <th scope="col">Độ ưu tiên</th>
                                     <th scope="col" class="text-center">Người cập nhật</th>
                                     <th scope="col" class="text-center">Ngày cập nhật</th>

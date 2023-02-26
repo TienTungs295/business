@@ -31,7 +31,7 @@ class ProjectRestController extends BaseCustomController
             try {
                 ProjectCategory::findOrFail($category_id);
             } catch (ModelNotFoundException $e) {
-                return $ajax_response->setMessage("Danh mục dự án không tồn tại hoặc đã bị xóa");
+                return $ajax_response->setMessage("Loại hình không tồn tại hoặc đã bị xóa");
             }
             $query->whereHas('projectCategories', function ($query2) use ($category_id) {
                 $query2->where('category_id', $category_id);

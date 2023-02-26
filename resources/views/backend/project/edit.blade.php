@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col">
-                                        <label class="form-label d-block">Danh mục dự án</label>
+                                        <label class="form-label d-block">Loại hình</label>
                                         @if(!empty($project_categories))
                                             @foreach($project_categories as $data)
                                                 <div class="form-check d-inline-flex mr-10">

@@ -4,9 +4,9 @@
         <div class="pagetitle">
             <h4>
                 @if(isset($project_category))
-                    Cập nhật danh mục dự án
+                    Cập nhật loại hình
                 @else
-                    Thêm mới danh mục dự án
+                    Thêm mới loại hình
                 @endif
             </h4>
         </div><!-- End Page Title -->
@@ -21,11 +21,11 @@
                                 @csrf
                                 <div class="row mb-3">
                                     <div class="col-md-9">
-                                        <label class="form-label">Tên danh mục</label>
+                                        <label class="form-label">Tên loại hình</label>
                                         <input type="text"
                                                value="{!! old('name', isset($project_category->name) ? $project_category->name : '')!!}"
                                                class="form-control" name="name" maxlength="350" required
-                                               placeholder="Tên danh mục">
+                                               placeholder="Tên loại hình">
                                     </div>
                                     <div class="col-md-3">
                                         <label class="form-label">Độ ưu tiên</label>
