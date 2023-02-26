@@ -1,14 +1,12 @@
 <?php
 
-use App\Http\Controllers\Rests\AuthRestController;
-use App\Http\Controllers\Rests\BlogRestController;
-use App\Http\Controllers\Rests\CategoryRestController;
-use App\Http\Controllers\Rests\CollectionRestController;
+use App\Http\Controllers\Rests\ProjectCategoryRestController;
+use App\Http\Controllers\Rests\ProjectFieldRestController;
 use App\Http\Controllers\Rests\ProjectRestController;
 use App\Http\Controllers\Rests\UploadRestController;
 use App\Http\Controllers\Rests\CommentRestController;
 use App\Http\Controllers\Rests\PostRestController;
-use App\Http\Controllers\Rests\ProjectCategoryRestController;
+use App\Http\Controllers\Rests\ProjectAreaRestController;
 use App\Http\Controllers\Rests\PostCategoryRestController;
 use App\Http\Controllers\Rests\CustomerInfoRestController;
 use Illuminate\Http\Request;
@@ -54,6 +52,13 @@ Route::group(['prefix' => 'project-category'], function () {
     Route::get('/find-all', [ProjectCategoryRestController::class, 'findAll']);
 });
 
+Route::group(['prefix' => 'project-area'], function () {
+    Route::get('/find-all', [ProjectAreaRestController::class, 'findAll']);
+});
+
+Route::group(['prefix' => 'project-field'], function () {
+    Route::get('/find-all', [ProjectFieldRestController::class, 'findAll']);
+});
 
 Route::group(['prefix' => 'contact'], function () {
     Route::post('/save', [CustomerInfoRestController::class, 'store']);

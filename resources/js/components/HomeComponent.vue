@@ -86,7 +86,7 @@
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tiết kiện chi phí đầu tư và vận hành</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tiết kiệm chi phí đầu tư và vận hành</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-primary appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
@@ -922,6 +922,8 @@
 import ProjectService from "../services/ProjectService";
 import PostService from "../services/PostService";
 import ProjectCategoryService from "../services/ProjectCategoryService";
+import ProjectFieldService from "../services/ProjectFieldService";
+import ProjectAreaService from "../services/ProjectAreaService";
 import {mapGetters} from "vuex";
 
 
@@ -1007,18 +1009,28 @@ export default {
         );
         document.head.appendChild(script);
 
-        setTimeout(() => {
-            ProjectCategoryService.findAll().then(response => {
-                let projectCategories = response || [];
-                this.$store.commit("setProjectCategories", projectCategories);
-            }).catch(e => {
-            });
-            ProjectService.findAll().then(response => {
-                let projectPaginate = response || {};
-                this.$store.commit("setProjectPaginate", projectPaginate);
-            }).catch(e => {
-            });
-        }, 2000);
+        // setTimeout(() => {
+        //     ProjectCategoryService.findAll().then(response => {
+        //         let projectCategories = response || [];
+        //         this.$store.commit("setProjectCategories", projectCategories);
+        //     }).catch(e => {
+        //     });
+        //     ProjectService.findAll().then(response => {
+        //         let projectPaginate = response || {};
+        //         this.$store.commit("setProjectPaginate", projectPaginate);
+        //     }).catch(e => {
+        //     });
+        //     ProjectFieldService.findAll().then(response => {
+        //         let projectFields = response || [];
+        //         this.$store.commit("setProjectFields", projectFields);
+        //     }).catch(e => {
+        //     });
+        //     ProjectAreaService.findAll().then(response => {
+        //         let projectAreas = response || [];
+        //         this.$store.commit("setProjectAreas", projectAreas);
+        //     }).catch(e => {
+        //     });
+        // }, 1000);
     },
     beforeDestroy() {
         clearInterval(this.timer);

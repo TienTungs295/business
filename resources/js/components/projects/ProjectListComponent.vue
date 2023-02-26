@@ -76,21 +76,41 @@
                         </div>
                     </div>
                     <loading-component v-bind:loading="isLoading"></loading-component>
-                    <loading-component v-bind:loading="isLoadingLoadMore"></loading-component>
-
-                    <div class="text-center pdt-25" v-if="projectPaginate.next_page_url != null && (!isLoadingLoadMore && !isLoading)">
-                        <a @click="loadMore()"
-                           class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-2">
-                            Xem thêm
-                            <img class="mgl-5 arrow-icon-down" width="15" height="15" src="/assets/img/business-icons/arrow-down.svg"
-                                 alt="DMT button"/>
-                        </a>
-                    </div>
                 </div>
                 <div class="col-12" v-if="projectPaginate.data.length ==0 && !isLoading">
                     <div class="row text-center">
                         <span class="fz-16">Không có dữ liệu</span>
                     </div>
+                </div>
+                <div class="col-12 mgt-40">
+                    <ul v-if="projectPaginate.last_page > 1 && projectPaginate.data && projectPaginate.data.length && !isLoading"
+                        class="custom-pagination-style-1 pagination pagination-rounded pagination-md justify-content-center">
+                        <li class="page-item" :class="projectPaginate.prev_page_url == null ? 'disabled' : ''">
+                            <a v-if="projectPaginate.prev_page_url != null" class="page-link cursor-pointer"
+                               @click="changePage(projectPaginate.current_page - 1)">
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                            <a class="page-link" v-else>
+                                <i class="fas fa-angle-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item" :class="projectPaginate.current_page == i ? 'active' :''"
+                            v-for="i in projectPaginate.last_page">
+                            <a class="page-link cursor-pointer" v-if="projectPaginate.current_page != i"
+                               @click="changePage(i)">{{ i }}</a>
+                            <a class="page-link cursor-default" v-else>{{ i }}</a>
+                        </li>
+
+                        <li class="page-item" :class="projectPaginate.next_page_url == null ? 'disabled' : ''">
+                            <a v-if="projectPaginate.next_page_url != null" class="page-link cursor-pointer"
+                               @click="changePage(projectPaginate.current_page + 1)">
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                            <a class="page-link" v-else>
+                                <i class="fas fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -13,6 +13,8 @@ export default new Vuex.Store({
                 data: []
             },
             projectCategories: [],
+            projectFields: [],
+            projectAreas: [],
             services: {
                 1: {
                     id: 1,
@@ -106,6 +108,8 @@ export default new Vuex.Store({
         postCategories: state => state.object.postCategories,
         projectPaginate: state => state.object.projectPaginate,
         projectCategories: state => state.object.projectCategories,
+        projectFields: state => state.object.projectFields,
+        projectAreas: state => state.object.projectAreas,
         services: state => state.object.services,
         isShowMenu: state => state.object.isShowMenu,
         isShowServiceMenu: state => state.object.isShowServiceMenu
@@ -128,6 +132,12 @@ export default new Vuex.Store({
         },
         setProjectCategories(state, newValue) {
             state.object.projectCategories = newValue;
+        },
+        setProjectFields(state, newValue) {
+            state.object.projectFields = newValue;
+        },
+        setProjectAreas(state, newValue) {
+            state.object.projectAreas = newValue;
         },
         setIsShowMenu(state, newValue) {
             state.object.isShowMenu = newValue;

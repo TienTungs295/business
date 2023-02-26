@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Rests;
 use App\Http\Controllers\BaseCustomController;
 use App\Http\Responses\AjaxResponse;
 use App\Models\Image;
+use App\Models\ProjectArea;
 use App\Models\ProjectCategory;
 use App\Models\Project;
 use App\Models\ProjectField;
@@ -21,11 +22,11 @@ class ProjectRestController extends BaseCustomController
         $area_id = $request->input("area_id");
         $name = $request->input("name");
         $sort = $request->input("sort");
-        $page_size = 12;
+        $page_size = 20;
         $page_size_param = $request->input("page_size");
         if (!is_null($page_size_param)) $page_size = $page_size_param;
         $ajax_response = new AjaxResponse();
-        $query = Project::where('id', '>', 1);
+        $query = Project::where('id', '>', 1)->with(["projectArea","projectFields","projectCategories"]);
         if (!is_null($category_id)) {
             try {
                 ProjectCategory::findOrFail($category_id);
@@ -44,13 +45,13 @@ class ProjectRestController extends BaseCustomController
                 return $ajax_response->setMessage("Lĩnh vực không tồn tại hoặc đã bị xóa");
             }
             $query->whereHas('projectFields', function ($query3) use ($field_id) {
-                $query3->where('field_id', $field_id);
+                $query3->where('project_field_id', $field_id);
             });
         }
 
         if (!is_null($area_id)) {
             try {
-                ProjectField::findOrFail($area_id);
+                ProjectArea::findOrFail($area_id);
             } catch (ModelNotFoundException $e) {
                 return $ajax_response->setMessage("Khu vực không tồn tại hoặc đã bị xóa");
             }
@@ -68,7 +69,7 @@ class ProjectRestController extends BaseCustomController
         } else {
             $query->orderByRaw('ISNULL(priority), priority ASC')->orderBy("updated_at", "DESC");
         }
-        $projects = $query->simplePaginate($page_size);
+        $projects = $query->paginate($page_size);
         return $ajax_response->setData($projects)->toApiResponse();
     }
 

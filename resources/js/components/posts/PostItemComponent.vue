@@ -15,7 +15,7 @@
 											</span>
                 </div>
                 <img :src="'/uploads/images/'+item.image" class="img-fluid"
-                     :alt="DMTImage" @error="setDefaultImg"/>
+                     alt="DMTImage" @error="setDefaultImg"/>
             </div>
             <div class="card-body py-4 px-0">
                                 <span
@@ -24,14 +24,6 @@
                                 </span>
                 <h3 class="text-transform-none font-weight-bold text-5 text-color-hover-primary mb-2">
                     {{item.name}}</h3>
-<!--                <p class="mb-2" v-html="item.content"></p>-->
-<!--                <span class="custom-view-more d-inline-flex font-weight-medium text-color-primary">-->
-<!--											Xem thêm-->
-<!--											<img width="27" height="27"-->
-<!--                                                 src="img/demos/construction/icons/arrow-right.svg" alt="" data-icon-->
-<!--                                                 data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-primary ms-2'}"-->
-<!--                                                 style="width: 27px;"/>-->
-<!--										</span>-->
             </div>
         </div>
     </router-link>
