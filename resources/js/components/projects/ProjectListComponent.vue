@@ -30,48 +30,92 @@
         </section>
         <div class="container pb-5 pb-sm-0 my-5">
             <div class="row">
-                <div class="col-12 position-relative" >
-                    <ul class="nav nav-pills sort-source sort-source-style-3 justify-content-center justify-content-md-start text-3-5 pb-2 mb-4">
-                        <li class="nav-item cursor-pointer" :class="category_id == null ? 'active' : ''"
-                            @click="findProjects(null,true)">
-                            <a class="nav-link font-weight-semibold text-color-dark text-color-hover-primary px-0 text-uppercase"
-                               :class="category_id == null ? 'active' : ''">Tất cả</a></li>
-                        <li class="nav-item ms-4 cursor-pointer text-uppercase" v-for="item in projectCategories"
-                            @click="findProjects(item.id,true)"
-                            :class="category_id == item.id ? 'active' : ''">
-                            <a class="nav-link font-weight-semibold text-color-dark text-color-hover-primary px-0"
-                               :class="category_id == item.id ? 'active' : ''">
-                                {{ item.name }}
-                            </a>
-                        </li>
-                    </ul>
+                <div class="col-md-2 mgb-20">
+                    <p class="mgb-0" style="position: relative; top:5px">BỘ LỌC DỰ ÁN:</p>
+                </div>
+                <div class="col-md-4 mgb-20">
+                    <select class="form-control text-uppercase" v-model="param.category_id"
+                            @change="changeProjectCategory($event)"
+                            name="categpry">
+                        <option value="">Tất cả loại hình</option>
+                        <option v-for="item in projectCategories" v-bind:value="item.id">
+                            {{ item.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-3 mgb-20">
+                    <select class="form-control text-uppercase" v-model="param.field_id"
+                            @change="changeProjectField($event)"
+                            name="field">
+                        <option value="">Tất cả lĩnh vực</option>
+                        <option v-for="item in projectFields" v-bind:value="item.id">
+                            {{ item.name }}
+                        </option>
+                    </select>
+                </div>
+                <div class="col-md-3 mgb-20">
+                    <select class="form-control text-uppercase" v-model="param.area_id"
+                            @change="changeProjectArea($event)"
+                            name="area">
+                        <option value="">Tất cả khu vực</option>
+                        <option v-for="item in projectAreas" v-bind:value="item.id">
+                            {{ item.name }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mgb-40">
+                <div class="col-md-2 mgb-20">
+                    <p class="mgb-0" style="position: relative; top:5px">TÌM KIẾM DỰ ÁN:</p>
+                </div>
+                <div class="col-md-4 mgb-20">
+                    <div class="form-group position-relative">
+                        <input type="text"
+                               v-model="param.name"
+                               v-on:keyup.enter="changeName"
+                               class="form-control" name="name" placeholder="Nhập tên dự án tìm kiếm...">
+                        <i class="fa fa-search project-search-icon" @click="changeName"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 position-relative">
                     <div v-if="projectPaginate.data.length && !isLoading">
                         <div class="row sort-destination g-4 px-0">
-                            <div class="col-sm-6 col-md-4 isotope-item" v-for="item in projectPaginate.data">
-                                <div class="portfolio-item">
-                                    <div
-                                        class="thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-centered-icons mb-3-5">
-                                        <div class="thumb-info-wrapper">
+                            <div class="col-sm-6 col-md-3 isotope-item pdl-0 pdr-0 mgt-0"
+                                 v-for="item in projectPaginate.data">
+                                <router-link tag="div"
+                                             :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}"
+                                             class="portfolio-item cursor-pointer">
+                                    <div class="mgr-2 mgb-2 cursor-pointer position-relative">
+                                        <div class="__portfolio-overlay">
+                                            <div class="__overlay-inner">
+                                                <div class="__square"></div>
+                                                <div class="__category mgb-10">
+                                                    <span class="text-uppercase d-block" style="line-height: 20px"
+                                                          v-if="item.project_categories != null && item.project_categories.length"
+                                                          v-for="category in item.project_categories">
+                                                        {{ category.name }}
+                                                    </span>
+                                                </div>
+                                                <div class="__name text-uppercase mgb-10">
+                                                    {{ item.name }}
+                                                </div>
+                                                <div class="__area text-uppercase" v-if="item.project_area != null">
+                                                    <img style="position: relative;bottom: 2px"
+                                                         class="__map-icon d-inline-block" width="12" height="12"
+                                                         src="/assets/img/business-icons/map-pin.svg" alt="DMTIcon"/>
+                                                    {{ item.project_area.name }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
                                             <img :src="'/uploads/images/'+item.image" :alt="item.image"
                                                  @error="setDefaultImg"
                                                  class="img-fluid" alt="DMT Image">
-                                            <div class="thumb-info-action">
-                                                <router-link
-                                                    class="thumb-info-action-icon thumb-info-action-icon-light"
-                                                    :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}">
-                                                    <i class="fas fa-plus text-dark"></i>
-                                                </router-link>
-                                            </div>
                                         </div>
                                     </div>
-                                    <h6 class="font-weight-bold text-5-5 line-height-3">
-                                        <router-link
-                                            class="text-color-dark text-color-hover-primary text-decoration-none fz-20"
-                                            :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}">
-                                            {{ item.name }}
-                                        </router-link>
-                                    </h6>
-                                </div>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -129,31 +173,36 @@
 <script>
 import ProjectService from "../../services/ProjectService";
 import ProjectCategoryService from "../../services/ProjectCategoryService";
+import ProjectAreaService from "../../services/ProjectAreaService";
+import ProjectFieldService from "../../services/ProjectFieldService";
 import {mapGetters} from "vuex";
-import CommentService from "../../services/CommentService";
 
 export default {
     name: "ProjectList",
     data() {
         return {
             isLoading: false,
-            isLoadingLoadMore: false,
-            category_id: null
+            param: {
+                page: 1,
+                category_id: "",
+                field_id: "",
+                area_id: "",
+            }
         };
     },
     computed: {
         ...mapGetters([
             'projectPaginate',
-            'projectCategories'
+            'projectCategories',
+            'projectFields',
+            'projectAreas',
         ])
     },
     methods: {
-        findProjects(category_id, isChangeCategory) {
-            this.category_id = category_id;
-            if (this.projectPaginate.data.length == 0 || isChangeCategory) this.isLoading = true;
-            let param = {};
-            if (category_id != undefined && category_id != null) param.category_id = category_id;
-            ProjectService.findAll(param).then(response => {
+        findProjects() {
+            // if (this.projectPaginate.data.length == 0 || isChangeParams) this.isLoading = true;
+            this.isLoading = true;
+            ProjectService.findAll(this.param).then(response => {
                 let projectPaginate = response || {};
                 this.$store.commit("setProjectPaginate", projectPaginate);
                 this.isLoading = false;
@@ -164,31 +213,65 @@ export default {
         setDefaultImg(event) {
             event.target.src = window.location.protocol + "//" + window.location.host + '/assets/img/business-image/default/placeholder.png'
         },
-
-        loadMore() {
-            this.isLoadingLoadMore = true;
-            let param = {};
-            param.page = this.projectPaginate.current_page + 1;
-            if (this.category_id != null) param.category_id = this.category_id;
-            ProjectService.findAll(param).then(response => {
-                let projectPaginate = response || {};
-                let projects = projectPaginate.data || [];
-                this.projectPaginate.data = this.projectPaginate.data.concat(projects);
-                this.projectPaginate.next_page_url = projectPaginate.next_page_url;
-                this.projectPaginate.current_page = projectPaginate.current_page;
-                this.$store.commit("setProjectPaginate", this.projectPaginate);
-                this.isLoadingLoadMore = false;
-            }).catch(e => {
-                this.isLoadingLoadMore = false;
+        changeProjectCategory($event) {
+            this.param.page = 1;
+            this.param.category_id = $event.target.value;
+            this.changeRouter();
+        },
+        changeProjectField($event) {
+            this.param.page = 1;
+            this.param.field_id = $event.target.value;
+            this.changeRouter();
+        },
+        changeProjectArea($event) {
+            this.param.page = 1;
+            this.param.area_id = $event.target.value;
+            this.changeRouter();
+        },
+        changeRouter: function () {
+            let paramQuery = {};
+            if (this.param.name != undefined && this.param.name != null) paramQuery.name = this.param.name;
+            if (this.param.category_id != "") paramQuery.category_id = this.param.category_id;
+            if (this.param.field_id != "") paramQuery.field_id = this.param.field_id;
+            if (this.param.area_id != "") paramQuery.area_id = this.param.area_id;
+            if (this.param.page != null) paramQuery.page = this.param.page;
+            this.$router.push({name: 'projectList', query: paramQuery}).catch(() => {
             });
+        },
+        changeName() {
+            this.param.page = 1;
+            this.changeRouter();
+        },
+        changePage: function (page) {
+            this.param.page = page;
+            this.changeRouter();
         },
     },
     mounted() {
+        if (this.$route.query.name != undefined && this.$route.query.name != null) this.param.name = this.$route.query.name;
+        if (this.$route.query.category_id != "" && this.$route.query.category_id != undefined && this.$route.query.category_id != null) this.param.category_id = this.$route.query.category_id;
+        if (this.$route.query.field_id != "" && this.$route.query.field_id != undefined && this.$route.query.field_id != null) this.param.field_id = this.$route.query.field_id;
+        if (this.$route.query.area_id != "" && this.$route.query.area_id != undefined && this.$route.query.area_id != null) this.param.area_id = this.$route.query.area_id;
+        if (this.$route.query.page != "" && this.$route.query.page != undefined && this.$route.query.page != null) this.param.page = this.$route.query.page;
+
         ProjectCategoryService.findAll().then(response => {
             let projectCategories = response || [];
             this.$store.commit("setProjectCategories", projectCategories);
         }).catch(e => {
         });
+
+        ProjectFieldService.findAll().then(response => {
+            let projectFields = response || [];
+            this.$store.commit("setProjectFields", projectFields);
+        }).catch(e => {
+        });
+
+        ProjectAreaService.findAll().then(response => {
+            let projectAreas = response || [];
+            this.$store.commit("setProjectAreas", projectAreas);
+        }).catch(e => {
+        });
+
         this.findProjects();
     }
 }
