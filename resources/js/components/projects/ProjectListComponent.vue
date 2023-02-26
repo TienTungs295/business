@@ -31,7 +31,7 @@
         <div class="container pb-5 pb-sm-0 my-5">
             <div class="row">
                 <div class="col-md-2 mgb-20">
-                    <p class="mgb-0" style="position: relative; top:5px">BỘ LỌC DỰ ÁN:</p>
+                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">BỘ LỌC DỰ ÁN</h5>
                 </div>
                 <div class="col-md-4 mgb-20">
                     <select class="form-control text-uppercase" v-model="param.category_id"
@@ -64,11 +64,11 @@
                     </select>
                 </div>
             </div>
-            <div class="row mgb-40">
+            <div class="row mgb-45" style="border-bottom: 2px solid #d80d07">
                 <div class="col-md-2 mgb-20">
-                    <p class="mgb-0" style="position: relative; top:5px">TÌM KIẾM DỰ ÁN:</p>
+                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">TÌM KIẾM DỰ ÁN</h5>
                 </div>
-                <div class="col-md-4 mgb-20">
+                <div class="col-md-4">
                     <div class="form-group position-relative">
                         <input type="text"
                                v-model="param.name"
@@ -77,8 +77,24 @@
                         <i class="fa fa-search project-search-icon" @click="changeName"></i>
                     </div>
                 </div>
+                <div class="col-md-3 text-md-left mgb-5">
+                    <h5 class="text-uppercase fz-16" style="position: relative; top:10px">Sắp xếp</h5>
+                </div>
+                <div class="col-md-3 mgb-25">
+                    <select class="form-control text-uppercase" v-model="param.sort"
+                            @change="changeOrder($event)"
+                            name="order">
+                        <option value="">Mặc định</option>
+                        <option value="date">
+                            Ngày đăng
+                        </option>
+                        <option value="name">
+                            A-Z
+                        </option>
+                    </select>
+                </div>
             </div>
-            <div class="row">
+            <div class="row pdt-15">
                 <div class="col-12 position-relative">
                     <div v-if="projectPaginate.data.length && !isLoading">
                         <div class="row sort-destination g-4 px-0">
@@ -187,6 +203,7 @@ export default {
                 category_id: "",
                 field_id: "",
                 area_id: "",
+                sort: ""
             }
         };
     },
@@ -235,6 +252,7 @@ export default {
             if (this.param.field_id != "") paramQuery.field_id = this.param.field_id;
             if (this.param.area_id != "") paramQuery.area_id = this.param.area_id;
             if (this.param.page != null) paramQuery.page = this.param.page;
+            if (this.param.sort != "") paramQuery.sort = this.param.sort;
             this.$router.push({name: 'projectList', query: paramQuery}).catch(() => {
             });
         },
@@ -246,6 +264,10 @@ export default {
             this.param.page = page;
             this.changeRouter();
         },
+        changeOrder($event) {
+            this.param.sort = $event.target.value;
+            this.changeRouter();
+        }
     },
     mounted() {
         if (this.$route.query.name != undefined && this.$route.query.name != null) this.param.name = this.$route.query.name;
