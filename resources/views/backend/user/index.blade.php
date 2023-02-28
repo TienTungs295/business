@@ -66,7 +66,7 @@
                                                       class="d-inline-block" method="GET">
                                                     @csrf
                                                     <button type="submit"
-                                                            class="btn btn-danger btn-sm" {!! (auth()->user()->id == $data->id) || (auth()->user()->role <= $data->role)  || ($data->role == 7) ? 'disabled' : '' !!}>
+                                                            class="btn btn-info btn-sm text-white" {!! (auth()->user()->id == $data->id) || (auth()->user()->role <= $data->role)  || ($data->role == 7) ? 'disabled' : '' !!}>
                                                         <i class="bi bi-pencil-square"></i>
                                                     </button>
                                                 </form>

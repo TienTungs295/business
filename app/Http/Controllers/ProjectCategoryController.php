@@ -93,6 +93,7 @@ class ProjectCategoryController extends BaseCustomController
         } catch (ModelNotFoundException $e) {
             return redirect()->route("projectCategoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
+        if ($project_category->is_default == 1) return redirect()->route("projectCategoryView")->with('error', 'Không thể cập nhật danh mục mặc định');
         $project_categories = ProjectCategory::where('id', '!=', $id)->get()->toArray();
         return view('backend.project-category.edit', compact('project_category', 'project_categories'));
     }
@@ -111,6 +112,7 @@ class ProjectCategoryController extends BaseCustomController
         } catch (ModelNotFoundException $e) {
             return redirect()->route("projectCategoryView")->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa')->withInput();
         }
+        if ($project_category->is_default == 1) return redirect()->route("projectCategoryView")->with('error', 'Không thể cập nhật danh mục mặc định');
 
         $request->validate(
             [
@@ -143,6 +145,7 @@ class ProjectCategoryController extends BaseCustomController
     {
         try {
             $project_category = ProjectCategory::findOrFail($id);
+            if ($project_category->is_default == 1) return redirect()->route("projectCategoryView")->with('error', 'Không thể xóa danh mục mặc định');
             $project_category->delete();
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');

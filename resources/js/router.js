@@ -59,6 +59,7 @@ router.beforeEach((to, from, next) => {
     if (from.name != to.name) window.scrollTo(0, 0);
     store.commit("setIsShowMenu", false);
     store.commit("setIsShowServiceMenu", false);
+    store.commit("setIsShowBIMMenu", false);
     next();
 });
 

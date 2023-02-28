@@ -45,15 +45,21 @@
                                             </td>
                                             <td class="text-center">{!!$data->updated_at->format('H:i:s d-m-Y')!!}</td>
                                             <td class="text-center">
-                                                <a href="{!! route('updateProjectCategoryView',['id' => $data->id]) !!}"
-                                                   class="btn btn-info btn-sm text-white">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                </a>
+                                                <form action="{!! route('updateProjectCategoryView',['id' => $data->id]) !!}"
+                                                      class="d-inline-block" method="GET">
+                                                    @csrf
+                                                    <button type="submit"
+                                                            class="btn btn-info btn-sm text-white" {!! $data->is_default == 1 ? 'disabled' : '' !!}>
+                                                        <i class="bi bi-pencil-square"></i>
+                                                    </button>
+                                                </form>
+
                                                 <form
                                                     action="{!! route('deleteProjectCategory',['id' => $data->id]) !!}"
                                                     class="d-inline-block" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-danger btn-sm"
+                                                            {!! $data->is_default == 1 ? 'disabled' : '' !!}
                                                             onclick="return confirm('Bạn có chắc chắn cho hành động này không?')">
                                                         <i class="bi bi-trash"></i>
                                                     </button>

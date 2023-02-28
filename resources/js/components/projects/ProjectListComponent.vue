@@ -98,7 +98,7 @@
                 <div class="col-12 position-relative">
                     <div v-if="projectPaginate.data.length && !isLoading">
                         <div class="row sort-destination g-4 px-0">
-                            <div class="col-sm-6 col-md-3 isotope-item pdl-0 pdr-0 mgt-0"
+                            <div class="col-sm-6 col-md-4 col-lg-3 isotope-item pdl-0 pdr-0 mgt-0"
                                  v-for="item in projectPaginate.data">
                                 <router-link tag="div"
                                              :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}"

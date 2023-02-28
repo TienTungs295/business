@@ -33,7 +33,7 @@
                                         <label class="form-label">Độ ưu tiên</label>
                                         <input type="number"
                                                value="{!! old('priority', isset($post_category->priority) ? $post_category->priority : '')!!}"
-                                               class="form-control" name="priority"  min="0">
+                                               class="form-control" name="priority" min="0">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
@@ -43,9 +43,9 @@
                                             @foreach($project_categories as $data)
                                                 <div class="form-check d-inline-flex mr-10">
                                                     <input class="form-check-input" type="checkbox"
-                                                           value="{!! $data->id !!}"
+                                                           value="{!! old('project_categories[]', isset($data->id) ? $data->id :'')  !!}"
                                                            name="project_categories[]"
-                                                        {!! isset($project->project_category_ids) && in_array($data->id, $project->project_category_ids) ? 'checked' : ''!!}>
+                                                        {!! old('project_categories',isset($project->project_category_ids) && in_array($data->id, $project->project_category_ids) ? 'checked' : '')!!}>
                                                     <label class="ml-10 form-check-label">
                                                         {!! $data->name !!}
                                                     </label>
@@ -61,9 +61,9 @@
                                             @foreach($project_fields as $data)
                                                 <div class="form-check d-inline-flex mr-10">
                                                     <input class="form-check-input" type="checkbox"
-                                                           value="{!! $data->id !!}"
+                                                           value="{!! old("project_fields", isset($data->id) ? $data->id :"")  !!}"
                                                            name="project_fields[]"
-                                                        {!! isset($project->project_field_ids) && in_array($data->id, $project->project_field_ids) ? 'checked' : ''!!}>
+                                                        {!! old("project_fields", (isset($project->project_field_ids) && in_array($data->id, $project->project_field_ids)) ? 'checked' : '') !!}>
                                                     <label class="ml-10 form-check-label">
                                                         {!! $data->name !!}
                                                     </label>
@@ -80,7 +80,7 @@
                                             @if(!empty($project_areas))
                                                 @foreach($project_areas as $data)
                                                     <option
-                                                        value="{!! $data["id"] !!}" {!! isset($project->id) && $project->project_area_id == $data["id"] ? 'selected' : ''!!}>{!! $data["name"] !!}</option>
+                                                        value="{!! old('project_area_id', isset($data["id"]) ? $data["id"] : '')  !!}" {!! old("project_area_id",isset($project->id) && $project->project_area_id == $data["id"] ? 'selected' : '') !!}>{!! $data["name"] !!}</option>
                                                 @endforeach
                                             @endif
                                         </select>

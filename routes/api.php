@@ -50,6 +50,7 @@ Route::group(['prefix' => 'post'], function () {
 });
 Route::group(['prefix' => 'project-category'], function () {
     Route::get('/find-all', [ProjectCategoryRestController::class, 'findAll']);
+    Route::get('/find-default', [ProjectCategoryRestController::class, 'findDefaultCategory']);
 });
 
 Route::group(['prefix' => 'project-area'], function () {

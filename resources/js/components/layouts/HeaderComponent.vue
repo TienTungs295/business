@@ -21,8 +21,9 @@
                         <div class="header-row">
                             <div class="header-nav header-nav-links order-3 order-lg-1">
                                 <div
-                                    class="header-nav-main header-nav-main-square header-nav-main-text-capitalize header-nav-main-effect-1 header-nav-main-sub-effect-1" :class="isShowMenu ? 'show' : ''">
-                                    <nav class="collapse px-3-5" :class="isShowMenu ? 'show' : 'closed'">
+                                    class="header-nav-main header-nav-main-square header-nav-main-text-capitalize header-nav-main-effect-1 header-nav-main-sub-effect-1"
+                                    :class="isShowMenu ? 'show' : ''">
+                                    <nav class="collapse" :class="isShowMenu ? 'show' : 'closed'">
                                         <ul class="nav nav-pills" id="mainNav">
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'home'}">
@@ -58,6 +59,25 @@
                                                     Dự án
                                                 </router-link>
                                             </li>
+                                            <li class="dropdown">
+                                                <router-link class="nav-link dmt-dropdown-item"
+                                                             :to="{ name: 'projectList', query:{'category_id':defaultCategory.id}}">
+                                                    <span class="__page">
+                                                        BIM-REVIT CO-OPERATION
+                                                    </span>
+                                                    <i v-if="projects.length" class="icon-arrow-down icons mgl-5 fz-12 __icon"
+                                                       @click.stop.prevent="toggleBIMMenu"></i>
+                                                </router-link>
+                                                <ul class="dropdown-menu dmt-dropdown-menu" v-if="projects.length"
+                                                    :class="isShowBIMMenu ? 'show' : ''">
+                                                    <li v-for="item in projects">
+                                                        <router-link class="dropdown-item"
+                                                                     :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}">
+                                                            {{ item.name }}
+                                                        </router-link>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'postList'}">
                                                     Tin tức & sự kiện
@@ -75,42 +95,6 @@
                                     <i class="fas" :class="isShowMenu ? 'fa-times': 'fa-bars'"></i>
                                 </button>
                             </div>
-                            <div
-                                class="header-nav-features header-nav-features-no-border header-nav-features-lg-show-border d-none d-sm-flex ms-3 order-1 order-lg-2">
-                                <ul class="header-social-icons social-icons d-none d-sm-block social-icons-clean social-icons-medium ms-0">
-                                    <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank"
-                                                                         title="Facebook"><i
-                                        class="fab fa-facebook-f"></i></a></li>
-                                    <li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank"
-                                                                        title="Twitter"><i
-                                        class="fab fa-twitter"></i></a></li>
-                                    <li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank"
-                                                                         title="Linkedin"><i
-                                        class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                            <!--                            <div-->
-                            <!--                                class="header-nav-features header-nav-features-no-border header-nav-features-sm-show-border ms-3 ps-4 order-2 order-lg-3">-->
-                            <!--                                <div class="header-nav-feature header-nav-features-search d-inline-flex">-->
-                            <!--                                    <a href="#" class="header-nav-features-toggle text-decoration-none"-->
-                            <!--                                       data-focus="headerSearch">-->
-                            <!--                                        <i class="icons icon-magnifier header-nav-top-icon text-3-5 text-color-dark text-color-hover-primary font-weight-semibold top-3"></i>-->
-                            <!--                                    </a>-->
-                            <!--                                    <div-->
-                            <!--                                        class="header-nav-features-dropdown header-nav-features-dropdown-mobile-fixed border-radius-0"-->
-                            <!--                                        id="headerSearchDropdown">-->
-                            <!--                                        <form role="search" action="page-search-results.html" method="get">-->
-                            <!--                                            <div class="simple-search input-group">-->
-                            <!--                                                <input class="form-control text-1" id="headerSearch" name="q"-->
-                            <!--                                                       type="search" value="" placeholder="Search...">-->
-                            <!--                                                <button class="btn" type="submit">-->
-                            <!--                                                    <i class="icons icon-magnifier header-nav-top-icon text-color-dark text-color-hover-primary top-2"></i>-->
-                            <!--                                                </button>-->
-                            <!--                                            </div>-->
-                            <!--                                        </form>-->
-                            <!--                                    </div>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
                         </div>
                     </div>
                 </div>
@@ -124,17 +108,22 @@
 
 
 import {mapGetters} from "vuex";
+import ProjectCategoryService from "../../services/ProjectCategoryService";
 
 export default {
     name: "Header",
     data() {
-        return {};
+        return {
+            defaultCategory: {},
+            projects: [],
+        };
     },
     computed: {
         ...mapGetters([
             'services',
             'isShowMenu',
             'isShowServiceMenu',
+            'isShowBIMMenu',
         ])
     },
     methods: {
@@ -143,9 +132,18 @@ export default {
         },
         toggleServiceMenu() {
             this.$store.commit("setIsShowServiceMenu", !this.isShowServiceMenu);
+        },
+        toggleBIMMenu() {
+            this.$store.commit("setIsShowBIMMenu", !this.isShowBIMMenu);
         }
     },
     mounted() {
+        ProjectCategoryService.findDefault().then(response => {
+            let res = response || {};
+            this.defaultCategory = res.category || {};
+            this.projects = res.projects || [];
+        }).catch(e => {
+        });
     }
 }
 </script>

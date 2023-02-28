@@ -7,6 +7,11 @@ class ProjectCategoryService {
         let url = PREFIX_URL + "find-all";
         return http.get(url, {alert: alert,});
     }
+
+    findDefault(alert) {
+        let url = PREFIX_URL + "find-default";
+        return http.get(url, {alert: alert,});
+    }
 }
 
 export default new ProjectCategoryService();
