@@ -30,10 +30,22 @@
                                                     Trang chủ
                                                 </router-link>
                                             </li>
-                                            <li>
-                                                <router-link class="nav-link" :to="{ name: 'aboutUs'}">
+                                            <li class="dropdown">
+                                                <router-link class="nav-link dmt-dropdown-item" :to="{ name: 'aboutUs'}">
                                                     Về chúng tôi
+                                                    <i class="icon-arrow-down icons mgl-5 fz-12 __icon"
+                                                       @click.stop.prevent="togglePartnerMenu"></i>
                                                 </router-link>
+                                                <ul class="dropdown-menu dmt-dropdown-menu"
+                                                    :class="isShowPartnerMenu ? 'show' : ''">
+                                                    <li>
+                                                        <router-link class="dropdown-item"
+                                                                     :to="{ name: 'partner'}">
+                                                            Đối tác liên kết
+                                                        </router-link>
+                                                    </li>
+                                                </ul>
+
                                             </li>
                                             <li class="dropdown">
                                                 <router-link class="nav-link dmt-dropdown-item"
@@ -124,6 +136,7 @@ export default {
             'isShowMenu',
             'isShowServiceMenu',
             'isShowBIMMenu',
+            'isShowPartnerMenu',
         ])
     },
     methods: {
@@ -135,6 +148,9 @@ export default {
         },
         toggleBIMMenu() {
             this.$store.commit("setIsShowBIMMenu", !this.isShowBIMMenu);
+        },
+        togglePartnerMenu() {
+            this.$store.commit("setIsShowPartnerMenu", !this.isShowPartnerMenu);
         }
     },
     mounted() {

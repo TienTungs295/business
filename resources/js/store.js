@@ -100,6 +100,7 @@ export default new Vuex.Store({
             isShowMenu:false,
             isShowServiceMenu:false,
             isShowBIMMenu:false,
+            isShowPartnerMenu:false,
         }
     },
     getters: {
@@ -114,7 +115,8 @@ export default new Vuex.Store({
         services: state => state.object.services,
         isShowMenu: state => state.object.isShowMenu,
         isShowServiceMenu: state => state.object.isShowServiceMenu,
-        isShowBIMMenu: state => state.object.isShowBIMMenu
+        isShowBIMMenu: state => state.object.isShowBIMMenu,
+        isShowPartnerMenu: state => state.object.isShowPartnerMenu
     },
     mutations: {
         setTotalPosts(state, newValue) {
@@ -149,6 +151,9 @@ export default new Vuex.Store({
         },
         setIsShowBIMMenu(state, newValue) {
             state.object.isShowBIMMenu = newValue;
+        },
+        setIsShowPartnerMenu(state, newValue) {
+            state.object.isShowPartnerMenu = newValue;
         }
     }
 })

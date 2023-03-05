@@ -65,6 +65,7 @@ router.beforeEach((to, from, next) => {
     store.commit("setIsShowMenu", false);
     store.commit("setIsShowServiceMenu", false);
     store.commit("setIsShowBIMMenu", false);
+    store.commit("setIsShowPartnerMenu", false);
     next();
 });
 
