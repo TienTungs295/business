@@ -32,7 +32,7 @@
                                     <div class="col-md-3">
                                         <label class="form-label">Độ ưu tiên</label>
                                         <input type="number"
-                                               value="{!! old('priority', isset($project_category->priority) ? $project_category->priority : '')!!}"
+                                               value="{!! old('priority', isset($project->priority) ? $project->priority : '')!!}"
                                                class="form-control" name="priority" min="0">
                                     </div>
                                 </div>
