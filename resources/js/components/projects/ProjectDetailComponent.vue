@@ -1,9 +1,9 @@
 <template>
     <div class="project-detail">
         <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
-        <section>
+        <section v-if="project.images.length">
             <VueSlickCarousel v-bind="settings" class="slick-wrapper">
-                <div class="slick-inner" v-for="(item, i) in project.images"
+                <div class="slick-inner" v-for="item in project.images"
                      :style="{'background-image': 'url(' + `/uploads/images/`+`${item.image}`+ ')','background-size': 'cover', 'background-position': 'center center'}"
                      :key="i">
                     <div class="container position-relative z-index-1 h-100">
@@ -93,10 +93,7 @@ export default {
     data() {
         return {
             project: {
-                images: [
-                    window.location.protocol + "//" + window.location.host + '/assets/img/business-image/default/placeholder.png',
-                    window.location.protocol + "//" + window.location.host + '/assets/img/business-image/default/placeholder.png'
-                ]
+                images: []
             },
             isLoading: true,
             c1: undefined,
@@ -110,8 +107,6 @@ export default {
                 "edgeFriction": 0.35,
                 "infinite": false,
                 "speed": 500,
-                "slidesToShow": 1,
-                "slidesToScroll": 1,
                 "draggable": false,
                 "touchMove": true,
                 "fade": true
@@ -120,20 +115,6 @@ export default {
     },
     computed: {},
     methods: {
-        showImage() {
-            this.index = this.current_index;
-            this.project_images = [];
-            if (this.project.images.length) {
-                for (const item of this.project.images) {
-                    if (item == null || item.image == null) continue;
-                    let image_url = window.location.protocol + "//" + window.location.host + '/uploads/images/' + item.image;
-                    this.project_images.push(image_url);
-                }
-            }
-        },
-        changeImage(index) {
-            this.current_index = index;
-        }
     },
     mounted() {
         ProjectService.detail(this.$route.params.id).then(response => {
