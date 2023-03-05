@@ -48,6 +48,11 @@ const routes = [
         path: '/chi-tiet-dich-vu/:id',
         name: "serviceDetail",
         component: () => import("./components/services/ServiceDetailComponent"),
+    },
+    {
+        path: '/doi-tac-lien-ket',
+        name: "partner",
+        component: () => import("./components/PartnerComponent"),
     }
 ];
 const router = new VueRouter({
