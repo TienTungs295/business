@@ -674,7 +674,7 @@
                 <div data-appear-animation="fadeInUpShorterPlus"
                      data-appear-animation-delay="200"
                     class="d-flex align-items-center appear-animation partner owl-carousel owl-theme custom-nav-style-1 nav-style-1 nav-svg-arrows-1 nav-outside custom-dots-style-2 mb-0"
-                    data-plugin-options="{'responsive': {'0': {'items': 2, 'nav': false, 'dots': false}, '768': {'items': 3, 'nav': false, 'dots': false}, '992': {'items': 4, 'nav': false, 'dots': false}, '1200': {'items': 5, 'nav': false, 'dots': false}}, 'loop': false, 'autoHeight': false}">
+                    data-plugin-options="{'autoplay': true, 'autoplayTimeout': 2000,'responsive': {'0': {'items': 2, 'nav': false, 'dots': false}, '768': {'items': 3, 'nav': false, 'dots': false}, '992': {'items': 4, 'nav': false, 'dots': false}, '1200': {'items': 5, 'nav': false, 'dots': false}},'loop': false, 'autoHeight': false}">
                     <div class="text-center">
                         <div class="pdl-5 pdr-5">
                             <img src="/assets/img/business-image/partner/logo-vinfast-inkythuatso-21-11-08-55.jpg" alt
@@ -824,6 +824,106 @@
                     <div class="text-center">
                         <div class="pdl-5 pdr-5">
                             <img src="/assets/img/business-image/partner/logo-hd-mon-holdings.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-newtaco.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-padagon-01.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/mipec.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/nam-son.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/park-city.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/searefico-ec-2.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/sld.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/stavian.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/tan-hoa-lu.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/teel.jfif" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/thang-long-group.jfif" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/token.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/V-achi_brand_20210308-1.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/VIDIFI.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/viet-cafe.webp" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/logo-hd-mon-holdings.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/vihajico.jpg" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/vinapi.jfif" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/vinh-phuc.png" alt class="img-fluid d-inline-block"/>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="pdl-5 pdr-5">
+                            <img src="/assets/img/business-image/partner/vinhomes-logo1.jpg" alt class="img-fluid d-inline-block"/>
                         </div>
                     </div>
                 </div>
