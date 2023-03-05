@@ -1,66 +1,68 @@
 <template>
     <div class="project-detail">
-        <section class="section section-height-3 border-0 m-0"
-                 style="background-image: url(/assets/img/business-image/our-service.png);  background-repeat:   no-repeat; background-size: cover; background-position: center center;">
-            <div class="container position-relative pt-5 pb-5-5 mt-5 mb-5">
-                <div class="row justify-content-end pt-1 mt-lg-5">
-                    <div class="col-7 col-md-5 position-relative">
-                        <ul class="breadcrumb d-block ps-2 text-color-light">
-                            <li>
-                                <router-link class="fz-12-i" :to="{ name: 'home'}">
-                                    Trang chủ
-                                </router-link>
-                            </li>
-                            <li class="active fz-12-i before-o-1" v-if="project">{{ project.name }}</li>
-                        </ul>
-                        <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Chi tiết dự án</span>
-                            <span class="custom-svg-position-1 custom-svg-position-1-variation">
-				                        <svg class="svg-fill-color-primary mt-1 "
-                                             xmlns="http://www.w3.org/2000/svg"
-                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                             viewBox="0 0 859.45 88.44" xml:space="preserve" preserveAspectRatio="none">
-				                            <polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
-				                        </svg>
-				                    </span>
-                        </h1>
+        <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
+        <section>
+            <VueSlickCarousel v-bind="settings" class="slick-wrapper">
+                <div class="slick-inner" v-for="(item, i) in project.images"
+                     :style="{'background-image': 'url(' + `/uploads/images/`+`${item.image}`+ ')','background-size': 'cover', 'background-position': 'center center'}"
+                     :key="i">
+                    <div class="container position-relative z-index-1 h-100">
+                        <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
+                                <span
+                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 fz-18-i">{{
+                                        project.name
+                                    }}</span>
+                            <span class="custom-svg-position-1">
+											<svg class="svg-fill-color-primary-transparent"
+                                                 data-appear-animation="fadeInLeftShorter"
+                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
+                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                 viewBox="0 0 859.45 88.44" xml:space="preserve"
+                                                 preserveAspectRatio="none">
+												<polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
+											</svg>
+										</span>
+                        </p>
                     </div>
                 </div>
-            </div>
+            </VueSlickCarousel>
         </section>
 
-        <div class="container pb-5 pb-sm-0 my-5">
+        <div class="container pb-5 pb-sm-0 my-5 project-content">
             <div class="row position-relative">
-                <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
-                <div class="col-lg-6" v-if="project">
-                    <div>
-                        <VueSlickCarousel ref="c1" :asNavFor="c2" :touchMove="true"
-                                          @afterChange="changeImage"
-                                          :fade="true">
-                            <div class="main-slide cursor-pointer" @click="showImage()" v-for="(item, i) in project.images" :key="i">
-                                <img :src="'/uploads/images/'+item.image"/>
-                            </div>
-                        </VueSlickCarousel>
+                <div class="col-lg-5 content-block-left mgb-20">
+                    <p class="font-weight-bold line-height-1 text-color-dark fz-22 fz-22">Thông tin dự án</p>
+                    <div class="fz-16 mgb-5">
+                        <span>Tên công trình: </span> <span class="fw-bold">{{ project.name }}</span>
                     </div>
-                    <div>
-                        <VueSlickCarousel v-show="project.images.length >1" ref="c2" :asNavFor="c1"
-                                          :slidesToShow="3" :focusOnSelect="true" :touchMove="true">
-                            <div class="nav-slide" v-for="(item, i) in project.images" :key="i">
-                                <div class="nav-slide-item">
-                                    <img :src="'/uploads/images/'+item.image"/>
-                                </div>
-                            </div>
-                        </VueSlickCarousel>
+                    <div class="fz-16 mgb-5">
+                        <span>Địa điểm: </span> <span class="fw-bold"
+                                                      v-if="project.project_area">{{ project.project_area.name }}</span>
                     </div>
-                    <div class="preview-image-wrapper">
-                        <vue-gallery-slideshow :images="project_images" :index="index"
-                                               @close="index = null"></vue-gallery-slideshow>
+                    <div class="fz-16 mgb-5">
+                        <span>Loại hình: </span>
+                        <span class="fw-bold"
+                              v-if="project.project_categories != null && project.project_categories.length"
+                              v-for="(category, index) in project.project_categories">
+                                                        {{ category.name }}
+                                                        <span
+                                                            v-if="(index != (project.project_categories.length -1))">/</span>
+                                                    </span>
+                    </div>
+                    <div class="fz-16 mgb-5">
+                        <span>Lĩnh vực: </span>
+                        <span class="fw-bold"
+                              v-if="project.project_fields != null && project.project_fields.length"
+                              v-for="(field, index) in project.project_fields">
+                                                        {{ field.name }}
+                                                          <span
+                                                              v-if="(index != (project.project_fields.length -1))">/</span>
+                                                    </span>
                     </div>
                 </div>
-
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="text-center text-sm-start mb-4 mb-sm-0">
-                        <p class="font-weight-bold line-height-1 text-color-dark fz-22">{{project.name}}</p>
+                        <p class="font-weight-bold line-height-1 text-color-dark fz-22">{{ project.name }}</p>
                     </div>
                     <p class="text-3-5 mb-4 content-wrapper" v-if="project" v-html="project.content"></p>
                 </div>
@@ -101,7 +103,19 @@ export default {
             c2: undefined,
             index: null,
             current_index: 0,
-            project_images: []
+            project_images: [],
+            settings: {
+                "dots": true,
+                "dotsClass": "slick-dots custom-dot-class",
+                "edgeFriction": 0.35,
+                "infinite": false,
+                "speed": 500,
+                "slidesToShow": 1,
+                "slidesToScroll": 1,
+                "draggable": false,
+                "touchMove": true,
+                "fade": true
+            }
         };
     },
     computed: {},

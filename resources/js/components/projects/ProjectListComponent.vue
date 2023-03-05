@@ -275,6 +275,7 @@ export default {
         if (this.$route.query.field_id != "" && this.$route.query.field_id != undefined && this.$route.query.field_id != null) this.param.field_id = this.$route.query.field_id;
         if (this.$route.query.area_id != "" && this.$route.query.area_id != undefined && this.$route.query.area_id != null) this.param.area_id = this.$route.query.area_id;
         if (this.$route.query.page != "" && this.$route.query.page != undefined && this.$route.query.page != null) this.param.page = this.$route.query.page;
+        if (this.$route.query.sort != "" && this.$route.query.sort != undefined && this.$route.query.sort != null) this.param.sort = this.$route.query.sort;
 
         ProjectCategoryService.findAll().then(response => {
             let projectCategories = response || [];

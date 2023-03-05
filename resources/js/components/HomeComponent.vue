@@ -41,7 +41,7 @@
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
                                     data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tối ưu thiết kế trên mô hình BIM</span>
                                 <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-primary appear-animation"
+											<svg class="svg-fill-color-primary-transparent appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
                                                  data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -88,7 +88,7 @@
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
                                     data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tiết kiệm chi phí đầu tư và vận hành</span>
                                 <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-primary appear-animation"
+											<svg class="svg-fill-color-primary-transparent appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
                                                  data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

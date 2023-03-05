@@ -89,7 +89,7 @@ class ProjectRestController extends BaseCustomController
             $ajax_response->setMessage("Dự án không hợp lệ");
         }
         try {
-            $project = Project::findOrFail($id);
+            $project = Project::with(["projectArea","projectFields","projectCategories"])->findOrFail($id);
         } catch (ModelNotFoundException $e) {
             $ajax_response->setMessage("Dự án không tồn tại hoặc đã bị xóa");
         }
