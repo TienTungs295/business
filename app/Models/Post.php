@@ -6,18 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
-class Post extends Model
+class Post extends Model implements TranslatableContract
 {
-    use HasFactory;
+    use HasFactory,Translatable;
 
     protected $table = 'post';
     protected $fillable = [
-        'name',
-        'content',
+//        'name',
+//        'content',
         'image',
         'priority'
     ];
+
+    public $translatedAttributes = ['title', 'full_text'];
 
     protected $appends = ['total_comments'];
 
