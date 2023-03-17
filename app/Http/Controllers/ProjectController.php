@@ -6,7 +6,9 @@ use App\Models\Image;
 use App\Models\Project;
 use App\Models\ProjectArea;
 use App\Models\ProjectCategory;
+use App\Models\ProjectCategoryTranslation;
 use App\Models\ProjectField;
+use App\Models\ProjectTranslation;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -67,15 +69,22 @@ class ProjectController extends BaseCustomController
             ]
         );
 
-        $project = new Project;
+        $name = $request->input('name');
+        $content = $request->input('content');
+        $project = [
+            'vi' => ['name' => $name, 'content' => $content],
+            'en' => ['name' => $name, 'content' => $content],
+            'cn' => ['name' => $name, 'content' => $content],
+            'jp' => ['name' => $name, 'content' => $content],
+            'kr' => ['name' => $name, 'content' => $content],
+        ];
+        $project["slug"] = Str::slug($name);
+
         $project_categories = $request->input("project_categories");
         $project_fields = $request->input("project_fields");
-        $project->name = $request->input('name');
-        $project->slug = Str::slug($project->name);;
-        $project->content = $request->input('content');
-        $project->priority = $request->input('priority');
-        $project->project_area_id = $request->input('project_area_id');
-        $project->user_id = auth()->user()->id;
+        $project["priority"] = $request->input('priority');
+        $project["project_area_id"] = $request->input('project_area_id');
+        $project["user_id"] = auth()->user()->id;
 
         //image
         $upload_path = "/uploads/images/";
@@ -83,7 +92,7 @@ class ProjectController extends BaseCustomController
         if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
-            $project->image = $image_name;
+            $project["image"] = $image_name;
         }
 
         //images
@@ -102,7 +111,7 @@ class ProjectController extends BaseCustomController
 
         DB::beginTransaction();
         try {
-            $project->save();
+            $project = Project::create($project);
             $project->images()->saveMany($images);
             $project->projectCategories()->attach($project_categories);
             $project->projectFields()->attach($project_fields);
@@ -285,6 +294,7 @@ class ProjectController extends BaseCustomController
         try {
             $project->images()->delete();
             $project->delete();
+            ProjectTranslation::where('project_id', $id)->delete();
             DB::commit();
         } catch (\Exception $e) {
             DB::rollback();

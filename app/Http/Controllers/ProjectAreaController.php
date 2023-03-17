@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AreaTranslation;
 use App\Models\Project;
+use App\Models\ProjectArea;
+use App\Models\ProjectAreaTranslation;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use App\Models\ProjectArea;
 use Illuminate\Support\Facades\DB;
 
 class ProjectAreaController extends BaseCustomController
@@ -62,11 +64,17 @@ class ProjectAreaController extends BaseCustomController
             return redirect()->back()->with('error', 'Tên khu vực đã tồn tại')->withInput();
         }
 
-        $project_area = new ProjectArea;
-        $project_area->name = $request->input('name');
-        $project_area->priority = $request->input('priority');
-        $project_area->user_id = auth()->user()->id;
-        $project_area->save();
+        $name = $request->input('name');
+        $project_area = [
+            'vi' => ['name' => $name],
+            'en' => ['name' => $name],
+            'cn' => ['name' => $name],
+            'jp' => ['name' => $name],
+            'kr' => ['name' => $name],
+        ];
+        $project_area["priority"] = $request->input('priority');
+        $project_area["user_id"] = auth()->user()->id;
+        ProjectArea::create($project_area);
         return redirect()->route("projectAreaView")->with('success', 'Thành công');
     }
 
@@ -147,6 +155,7 @@ class ProjectAreaController extends BaseCustomController
             $project_area = ProjectArea::findOrFail($id);
             $project_area->delete();
             Project::where('project_area_id', $id)->update(['project_area_id' => 0]);
+            ProjectAreaTranslation::where('project_area_id', $id)->delete();
             DB::commit();
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');

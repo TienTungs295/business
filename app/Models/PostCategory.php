@@ -5,18 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
 
-class PostCategory extends Model
+class PostCategory extends Model implements TranslatableContract
 {
     use HasFactory;
+    use Translatable;
 
     protected $table = 'category';
     protected $fillable = [
         'id',
-        'name',
+//        'name',
         'priority',
     ];
+    public $translatedAttributes = ['name'];
 
     protected $appends = ['total_posts'];
 

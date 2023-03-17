@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProjectCategoryTranslation;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Models\ProjectCategory;
@@ -61,11 +62,17 @@ class ProjectCategoryController extends BaseCustomController
             return redirect()->back()->with('error', 'Tên loại hình đã tồn tại')->withInput();
         }
 
-        $project_category = new ProjectCategory;
-        $project_category->name = $request->input('name');
-        $project_category->priority = $request->input('priority');
-        $project_category->user_id = auth()->user()->id;
-        $project_category->save();
+        $name = $request->input('name');
+        $project_category = [
+            'vi' => ['name' => $name],
+            'en' => ['name' => $name],
+            'cn' => ['name' => $name],
+            'jp' => ['name' => $name],
+            'kr' => ['name' => $name],
+        ];
+        $project_category["priority"] = $request->input('priority');
+        $project_category["user_id"] = auth()->user()->id;
+        ProjectCategory::create($project_category);
         return redirect()->route("projectCategoryView")->with('success', 'Thành công');
     }
 
@@ -147,6 +154,7 @@ class ProjectCategoryController extends BaseCustomController
             $project_category = ProjectCategory::findOrFail($id);
             if ($project_category->is_default == 1) return redirect()->route("projectCategoryView")->with('error', 'Không thể xóa danh mục mặc định');
             $project_category->delete();
+            ProjectCategoryTranslation::where('project_category_id', $id)->delete();
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }

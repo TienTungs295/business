@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PostCategoryTranslation;
+use App\Models\PostTranslation;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use App\Models\PostCategory;
@@ -60,11 +62,17 @@ class PostCategoryController extends BaseCustomController
             return redirect()->back()->with('error', 'Tên danh mục bài viết đã tồn tại')->withInput();
         }
 
-        $post_category = new PostCategory;
-        $post_category->name = $request->input('name');
-        $post_category->priority = $request->input('priority');
-        $post_category->user_id = auth()->user()->id;
-        $post_category->save();
+        $name = $request->input('name');
+        $post_category = [
+            'vi' => ['name' => $name],
+            'en' => ['name' => $name],
+            'cn' => ['name' => $name],
+            'jp' => ['name' => $name],
+            'kr' => ['name' => $name],
+        ];
+        $post_category["priority"] = $request->input('priority');
+        $post_category["user_id"] = auth()->user()->id;
+        PostCategory::create($post_category);
         return redirect()->route("postCategoryView")->with('success', 'Thành công');
     }
 
@@ -143,6 +151,7 @@ class PostCategoryController extends BaseCustomController
         try {
             $post_category = PostCategory::findOrFail($id);
             $post_category->delete();
+            PostCategoryTranslation::where('post_category_id', $id)->delete();
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }

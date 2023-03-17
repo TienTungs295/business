@@ -4,18 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
 
-class ProjectArea extends Model
+class ProjectArea extends Model implements TranslatableContract
 {
     use HasFactory;
+    use Translatable;
 
     protected $table = 'project_area';
     protected $fillable = [
         'id',
-        'name',
+//        'name',
         'priority',
     ];
+
+    public $translatedAttributes = ['name'];
 
     public function projects()
     {

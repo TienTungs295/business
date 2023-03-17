@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\PostCategory;
+use App\Models\PostTranslation;
 use File;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
@@ -212,7 +213,7 @@ class PostController extends BaseCustomController
         $image = $post->image;
         if (!is_null($image)) array_push($del_images, $image);
         $post->delete();
-
+        PostTranslation::where('post_id', $id)->delete();
         foreach ($del_images as $image) {
             $delete_url = 'uploads\images\\' . $image;
             if (File::exists(public_path($delete_url)))

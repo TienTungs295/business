@@ -5,10 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
+use Astrotomic\Translatable\Translatable;
 
-class Project extends Model
+class Project extends Model implements TranslatableContract
 {
     use HasFactory;
+    use Translatable;
 
     /**
      * The database table used by the model.
@@ -21,11 +24,13 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
-        'content',
+//        'name',
+//        'content',
         'image',
         'priority',
     ];
+
+    public $translatedAttributes = ['name', 'content'];
 
     public function user()
     {

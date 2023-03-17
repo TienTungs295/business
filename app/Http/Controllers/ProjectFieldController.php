@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FieldTranslation;
+use App\Models\ProjectField;
+use App\Models\ProjectFieldTranslation;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
-use App\Models\ProjectField;
 
 class ProjectFieldController extends BaseCustomController
 {
@@ -60,11 +62,17 @@ class ProjectFieldController extends BaseCustomController
             return redirect()->back()->with('error', 'Tên lĩnh vực đã tồn tại')->withInput();
         }
 
-        $project_field = new ProjectField;
-        $project_field->name = $request->input('name');
-        $project_field->priority = $request->input('priority');
-        $project_field->user_id = auth()->user()->id;
-        $project_field->save();
+        $name = $request->input('name');
+        $project_field = [
+            'vi' => ['name' => $name],
+            'en' => ['name' => $name],
+            'cn' => ['name' => $name],
+            'jp' => ['name' => $name],
+            'kr' => ['name' => $name],
+        ];
+        $project_field["priority"] = $request->input('priority');
+        $project_field["user_id"] = auth()->user()->id;
+        ProjectField::create($project_field);
         return redirect()->route("projectFieldView")->with('success', 'Thành công');
     }
 
@@ -143,6 +151,7 @@ class ProjectFieldController extends BaseCustomController
         try {
             $project_field = ProjectField::findOrFail($id);
             $project_field->delete();
+            ProjectFieldTranslation::where('project_field_id', $id)->delete();
         } catch (ModelNotFoundException $e) {
             return redirect()->back()->with('error', 'Đối tượng không tồn tại hoặc đã bị xóa');
         }
