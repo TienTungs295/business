@@ -126,7 +126,7 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($locale, $id)
     {
 
         if ((auth()->user()->role & 2) == 0) {
@@ -153,7 +153,7 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $locale, $id)
     {
         if ((auth()->user()->role & 2) == 0) {
             return redirect()->back()->with('error', 'Bạn không đủ quyền thực hiện chức năng này')->withInput();
@@ -221,7 +221,7 @@ class UserController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($locale, $id)
     {
         try {
             $user = User::findOrFail($id);

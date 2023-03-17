@@ -59,7 +59,7 @@ class CommentController extends Controller
     {
     }
 
-    public function changeStatus(Request $request, $id)
+    public function changeStatus(Request $request, $locale, $id)
     {
         try {
             $comment = Comment::findOrFail($id);
@@ -78,7 +78,7 @@ class CommentController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($locale, $id)
     {
         try {
             $comment = Comment::findOrFail($id);

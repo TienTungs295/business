@@ -61,14 +61,20 @@ class PostController extends BaseCustomController
                 'name.max' => 'Tên bài viết không được phép vượt quá 350 ký tự',
             ]
         );
-
-        $post = new Post;
+        $name = $request->input('name');
+        $content = $request->input('content');
+        $post = [
+            'vi' => ['name' => $name, 'content' => $content],
+            'en' => ['name' => $name, 'content' => $content],
+            'cn' => ['name' => $name, 'content' => $content],
+            'jp' => ['name' => $name, 'content' => $content],
+            'kr' => ['name' => $name, 'content' => $content],
+        ];
+        $post["slug"] = Str::slug($name);
         $post_categories = $request->input("post_categories");
-        $post->name = $request->input('name');
-        $post->slug = Str::slug($post->name);
-        $post->content = $request->input('content');
-        $post->priority = $request->input('priority');
-        $post->user_id = auth()->user()->id;
+        $post["priority"] = $request->input('priority');
+        $post["user_id"] = auth()->user()->id;
+
 
         //image
         $upload_path = "/uploads/images/";
@@ -76,12 +82,12 @@ class PostController extends BaseCustomController
         if ($image_url != null && $image_url != "" && str_contains($image_url, "/uploads/images/")) {
             $start_position = strpos($image_url, "/uploads/images/") + strlen($upload_path);
             $image_name = substr($image_url, $start_position, strlen($image_url) - $start_position);
-            $post->image = $image_name;
+            $post["image"] = $image_name;
         }
 
         DB::beginTransaction();
         try {
-            $post->save();
+            $post = Post::create($post);
             $post->postCategories()->attach($post_categories);
             DB::commit();
         } catch (\Exception $e) {
@@ -108,7 +114,7 @@ class PostController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($locale, $id)
     {
         try {
             $post = Post::findOrFail($id);
@@ -130,7 +136,7 @@ class PostController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $locale, $id)
     {
         $request->validate(
             [
@@ -195,7 +201,7 @@ class PostController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($locale, $id)
     {
         try {
             $post = Post::findOrFail($id);

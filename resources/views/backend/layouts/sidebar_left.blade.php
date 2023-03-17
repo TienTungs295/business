@@ -1,6 +1,5 @@
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item {{ (request()->is('quan-tri')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("homeView") !!}">
@@ -44,25 +43,27 @@
                 <span>Bài viết</span>
             </a>
         </li>
-        <li class="nav-item {{ (request()->is('quan-tri/binh-luan*')) ? 'active' : '' }}">
-            <a class="nav-link collapsed" href="{!! route("commentView") !!}">
-                <i class="bi bi-chat-left-text"></i>
-                <span>Bình luận</span>
-            </a>
-        </li>
-        <li class="nav-item {{ (request()->is('quan-tri/lien-he*')) ? 'active' : '' }}">
-            <a class="nav-link collapsed" href="{!! route("customerInfoView") !!}">
-                <i class="bi bi-telephone-plus"></i>
-                <span>Liên hệ</span>
-            </a>
-        </li>
-        @if((auth()->user()->role & 2) > 0)
-            <li class="nav-item {{ (request()->is('quan-tri/nhan-vien*')) ? 'active' : '' }}">
-                <a class="nav-link collapsed" href="{!! route("userView") !!}">
-                    <i class="bi bi-person-bounding-box"></i>
-                    <span>Nhân viên</span>
+        @if(app()->getLocale() == "vi")
+            <li class="nav-item {{ (request()->is('quan-tri/binh-luan*')) ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{!! route("commentView") !!}">
+                    <i class="bi bi-chat-left-text"></i>
+                    <span>Bình luận</span>
                 </a>
             </li>
+            <li class="nav-item {{ (request()->is('quan-tri/lien-he*')) ? 'active' : '' }}">
+                <a class="nav-link collapsed" href="{!! route("customerInfoView") !!}">
+                    <i class="bi bi-telephone-plus"></i>
+                    <span>Liên hệ</span>
+                </a>
+            </li>
+            @if((auth()->user()->role & 2) > 0)
+                <li class="nav-item {{ (request()->is('quan-tri/nhan-vien*')) ? 'active' : '' }}">
+                    <a class="nav-link collapsed" href="{!! route("userView") !!}">
+                        <i class="bi bi-person-bounding-box"></i>
+                        <span>Nhân viên</span>
+                    </a>
+                </li>
+            @endif
         @endif
     </ul>
 

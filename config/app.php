@@ -241,5 +241,11 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
-
+    'languages' => [
+        'vi' => 'Việt Nam',
+        'en' => 'English',
+        'cn' => 'Trung Quốc',
+        'kr' => 'Hàn Quốc',
+        'jp' => 'Nhật bản',
+    ],
 ];

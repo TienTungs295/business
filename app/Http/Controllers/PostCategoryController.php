@@ -85,7 +85,7 @@ class PostCategoryController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($locale, $id)
     {
         try {
             $post_category = PostCategory::findOrFail($id);
@@ -138,7 +138,7 @@ class PostCategoryController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($locale, $id)
     {
         try {
             $post_category = PostCategory::findOrFail($id);

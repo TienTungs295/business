@@ -14,7 +14,8 @@ return [
         'vi',
         'en',
         'cn',
-        'jp'
+        'jp',
+        'kr'
     ],
 
     /*

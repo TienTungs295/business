@@ -11,7 +11,8 @@ use Astrotomic\Translatable\Translatable;
 
 class Post extends Model implements TranslatableContract
 {
-    use HasFactory,Translatable;
+    use HasFactory;
+    use Translatable;
 
     protected $table = 'post';
     protected $fillable = [
@@ -21,7 +22,7 @@ class Post extends Model implements TranslatableContract
         'priority'
     ];
 
-    public $translatedAttributes = ['title', 'full_text'];
+    public $translatedAttributes = ['name', 'content'];
 
     protected $appends = ['total_comments'];
 

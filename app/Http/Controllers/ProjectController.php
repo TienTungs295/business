@@ -131,7 +131,7 @@ class ProjectController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($locale, $id)
     {
         try {
             $project = Project::findOrFail($id);
@@ -163,7 +163,7 @@ class ProjectController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $locale, $id)
     {
         $request->validate(
             [
@@ -268,7 +268,7 @@ class ProjectController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($locale, $id)
     {
         try {
             $project = Project::findOrFail($id);
