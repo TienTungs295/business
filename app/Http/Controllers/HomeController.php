@@ -7,7 +7,9 @@ use App\Models\CustomerInfo;
 use App\Models\Post;
 use App\Models\PostCategory;
 use App\Models\Project;
+use App\Models\ProjectArea;
 use App\Models\ProjectCategory;
+use App\Models\ProjectField;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +27,8 @@ class HomeController extends Controller
         $total_post_categories = PostCategory::all()->count();
         $total_posts = Post::all()->count();
         $total_customer_infos = CustomerInfo::all()->count();
+        $total_project_fields = ProjectField::all()->count();
+        $total_project_areas = ProjectArea::all()->count();
         return View('backend.home.index', compact(
                 'total_pending_comments',
                 'total_project_categories',
@@ -32,6 +36,8 @@ class HomeController extends Controller
                 'total_post_categories',
                 'total_posts',
                 'total_customer_infos',
+                'total_project_fields',
+                'total_project_areas'
             )
         );
     }

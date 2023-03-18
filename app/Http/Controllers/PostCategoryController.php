@@ -111,7 +111,7 @@ class PostCategoryController extends BaseCustomController
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $locale, $id)
     {
         try {
             $post_category = PostCategory::findOrFail($id);

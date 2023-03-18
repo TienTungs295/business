@@ -12,25 +12,27 @@
                     <div class="col">
                         <div class="row">
 
+                        @if(app()->getLocale() == "vi")
                             <!-- Comment -->
-                            <div class="col-xxl-4 col-md-6">
-                                <a class="card info-card revenue-card" href="{!! route("commentView") !!}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Bình luận đang chờ xử lý</h5>
-                                        <div class="d-flex align-items-center">
-                                            <div
-                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-chat-left-text"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h6>{!! $total_pending_comments!!}</h6>
+                                <div class="col-xxl-4 col-md-6">
+                                    <a class="card info-card revenue-card" href="{!! route("commentView") !!}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Bình luận đang chờ xử lý</h5>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-chat-left-text"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{!! $total_pending_comments!!}</h6>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div><!-- End Comment -->
+                                    </a>
+                                </div><!-- End Comment -->
+                        @endif
 
-                            <!-- Project Category -->
+                        <!-- Project Category -->
                             <div class="col-xxl-4 col-md-6">
                                 <a class="card info-card sales-card" href="{!! route("projectCategoryView") !!}">
                                     <div class="card-body">
@@ -48,6 +50,44 @@
                                 </a>
                             </div>
                             <!-- Project Category -->
+
+                            <!-- Project Field -->
+                            <div class="col-xxl-4 col-md-6">
+                                <a class="card info-card customers-card" href="{!! route("projectFieldView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lĩnh vực</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-peace-fill"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_project_fields !!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Project Field -->
+
+                            <!-- Project Area -->
+                            <div class="col-xxl-4 col-md-6">
+                                <a class="card info-card sales-card" href="{!! route("projectAreaView") !!}">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Khu vực</h5>
+                                        <div class="d-flex align-items-center">
+                                            <div
+                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                <i class="bi bi-pin-map-fill"></i>
+                                            </div>
+                                            <div class="ps-3">
+                                                <h6>{!! $total_project_areas !!}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Project Area -->
 
                             <!-- Project -->
                             <div class="col-xxl-4 col-xl-12">
@@ -104,25 +144,26 @@
                                 </a>
                             </div><!-- End Post -->
 
-
+                        @if(app()->getLocale() == "vi")
                             <!-- Contact -->
-                            <div class="col-xxl-4 col-md-6">
-                                <a class="card info-card revenue-card" href="{!! route("customerInfoView") !!}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Liên hệ</h5>
+                                <div class="col-xxl-4 col-md-6">
+                                    <a class="card info-card revenue-card" href="{!! route("customerInfoView") !!}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Liên hệ</h5>
 
-                                        <div class="d-flex align-items-center">
-                                            <div
-                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-telephone-plus"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h6>{!! $total_customer_infos!!}</h6>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-telephone-plus"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{!! $total_customer_infos!!}</h6>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div><!-- End Contact -->
+                                    </a>
+                                </div><!-- End Contact -->
+                            @endif
 
                         </div>
                     </div><!-- End Left side columns -->

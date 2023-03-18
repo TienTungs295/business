@@ -6,13 +6,15 @@
             {{--            <img src="assets/img/logo.png" alt="">--}}
             <span class="d-none d-lg-block">Quản trị DMT</span>
         </a>
-        <ul class="nav nav-tabs nav-tabs-bordered d-flex">
+        @if(!request()->is('*/quan-tri/binh-luan*') && !request()->is('*/quan-tri/lien-he*') && !request()->is('*/quan-tri/nhan-vien*'))
+        <ul class="nav nav-tabs nav-tabs-bordered d-flex" style="font-size: 16px">
             @foreach(config('app.languages') as $langLocale => $langName)
                 <li class="nav-item flex-fill">
                     <a href="{{ url()->current() }}?change_language={{ $langLocale }}" class="nav-link w-100 cursor-pointer @if(app()->getLocale() == $langLocale) active @endif">{!! $langName !!}</a>
                 </li>
             @endforeach
         </ul>
+        @endif
     </div><!-- End Logo -->
 
 

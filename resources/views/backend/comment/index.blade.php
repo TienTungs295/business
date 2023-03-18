@@ -12,7 +12,7 @@
                         <div class="card-body">
                             <!-- Table with stripped rows -->
                             <form method="GET" action="{!! route('commentView') !!}" class="row g-3">
-                                <div class="col-md-8 text-end">
+                                <div class="col text-end">
                                     <a href="{!! route('commentView') !!}" class="btn btn-primary btn-sm"><i
                                             class="bi bi-arrow-repeat me-1"></i> Làm mới
                                     </a>
@@ -60,7 +60,7 @@
                                                       class="d-inline-block" method="POST">
                                                     @csrf
                                                     <button type="submit"
-                                                            {!! $data->status ==2 ? 'disabled' : '' !!} class="btn btn-info btn-sm text-white"
+                                                            {!! $data->status ==2 ? 'disabled' : '' !!} class="btn btn-sm text-white @if($data->status ==1) btn-info @else btn-secondary @endif"
                                                             title="Xác nhận">
                                                         <i class="bi bi-check2-circle me-1"></i>
                                                     </button>

@@ -71,4 +71,11 @@ class CommentRestController extends Controller
         $comments = Comment::where('post_id', $post_id)->where('status', 2)->orderBy("id", "DESC")->simplePaginate($page_size);
         return $ajax_response->setData($comments)->toApiResponse();
     }
+
+    public function countPendingComment(Request $request)
+    {
+        $ajax_response = new AjaxResponse();
+        $count = Comment::where('status', 1)->count();
+        return $ajax_response->setData($count)->toApiResponse();
+    }
 }

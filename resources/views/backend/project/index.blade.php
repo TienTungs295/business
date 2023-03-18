@@ -23,10 +23,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8 text-end">
+                                    @if(app()->getLocale() == "vi")
                                     <a href="{!! route('createProjectView') !!}" class="btn btn-primary btn-sm"><i
                                             class="bi bi-plus-lg me-1"></i> Thêm
                                         mới
                                     </a>
+                                    @endif
                                     <a href="{!! route('projectView') !!}" class="btn btn-primary btn-sm"><i
                                             class="bi bi-arrow-repeat me-1"></i> Làm mới
                                     </a>

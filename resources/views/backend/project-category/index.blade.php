@@ -12,10 +12,12 @@
                         <div class="card-body">
                             <!-- Table with stripped rows -->
                             <div class="text-end">
-                                <a href="{!! route('createProjectCategoryView') !!}" class="btn btn-primary btn-sm"><i
-                                        class="bi bi-plus-lg me-1"></i> Thêm
-                                    mới
-                                </a>
+                                @if(app()->getLocale() == "vi")
+                                    <a href="{!! route('createProjectCategoryView') !!}" class="btn btn-primary btn-sm"><i
+                                            class="bi bi-plus-lg me-1"></i> Thêm
+                                        mới
+                                    </a>
+                                @endif
                                 <a href="{!! route('projectCategoryView') !!}" class="btn btn-primary btn-sm"><i
                                         class="bi bi-arrow-repeat me-1"></i> Làm mới
                                 </a>

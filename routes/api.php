@@ -27,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'comment'], function () {
     Route::get('/find-by-post', [CommentRestController::class, 'findByPost']);
+    Route::get('/count-pending-comment', [CommentRestController::class, 'countPendingComment']);
     Route::post('/save', [CommentRestController::class, 'save']);
 });
 

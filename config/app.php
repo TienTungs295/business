@@ -243,7 +243,7 @@ return [
     ],
     'languages' => [
         'vi' => 'Việt Nam',
-        'en' => 'English',
+        'en' => 'Anh',
         'cn' => 'Trung Quốc',
         'kr' => 'Hàn Quốc',
         'jp' => 'Nhật bản',
