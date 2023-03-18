@@ -6,28 +6,31 @@
             {{--            <img src="assets/img/logo.png" alt="">--}}
             <span class="d-none d-lg-block">Quản trị DMT</span>
         </a>
-        @if(!request()->is('*/quan-tri/binh-luan*') && !request()->is('*/quan-tri/lien-he*') && !request()->is('*/quan-tri/nhan-vien*'))
-        <ul class="nav nav-tabs nav-tabs-bordered d-flex" style="font-size: 16px">
-            @foreach(config('app.languages') as $langLocale => $langName)
-                <li class="nav-item flex-fill">
-                    <a href="{{ url()->current() }}?change_language={{ $langLocale }}" class="nav-link w-100 cursor-pointer @if(app()->getLocale() == $langLocale) active @endif">{!! $langName !!}</a>
-                </li>
-            @endforeach
-        </ul>
+        @if(!request()->is('*/quan-tri/binh-luan*') && !request()->is('*/quan-tri/lien-he*') && !request()->is('*/quan-tri/nhan-vien*') && !request()->is('*user/profile*'))
+            <ul class="nav nav-tabs nav-tabs-bordered d-flex" style="font-size: 16px">
+                @foreach(config('app.languages') as $langLocale => $langName)
+                    <li class="nav-item flex-fill">
+                        <a href="{{ url()->current() }}?change_language={{ $langLocale }}"
+                           class="nav-link w-100 cursor-pointer @if(app()->getLocale() == $langLocale) active @endif">{!! $langName !!}</a>
+                    </li>
+                @endforeach
+            </ul>
         @endif
     </div><!-- End Logo -->
 
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
-            <li class="nav-item dropdown">
+            @if(!request()->is('*user/profile*'))
+                <li class="nav-item dropdown">
 
-                <a class="nav-link nav-icon" href="{!! route("commentView") !!}">
-                    <i class="bi bi-chat-left-text"></i>
-                    <span class="badge bg-success badge-number" id="total-pending-comments">0</span>
-                </a><!-- End Messages Icon -->
+                    <a class="nav-link nav-icon" href="{!! route("commentView") !!}">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span class="badge bg-success badge-number" id="total-pending-comments">0</span>
+                    </a><!-- End Messages Icon -->
 
-            </li><!-- End Messages Nav -->
+                </li><!-- End Messages Nav -->
+            @endif
 
             <li class="nav-item dropdown pe-3">
 
