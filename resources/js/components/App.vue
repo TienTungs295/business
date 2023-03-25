@@ -47,6 +47,8 @@
 </template>
 <script>
 
+import LocaleService from "../services/LocaleService";
+
 export default {
     name: "App",
     data() {

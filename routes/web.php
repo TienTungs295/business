@@ -165,7 +165,7 @@ Route::prefix('rest')
 
         Route::group(['prefix' => 'locale'], function () {
             Route::post('/changeLocale', [\App\Http\Controllers\Rests\LocaleRestController::class, 'changeLocale']);
-            Route::post('/getLocale', [\App\Http\Controllers\Rests\LocaleRestController::class, 'getLocale']);
+            Route::get('/getLocale', [\App\Http\Controllers\Rests\LocaleRestController::class, 'getLocale']);
         });
 
         Route::post('/tai-anh', ['as' => 'uploadImage', UploadRestController::class, 'storeImage']);

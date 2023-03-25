@@ -22,6 +22,8 @@ class LocaleRestController extends Controller
     public function getLocale(Request $request)
     {
         $ajax_response = new AjaxResponse();
-        return $ajax_response->setData(session()->getLocale("locale"))->toApiResponse();
+        $locale = session()->get("locale");
+        if ($locale == null) $locale = "vi";
+        return $ajax_response->setData($locale)->toApiResponse();
     }
 }

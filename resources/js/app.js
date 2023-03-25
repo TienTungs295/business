@@ -30,6 +30,7 @@ import store from './store';
 // import VueStarRating  from 'vue-star-rating';
 import VueCookies from 'vue-cookies'
 import VueGallerySlideshow from 'vue-gallery-slideshow';
+import VueI18n from 'vue-i18n';
 
 
 Vue.component('header-component', require('./components/layouts/HeaderComponent').default);
@@ -57,7 +58,7 @@ Vue.use(VueToastr, {
     defaultStyle: {"top": "50px"},
 });
 
-Vue.use(VueCookies, { expires: '60d'})
+Vue.use(VueCookies, { expires: '1d'})
 
 Vue.prototype.moment = moment;
 
@@ -126,10 +127,33 @@ Vue.filter('commaFormat', function (value) {
     }
 });
 
+Vue.use(VueI18n);
+
+const messages = {
+    vi: {
+        message: {
+            hello: 'Xin chao',
+            home:"Trang chủ"
+        }
+    },
+    en: {
+        message: {
+            hello: 'Hello',
+            home:"Home"
+        }
+    }
+};
+
+const i18n = new VueI18n({
+    locale: 'vi',
+    messages
+});
+
 const app = new Vue({
     store,
     el: '#app',
     render: h => h(App),
+    i18n,
     router
 });
 

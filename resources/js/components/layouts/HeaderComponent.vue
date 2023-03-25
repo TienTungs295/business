@@ -27,7 +27,7 @@
                                         <ul class="nav nav-pills" id="mainNav">
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'home'}">
-                                                    Trang chủ
+                                                    {{ $t('message.home') }}
                                                 </router-link>
                                             </li>
                                             <li class="dropdown">
@@ -136,8 +136,7 @@ export default {
     data() {
         return {
             defaultCategory: {},
-            projects: [],
-            locale: "vi"
+            projects: []
         };
     },
     computed: {
@@ -147,6 +146,7 @@ export default {
             'isShowServiceMenu',
             'isShowBIMMenu',
             'isShowPartnerMenu',
+            'locale'
         ])
     },
     methods: {
@@ -163,17 +163,33 @@ export default {
             this.$store.commit("setIsShowPartnerMenu", !this.isShowPartnerMenu);
         },
         changeLocale($event) {
+            let locale = $event.target.value;
             let data = {
-                locale: $event.target.value
+                locale: locale
             }
+            this.$cookies.set("locale", locale);
+            this.$i18n.locale = this.locale;
             LocaleService.changeLocale(data).then(response => {
                 let locale = response;
-                // this.$router.go(0);
+                this.$router.go(0);
             }).catch(e => {
             });
+        },
+        initLocale(){
+            let locale = this.$cookies.get("locale");
+            if(locale == null || locale == undefined) locale="vi"
+            this.$store.commit("setLocale", locale);
+            this.$i18n.locale = this.locale;
         }
     },
     mounted() {
+        this.initLocale();
+        LocaleService.getLocale().then(response => {
+            this.$store.commit("setLocale", response);
+            this.$i18n.locale = this.locale;
+        }).catch(e => {
+        });
+
         ProjectCategoryService.findDefault().then(response => {
             let res = response || {};
             this.defaultCategory = res.category || {};

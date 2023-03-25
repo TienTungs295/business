@@ -97,10 +97,11 @@ export default new Vuex.Store({
                 //     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia."
                 // },
             },
-            isShowMenu:false,
-            isShowServiceMenu:false,
-            isShowBIMMenu:false,
-            isShowPartnerMenu:false,
+            isShowMenu: false,
+            isShowServiceMenu: false,
+            isShowBIMMenu: false,
+            isShowPartnerMenu: false,
+            locale: "vi",
         }
     },
     getters: {
@@ -116,7 +117,8 @@ export default new Vuex.Store({
         isShowMenu: state => state.object.isShowMenu,
         isShowServiceMenu: state => state.object.isShowServiceMenu,
         isShowBIMMenu: state => state.object.isShowBIMMenu,
-        isShowPartnerMenu: state => state.object.isShowPartnerMenu
+        isShowPartnerMenu: state => state.object.isShowPartnerMenu,
+        locale: state => state.object.locale,
     },
     mutations: {
         setTotalPosts(state, newValue) {
@@ -154,6 +156,9 @@ export default new Vuex.Store({
         },
         setIsShowPartnerMenu(state, newValue) {
             state.object.isShowPartnerMenu = newValue;
+        },
+        setLocale(state, newValue) {
+            state.object.locale = newValue;
         }
     }
 })
