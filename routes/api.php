@@ -25,48 +25,4 @@ use Illuminate\Support\Facades\Route;
 
 // Below mention routes are available only for the authenticated users.
 
-Route::group(['prefix' => 'comment'], function () {
-    Route::get('/find-by-post', [CommentRestController::class, 'findByPost']);
-    Route::get('/count-pending-comment', [CommentRestController::class, 'countPendingComment']);
-    Route::post('/save', [CommentRestController::class, 'save']);
-});
-
-Route::group(['prefix' => 'project'], function () {
-    Route::get('/find-all', [ProjectRestController::class, 'findAll']);
-    Route::get('/find-random', [ProjectRestController::class, 'findRandom']);
-    Route::get('/detail', [ProjectRestController::class, 'detail']);
-});
-
-
-Route::group(['prefix' => 'post-category'], function () {
-    Route::get('/find-all', [PostCategoryRestController::class, 'findAll']);
-});
-
-Route::group(['prefix' => 'post'], function () {
-    Route::get('/find-all', [PostRestController::class, 'findAll']);
-    Route::get('/detail', [PostRestController::class, 'detail']);
-    Route::get('/related', [PostRestController::class, 'related']);
-    Route::get('/recent', [PostRestController::class, 'recent']);
-    Route::get('/count-all', [PostRestController::class, 'countAll']);
-});
-Route::group(['prefix' => 'project-category'], function () {
-    Route::get('/find-all', [ProjectCategoryRestController::class, 'findAll']);
-    Route::get('/find-default', [ProjectCategoryRestController::class, 'findDefaultCategory']);
-});
-
-Route::group(['prefix' => 'project-area'], function () {
-    Route::get('/find-all', [ProjectAreaRestController::class, 'findAll']);
-});
-
-Route::group(['prefix' => 'project-field'], function () {
-    Route::get('/find-all', [ProjectFieldRestController::class, 'findAll']);
-});
-
-Route::group(['prefix' => 'contact'], function () {
-    Route::post('/save', [CustomerInfoRestController::class, 'store']);
-    Route::post('/save-email', [CustomerInfoRestController::class, 'storeEmail']);
-});
-
-Route::post('/tai-anh', ['as' => 'uploadImage', UploadRestController::class, 'storeImage']);
-
 

@@ -31,7 +31,8 @@
                                                 </router-link>
                                             </li>
                                             <li class="dropdown">
-                                                <router-link class="nav-link dmt-dropdown-item" :to="{ name: 'aboutUs'}">
+                                                <router-link class="nav-link dmt-dropdown-item"
+                                                             :to="{ name: 'aboutUs'}">
                                                     Về chúng tôi
                                                     <i class="icon-arrow-down icons mgl-5 fz-12 __icon"
                                                        @click.stop.prevent="togglePartnerMenu"></i>
@@ -77,7 +78,8 @@
                                                     <span class="__page">
                                                         BIM-REVIT CO-OPERATION
                                                     </span>
-                                                    <i v-if="projects.length" class="icon-arrow-down icons mgl-5 fz-12 __icon"
+                                                    <i v-if="projects.length"
+                                                       class="icon-arrow-down icons mgl-5 fz-12 __icon"
                                                        @click.stop.prevent="toggleBIMMenu"></i>
                                                 </router-link>
                                                 <ul class="dropdown-menu dmt-dropdown-menu" v-if="projects.length"
@@ -109,6 +111,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="header-column">
+                        <select name="" v-model="locale" @change="changeLocale($event)">
+                            <option value="vi">Việt Nam</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
@@ -121,6 +129,7 @@
 
 import {mapGetters} from "vuex";
 import ProjectCategoryService from "../../services/ProjectCategoryService";
+import LocaleService from "../../services/LocaleService";
 
 export default {
     name: "Header",
@@ -128,6 +137,7 @@ export default {
         return {
             defaultCategory: {},
             projects: [],
+            locale: "vi"
         };
     },
     computed: {
@@ -151,6 +161,16 @@ export default {
         },
         togglePartnerMenu() {
             this.$store.commit("setIsShowPartnerMenu", !this.isShowPartnerMenu);
+        },
+        changeLocale($event) {
+            let data = {
+                locale: $event.target.value
+            }
+            LocaleService.changeLocale(data).then(response => {
+                let locale = response;
+                // this.$router.go(0);
+            }).catch(e => {
+            });
         }
     },
     mounted() {

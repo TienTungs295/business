@@ -1,9 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Rests\WithListRestController;
-use App\Http\Controllers\Rests\CartRestController;
-use App\Http\Controllers\Rests\OrderRestController;
+use App\Http\Controllers\Rests\ProjectCategoryRestController;
+use App\Http\Controllers\Rests\ProjectFieldRestController;
+use App\Http\Controllers\Rests\ProjectRestController;
+use App\Http\Controllers\Rests\UploadRestController;
+use App\Http\Controllers\Rests\CommentRestController;
+use App\Http\Controllers\Rests\PostRestController;
+use App\Http\Controllers\Rests\ProjectAreaRestController;
+use App\Http\Controllers\Rests\PostCategoryRestController;
+use App\Http\Controllers\Rests\CustomerInfoRestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +21,8 @@ use App\Http\Controllers\Rests\OrderRestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//web
 Route::prefix('{locale?}')
     ->where(['locale' => '[a-zA-Z]{2}'])
     ->middleware('setLocale')
@@ -106,4 +114,68 @@ Route::get('/quan-tri', function () {
 Route::any('{all}', function () {
     return view('frontend.index');
 })->where(['all' => '^((?!rest|quan-tri|vi|en|cn|jp|kr).)*$']);
+
+//api
+Route::prefix('rest')
+    ->group(function () {
+        Route::middleware('localization')
+            ->group(function () {
+                Route::group(['prefix' => 'comment'], function () {
+                    Route::get('/find-by-post', [CommentRestController::class, 'findByPost']);
+                    Route::get('/count-pending-comment', [CommentRestController::class, 'countPendingComment']);
+                    Route::post('/save', [CommentRestController::class, 'save']);
+                });
+
+                Route::group(['prefix' => 'project'], function () {
+                    Route::get('/find-all', [ProjectRestController::class, 'findAll']);
+                    Route::get('/find-random', [ProjectRestController::class, 'findRandom']);
+                    Route::get('/detail', [ProjectRestController::class, 'detail']);
+                });
+
+
+                Route::group(['prefix' => 'post-category'], function () {
+                    Route::get('/find-all', [PostCategoryRestController::class, 'findAll']);
+                });
+
+                Route::group(['prefix' => 'post'], function () {
+                    Route::get('/find-all', [PostRestController::class, 'findAll']);
+                    Route::get('/detail', [PostRestController::class, 'detail']);
+                    Route::get('/related', [PostRestController::class, 'related']);
+                    Route::get('/recent', [PostRestController::class, 'recent']);
+                    Route::get('/count-all', [PostRestController::class, 'countAll']);
+                });
+                Route::group(['prefix' => 'project-category'], function () {
+                    Route::get('/find-all', [ProjectCategoryRestController::class, 'findAll']);
+                    Route::get('/find-default', [ProjectCategoryRestController::class, 'findDefaultCategory']);
+                });
+
+                Route::group(['prefix' => 'project-area'], function () {
+                    Route::get('/find-all', [ProjectAreaRestController::class, 'findAll']);
+                });
+
+                Route::group(['prefix' => 'project-field'], function () {
+                    Route::get('/find-all', [ProjectFieldRestController::class, 'findAll']);
+                });
+
+                Route::group(['prefix' => 'contact'], function () {
+                    Route::post('/save', [CustomerInfoRestController::class, 'store']);
+                    Route::post('/save-email', [CustomerInfoRestController::class, 'storeEmail']);
+                });
+            });
+
+        Route::group(['prefix' => 'locale'], function () {
+            Route::post('/changeLocale', [\App\Http\Controllers\Rests\LocaleRestController::class, 'changeLocale']);
+            Route::post('/getLocale', [\App\Http\Controllers\Rests\LocaleRestController::class, 'getLocale']);
+        });
+
+        Route::post('/tai-anh', ['as' => 'uploadImage', UploadRestController::class, 'storeImage']);
+    });
+
+
+
+
+
+
+
+
 

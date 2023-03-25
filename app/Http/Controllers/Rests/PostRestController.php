@@ -14,6 +14,7 @@ class PostRestController extends Controller
 
     public function findAll(Request $request)
     {
+        app()->getLocale();
         $ajax_response = new AjaxResponse();
         $category_id = $request->input("category_id");
         $page_size = 5;

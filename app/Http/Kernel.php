@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'isMember' => \App\Http\Middleware\Member::class,
         'preventBackHistory' => \App\Http\Middleware\PreventBackHistory::class,
         'setLocale' => \App\Http\Middleware\SetLocale::class,
+        'localization' => \App\Http\Middleware\Localization::class,
     ];
 }
