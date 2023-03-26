@@ -58,7 +58,7 @@ Vue.use(VueToastr, {
     defaultStyle: {"top": "50px"},
 });
 
-Vue.use(VueCookies, { expires: '1d'})
+Vue.use(VueCookies, {expires: '1d'})
 
 Vue.prototype.moment = moment;
 
@@ -132,14 +132,72 @@ Vue.use(VueI18n);
 const messages = {
     vi: {
         message: {
-            hello: 'Xin chao',
-            home:"Trang chủ"
+            home: "Trang chủ",
+            about_us: "Về chúng tôi",
+            partners: "Đối tác liên kết",
+            services: "Dịch vụ",
+            projects: "Dự án",
+            bim: "BIM-REVIT CO-OPERATION",
+            news: "Tin tức & sự kiện",
+            contact: "Liên hệ",
+            text_slider1:"Tối ưu thiết kế trên mô hình BIM",
+            text_slider2:"Tiết kiệm chi phí đầu tư và vận hành",
         }
     },
     en: {
         message: {
-            hello: 'Hello',
-            home:"Home"
+            home: "Home",
+            about_us: "AboutUs",
+            partners: "Partners",
+            services: "Services",
+            projects: "Projects",
+            bim: "BIM-REVIT CO-OPERATION",
+            contact: "Contact",
+            news: "NEWS",
+            text_slider1:"Tối ưu thiết kế trên mô hình BIM",
+            text_slider2:"Tiết kiệm chi phí đầu tư và vận hành",
+        }
+    },
+    cn: {
+        message: {
+            home: "主页",
+            about_us: "关于我们",
+            partners: "伙伴",
+            services: "服务",
+            projects: "项目",
+            bim: "BIM-REVIT 合作",
+            contact: "接触",
+            news: "消息",
+            text_slider1:"Tối ưu thiết kế trên mô hình BIM",
+            text_slider2:"Tiết kiệm chi phí đầu tư và vận hành",
+        }
+    },
+    jp: {
+        message: {
+            home: "家",
+            about_us: "私たちに関しては",
+            partners: "パートナー",
+            services: "サービス",
+            projects: "プロジェクト",
+            bim: "BIM-REVIT 協力",
+            contact: "コンタクト",
+            news: "ニュース",
+            text_slider1:"Tối ưu thiết kế trên mô hình BIM",
+            text_slider2:"Tiết kiệm chi phí đầu tư và vận hành",
+        }
+    },
+    kr: {
+        message: {
+            home: "홈페이지",
+            about_us: "우리에 대해",
+            partners: "파트너",
+            services: "서비스",
+            projects: "프로젝트",
+            bim: "BIM-REVIT 협력",
+            contact: "연락하다",
+            news: "소식",
+            text_slider1:"Tối ưu thiết kế trên mô hình BIM",
+            text_slider2:"Tiết kiệm chi phí đầu tư và vận hành",
         }
     }
 };

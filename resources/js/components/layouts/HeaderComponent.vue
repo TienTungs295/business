@@ -33,7 +33,7 @@
                                             <li class="dropdown">
                                                 <router-link class="nav-link dmt-dropdown-item"
                                                              :to="{ name: 'aboutUs'}">
-                                                    Về chúng tôi
+                                                    {{ $t('message.about_us') }}
                                                     <i class="icon-arrow-down icons mgl-5 fz-12 __icon"
                                                        @click.stop.prevent="togglePartnerMenu"></i>
                                                 </router-link>
@@ -42,17 +42,19 @@
                                                     <li>
                                                         <router-link class="dropdown-item"
                                                                      :to="{ name: 'partner'}">
-                                                            Đối tác liên kết
+                                                            {{ $t('message.partners') }}
+                                                        </router-link>
+                                                        <router-link class="dropdown-item" :to="{ name: 'contactUs'}">
+                                                            {{ $t('message.contact') }}
                                                         </router-link>
                                                     </li>
                                                 </ul>
-
                                             </li>
                                             <li class="dropdown">
                                                 <router-link class="nav-link dmt-dropdown-item"
                                                              :to="{ name: 'service'}">
                                                     <span class="__page">
-                                                        Dịch vụ
+                                                    {{ $t('message.services') }}
                                                     </span>
                                                     <i class="icon-arrow-down icons mgl-5 fz-12 __icon"
                                                        @click.stop.prevent="toggleServiceMenu"></i>
@@ -69,14 +71,14 @@
                                             </li>
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'projectList'}">
-                                                    Dự án
+                                                    {{ $t('message.projects') }}
                                                 </router-link>
                                             </li>
                                             <li class="dropdown">
                                                 <router-link class="nav-link dmt-dropdown-item"
                                                              :to="{ name: 'projectList', query:{'category_id':defaultCategory.id}}">
                                                     <span class="__page">
-                                                        BIM-REVIT CO-OPERATION
+                                                     {{ $t('message.bim') }}
                                                     </span>
                                                     <i v-if="projects.length"
                                                        class="icon-arrow-down icons mgl-5 fz-12 __icon"
@@ -94,12 +96,7 @@
                                             </li>
                                             <li>
                                                 <router-link class="nav-link" :to="{ name: 'postList'}">
-                                                    Tin tức & sự kiện
-                                                </router-link>
-                                            </li>
-                                            <li>
-                                                <router-link class="nav-link" :to="{ name: 'contactUs'}">
-                                                    Liên hệ
+                                                    {{ $t('message.news') }}
                                                 </router-link>
                                             </li>
                                         </ul>
@@ -112,9 +109,12 @@
                         </div>
                     </div>
                     <div class="header-column">
-                        <select name="" v-model="locale" @change="changeLocale($event)">
-                            <option value="vi">Việt Nam</option>
-                            <option value="en">English</option>
+                        <select name="locale" @change="changeLocale($event)">
+                            <option :selected="locale == 'vi'" value="vi">Việt Nam</option>
+                            <option :selected="locale == 'en'" value="en">English</option>
+                            <option :selected="locale == 'cn'" value="cn">简体中文</option>
+                            <option :selected="locale == 'jp'" value="jp">日本語</option>
+                            <option :selected="locale == 'kr'" value="kr">한국어</option>
                         </select>
                     </div>
                 </div>
@@ -164,32 +164,24 @@ export default {
         },
         changeLocale($event) {
             let locale = $event.target.value;
+            // this.$store.commit("setLocale", locale);
+            // this.$i18n.locale = this.locale;
+            this.$cookies.set("locale", locale);
             let data = {
                 locale: locale
             }
-            this.$cookies.set("locale", locale);
-            this.$i18n.locale = this.locale;
             LocaleService.changeLocale(data).then(response => {
-                let locale = response;
                 this.$router.go(0);
+                // let query = JSON.parse(JSON.stringify(this.$route.query));
+                // query.lang = response;
+                // this.$router.push({name: this.$route.name, query: query}).catch((e) => {
+                //     console.warn(e);
+                // });
             }).catch(e => {
             });
-        },
-        initLocale(){
-            let locale = this.$cookies.get("locale");
-            if(locale == null || locale == undefined) locale="vi"
-            this.$store.commit("setLocale", locale);
-            this.$i18n.locale = this.locale;
         }
     },
     mounted() {
-        this.initLocale();
-        LocaleService.getLocale().then(response => {
-            this.$store.commit("setLocale", response);
-            this.$i18n.locale = this.locale;
-        }).catch(e => {
-        });
-
         ProjectCategoryService.findDefault().then(response => {
             let res = response || {};
             this.defaultCategory = res.category || {};

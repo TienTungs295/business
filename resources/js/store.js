@@ -101,7 +101,7 @@ export default new Vuex.Store({
             isShowServiceMenu: false,
             isShowBIMMenu: false,
             isShowPartnerMenu: false,
-            locale: "vi",
+            locale: null,
         }
     },
     getters: {

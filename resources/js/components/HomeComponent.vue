@@ -39,7 +39,7 @@
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tối ưu thiết kế trên mô hình BIM</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">{{ $t('message.text_slider1') }}</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-primary-transparent appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
@@ -86,7 +86,7 @@
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">Tiết kiệm chi phí đầu tư và vận hành</span>
+                                    data-appear-animation="fadeInLeftShorterPlus" data-appear-animation-delay="600">{{ $t('message.text_slider2') }}</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-primary-transparent appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"

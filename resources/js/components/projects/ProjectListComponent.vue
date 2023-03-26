@@ -192,6 +192,7 @@ import ProjectCategoryService from "../../services/ProjectCategoryService";
 import ProjectAreaService from "../../services/ProjectAreaService";
 import ProjectFieldService from "../../services/ProjectFieldService";
 import {mapGetters} from "vuex";
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "ProjectList",
@@ -270,6 +271,7 @@ export default {
         }
     },
     mounted() {
+        serviceBus.$emit('initLocale');
         if (this.$route.query.name != undefined && this.$route.query.name != null) this.param.name = this.$route.query.name;
         if (this.$route.query.category_id != "" && this.$route.query.category_id != undefined && this.$route.query.category_id != null) this.param.category_id = this.$route.query.category_id;
         if (this.$route.query.field_id != "" && this.$route.query.field_id != undefined && this.$route.query.field_id != null) this.param.field_id = this.$route.query.field_id;
