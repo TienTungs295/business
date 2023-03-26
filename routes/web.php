@@ -113,7 +113,7 @@ Route::get('/quan-tri', function () {
 
 Route::any('{all}', function () {
     return view('frontend.index');
-})->where(['all' => '^((?!rest|quan-tri|vi|en|cn|jp|kr).)*$']);
+})->where(['all' => '^((?!rest|quan-tri).)*$']);
 
 //api
 Route::prefix('rest')
