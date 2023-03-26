@@ -497,3 +497,19 @@ body .body {
         }
     }
 }
+
+
+#language {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    select{
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+@media (max-width: 991px) {
+    #language{
+        display: none;
+    }
+}
