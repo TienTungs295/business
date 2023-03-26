@@ -8,18 +8,22 @@
                         <ul class="breadcrumb d-block ps-2 text-color-light">
                             <li>
                                 <router-link class="fz-12-i" :to="{ name: 'home'}">
-                                    Trang chủ
+                                    {{ $t('message.home') }}
                                 </router-link>
                             </li>
                             <li>
                                 <router-link class="fz-12-i" :to="{ name: 'service'}">
-                                    Dịch vụ
+                                    {{ $t('message.services') }}
                                 </router-link>
                             </li>
-                            <li class="active fz-12-i before-o-1" v-if="serviceDetail">{{serviceDetail.shortTitle}}</li>
+                            <li class="active fz-12-i before-o-1" v-if="serviceDetail">{{ serviceDetail.shortTitle }}
+                            </li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Dịch vụ</span>
+                            <span
+                                class="d-block position-relative z-index-1 pb-5 ps-lg-3">{{
+                                    $t('message.services')
+                                }}</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
 				                        <svg class="svg-fill-color-primary mt-1 "
                                              xmlns="http://www.w3.org/2000/svg"
@@ -48,9 +52,9 @@
                                 <p class="font-weight-light text-3-5 mb-3-5">{{ serviceDetail.content }} </p>
                             </div>
                         </div>
-                        <div v-else class="text-center">
-                            <p class="fz-16">Dịch vụ không tồn tại</p>
-                        </div>
+<!--                        <div v-else class="text-center">-->
+<!--                            <p class="fz-16">{{ $t('message.empty') }}</p>-->
+<!--                        </div>-->
                     </div>
                 </div>
 
@@ -58,14 +62,15 @@
                 <div class="col-lg-4 order-lg-1 position-relative">
                     <aside class="sidebar" id="sidebar">
                         <h3 class="text-color-dark font-weight-bold text-transform-none text-5-5 line-height-1 mgb-30">
-                            Để lại lời nhắn</h3>
+                            {{ $t('message.leave_message') }}</h3>
                         <div class="contact-form form-style-3">
                             <div class="row">
                                 <div class="form-group col mb-3-5">
                                     <input type="text" maxlength="200"
                                            v-model="contact.name"
                                            :class="{'is-invalid': errors.name}"
-                                           class="form-control text-3 h-auto py-3-5" name="name" placeholder="Họ và tên"
+                                           class="form-control text-3 h-auto py-3-5" name="name"
+                                           :placeholder="$t('message.name')"
                                            required>
                                     <div class="invalid-feedback" v-if="errors.name">
                                                             <span v-for="error in errors.name"
@@ -81,7 +86,7 @@
                                            :class="{'is-invalid': errors.phone_number}"
                                            class="form-control text-3 h-auto py-3-5"
                                            name="phone_number"
-                                           placeholder="Số điện thoại" required>
+                                           :placeholder="$t('message.phone')" required>
                                     <div class="invalid-feedback" v-if="errors.phone_number">
                                                             <span v-for="error in errors.phone_number"
                                                                   class="d-block">{{ error }}</span>
@@ -95,7 +100,7 @@
                                            maxlength="200"
                                            :class="{'is-invalid': errors.email}"
                                            class="form-control text-3 h-auto py-3-5" name="email"
-                                           placeholder="Email" required>
+                                           :placeholder="$t('message.email')" required>
                                     <div class="invalid-feedback" v-if="errors.email">
                                                             <span v-for="error in errors.email"
                                                                   class="d-block">{{ error }}</span>
@@ -107,7 +112,7 @@
                                 <textarea maxlength="5000" rows="8" v-model="contact.message"
                                           class="form-control text-3 h-auto py-3-5" name="message"
                                           :class="{'is-invalid': errors.message}"
-                                          placeholder="Lời nhắn"
+                                          :placeholder="$t('message.message')"
                                           required></textarea>
                                     <div class="invalid-feedback" v-if="errors.message">
                                                             <span v-for="error in errors.message"
@@ -120,7 +125,7 @@
                                     <button type="button"
                                             @click="saveContact"
                                             class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-2">
-                                        Gửi
+                                        {{ $t('message.submit') }}
                                         <img width="27" height="27" class="arrow-icon"
                                              src="/assets/img/demos/construction/icons/arrow-right-white.svg" alt=""/>
                                     </button>
@@ -146,6 +151,7 @@
 import ContactService from "../../services/ContactService";
 import {mapGetters} from "vuex";
 import {serviceBus} from "../../serviceBus";
+import LocaleService from "../../services/LocaleService";
 
 export default {
     name: "ServiceDetail",
@@ -153,12 +159,14 @@ export default {
         return {
             contact: {},
             errors: {},
-            serviceDetail: null
+            serviceDetail: null,
+            serviceByLocale: {}
         };
     },
     computed: {
         ...mapGetters([
             'services',
+            'locale'
         ])
     },
     methods: {
@@ -169,11 +177,27 @@ export default {
             }).catch(response => {
                 this.errors = response.errors || {};
             });
+        },
+        initLocale() {
+            let locale = this.$cookies.get("locale");
+            this.$i18n.locale = locale;
+            if (locale == null || locale == undefined) locale = "vi"
+            this.$i18n.locale = locale;
+            this.$store.commit("setLocale", locale);
+            this.serviceByLocale = this.services[this.locale];
+            LocaleService.getLocale().then(response => {
+                let lang = response;
+                this.$i18n.locale = lang;
+                this.$store.commit("setLocale", lang);
+                this.serviceByLocale = this.services[this.locale];
+                this.serviceDetail = this.serviceByLocale[this.$route.params.id];
+                this.$cookies.set("locale", lang);
+            }).catch(e => {
+            });
         }
     },
     mounted() {
-        serviceBus.$emit('initLocale');
-        this.serviceDetail = this.services[this.$route.params.id];
+        this.initLocale();
     }
 }
 </script>

@@ -13,42 +13,42 @@
                     </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1">
-                    <h4 class="text-color-dark font-weight-bold mb-4-5">Cung cấp</h4>
+                    <h4 class="text-color-dark font-weight-bold mb-4-5">{{$t('message.provide')}}</h4>
                     <ul class="list list-unstyled columns-lg-2">
                         <li>
                             <router-link :to="{ name: 'home'}" class="text-color-hover-primary">
-                                Trang chủ
+                                {{$t('message.home')}}
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{ name: 'aboutUs'}" class="text-color-hover-primary">
-                                Về chúng tôi
+                                {{$t('message.about_us')}}
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{ name: 'service'}" class="text-color-hover-primary">
-                                Dịch vụ
+                                {{$t('message.services')}}
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{ name: 'projectList'}" class="text-color-hover-primary">
-                                Dự án
+                                {{$t('message.projects')}}
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{ name: 'postList'}" class="text-color-hover-primary">
-                                Tin tức & sự kiện
+                                {{$t('message.news')}}
                             </router-link>
                         </li>
                         <li>
                             <router-link :to="{ name: 'contactUs'}" class="text-color-hover-primary">
-                                Liên hệ
+                                {{$t('message.contact')}}
                             </router-link>
                         </li>
                     </ul>
                 </div>
                 <div class="col-lg-5">
-                    <h4 class="text-color-dark font-weight-bold mb-4-5">Email liên hệ</h4>
+                    <h4 class="text-color-dark font-weight-bold mb-4-5">{{$t('message.email_contact')}}</h4>
                     <div class="newsletter">
                         <div class="alert alert-danger d-none" id="newsletterError"></div>
                         <div id="newsletterForm" class="mb-4-5">
@@ -110,7 +110,7 @@
                         </ul>
                     </div>
                 </div>
-                <p class="text-color-grey text-3 mb-3 text-center" id="developer">Phát triển và vận hành bởi <a
+                <p class="text-color-grey text-3 mb-3 text-center" id="developer">{{$t('message.developed_and_operated')}}<a
                     href="https://www.facebook.com/tientung2206">Tien
                     Luu</a>.</p>
             </div>

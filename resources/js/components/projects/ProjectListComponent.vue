@@ -8,13 +8,13 @@
                         <ul class="breadcrumb d-block ps-2 text-color-light">
                             <li>
                                 <router-link class="fz-12-i" :to="{ name: 'home'}">
-                                    Trang chủ
+                                    {{$t('message.home')}}
                                 </router-link>
                             </li>
-                            <li class="active fz-12-i before-o-1">Dự án</li>
+                            <li class="active fz-12-i before-o-1">{{$t('message.projects')}}</li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Dự án</span>
+                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">{{$t('message.projects')}}</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
 				                        <svg class="svg-fill-color-primary mt-1 "
                                              xmlns="http://www.w3.org/2000/svg"
@@ -31,13 +31,13 @@
         <div class="container pb-5 pb-sm-0 my-5">
             <div class="row">
                 <div class="col-md-2 mgb-20">
-                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">BỘ LỌC DỰ ÁN</h5>
+                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">{{$t('message.filter')}}</h5>
                 </div>
                 <div class="col-md-4 mgb-20">
                     <select class="form-control text-uppercase" v-model="param.category_id"
                             @change="changeProjectCategory($event)"
                             name="categpry">
-                        <option value="">Tất cả loại hình</option>
+                        <option value="">{{$t('message.all_types')}}</option>
                         <option v-for="item in projectCategories" v-bind:value="item.id">
                             {{ item.name }}
                         </option>
@@ -47,7 +47,7 @@
                     <select class="form-control text-uppercase" v-model="param.field_id"
                             @change="changeProjectField($event)"
                             name="field">
-                        <option value="">Tất cả lĩnh vực</option>
+                        <option value="">{{$t('message.all_fields')}}</option>
                         <option v-for="item in projectFields" v-bind:value="item.id">
                             {{ item.name }}
                         </option>
@@ -57,7 +57,7 @@
                     <select class="form-control text-uppercase" v-model="param.area_id"
                             @change="changeProjectArea($event)"
                             name="area">
-                        <option value="">Tất cả khu vực</option>
+                        <option value="">{{$t('message.all_areas')}}</option>
                         <option v-for="item in projectAreas" v-bind:value="item.id">
                             {{ item.name }}
                         </option>
@@ -66,27 +66,27 @@
             </div>
             <div class="row mgb-45" style="border-bottom: 2px solid #d80d07">
                 <div class="col-md-2 mgb-20">
-                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">TÌM KIẾM DỰ ÁN</h5>
+                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">{{$t('message.search')}}</h5>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group position-relative">
                         <input type="text"
                                v-model="param.name"
                                v-on:keyup.enter="changeName"
-                               class="form-control" name="name" placeholder="Nhập tên dự án tìm kiếm...">
+                               class="form-control" name="name" :placeholder="$t('message.enter_project')">
                         <i class="fa fa-search project-search-icon" @click="changeName"></i>
                     </div>
                 </div>
                 <div class="col-md-3 text-md-left mgb-5">
-                    <h5 class="text-uppercase fz-16" style="position: relative; top:10px">Sắp xếp</h5>
+                    <h5 class="text-uppercase fz-16" style="position: relative; top:10px">{{$t('message.sort')}}</h5>
                 </div>
                 <div class="col-md-3 mgb-25">
                     <select class="form-control text-uppercase" v-model="param.sort"
                             @change="changeOrder($event)"
                             name="order">
-                        <option value="">Mặc định</option>
+                        <option value="">{{$t('message.default')}}</option>
                         <option value="date">
-                            Ngày đăng
+                            {{$t('message.date_submitted')}}
                         </option>
                         <option value="name">
                             A-Z

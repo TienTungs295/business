@@ -31,16 +31,16 @@
         <div class="container pb-5 pb-sm-0 my-5 project-content">
             <div class="row position-relative">
                 <div class="col-lg-5 content-block-left mgb-20">
-                    <p class="font-weight-bold line-height-1 text-color-dark fz-22 fz-22">Thông tin dự án</p>
+                    <p class="font-weight-bold line-height-1 text-color-dark fz-22 fz-22">{{$t('message.project_detail')}}</p>
                     <div class="fz-16 mgb-5">
-                        <span>Tên công trình: </span> <span class="fw-bold">{{ project.name }}</span>
+                        <span>{{$t('message.project_name')}}: </span> <span class="fw-bold">{{ project.name }}</span>
                     </div>
                     <div class="fz-16 mgb-5">
-                        <span>Địa điểm: </span> <span class="fw-bold"
+                        <span>{{$t('message.area')}}: </span> <span class="fw-bold"
                                                       v-if="project.project_area">{{ project.project_area.name }}</span>
                     </div>
                     <div class="fz-16 mgb-5">
-                        <span>Loại hình: </span>
+                        <span>{{$t('message.type')}}: </span>
                         <span class="fw-bold"
                               v-if="project.project_categories != null && project.project_categories.length"
                               v-for="(category, index) in project.project_categories">
@@ -50,7 +50,7 @@
                                                     </span>
                     </div>
                     <div class="fz-16 mgb-5">
-                        <span>Lĩnh vực: </span>
+                        <span>{{$t('message.field')}}: </span>
                         <span class="fw-bold"
                               v-if="project.project_fields != null && project.project_fields.length"
                               v-for="(field, index) in project.project_fields">

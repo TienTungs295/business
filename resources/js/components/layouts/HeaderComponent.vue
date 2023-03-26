@@ -61,7 +61,7 @@
                                                 </router-link>
                                                 <ul class="dropdown-menu dmt-dropdown-menu"
                                                     :class="isShowServiceMenu ? 'show' : ''">
-                                                    <li v-for="(item,index) in services">
+                                                    <li v-for="(item,index) in serviceByLocale">
                                                         <router-link class="dropdown-item"
                                                                      :to="{ name: 'serviceDetail',params: {id:item.id }}">
                                                             {{ item.shortTitle }}
@@ -110,7 +110,7 @@
                     </div>
                     <div class="header-column">
                         <select name="locale" @change="changeLocale($event)">
-                            <option :selected="locale == 'vi'" value="vi">Việt Nam</option>
+                            <option :selected="locale == 'vi'" value="vi">Tiếng Việt</option>
                             <option :selected="locale == 'en'" value="en">English</option>
                             <option :selected="locale == 'cn'" value="cn">简体中文</option>
                             <option :selected="locale == 'jp'" value="jp">日本語</option>
@@ -136,7 +136,8 @@ export default {
     data() {
         return {
             defaultCategory: {},
-            projects: []
+            projects: [],
+            serviceByLocale: {}
         };
     },
     computed: {
@@ -179,9 +180,26 @@ export default {
                 // });
             }).catch(e => {
             });
+        },
+        initLocale() {
+            let locale = this.$cookies.get("locale");
+            this.$i18n.locale = locale;
+            if (locale == null || locale == undefined) locale = "vi"
+            this.$i18n.locale = locale;
+            this.$store.commit("setLocale", locale);
+            this.serviceByLocale = this.services[this.locale];
+            LocaleService.getLocale().then(response => {
+                let lang = response;
+                this.$i18n.locale = lang;
+                this.$store.commit("setLocale", lang);
+                this.serviceByLocale = this.services[this.locale];
+                this.$cookies.set("locale", lang);
+            }).catch(e => {
+            });
         }
     },
     mounted() {
+        this.initLocale();
         ProjectCategoryService.findDefault().then(response => {
             let res = response || {};
             this.defaultCategory = res.category || {};

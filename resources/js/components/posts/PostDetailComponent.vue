@@ -8,13 +8,13 @@
                         <ul class="breadcrumb d-block ps-2 text-color-light">
                             <li>
                                 <router-link class="fz-12-i" :to="{ name: 'home'}">
-                                    Trang chủ
+                                    {{$t('message.home')}}
                                 </router-link>
                             </li>
                             <li class="active fz-12-i before-o-1">{{ post.name }}</li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Chi tiết bài viết</span>
+                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3"> {{$t('message.post_detail')}}</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
 				                        <svg class="svg-fill-color-primary mt-1 "
                                              xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@
                                 <p class="text-uppercase text-1 mb-3 text-color-default fz-12" v-if="post != null">
                                     <time>{{ post.updated_at | dateFormat }}</time>
                                     <span class="opacity-3 d-inline-block px-2">|</span>
-                                    <span v-if="post.total_comments != null">{{ post.total_comments }} Bình luận</span>
+                                    <span v-if="post.total_comments != null">{{ post.total_comments }} {{$t('message.comment')}}</span>
                                     <span v-if="post.user != null" class="opacity-3 d-inline-block px-2">|</span>
                                     <span v-if="post.user != null">{{ post.user.name }}</span>
                                 </p>
@@ -52,7 +52,7 @@
                                     <hr class="my-5">
                                     <div id="comments" class="post-block post-comments">
                                         <h3 class="text-color-primary text-capitalize font-weight-bold text-5 m-0 mb-3">
-                                            {{ post.total_comments }} bình luận cho bài viết</h3>
+                                            {{ post.total_comments }}  {{$t('message.comments_for_post')}}</h3>
                                         <ul class="comments">
                                             <li v-for="item in commentData.data">
                                                 <div class="comment">
@@ -86,7 +86,7 @@
                                              v-if="commentData.next_page_url != null && !isLoadingComment">
                                             <a @click="paginate()"
                                                class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-2">
-                                                Xem thêm
+                                                {{$t('message.show_more')}}
                                                 <img class="mgl-5" width="15" height="15"
                                                      src="/assets/img/business-icons/arrow-down.svg"
                                                      alt="DMT button"/>
@@ -94,15 +94,14 @@
                                         </div>
 
                                         <h3 class="text-color-primary text-capitalize font-weight-bold text-5 m-0 mb-3 mt-5">
-                                            Để lại bình luận</h3>
+                                            {{$t('message.leave_message')}}</h3>
 
                                         <div class="custom-form-simple-validation p-4 rounded bg-color-grey">
                                             <div class="p-2">
                                                 <div class="row">
                                                     <div class="form-group col-lg-6">
                                                         <label
-                                                            class="form-label required mb-1 font-weight-bold text-dark">Họ
-                                                            và tên</label>
+                                                            class="form-label required mb-1 font-weight-bold text-dark">{{$t('message.name')}}</label>
                                                         <input type="text" maxlength="200"
                                                                :class="{'is-invalid': errors.customer_name}"
                                                                v-model="comment.customer_name"
@@ -116,7 +115,7 @@
                                                     </div>
                                                     <div class="form-group col-lg-6">
                                                         <label
-                                                            class="form-label mb-1 font-weight-bold text-dark">Email</label>
+                                                            class="form-label mb-1 font-weight-bold text-dark">{{$t('message.email')}}</label>
                                                         <input type="email" v-model="comment.customer_email"
                                                                :class="{'is-invalid': errors.customer_email}"
                                                                maxlength="200"
@@ -131,8 +130,7 @@
                                                 <div class="row">
                                                     <div class="form-group col">
                                                         <label
-                                                            class="form-label mb-1 font-weight-bold text-dark">Nội
-                                                            dung</label>
+                                                            class="form-label mb-1 font-weight-bold text-dark"> {{$t('message.message')}}</label>
                                                         <textarea maxlength="5000" rows="8" v-model="comment.comment"
                                                                   :class="{'is-invalid': errors.comment}"
                                                                   class="form-control p-3 border-0 box-shadow-none"
@@ -148,7 +146,7 @@
                                                         <button type="button"
                                                                 @click="sendComment"
                                                                 class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-2">
-                                                            Gửi
+                                                            {{$t('message.submit')}}
                                                             <img width="27" height="27" class="arrow-icon"
                                                                  src="/assets/img/demos/construction/icons/arrow-right-white.svg" alt=""/>
                                                         </button>
@@ -165,15 +163,14 @@
                 <div class="blog-sidebar col-lg-4 pt-4 pt-lg-0">
                     <aside class="sidebar">
                         <div class="px-3 mt-4">
-                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3">Bài viết
-                                gần đây</h3>
+                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3">{{$t('message.recent_posts')}}</h3>
                             <div class="pb-2 mb-1">
                                 <div v-for="item in recentPosts">
                                          <span
                                              class="text-color-default text-uppercase fz-12 mb-0 d-block text-decoration-none">
                                                 {{ item.updated_at | dateFormat }}
                                              <span class="opacity-3 d-inline-block px-2">|</span>
-                                             {{ item.total_comments }} Bình luận
+                                             {{ item.total_comments }} {{$t('message.comment')}}
                                              <span v-if="item.user != null"
                                                    class="opacity-3 d-inline-block px-2">|</span>
                                              <span v-if="item.user != null">{{ item.user.name }}</span>
@@ -190,20 +187,19 @@
                             <hr class="my-2">
                         </div>
                         <div class="px-3 mt-4 post-category">
-                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0">Danh mục bài
-                                viết</h3>
+                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0">{{$t('message.category')}}</h3>
                             <ul class="nav nav-list flex-column mt-2 mb-0 p-relative right-9 ">
                                 <li class="nav-item">
                                     <a class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
                                        @click="changePostCategory(null)">
-                                        Tất cả ({{ totalPosts }})
+                                        {{$t('message.all')}} ({{ totalPosts }})
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a
                                         class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
                                         @click="changePostCategory(0)">
-                                        Không danh mục ({{ totalUncategoryPosts }})
+                                        {{$t('message.un_category')}} ({{ totalUncategoryPosts }})
                                     </a>
                                 </li>
                                 <li class="nav-item" v-for="item in postCategories">

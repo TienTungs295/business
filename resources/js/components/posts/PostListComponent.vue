@@ -8,13 +8,13 @@
                         <ul class="breadcrumb d-block ps-2 text-color-light">
                             <li>
                                 <router-link class="fz-12-i" :to="{ name: 'home'}">
-                                    Trang chủ
+                                    {{$t('message.home')}}
                                 </router-link>
                             </li>
-                            <li class="active fz-12-i before-o-1">Tin tức & sự kiện</li>
+                            <li class="active fz-12-i before-o-1"> {{$t('message.news')}}</li>
                         </ul>
                         <h1 class="position-absolute top-100 left-0 text-color-light font-weight-bold text-6 line-height-3 text-end mt-5-5">
-                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">Chi tiết dự án</span>
+                            <span class="d-block position-relative z-index-1 pb-5 ps-lg-3">{{$t('message.news')}}</span>
                             <span class="custom-svg-position-1 custom-svg-position-1-variation">
 				                        <svg class="svg-fill-color-primary mt-1 "
                                              xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@
                                 <p class="text-uppercase text-color-default fz-12 my-2">
                                     <time>{{ item.updated_at | dateFormat }}</time>
                                     <span class="opacity-3 d-inline-block px-2">|</span>
-                                    {{ item.total_comments }} Bình luận
+                                    {{ item.total_comments }} {{$t('message.comment')}}
                                     <span v-if="item.user != null" class="opacity-3 d-inline-block px-2">|</span>
                                     <span v-if="item.user != null">{{ item.user.name }}</span>
                                 </p>
@@ -65,7 +65,7 @@
                                         :to="{ name: 'postDetail', params: { slug: item.slug,id:item.id }}">
                                        	<span
                                             class="custom-view-more d-inline-flex font-weight-medium text-color-primary">
-													Xem thêm
+													{{$t('message.show_more')}}
 													<img width="27" height="27" class="arrow-icon"
                                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                                          alt="DMT Image"
@@ -80,7 +80,7 @@
                     <article class="mb-5 post-item" v-if="!isLoading && paginate.data.length == 0">
                         <div class="card bg-transparent border-0 custom-border-radius-1">
                             <div class="card-body p-0 z-index-1 text-center">
-                                Không có dữ liệu
+                                {{$t('message.empty')}}
                             </div>
                         </div>
                     </article>
@@ -118,15 +118,14 @@
                 <div class="blog-sidebar col-lg-4 pt-4 pt-lg-0">
                     <aside class="sidebar">
                         <div class="px-3 mt-4">
-                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3">Bài viết
-                                gần đây</h3>
+                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0 mb-3"> {{$t('message.recent_posts')}}</h3>
                             <div class="pb-2 mb-1">
                                 <div v-for="item in recentPosts">
                                          <span
                                              class="text-color-default text-uppercase fz-12 mb-0 d-block text-decoration-none">
                                                 {{ item.updated_at | dateFormat }}
                                              <span class="opacity-3 d-inline-block px-2">|</span>
-                                             {{ item.total_comments }} Bình luận
+                                             {{ item.total_comments }} {{$t('message.comment')}}
                                              <span v-if="item.user != null"
                                                    class="opacity-3 d-inline-block px-2">|</span>
                                              <span v-if="item.user != null">{{ item.user.name }}</span>
@@ -143,21 +142,20 @@
                             <hr class="my-2">
                         </div>
                         <div class="px-3 mt-4 post-category">
-                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0">Danh mục bài
-                                viết</h3>
+                            <h3 class="text-color-quaternary text-capitalize font-weight-bold text-5 m-0">{{$t('message.category')}}</h3>
                             <ul class="nav nav-list flex-column mt-2 mb-0 p-relative right-9 ">
                                 <li class="nav-item">
                                     <a class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
                                        :class="category_id == null ? 'active-link' :''"
                                        @click="changePostCategory(null)">
-                                        Tất cả ({{ totalPosts }})
+                                        {{$t('message.all')}} ({{ totalPosts }})
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a :class="category_id == 0 ? 'active-link' :''"
                                        class="nav-link bg-transparent border-0 cursor-pointer fz-14-i"
                                        @click="changePostCategory(0)">
-                                        Không danh mục ({{ totalUncategoryPosts }})
+                                        {{$t('message.un_category')}} ({{ totalUncategoryPosts }})
                                     </a>
                                 </li>
                                 <li class="nav-item" v-for="item in postCategories">
