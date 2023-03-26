@@ -84,6 +84,7 @@ import ProjectService from "../../services/ProjectService";
 import VueSlickCarousel from 'vue-slick-carousel'
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "ProjectDetail",
@@ -117,6 +118,7 @@ export default {
     methods: {
     },
     mounted() {
+        serviceBus.$emit('initLocale');
         ProjectService.detail(this.$route.params.id).then(response => {
             this.project = response || {};
             this.isLoading = false;

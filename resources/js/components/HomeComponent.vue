@@ -1025,6 +1025,7 @@ import ProjectCategoryService from "../services/ProjectCategoryService";
 import ProjectFieldService from "../services/ProjectFieldService";
 import ProjectAreaService from "../services/ProjectAreaService";
 import {mapGetters} from "vuex";
+import {serviceBus} from "../serviceBus";
 
 
 export default {
@@ -1076,6 +1077,7 @@ export default {
         },
     },
     mounted() {
+        serviceBus.$emit('initLocale');
         ProjectService.findAll({page_size:7}).then(response => {
             this.projectPaginate = response || {};
             this.isLoadingProject = false;

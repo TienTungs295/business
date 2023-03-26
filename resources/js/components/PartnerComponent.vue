@@ -530,10 +530,12 @@
 <script>
 
 import ContactService from "../services/ContactService";
+import {serviceBus} from "../serviceBus";
 
 export default {
     name: "AboutUs",
     mounted() {
+        serviceBus.$emit('initLocale');
     },
     data() {
         return {

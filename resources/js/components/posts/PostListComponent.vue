@@ -188,6 +188,7 @@
 import PostService from "../../services/PostService";
 import PostCategoryService from "../../services/PostCategoryService";
 import {mapGetters} from "vuex";
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "PostList",
@@ -231,6 +232,7 @@ export default {
         }
     },
     mounted() {
+        serviceBus.$emit('initLocale');
         let page = this.$route.query.page || 1;
         this.category_id = this.$route.query.category_id;
         let param = {

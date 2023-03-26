@@ -234,6 +234,7 @@ import PostService from "../../services/PostService";
 import CommentService from "../../services/CommentService";
 import {mapGetters} from "vuex";
 import PostCategoryService from "../../services/PostCategoryService";
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "PostDetail",
@@ -303,6 +304,7 @@ export default {
         },
     },
     mounted() {
+        serviceBus.$emit('initLocale');
         PostService.detail(this.$route.params.id).then(response => {
             let data = response || {};
             this.nextPost = data.next_post;

@@ -149,6 +149,7 @@
 
 import ContactService from "../../services/ContactService";
 import {mapGetters} from "vuex";
+import {serviceBus} from "../../serviceBus";
 
 export default {
     name: "ServiceList",
@@ -175,6 +176,7 @@ export default {
         }
     },
     mounted() {
+        serviceBus.$emit('initLocale');
     },
 }
 </script>

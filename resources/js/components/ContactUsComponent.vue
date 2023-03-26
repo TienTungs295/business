@@ -158,6 +158,7 @@
 <script>
 
 import ContactService from "../services/ContactService";
+import {serviceBus} from "../serviceBus";
 
 export default {
     name: "ContactUs",
@@ -168,6 +169,7 @@ export default {
         };
     },
     mounted() {
+        serviceBus.$emit('initLocale');
     },
     methods: {
         saveContact() {
