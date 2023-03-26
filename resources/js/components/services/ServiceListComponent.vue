@@ -35,13 +35,14 @@
                         <div class="col-12">
                             <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-4">Dịch vụ cung cấp</h2>
                         </div>
-                        <div class="col-12 mgb-20" v-for="(item,index) in services">
+                        <div class="col-12 mgb-20" v-for="(item,index) in serviceByLocale">
                             <div class="d-flex align-items-start">
                                 <img class="flex-0-0-auto" width="60" height="60"
                                      :src="item.icon" alt=""/>
                                 <div class="ps-4">
-                                    <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">{{item.title}}</h3>
-                                    <p class="font-weight-light text-3-5 mb-3-5">{{item.excerpt}}</p>
+                                    <h3 class="text-color-dark font-weight-bold text-transform-none text-5 mb-2">
+                                        {{ item.title }}</h3>
+                                    <p class="font-weight-light text-3-5 mb-3-5">{{ item.excerpt }}</p>
                                 </div>
                             </div>
                             <div class="text-right">
@@ -157,7 +158,8 @@ export default {
     data() {
         return {
             contact: {},
-            errors: {}
+            errors: {},
+            serviceByLocale: {}
         };
     },
     computed: {
@@ -177,6 +179,9 @@ export default {
     },
     mounted() {
         serviceBus.$emit('initLocale');
+        let locale = this.$cookies.get("locale");
+        if (locale == null || locale == undefined) locale = "vi"
+        this.serviceByLocale=this.services[locale];
     },
 }
 </script>
