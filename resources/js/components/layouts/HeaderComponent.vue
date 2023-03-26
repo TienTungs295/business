@@ -44,6 +44,8 @@
                                                                      :to="{ name: 'partner'}">
                                                             {{ $t('message.partners') }}
                                                         </router-link>
+                                                    </li>
+                                                    <li>
                                                         <router-link class="dropdown-item" :to="{ name: 'contactUs'}">
                                                             {{ $t('message.contact') }}
                                                         </router-link>
