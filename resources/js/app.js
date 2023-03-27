@@ -25,9 +25,8 @@ import router from './router';
 
 import VueToastr from "vue-toastr";
 import moment from 'moment';
-// import {BTabs, BTab, BModal, BCarousel, BCarouselSlide, BDropdown, BDropdownItem, BProgress} from 'bootstrap-vue';
+import {BDropdown, BDropdownItem} from 'bootstrap-vue';
 import store from './store';
-// import VueStarRating  from 'vue-star-rating';
 import VueCookies from 'vue-cookies'
 import VueGallerySlideshow from 'vue-gallery-slideshow';
 import VueI18n from 'vue-i18n';
@@ -38,15 +37,8 @@ Vue.component('footer-component', require('./components/layouts/FooterComponent'
 Vue.component('post-item-component', require('./components/posts/PostItemComponent').default);
 Vue.component('loading-component', require('./components/common/LoadingComponent').default);
 Vue.component('phone-ring-component', require('./components/common/PhoneRingComponent').default);
-// Vue.component('b-tabs', BTabs);
-// Vue.component('b-tab', BTab);
-// Vue.component('b-modal', BModal);
-// Vue.component('b-carousel', BCarousel);
-// Vue.component('b-carousel-slide', BCarouselSlide);
-// Vue.component('b-dropdown', BDropdown);
-// Vue.component('b-dropdown-item', BDropdownItem);
-// Vue.component('star-rating', VueStarRating);
-// Vue.component('b-progress', BProgress);
+Vue.component('b-dropdown', BDropdown);
+Vue.component('b-dropdown-item', BDropdownItem);
 Vue.component('vue-gallery-slideshow', VueGallerySlideshow);
 
 Vue.use(VueToastr, {
@@ -208,20 +200,20 @@ const messages = {
             "office_staff": "Nhân viên văn phòng",
             "client_say1": "Dịch vụ của công ty rất tốt, chất lượng công trình rất đảm bảo, đội ngũ thi công chuyên nghiệp. Tôi sẽ tiếp tục sử dụng các dịch vụ của DMT trong thời gian tới",
             "client_say2": "Tôi rất hài lòng với phong cách làm việc chuyên nghiệp, thời gian chính xác. Cách bố trí đường điện, nước, hệ thống điều hòa thông gió của các bạn rất thông minh nên không gian vô cùng thoáng đãng.",
-            "profile":"Profile",
-            "about_us_content1":"Công ty CP Tư vấn Thiết kế Quản lý dự án và phát triển công nghệ DMT xin gửi lời chúc sức khỏe và lời chào trân trọng nhất đến toàn thể Quý khách hàng.",
-            "about_us_content2":"DMT được thành lập năm 2008 với phạm vi hoạt động tại Việt Nam và Quốc tế về lĩnh vực tư vấn thiết kế công trình . Với đội ngũ nhân viên giàu kinh nghiệm, năng động và sáng tạo ,trong thời gian qua chúng tôi đã hoàn thành thiết kế nhiều công trình có giá trị.",
-            "about_us_content3":"Bằng việc áp dụng những kỹ thuật mới nhất vào sản xuất và quản lý chất lượng các công trình thiết kế và thi công xây dựng của DMT đã khẳng định niềm tin và chỗ đứng trong lòng Qúy khách hàng .",
-            "about_us_content4":"Chúng tôi sẽ tiếp tục cố gắng hơn nữa nhằm nâng cao chất lượng sản phẩm và dịch vụ để nhận được sự hài lòng trọn vẹn nhất từ phía Qúy khách hàng.",
-            "provide":"Cung cấp",
-            "enter_project":"Nhập tên dự án cần tìm kiếm..",
-            "project_detail":"Thông tin dự án",
-            "project_name":"Tên công trình",
-            "area":"Địa điểm",
-            "type":"Loại hình",
-            "field":"Lĩnh vực",
-            "empty":"Không có dữ liệu",
-            "category":"Danh mục",
+            "profile": "Profile",
+            "about_us_content1": "Công ty CP Tư vấn Thiết kế Quản lý dự án và phát triển công nghệ DMT xin gửi lời chúc sức khỏe và lời chào trân trọng nhất đến toàn thể Quý khách hàng.",
+            "about_us_content2": "DMT được thành lập năm 2008 với phạm vi hoạt động tại Việt Nam và Quốc tế về lĩnh vực tư vấn thiết kế công trình . Với đội ngũ nhân viên giàu kinh nghiệm, năng động và sáng tạo ,trong thời gian qua chúng tôi đã hoàn thành thiết kế nhiều công trình có giá trị.",
+            "about_us_content3": "Bằng việc áp dụng những kỹ thuật mới nhất vào sản xuất và quản lý chất lượng các công trình thiết kế và thi công xây dựng của DMT đã khẳng định niềm tin và chỗ đứng trong lòng Qúy khách hàng .",
+            "about_us_content4": "Chúng tôi sẽ tiếp tục cố gắng hơn nữa nhằm nâng cao chất lượng sản phẩm và dịch vụ để nhận được sự hài lòng trọn vẹn nhất từ phía Qúy khách hàng.",
+            "provide": "Cung cấp",
+            "enter_project": "Nhập tên dự án cần tìm kiếm..",
+            "project_detail": "Thông tin dự án",
+            "project_name": "Tên công trình",
+            "area": "Địa điểm",
+            "type": "Loại hình",
+            "field": "Lĩnh vực",
+            "empty": "Không có dữ liệu",
+            "category": "Danh mục",
         }
     },
     en: {
@@ -412,7 +404,7 @@ const messages = {
             "category": "类别"
         }
     },
-    jp:{
+    jp: {
         "message": {
             "home": "ホームページ",
             "about_us": "私たちに関しては",
@@ -506,7 +498,7 @@ const messages = {
             "category": "カテゴリー"
         }
     },
-    kr:{
+    kr: {
         "message": {
             "home": "홈페이지",
             "about_us": "회사 소개",

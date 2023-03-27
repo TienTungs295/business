@@ -105,13 +105,6 @@
                                                 </li>
                                                 <li id="language-mobile" class="d-lg-none">
                                                     <div>
-                                                        <select name="locale" @change="changeLocale($event)">
-                                                            <option :selected="locale == 'vi'" value="vi">Tiếng Việt</option>
-                                                            <option :selected="locale == 'en'" value="en">English</option>
-                                                            <option :selected="locale == 'cn'" value="cn">简体中文</option>
-                                                            <option :selected="locale == 'jp'" value="jp">日本語</option>
-                                                            <option :selected="locale == 'kr'" value="kr">한국어</option>
-                                                        </select>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -126,13 +119,33 @@
                     </div>
                 </div>
                 <div id="language">
-                    <select name="locale" @change="changeLocale($event)">
-                        <option :selected="locale == 'vi'" value="vi">Tiếng Việt</option>
-                        <option :selected="locale == 'en'" value="en">English</option>
-                        <option :selected="locale == 'cn'" value="cn">简体中文</option>
-                        <option :selected="locale == 'jp'" value="jp">日本語</option>
-                        <option :selected="locale == 'kr'" value="kr">한국어</option>
-                    </select>
+                    <div class="custom_select">
+                        <b-dropdown variant="link" no-caret
+                                    class="custom-dropdown __style-2"
+                                    toggle-class="text-decoration-none">
+                            <template #button-content>
+                                <div class="d-table" v-if="locale">
+                                    <div class="d-table-cell pdr-5">
+                                        <img style="position: relative; top:5px; border:1px solid #ccc"
+                                             :src="languages[locale].flag" alt="" width="30"
+                                             height="10">
+                                    </div>
+                                    <span class="__cat-name d-table-cell" style="line-height: 16px">{{languages[locale].name}}</span>
+                                </div>
+                            </template>
+                            <b-dropdown-item :active="locale == key" v-for="(value,key) in languages" v-bind:key="key"
+                                             @click="changeLocale(key)">
+                                <div class="d-table">
+                                    <div class="d-table-cell pdr-5">
+                                        <img  style="position: relative; top:4px; border:1px solid #ccc"
+                                              :src="value.flag" alt="" width="30"
+                                              height="10">
+                                    </div>
+                                    <span class="__cat-name d-table-cell">{{value.name}}</span>
+                                </div>
+                            </b-dropdown-item>
+                        </b-dropdown>
+                    </div>
                 </div>
             </div>
         </div>
@@ -153,7 +166,29 @@ export default {
         return {
             defaultCategory: {},
             projects: [],
-            serviceByLocale: {}
+            serviceByLocale: {},
+            languages: {
+                "vi": {
+                    flag: "/assets/img/business-image/flag/vi.png",
+                    name: "Tiếng Việt",
+                },
+                "en": {
+                    flag: "/assets/img/business-image/flag/en.png",
+                    name: "English",
+                },
+                "cn": {
+                    flag: "/assets/img/business-image/flag/cn.png",
+                    name: "简体中文",
+                },
+                "jp": {
+                    flag: "/assets/img/business-image/flag/jp.png",
+                    name: "日本語",
+                },
+                "kr": {
+                    flag: "/assets/img/business-image/flag/kr.png",
+                    name: "한국어",
+                }
+            }
         };
     },
     computed: {
@@ -179,8 +214,8 @@ export default {
         togglePartnerMenu() {
             this.$store.commit("setIsShowPartnerMenu", !this.isShowPartnerMenu);
         },
-        changeLocale($event) {
-            let locale = $event.target.value;
+        changeLocale(locale) {
+            if (locale == this.locale) return;
             // this.$store.commit("setLocale", locale);
             // this.$i18n.locale = this.locale;
             this.$cookies.set("locale", locale);
