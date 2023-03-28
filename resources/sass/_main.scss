@@ -518,8 +518,11 @@ body .body {
 
 .custom_select {
     color: #444;
-    select, .custom-dropdown.__style-2 {
+
+    .__flag {
         border: 1px solid #ccc;
+    }
+    select, .custom-dropdown.__style-2 {
         border-radius: 0;
         width: 100%;
     }
@@ -527,10 +530,7 @@ body .body {
     .custom-dropdown.__style-2 {
         .btn-link {
             color: #444;
-            padding: 8px;
-            padding-top: 2px;
             text-transform: inherit;
-
             &:before {
                 background-color: inherit;
             }
@@ -565,5 +565,3 @@ body .body {
         }
     }
 }
-
-

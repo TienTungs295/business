@@ -109,13 +109,13 @@
                                                                     class="custom-dropdown __style-2"
                                                                     toggle-class="text-decoration-none">
                                                             <template #button-content>
-                                                                <div class="d-table" v-if="locale">
-                                                                    <div class="d-table-cell pdr-5">
-                                                                        <img style="position: relative; top:5px; border:1px solid #ccc"
-                                                                             :src="languages[locale].flag" alt="" width="30"
-                                                                             height="10">
+                                                                <div v-if="locale">
+                                                                    <div>
+                                                                        <img class="__flag"
+                                                                            :src="languages[locale].flag" alt=""
+                                                                            width="35"
+                                                                            height="20">
                                                                     </div>
-                                                                    <span class="__cat-name d-table-cell" style="line-height: 16px">{{languages[locale].name}}</span>
                                                                 </div>
                                                             </template>
                                                             <b-dropdown-item :active="locale == key" v-for="(value,key) in languages" v-bind:key="key"
@@ -124,7 +124,7 @@
                                                                     <div class="d-table-cell pdr-5">
                                                                         <img  style="position: relative; top:4px; border:1px solid #ccc"
                                                                               :src="value.flag" alt="" width="30"
-                                                                              height="10">
+                                                                              height="20">
                                                                     </div>
                                                                     <span class="__cat-name d-table-cell">{{value.name}}</span>
                                                                 </div>
@@ -149,13 +149,12 @@
                                     class="custom-dropdown __style-2"
                                     toggle-class="text-decoration-none">
                             <template #button-content>
-                                <div class="d-table" v-if="locale">
-                                    <div class="d-table-cell pdr-5">
-                                        <img style="position: relative; top:5px; border:1px solid #ccc"
-                                             :src="languages[locale].flag" alt="" width="30"
-                                             height="10">
+                                <div v-if="locale">
+                                    <div>
+                                        <img class="__flag"
+                                            :src="languages[locale].flag" alt="" width="35"
+                                            height="20">
                                     </div>
-                                    <span class="__cat-name d-table-cell" style="line-height: 16px">{{languages[locale].name}}</span>
                                 </div>
                             </template>
                             <b-dropdown-item :active="locale == key" v-for="(value,key) in languages" v-bind:key="key"
@@ -164,7 +163,7 @@
                                     <div class="d-table-cell pdr-5">
                                         <img  style="position: relative; top:4px; border:1px solid #ccc"
                                               :src="value.flag" alt="" width="30"
-                                              height="10">
+                                              height="20">
                                     </div>
                                     <span class="__cat-name d-table-cell">{{value.name}}</span>
                                 </div>
