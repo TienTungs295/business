@@ -110,8 +110,8 @@
                                                                     toggle-class="text-decoration-none">
                                                             <template #button-content>
                                                                 <div v-if="locale">
-                                                                    <div class="text-right">
-                                                                        <img class="__flag d-inline-block"
+                                                                    <div>
+                                                                        <img class="__flag"
                                                                             :src="languages[locale].flag" alt=""
                                                                             width="35"
                                                                             height="20">
