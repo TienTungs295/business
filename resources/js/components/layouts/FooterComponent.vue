@@ -54,7 +54,7 @@
                         <div id="newsletterForm" class="mb-4-5">
                             <div class="input-group">
                                 <input class="form-control border-0"
-                                       placeholder="Email của bạn"
+                                       :placeholder="$t('message.your_email')"
                                        v-model="contact.email"
                                        name="newsletterEmail"
                                        id="newsletterEmail"
