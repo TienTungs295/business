@@ -192,7 +192,6 @@ class ProjectController extends BaseCustomController
         $project_categories = $request->input("project_categories");
         $project_fields = $request->input("project_fields");
         $project->name = $request->input('name');
-        $project->slug = Str::slug($project->name);
         $project->content = $request->input('content');
         $project->priority = $request->input('priority');
         $project->project_area_id = $request->input('project_area_id');
