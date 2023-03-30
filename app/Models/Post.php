@@ -16,10 +16,10 @@ class Post extends Model implements TranslatableContract
 
     protected $table = 'post';
     protected $fillable = [
-//        'name',
-//        'content',
+        'slug',
         'image',
-        'priority'
+        'priority',
+        'user_id'
     ];
 
     public $translatedAttributes = ['name', 'content'];

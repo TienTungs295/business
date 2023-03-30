@@ -24,10 +24,12 @@ class Project extends Model implements TranslatableContract
      * @var array
      */
     protected $fillable = [
-//        'name',
-//        'content',
+        'slug',
         'image',
+        'category_id',
+        'project_area_id',
         'priority',
+        'user_id'
     ];
 
     public $translatedAttributes = ['name', 'content'];
