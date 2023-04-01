@@ -103,10 +103,10 @@
                                                         {{ $t('message.news') }}
                                                     </router-link>
                                                 </li>
-                                                <li id="language-mobile" class="d-lg-none">
+                                                <li id="language-mobile" class="d-xl-none">
                                                     <div class="custom_select text-left">
                                                         <div v-for="(value,key) in languages" v-bind:key="key" @click="changeLocale(key)"
-                                                             class="__flag d-inline-block" :active="locale == key">
+                                                             class="__flag d-inline-block pdt-5 pdr-5" :active="locale == key">
                                                             <img class="__flag-img d-inline-block"
                                                                  :src="value.flag" alt="value.name">
                                                         </div>
@@ -124,9 +124,9 @@
                     </div>
                 </div>
                 <div id="language">
-                    <div class="custom_select text-right">
+                    <div class="custom_select text-right pdb-5">
                         <div v-for="(value,key) in languages" v-bind:key="key" @click="changeLocale(key)"
-                             class="__flag d-inline-block" :class="locale == key ? 'active' :''">
+                             class="__flag d-inline-block pdl-5" :class="locale == key ? 'active' :''">
                             <img class="__flag-img d-inline-block"
                                  :src="value.flag" alt="value.name">
                         </div>

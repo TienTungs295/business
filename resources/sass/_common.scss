@@ -173,12 +173,12 @@ a, button {
         display: none;
     }
 
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
         .__pc {
             display: block;
         }
     }
-    @media (max-width: 991px) {
+    @media (max-width: 1199px) {
         .__mobile {
             display: block;
         }

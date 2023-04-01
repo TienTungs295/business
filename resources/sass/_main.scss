@@ -253,7 +253,7 @@ body .body {
 }
 
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .dropdown {
         .dmt-dropdown-menu {
             top: auto !important;
@@ -272,7 +272,7 @@ body .body {
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
     .header-nav-main.show {
         border-right: 1px solid #ccc;
         border-left: 1px solid #ccc;
@@ -491,7 +491,7 @@ body .body {
 }
 
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .project-content {
         .content-block-left {
             border-right: 1px solid #ccc;
@@ -506,7 +506,7 @@ body .body {
 #language {
     position: absolute;
     right: 5px;
-    width: 160px;
+    width: 200px;
     top: 50%;
     transform: translateY(-50%);
 
@@ -515,17 +515,10 @@ body .body {
     }
 }
 
-@media (max-width: 991px) {
-    #language {
-        display: none;
-    }
-}
-
 .custom_select {
     .__flag {
-        width: 30px;
+        width: 34px;
         cursor:pointer;
-        padding-left: 4px;
         &.active{
             .__flag-img{
                 border: 1px solid #444;
@@ -542,5 +535,11 @@ body .body {
         .dropdown-menu {
             background-color: rgba(255, 255, 255, 1) !important;
         }
+    }
+}
+
+@media (max-width: 1199px) {
+    #language {
+        display: none;
     }
 }
