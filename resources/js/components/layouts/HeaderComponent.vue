@@ -4,7 +4,7 @@
             <div class="container-fluid">
                 <div class="header-container container">
                     <div class="header-row">
-                        <div class="header-column">
+                        <div class="header-column flex-grow-lg-0">
                             <div class="header-row">
                                 <div class="header-logo custom-header-logo">
                                     <router-link :to="{ name: 'home'}">
@@ -104,32 +104,12 @@
                                                     </router-link>
                                                 </li>
                                                 <li id="language-mobile" class="d-lg-none">
-                                                    <div class="custom_select">
-                                                        <b-dropdown variant="link" no-caret
-                                                                    class="custom-dropdown __style-2"
-                                                                    toggle-class="text-decoration-none">
-                                                            <template #button-content>
-                                                                <div v-if="locale">
-                                                                    <div>
-                                                                        <img class="__flag"
-                                                                            :src="languages[locale].flag" alt=""
-                                                                            width="35"
-                                                                            height="20">
-                                                                    </div>
-                                                                </div>
-                                                            </template>
-                                                            <b-dropdown-item :active="locale == key" v-for="(value,key) in languages" v-bind:key="key"
-                                                                             @click="changeLocale(key)">
-                                                                <div class="d-table">
-                                                                    <div class="d-table-cell pdr-5">
-                                                                        <img  style="position: relative; top:4px; border:1px solid #ccc"
-                                                                              :src="value.flag" alt="" width="30"
-                                                                              height="20">
-                                                                    </div>
-                                                                    <span class="__cat-name d-table-cell">{{value.name}}</span>
-                                                                </div>
-                                                            </b-dropdown-item>
-                                                        </b-dropdown>
+                                                    <div class="custom_select text-left">
+                                                        <div v-for="(value,key) in languages" v-bind:key="key" @click="changeLocale(key)"
+                                                             class="__flag d-inline-block" :active="locale == key">
+                                                            <img class="__flag-img d-inline-block"
+                                                                 :src="value.flag" alt="value.name">
+                                                        </div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -144,31 +124,12 @@
                     </div>
                 </div>
                 <div id="language">
-                    <div class="custom_select">
-                        <b-dropdown variant="link" no-caret
-                                    class="custom-dropdown __style-2"
-                                    toggle-class="text-decoration-none">
-                            <template #button-content>
-                                <div v-if="locale">
-                                    <div class="text-right">
-                                        <img class="__flag d-inline-block"
-                                            :src="languages[locale].flag" alt="" width="35"
-                                            height="20">
-                                    </div>
-                                </div>
-                            </template>
-                            <b-dropdown-item :active="locale == key" v-for="(value,key) in languages" v-bind:key="key"
-                                             @click="changeLocale(key)">
-                                <div class="d-table">
-                                    <div class="d-table-cell pdr-5">
-                                        <img  style="position: relative; top:4px; border:1px solid #ccc"
-                                              :src="value.flag" alt="" width="30"
-                                              height="20">
-                                    </div>
-                                    <span class="__cat-name d-table-cell">{{value.name}}</span>
-                                </div>
-                            </b-dropdown-item>
-                        </b-dropdown>
+                    <div class="custom_select text-right">
+                        <div v-for="(value,key) in languages" v-bind:key="key" @click="changeLocale(key)"
+                             class="__flag d-inline-block" :class="locale == key ? 'active' :''">
+                            <img class="__flag-img d-inline-block"
+                                 :src="value.flag" alt="value.name">
+                        </div>
                     </div>
                 </div>
             </div>
