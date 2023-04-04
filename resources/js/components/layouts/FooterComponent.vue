@@ -9,7 +9,7 @@
                              src="/assets/img/business-image/logo/dmt-logo.png">
                     </router-link>
                     <div class="mgt-30">
-                        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100090390816536" data-tabs="timeline" data-width="250" data-height="90" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100090390816536" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100090390816536">Công Ty Cổ Phần Tư Vấn Thiết Kế Quản Lý Dự Án Và Phát Triển Công Nghệ DMT</a></blockquote></div>
+                        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=100088188111491" data-tabs="timeline" data-width="250" data-height="90" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/profile.php?id=100090390816536" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=100090390816536">Công Ty Cổ Phần Tư Vấn Thiết Kế Quản Lý Dự Án Và Phát Triển Công Nghệ DMT</a></blockquote></div>
                     </div>
                 </div>
                 <div class="col-lg-4 offset-lg-1">
