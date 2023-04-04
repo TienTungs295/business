@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendor/owl.carousel/assets/owl.theme.default.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.min.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('css/app.css?version=27') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css?version=30') }}">
 
     <!-- Head Libs -->
     <script src="{{asset('assets/vendor/modernizr/modernizr.min.js')}}"></script>
@@ -41,7 +41,7 @@
 <body data-plugin-scroll-spy data-plugin-options="{'target': '#sidebar'}">
 <div id="app">
 </div>
-<script src="{{ asset('js/app.js?version=27') }}"></script>
+<script src="{{ asset('js/app.js?version=30') }}"></script>
 
 <!-- Latest jQuery -->
 {{--<script src="{{asset('assets/js/jquery/jquery-3.6.0.min.js')}}"></script>--}}
@@ -57,7 +57,7 @@
 
 <script>
     var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "103769949310308");
+    chatbox.setAttribute("page_id", "104798685810981");
     chatbox.setAttribute("attribution", "biz_inbox");
 </script>
 
@@ -78,6 +78,6 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 </script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v16.0&appId=464740230892842&autoLogAppEvents=1" nonce="vhVulAux"></script>
+
 </body>
 </html>
