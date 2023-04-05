@@ -169,7 +169,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div v-for="(item,index) in serviceByLocale" class="col-md-6 mgb-20 appear-animation"
+                    <div v-for="(item,index) in serviceByLocale" v-if="index < 4" class="col-md-6 mgb-20 appear-animation"
                          data-appear-animation="fadeInUpShorterPlus"
                          data-appear-animation-delay="500">
                         <div class="d-flex align-items-start">
