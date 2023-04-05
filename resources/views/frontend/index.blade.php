@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>DMT | MEP Design Ecosystem</title>
+    <title>DMT | MEP Consultant</title>
 
     <meta property="og:image" content="https://dmt.net.vn/assets/img/business-image/slider/banner1.png" />
     <meta name="keywords" content="MEP Consultant" />
