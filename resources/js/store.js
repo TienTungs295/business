@@ -33,14 +33,6 @@ export default new Vuex.Store({
                         excerpt: "Hạng mục cơ điện là một hệ thống hoàn chỉnh và đồng bộ, bao gồm nhiều thành phần hệ thống bên trong như: Hệ thống điện, điện phụ trợ, hệ thống điều hòa thông gió...",
                         content: "Hạng mục cơ điện là một hệ thống hoàn chỉnh và đồng bộ, bao gồm nhiều thành phần hệ thống bên trong như: Hệ thống điện, điện phụ trợ, hệ thống điều hòa thông gió, hệ thống cấp thoát nước ... Vì vậy, để có thể thiết kế một hệ thống cơ điện hoàn chỉnh, người thiết kế cần hiểu sâu và bao quát nhiều hệ thống, để có thể tối ưu hóa thiết kế, giúp hệ thống hoạt động hiệu quả và bền vững."
                     },
-                    3: {
-                        id: 3,
-                        icon: "/assets/img/business-image/services/indent-firstline.svg",
-                        shortTitle: "Tư vấn thiết kế Phòng cháy chữa cháy",
-                        title: "Tư vấn thiết kế Phòng cháy chữa cháy",
-                        excerpt: "Phòng cháy - chữa cháy (fire life safety) là một giải pháp tổng thể bao gồm nhiều hạng mục khác nhau, không chỉ gói gọn trong hệ thống báo cháy và chữa cháy...",
-                        content: "Phòng cháy - chữa cháy (fire life safety) là một giải pháp tổng thể bao gồm nhiều hạng mục khác nhau, không chỉ gói gọn trong hệ thống báo cháy và chữa cháy, như các quan niệm truyền thống. Một hệ thống PCCC hoàn chỉnh còn bao gồm các giải pháp thiết kế về kiến trúc (đường thoát nạn, ngăn chia khoang cháy, giao thông tiếp cận đám cháy...), các giải pháp về kiểm soát khói... Ngoài ra, việc tham chiếu các tiêu chuẩn quốc tế uy tin (NFPA, IBC...) cũng hết sức quan trọng trong việc nâng cao độ tin cậy và an toàn cho dự án"
-                    },
                     4: {
                         id: 4,
                         icon: "/assets/img/business-image/services/lightbulb.svg",
@@ -74,14 +66,6 @@ export default new Vuex.Store({
                         "title": "Electromechanical design consulting",
                         "excerpt": "The electromechanical item is a complete and synchronous system, including many internal system components such as electrical system, auxiliary electricity, air-conditioning system...",
                         "content": "The electromechanical item is a complete and synchronous system, including many internal system components such as electrical system, auxiliary electricity, air conditioning system, ventilation system, water supply and drainage system... Therefore, "
-                    },
-                    "3": {
-                        "id": 3,
-                        "icon": "/assets/img/business-image/services/indent-firstline.svg",
-                        "shortTitle": "Design consultancy for fire prevention and fighting",
-                        "title": "Design consultancy for fire prevention and fighting",
-                        "excerpt": "Fire prevention and fighting (fire life safety) is a total solution that includes many different items, not only encapsulated in fire alarm and fire fighting systems...",
-                        "content": "Fire prevention and fighting (fire life safety) is a total solution that includes many different items, not only encapsulated in fire alarm and fire fighting systems, as traditional concepts. "
                     },
                     "4": {
                         "id": 4,
@@ -117,14 +101,6 @@ export default new Vuex.Store({
                         "excerpt": "机电项目是一个完整的同步系统，包括许多内部系统组成部分，如电气系统、辅助电力、空调系统……",
                         "content": "机电项目是一个完整同步的系统，包括电气系统、辅助用电、空调系统、通风系统、给排水系统等诸多内部系统组成部分……因此， "
                     },
-                    "3": {
-                        "id": 3,
-                        "icon": "/assets/img/business-image/services/indent-firstline.svg",
-                        "shortTitle": "消防设计咨询",
-                        "title": "消防设计咨询",
-                        "excerpt": "防火和灭火（消防生命安全）是一个包括许多不同项目的整体解决方案，不仅封装在火灾报警和消防系统中......",
-                        "content": "防火和灭火（火灾生命安全）是一个包括许多不同项目的整体解决方案，而不是像传统概念那样仅仅封装在火灾报警和消防系统中。 "
-                    },
                     "4": {
                         "id": 4,
                         "icon": "/assets/img/business-image/services/lightbulb.svg",
@@ -158,14 +134,6 @@ export default new Vuex.Store({
                         "title": "電気機械設計コンサルティング",
                         "excerpt": "電気機械部品は、電気システム、補助電気、空調システムなどの多くの内部システム コンポーネントを含む完全な同期システムです。",
                         "content": "電気機械部品は、電気システム、補助電気、空調システム、換気システム、給水および排水システムなどの多くの内部システム コンポーネントを含む完全な同期システムです。したがって、 "
-                    },
-                    "3": {
-                        "id": 3,
-                        "icon": "/assets/img/business-image/services/indent-firstline.svg",
-                        "shortTitle": "防火・防火設計コンサルティング",
-                        "title": "防火・防火設計コンサルティング",
-                        "excerpt": "防火・防火（防火・人命安全）は、火災報知器や消防設備だけでなく、さまざまな項目を含むトータルソリューションです...",
-                        "content": "防火・防火（ファイヤー・ライフ・セイフティ）は、従来の概念である火災報知器や消火設備だけにとどまらず、さまざまな項目を含むトータルソリューションです。 "
                     },
                     "4": {
                         "id": 4,
@@ -229,6 +197,7 @@ export default new Vuex.Store({
             },
             isShowMenu: false,
             isShowServiceMenu: false,
+            isShowProjectMenu: false,
             isShowBIMMenu: false,
             isShowPartnerMenu: false,
             locale: null,
@@ -246,6 +215,7 @@ export default new Vuex.Store({
         services: state => state.object.services,
         isShowMenu: state => state.object.isShowMenu,
         isShowServiceMenu: state => state.object.isShowServiceMenu,
+        isShowProjectMenu: state => state.object.isShowProjectMenu,
         isShowBIMMenu: state => state.object.isShowBIMMenu,
         isShowPartnerMenu: state => state.object.isShowPartnerMenu,
         locale: state => state.object.locale,
@@ -280,6 +250,9 @@ export default new Vuex.Store({
         },
         setIsShowServiceMenu(state, newValue) {
             state.object.isShowServiceMenu = newValue;
+        },
+        setIsShowProjectMenu(state, newValue) {
+            state.object.isShowProjectMenu = newValue;
         },
         setIsShowBIMMenu(state, newValue) {
             state.object.isShowBIMMenu = newValue;

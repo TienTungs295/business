@@ -73,30 +73,31 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-                                                <li>
-                                                    <router-link class="nav-link" :to="{ name: 'projectList'}">
-                                                        {{ $t('message.projects') }}
-                                                    </router-link>
-                                                </li>
                                                 <li class="dropdown">
-                                                    <router-link class="nav-link dmt-dropdown-item"
-                                                                 :to="{ name: 'projectList', query:{'category_id':defaultCategory.id}}">
-                                                    <span class="__page">
-                                                     {{ $t('message.bim') }}
+                                                    <router-link class="nav-link dmt-dropdown-item" :to="{ name: 'projectList'}">
+                                                        <span class="__page">
+                                                        {{ $t('message.projects') }}
                                                     </span>
-                                                        <i v-if="projects.length"
-                                                           class="icon-arrow-down icons mgl-5 fz-12 __icon"
-                                                           @click.stop.prevent="toggleBIMMenu"></i>
+                                                        <i class="icon-arrow-down icons mgl-5 fz-12 __icon"
+                                                           @click.stop.prevent="toggleProjectMenu"></i>
                                                     </router-link>
-                                                    <ul class="dropdown-menu dmt-dropdown-menu" v-if="projects.length"
-                                                        :class="isShowBIMMenu ? 'show' : ''">
-                                                        <li v-for="item in projects">
+                                                    <ul class="dropdown-menu dmt-dropdown-menu"
+                                                        :class="isShowProjectMenu ? 'show' : ''">
+                                                        <li v-for="(item) in projectCategories">
                                                             <router-link class="dropdown-item"
-                                                                         :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}">
+                                                                         :to="{ name: 'projectList', query:{'category_id':item.id}}">
                                                                 {{ item.name }}
                                                             </router-link>
                                                         </li>
                                                     </ul>
+                                                </li>
+                                                <li class="dropdown" v-for="item in defaultProjectCategories">
+                                                    <router-link class="nav-link dmt-dropdown-item"
+                                                                 :to="{ name: 'projectList', query:{'category_id':item.id}}">
+                                                    <span class="__page">
+                                                     {{item.name}}
+                                                    </span>
+                                                    </router-link>
                                                 </li>
                                                 <li>
                                                     <router-link class="nav-link" :to="{ name: 'postList'}">
@@ -149,8 +150,7 @@ export default {
     name: "Header",
     data() {
         return {
-            defaultCategory: {},
-            projects: [],
+            defaultProjectCategories: {},
             serviceByLocale: {},
             languages: {
                 "vi": {
@@ -181,9 +181,11 @@ export default {
             'services',
             'isShowMenu',
             'isShowServiceMenu',
+            'isShowProjectMenu',
             'isShowBIMMenu',
             'isShowPartnerMenu',
-            'locale'
+            'locale',
+            'projectCategories'
         ])
     },
     methods: {
@@ -192,6 +194,9 @@ export default {
         },
         toggleServiceMenu() {
             this.$store.commit("setIsShowServiceMenu", !this.isShowServiceMenu);
+        },
+        toggleProjectMenu() {
+            this.$store.commit("setIsShowProjectMenu", !this.isShowServiceMenu);
         },
         toggleBIMMenu() {
             this.$store.commit("setIsShowBIMMenu", !this.isShowBIMMenu);
@@ -237,9 +242,13 @@ export default {
     mounted() {
         this.initLocale();
         ProjectCategoryService.findDefault().then(response => {
-            let res = response || {};
-            this.defaultCategory = res.category || {};
-            this.projects = res.projects || [];
+            this.defaultProjectCategories = response || [];
+        }).catch(e => {
+        });
+
+        ProjectCategoryService.findAll().then(response => {
+            let projectCategories = response || [];
+            this.$store.commit("setProjectCategories", projectCategories);
         }).catch(e => {
         });
     }

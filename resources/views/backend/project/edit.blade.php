@@ -74,20 +74,6 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col">
-                                        <label class="form-label">Khu vực</label>
-                                        <select class="form-select" name="project_area_id">
-                                            <option value="">-----</option>
-                                            @if(!empty($project_areas))
-                                                @foreach($project_areas as $data)
-                                                    <option
-                                                        value="{!! old('project_area_id', isset($data["id"]) ? $data["id"] : '')  !!}" {!! old("project_area_id",isset($project->id) && $project->project_area_id == $data["id"] ? 'selected' : '') !!}>{!! $data["name"] !!}</option>
-                                                @endforeach
-                                            @endif
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col">
                                         <label class="form-label">Nội dung</label>
                                         <textarea class="3m-editor" name="content">
                                             {!! old('content', isset($project->content) ? $project->content : '') !!}

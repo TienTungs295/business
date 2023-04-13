@@ -36,10 +36,6 @@
                         <span>{{$t('message.project_name')}}: </span> <span class="fw-bold">{{ project.name }}</span>
                     </div>
                     <div class="fz-16 mgb-5">
-                        <span>{{$t('message.area')}}: </span> <span class="fw-bold"
-                                                      v-if="project.project_area">{{ project.project_area.name }}</span>
-                    </div>
-                    <div class="fz-16 mgb-5">
                         <span>{{$t('message.type')}}: </span>
                         <span class="fw-bold"
                               v-if="project.project_categories != null && project.project_categories.length"

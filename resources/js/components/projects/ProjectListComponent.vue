@@ -31,7 +31,7 @@
         <div class="container pb-5 pb-sm-0 my-5">
             <div class="row">
                 <div class="col-md-2 mgb-20">
-                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">{{$t('message.filter')}}</h5>
+                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">{{$t('message.type')}}</h5>
                 </div>
                 <div class="col-md-4 mgb-20">
                     <select class="form-control text-uppercase" v-model="param.category_id"
@@ -43,22 +43,15 @@
                         </option>
                     </select>
                 </div>
-                <div class="col-md-3 mgb-20">
+                <div class="col-md-2 mgb-20">
+                    <h5 class="mgb-0 fz-16" style="position: relative; top:10px">{{$t('message.field')}}</h5>
+                </div>
+                <div class="col-md-4 mgb-20">
                     <select class="form-control text-uppercase" v-model="param.field_id"
                             @change="changeProjectField($event)"
                             name="field">
                         <option value="">{{$t('message.all_fields')}}</option>
                         <option v-for="item in projectFields" v-bind:value="item.id">
-                            {{ item.name }}
-                        </option>
-                    </select>
-                </div>
-                <div class="col-md-3 mgb-20">
-                    <select class="form-control text-uppercase" v-model="param.area_id"
-                            @change="changeProjectArea($event)"
-                            name="area">
-                        <option value="">{{$t('message.all_areas')}}</option>
-                        <option v-for="item in projectAreas" v-bind:value="item.id">
                             {{ item.name }}
                         </option>
                     </select>
@@ -77,10 +70,10 @@
                         <i class="fa fa-search project-search-icon" @click="changeName"></i>
                     </div>
                 </div>
-                <div class="col-md-3 text-md-left mgb-5">
+                <div class="col-md-2 mgb-5">
                     <h5 class="text-uppercase fz-16" style="position: relative; top:10px">{{$t('message.sort')}}</h5>
                 </div>
-                <div class="col-md-3 mgb-25">
+                <div class="col-md-4 mgb-25">
                     <select class="form-control text-uppercase" v-model="param.sort"
                             @change="changeOrder($event)"
                             name="order">
@@ -116,12 +109,6 @@
                                                 </div>
                                                 <div class="__name text-uppercase mgb-10">
                                                     {{ item.name }}
-                                                </div>
-                                                <div class="__area text-uppercase" v-if="item.project_area != null">
-                                                    <img style="position: relative;bottom: 2px"
-                                                         class="__map-icon d-inline-block" width="12" height="12"
-                                                         src="/assets/img/business-icons/map-pin.svg" alt="DMTIcon"/>
-                                                    {{ item.project_area.name }}
                                                 </div>
                                             </div>
                                         </div>
@@ -291,11 +278,11 @@ export default {
         }).catch(e => {
         });
 
-        ProjectAreaService.findAll().then(response => {
-            let projectAreas = response || [];
-            this.$store.commit("setProjectAreas", projectAreas);
-        }).catch(e => {
-        });
+        // ProjectAreaService.findAll().then(response => {
+        //     let projectAreas = response || [];
+        //     this.$store.commit("setProjectAreas", projectAreas);
+        // }).catch(e => {
+        // });
 
         this.findProjects();
     }
