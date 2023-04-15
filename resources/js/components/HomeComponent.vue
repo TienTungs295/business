@@ -192,7 +192,7 @@
 								</svg>
                             <div>
                                 <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
-                                    <ul class="diamonds mb-0 appear-animation"
+                                    <ul class="diamonds mb-0"
                                         data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
                                         <li v-for="(item,i) in projectPaginate.data">
                                             <router-link class="diamond lightbox border-ccc"
