@@ -1,45 +1,30 @@
 <template>
     <div role="main" class="main">
-
-        <div v-if="!isLoadingSlider"
-             class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover nav-style-diamond nav-with-transparency nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0"
-             data-plugin-options="{'autoplay': true, 'autoplayTimeout': 6000}"
-             data-dynamic-height="['750px','750px','650px','550px','450px']" style="height: 750px;">
-            <div class="owl-stage-outer">
-                <div class="owl-stage">
-                    <!-- Carousel Slide 1 -->
-                    <div class="owl-item position-relative" v-for="item in sliders">
-                        <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
-                             data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
-                             data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
-                             style="background-image: url(/assets/img/business-image/slider/slider-1.jpg); background-size: cover; background-position: center;"></div>
-                        <div class="container position-relative z-index-1 h-100">
-                            <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
+        <section v-if="sliders.length">
+            <VueSlickCarousel v-bind="settings" class="slick-wrapper style-1">
+                <div class="slick-inner" v-for="(item,i) in sliders"
+                     :style="{'background-image': 'url(' + `/uploads/images/`+`${item.image}`+ ')','background-size': 'cover', 'background-position': 'center center'}"
+                     :key="i">
+                    <div class="container position-relative z-index-1 h-100">
+                        <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
-                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus"
-                                    data-appear-animation-delay="600">{{item.description}}</span>
-                                <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-primary-transparent appear-animation"
-                                                 data-appear-animation="fadeInLeftShorter"
-                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
+                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 fz-18-i">{{
+                                        item.description
+                                    }}</span>
+                            <span class="custom-svg-position-1">
+											<svg class="svg-fill-color-primary-transparent" xmlns="http://www.w3.org/2000/svg"
                                                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                                  viewBox="0 0 859.45 88.44" xml:space="preserve"
                                                  preserveAspectRatio="none">
 												<polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
 											</svg>
 										</span>
-                            </p>
-                        </div>
+                        </p>
                     </div>
-
                 </div>
-            </div>
-            <div class="owl-nav mt-5">
-                <button type="button" role="presentation" class="owl-prev"></button>
-                <button type="button" role="presentation" class="owl-next"></button>
-            </div>
-        </div>
+            </VueSlickCarousel>
+        </section>
+
 
         <div class="container py-5 my-3">
             <div class="row justify-content-between align-items-center flex-lg-nowrap gy-3">
@@ -207,9 +192,10 @@
 								</svg>
                             <div>
                                 <div class="diamonds-wrapper" v-if="projectPaginate.data.length > 0">
-                                    <ul class="diamonds mb-0">
+                                    <ul class="diamonds mb-0 appear-animation"
+                                        data-appear-animation="fadeInUpShorter" data-appear-animation-delay="600">
                                         <li v-for="(item,i) in projectPaginate.data">
-                                            <router-link class="diamond lightbox"
+                                            <router-link class="diamond lightbox border-ccc"
                                                          :to="{ name: 'projectDetail', params: { slug: item.slug,id:item.id }}"
                                                          :class="(i == 3 || i == 5 || i == 6) ? 'diamond-sm' : ''"
                                                          :key="i">
@@ -797,6 +783,9 @@
 import ProjectService from "../services/ProjectService";
 import PostService from "../services/PostService";
 import SliderService from "../services/SliderService";
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 import ProjectCategoryService from "../services/ProjectCategoryService";
 import ProjectFieldService from "../services/ProjectFieldService";
 import ProjectAreaService from "../services/ProjectAreaService";
@@ -807,6 +796,9 @@ import LocaleService from "../services/LocaleService";
 
 export default {
     name: "Home",
+    components: {
+        VueSlickCarousel
+    },
     data() {
         return {
             isLoadingProject: true,
@@ -821,6 +813,19 @@ export default {
             isLoadMoreService: false,
             serviceByLocale: {},
             sliders: [],
+            settings: {
+                "dots": true,
+                "dotsClass": "slick-dots custom-dot-class",
+                "edgeFriction": 0.5,
+                "infinite": true,
+                "speed": 1000,
+                "draggable": false,
+                "touchMove": true,
+                "autoplay":true,
+                "fade": true,
+                "autoplaySpeed":6000,
+                "pauseOnHover":false
+            },
             isLoadingSlider: true
         };
     },
@@ -890,7 +895,7 @@ export default {
         });
 
         SliderService.findAll().then(response => {
-            this.sliders = response.data || [];
+            this.sliders = response || [];
             this.isLoadingSlider = false;
         }).catch(e => {
             this.isLoadingSlider = false;

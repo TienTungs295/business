@@ -469,22 +469,23 @@ body .body {
     .slick-inner {
         height: 100vh;
     }
-
-    .slick-dots {
-        bottom: 25px
-    }
-
-    .custom-dot-class {
-        button:before {
-            color: #fff;
-            border-radius: 50%;
-            opacity: 1;
+    &.style-1{
+        .slick-dots {
+            bottom: 25px
         }
 
-        .slick-active {
+        .custom-dot-class {
             button:before {
-                border: 1px solid $primary-color;
-                color: $primary-color !important;
+                color: #fff;
+                border-radius: 50%;
+                opacity: 1;
+            }
+
+            .slick-active {
+                button:before {
+                    border: 1px solid $primary-color;
+                    color: $primary-color !important;
+                }
             }
         }
     }
@@ -542,4 +543,8 @@ body .body {
     #language {
         display: none;
     }
+}
+
+button.slick-prev:before, button.slick-next:before {
+    background-color: red !important;
 }

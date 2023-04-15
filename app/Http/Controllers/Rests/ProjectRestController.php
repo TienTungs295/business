@@ -20,7 +20,6 @@ class ProjectRestController extends BaseCustomController
     {
         $category_id = $request->input("category_id");
         $field_id = $request->input("field_id");
-        $area_id = $request->input("area_id");
         $name = $request->input("name");
         $sort = $request->input("sort");
         $page_size = 20;
@@ -48,15 +47,6 @@ class ProjectRestController extends BaseCustomController
             $query->whereHas('projectFields', function ($query3) use ($field_id) {
                 $query3->where('project_field_id', $field_id);
             });
-        }
-
-        if (!is_null($area_id)) {
-            try {
-                ProjectArea::findOrFail($area_id);
-            } catch (ModelNotFoundException $e) {
-                return $ajax_response->setMessage("Khu vực không tồn tại hoặc đã bị xóa");
-            }
-            $query->where('project_area_id', $area_id);
         }
         if (isset($name)) $query->where('name', 'like', '%' . $name . '%');
 

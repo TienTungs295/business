@@ -24,7 +24,7 @@
                                         <label class="form-label">Nội dung</label>
                                         <input type="text"
                                                value="{!! old('description', isset($slider->description) ? $slider->description : '')!!}"
-                                               class="form-control" name="description" maxlength="100" required
+                                               class="form-control" name="description" maxlength="50" required
                                                placeholder="Nội dung">
                                     </div>
                                     <div class="col-md-3">

@@ -196,7 +196,7 @@ export default {
             this.$store.commit("setIsShowServiceMenu", !this.isShowServiceMenu);
         },
         toggleProjectMenu() {
-            this.$store.commit("setIsShowProjectMenu", !this.isShowServiceMenu);
+            this.$store.commit("setIsShowProjectMenu", !this.isShowProjectMenu);
         },
         toggleBIMMenu() {
             this.$store.commit("setIsShowBIMMenu", !this.isShowBIMMenu);

@@ -7,6 +7,8 @@ use App\Models\SliderTranslation;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use File;
+
 
 class SliderController extends BaseCustomController
 {
@@ -41,11 +43,11 @@ class SliderController extends BaseCustomController
     {
         $request->validate(
             [
-                'description' => 'required|max:100'
+                'description' => 'required|max:50'
             ],
             [
                 'description.required' => 'Nội dung không được phép bỏ trống',
-                'description.max' => 'Nội dung không được vượt quá 100 ký tự'
+                'description.max' => 'Nội dung không được vượt quá 50 ký tự'
             ]);
         $description = $request->input('description');
         $slider = [
@@ -119,11 +121,11 @@ class SliderController extends BaseCustomController
 
         $request->validate(
             [
-                'description' => 'required|max:100'
+                'description' => 'required|max:50'
             ],
             [
                 'description.required' => 'Nội dung không được phép bỏ trống',
-                'description.max' => 'Nội dung không được vượt quá 100 ký tự'
+                'description.max' => 'Nội dung không được vượt quá 50 ký tự'
             ]);
         $slider->description = $request->input('description');
         $slider->priority = $request->input('priority');

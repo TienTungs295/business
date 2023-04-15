@@ -2,7 +2,7 @@
     <div class="project-detail">
         <loading-component v-bind:loading="isLoading" v-bind:center="true"></loading-component>
         <section v-if="project.images.length">
-            <VueSlickCarousel v-bind="settings" class="slick-wrapper">
+            <VueSlickCarousel v-bind="settings" class="slick-wrapper style-1">
                 <div class="slick-inner" v-for="item in project.images"
                      :style="{'background-image': 'url(' + `/uploads/images/`+`${item.image}`+ ')','background-size': 'cover', 'background-position': 'center center'}"
                      :key="i">
