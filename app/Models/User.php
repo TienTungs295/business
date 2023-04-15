@@ -92,4 +92,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(ProjectField::class, 'user_id');
     }
+
+    public function sliders()
+    {
+        return $this->hasMany(Slider::class, 'user_id');
+    }
 }

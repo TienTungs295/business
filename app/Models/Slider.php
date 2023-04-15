@@ -8,24 +8,21 @@ use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 use Astrotomic\Translatable\Translatable;
 
 
-class ProjectArea extends Model implements TranslatableContract
+class Slider extends Model implements TranslatableContract
 {
     use HasFactory;
     use Translatable;
 
-    protected $table = 'project_area';
+    protected $table = 'slider';
     protected $fillable = [
         'id',
+        'image',
         'user_id',
         'priority',
     ];
 
-    public $translatedAttributes = ['name'];
+    public $translatedAttributes = ['description'];
 
-    public function projects()
-    {
-        return $this->hasMany(Project::class, 'project_area_id');
-    }
 
     public function user()
     {

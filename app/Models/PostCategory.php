@@ -17,7 +17,7 @@ class PostCategory extends Model implements TranslatableContract
     protected $table = 'category';
     protected $fillable = [
         'id',
-//        'name',
+        'user_id',
         'priority',
     ];
     public $translatedAttributes = ['name'];

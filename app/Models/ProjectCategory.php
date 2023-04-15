@@ -16,7 +16,7 @@ class ProjectCategory extends Model implements TranslatableContract
     protected $table = 'project_category';
     protected $fillable = [
         'id',
-//        'name',
+        'user_id',
         'priority',
     ];
 

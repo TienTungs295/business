@@ -10,6 +10,7 @@ use App\Http\Controllers\Rests\PostRestController;
 use App\Http\Controllers\Rests\ProjectAreaRestController;
 use App\Http\Controllers\Rests\PostCategoryRestController;
 use App\Http\Controllers\Rests\CustomerInfoRestController;
+use App\Http\Controllers\Rests\SliderRestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,6 +105,15 @@ Route::prefix('{locale?}')
                 Route::post('/cap-nhat/{id}', ['as' => 'updateProjectArea', 'uses' => 'ProjectAreaController@update']);
                 Route::post('/xoa/{id}', ['as' => 'deleteProjectArea', 'uses' => 'ProjectAreaController@destroy']);
             });
+
+            Route::group(['prefix' => 'slider'], function () {
+                Route::get('', ['as' => 'sliderView', 'uses' => 'SliderController@index']);
+                Route::get('/them-moi', ['as' => 'createSliderView', 'uses' => 'SliderController@create']);
+                Route::get('/chinh-sua/{id}', ['as' => 'updateSliderView', 'uses' => 'SliderController@edit']);
+                Route::post('/luu-tru', ['as' => 'createSlider', 'uses' => 'SliderController@store']);
+                Route::post('/cap-nhat/{id}', ['as' => 'updateSlider', 'uses' => 'SliderController@update']);
+                Route::post('/xoa/{id}', ['as' => 'deleteSlider', 'uses' => 'SliderController@destroy']);
+            });
         });
     });
 
@@ -160,6 +170,10 @@ Route::prefix('rest')
                 Route::group(['prefix' => 'contact'], function () {
                     Route::post('/save', [CustomerInfoRestController::class, 'store']);
                     Route::post('/save-email', [CustomerInfoRestController::class, 'storeEmail']);
+                });
+
+                Route::group(['prefix' => 'slider'], function () {
+                    Route::get('/find-all', [SliderRestController::class, 'findAll']);
                 });
             });
 

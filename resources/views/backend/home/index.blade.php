@@ -70,25 +70,6 @@
                             </div>
                             <!-- Project Field -->
 
-                            <!-- Project Area -->
-                            <div class="col-xxl-4 col-md-6">
-                                <a class="card info-card sales-card" href="{!! route("projectAreaView") !!}">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Khu vực</h5>
-                                        <div class="d-flex align-items-center">
-                                            <div
-                                                class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                                <i class="bi bi-pin-map-fill"></i>
-                                            </div>
-                                            <div class="ps-3">
-                                                <h6>{!! $total_project_areas !!}</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <!-- Project Area -->
-
                             <!-- Project -->
                             <div class="col-xxl-4 col-xl-12">
                                 <a class="card info-card customers-card" href="{!! route("projectView") !!}">

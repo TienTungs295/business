@@ -11,7 +11,7 @@
     <meta property="og:image" content="https://dmt.net.vn/assets/img/business-image/slider/banner1.png" />
     <meta name="keywords" content="MEP Consultant" />
     <meta name="description" content="MEP Consultant">
-{{--    <meta name="author" content="okler.net">--}}
+    <meta name="author" content="https://www.facebook.com/tientung2206">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('/assets/img/business-image/logo/dmt-logo.png')}}" type="image/x-icon" />

@@ -1,46 +1,24 @@
 <template>
     <div role="main" class="main">
 
-        <div
-            class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover nav-style-diamond nav-with-transparency nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0"
-            data-plugin-options="{'autoplay': true, 'autoplayTimeout': 6000}"
-            data-dynamic-height="['750px','750px','650px','550px','450px']" style="height: 750px;">
+        <div v-if="!isLoadingSlider"
+             class="owl-carousel owl-carousel-light owl-carousel-light-init-fadeIn owl-theme manual dots-inside dots-horizontal-center show-dots-hover nav-style-diamond nav-with-transparency nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0"
+             data-plugin-options="{'autoplay': true, 'autoplayTimeout': 6000}"
+             data-dynamic-height="['750px','750px','650px','550px','450px']" style="height: 750px;">
             <div class="owl-stage-outer">
                 <div class="owl-stage">
                     <!-- Carousel Slide 1 -->
-                    <div class="owl-item position-relative">
+                    <div class="owl-item position-relative" v-for="item in sliders">
                         <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
                              data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
                              data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
                              style="background-image: url(/assets/img/business-image/slider/slider-1.jpg); background-size: cover; background-position: center;"></div>
                         <div class="container position-relative z-index-1 h-100">
-                            <!--                            <div class="row align-items-center h-100">-->
-                            <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
-                            <!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
-                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                        data-appear-animation-delay="500">-->
-                            <!--												<span-->
-                            <!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
-                            <!--													<span-->
-                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
-                            <!--												</span>-->
-                            <!--                                        BUILDING<br> DREAMS-->
-                            <!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
-                            <!--													<span-->
-                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
-                            <!--												</span>-->
-                            <!--                                    </h1>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
                             <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
                                 <span
                                     class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
                                     data-appear-animation="fadeInLeftShorterPlus"
-                                    data-appear-animation-delay="600">{{ $t('message.text_slider1') }}</span>
+                                    data-appear-animation-delay="600">{{item.description}}</span>
                                 <span class="custom-svg-position-1">
 											<svg class="svg-fill-color-primary-transparent appear-animation"
                                                  data-appear-animation="fadeInLeftShorter"
@@ -55,53 +33,6 @@
                         </div>
                     </div>
 
-                    <!-- Carousel Slide 2 -->
-                    <div class="owl-item position-relative">
-                        <div class="background-image-wrapper position-absolute top-0 left-0 right-0 bottom-0"
-                             data-appear-animation="kenBurnsToRight" data-appear-animation-duration="30s"
-                             data-plugin-options="{'minWindowWidth': 0}" data-carousel-onchange-show
-                             style="background-image: url(/assets/img/business-image/our-service.png); background-size: cover; background-position: center;"></div>
-                        <div class="container position-relative z-index-1 h-100">
-                            <!--                            <div class="row align-items-center h-100">-->
-                            <!--                                <div class="col-lg-9 col-xl-8 position-relative mx-auto mt-5 pt-5">-->
-                            <!--                                    <h1 class="position-relative text-color-light font-weight-bold custom-big-text-style-1 text-start text-lg-end pt-4 mt-5 appear-animation"-->
-                            <!--                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                        data-appear-animation-delay="500">-->
-                            <!--												<span-->
-                            <!--                                                    class="position-absolute bottom-100 left-0 transform3dy-p50 w-100 pt-4 ms-0">-->
-                            <!--													<span-->
-                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                                        data-appear-animation-delay="1300">BUILDING</span>-->
-                            <!--												</span>-->
-                            <!--                                        BUILDING<br> DREAMS-->
-                            <!--                                        <span class="position-absolute top-100 left-0 transform3dy-n50 w-100 pt-4 ms-0">-->
-                            <!--													<span-->
-                            <!--                                                        class="d-inline-flex custom-outline-text-style-1 text-2 text-center appear-animation"-->
-                            <!--                                                        data-appear-animation="fadeInRightShorterPlus"-->
-                            <!--                                                        data-appear-animation-delay="1300">DREAMS</span>-->
-                            <!--												</span>-->
-                            <!--                                    </h1>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
-                            <p class="position-absolute bottom-15 right-0 text-color-light font-weight-bold text-5-5 line-height-3 text-end pb-0 pb-lg-5 mb-0 d-none d-sm-block">
-                                <span
-                                    class="d-block line-height-1 position-relative z-index-1 pb-5 ps-lg-3 mb-5-5 appear-animation"
-                                    data-appear-animation="fadeInLeftShorterPlus"
-                                    data-appear-animation-delay="600">{{ $t('message.text_slider2') }}</span>
-                                <span class="custom-svg-position-1">
-											<svg class="svg-fill-color-primary-transparent appear-animation"
-                                                 data-appear-animation="fadeInLeftShorter"
-                                                 data-appear-animation-delay="400" xmlns="http://www.w3.org/2000/svg"
-                                                 xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                 viewBox="0 0 859.45 88.44" xml:space="preserve"
-                                                 preserveAspectRatio="none">
-												<polyline points="7.27,84.78 855.17,84.78 855.17,4.79 84.74,4.79 "/>
-											</svg>
-										</span>
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="owl-nav mt-5">
@@ -165,7 +96,7 @@
                             data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="300">
                             {{ $t('message.services') }}</h2>
                         <p class="text-4 font-weight-light appear-animation" data-appear-animation="fadeInUpShorterPlus"
-                           data-appear-animation-delay="500">{{$t('message.our_service_title')}}</p>
+                           data-appear-animation-delay="500">{{ $t('message.our_service_title') }}</p>
                     </div>
                 </div>
                 <div class="row">
@@ -183,7 +114,7 @@
                                 <p class="font-weight-light text-3-5 mb-3-5">{{ item.excerpt }}</p>
                                 <router-link :to="{ name: 'serviceDetail',params: {id:item.id }}"
                                              class="custom-view-more d-inline-flex font-weight-medium text-color-primary text-decoration-none">
-                                    {{$t('message.show_more')}}
+                                    {{ $t('message.show_more') }}
                                     <img width="27" height="27" class="arrow-icon"
                                          src="/assets/img/demos/construction/icons/arrow-right.svg"
                                          alt="" data-icon
@@ -196,7 +127,7 @@
                         <router-link :to="{ name: 'service'}"
                                      class="custom-view-more d-inline-flex align-items-center btn btn-primary font-weight-semibold rounded-0 text-3-5 btn-px-4 btn-py-2 appear-animation"
                                      data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="700">
-                            {{$t('message.show_more')}}
+                            {{ $t('message.show_more') }}
                             <img class="mgl-5 arrow-icon-down" width="15" height="15"
                                  src="/assets/img/business-icons/arrow-down.svg"
                                  alt=""
@@ -800,11 +731,12 @@
                                          src="/assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
                                     <div>
-                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">{{$t('message.client_say1')}}</p>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">
+                                            {{ $t('message.client_say1') }}</p>
                                     </div>
                                     <div class="testimonial-author">
                                         <strong class="font-weight-bold text-5-5 negative-ls-1">- Mr.Bình</strong>
-                                        <p class="text-color-dark mb-0">{{$t('message.construction_engineer')}}</p>
+                                        <p class="text-color-dark mb-0">{{ $t('message.construction_engineer') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -814,11 +746,12 @@
                                          src="/assets/img/business-icons/left-quote.svg" alt=""
                                          style="width: 40px;"/>
                                     <div>
-                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">{{$t('message.client_say2')}}</p>
+                                        <p class="text-color-dark text-4 line-height-8 alternative-font-4 mb-0">
+                                            {{ $t('message.client_say2') }}</p>
                                     </div>
                                     <div class="testimonial-author">
                                         <strong class="font-weight-bold text-5-5 negative-ls-1">- Ms.Ngọc</strong>
-                                        <p class="text-color-dark mb-0">{{$t('message.office_staff')}}</p>
+                                        <p class="text-color-dark mb-0">{{ $t('message.office_staff') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -833,9 +766,11 @@
             <div class="row">
                 <div class="col">
                     <h2 class="text-color-dark font-weight-bold text-7 line-height-1 mb-3-5 appear-animation"
-                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">{{$t('message.news')}}</h2>
+                        data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="200">
+                        {{ $t('message.news') }}</h2>
                     <p class="text-4 font-weight-light mb-5-5 appear-animation"
-                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">{{$t('message.our_recent_news')}}</p>
+                       data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="400">
+                        {{ $t('message.our_recent_news') }}</p>
                 </div>
             </div>
             <div class="row row-gutter-sm justify-content-center mb-4 appear-animation"
@@ -861,6 +796,7 @@
 <script>
 import ProjectService from "../services/ProjectService";
 import PostService from "../services/PostService";
+import SliderService from "../services/SliderService";
 import ProjectCategoryService from "../services/ProjectCategoryService";
 import ProjectFieldService from "../services/ProjectFieldService";
 import ProjectAreaService from "../services/ProjectAreaService";
@@ -883,7 +819,9 @@ export default {
             posts: [],
             isLoadingBlog: true,
             isLoadMoreService: false,
-            serviceByLocale: {}
+            serviceByLocale: {},
+            sliders: [],
+            isLoadingSlider: true
         };
     },
     computed: {
@@ -949,6 +887,13 @@ export default {
             this.isLoadingBlog = false;
         }).catch(e => {
             this.isLoadingBlog = false;
+        });
+
+        SliderService.findAll().then(response => {
+            this.sliders = response.data || [];
+            this.isLoadingSlider = false;
+        }).catch(e => {
+            this.isLoadingSlider = false;
         });
 
         this.timer = setInterval(() => {

@@ -16,7 +16,7 @@ class ProjectField extends Model implements TranslatableContract
     protected $table = 'project_field';
     protected $fillable = [
         'id',
-//        'name',
+        'user_id',
         'priority',
     ];
 

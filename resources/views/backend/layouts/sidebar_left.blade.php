@@ -7,6 +7,12 @@
                 <span>Trang chủ</span>
             </a>
         </li>
+        <li class="nav-item {{ (request()->is('*/quan-tri/slider*')) ? 'active' : '' }}">
+            <a class="nav-link collapsed" href="{!! route("sliderView") !!}">
+                <i class="bi bi-card-image"></i>
+                <span>Banner</span>
+            </a>
+        </li>
         <li class="nav-item {{ (request()->is('*/quan-tri/danh-muc-du-an*')) ? 'active' : '' }}">
             <a class="nav-link collapsed" href="{!! route("projectCategoryView") !!}">
                 <i class="bi bi-intersect"></i>
