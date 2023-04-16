@@ -37,6 +37,7 @@
                                 <div class="row mb-3">
                                     <div class="col-md-12">
                                         <label class="form-label">Ảnh</label>
+                                        <div class="form-label text-danger">Note: Nên chọn ảnh có kích thước rộng để tránh bị vỡ ảnh</div>
                                         <input type="text" id="image"
                                                value="{!! old('image', isset($slider->image) ? $slider->image : '')!!}"
                                                name="image">
