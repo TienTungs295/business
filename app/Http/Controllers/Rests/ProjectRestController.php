@@ -48,11 +48,20 @@ class ProjectRestController extends BaseCustomController
                 $query3->where('project_field_id', $field_id);
             });
         }
-        if (isset($name)) $query->where('name', 'like', '%' . $name . '%');
+        if (isset($name)){
+            $query->whereHas('translations', function ($query4) use ($field_id, $name) {
+                $query4->where('locale', app()->getLocale());
+                $query4->where('name', 'like', '%' . $name . '%');
+            });
+        }
 
         if (!is_null($sort)) {
             if ($sort == 'name') {
-                $query->orderBy("name", "ASC")->orderByRaw('ISNULL(priority), priority ASC');
+                $query->whereHas('translations', function ($query5) use ($field_id) {
+                    $query5->where('locale', app()->getLocale());
+                    $query5->orderBy("name", "ASC");
+                });
+                $query->orderByRaw('ISNULL(priority), priority ASC');
             }
             if ($sort == 'date') {
                 $query->orderBy("updated_at", "DESC")->orderByRaw('ISNULL(priority), priority ASC');
