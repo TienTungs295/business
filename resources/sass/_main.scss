@@ -469,6 +469,12 @@ body .body {
     .slick-inner {
         height: 100vh;
     }
+    .slick-inner-2 {
+        height: 550px;
+        @media (min-width: 992px) {
+            height: 100vh;
+        }
+    }
     &.style-1{
         .slick-dots {
             bottom: 25px
