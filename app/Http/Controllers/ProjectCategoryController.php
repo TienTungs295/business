@@ -19,9 +19,11 @@ class ProjectCategoryController extends BaseCustomController
     {
         $q = $request->input('q');
         if ($q != "") {
-            $project_categories = ProjectCategory::with('user')->where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
-            })->orderBy('id', 'DESC')
+            $query = ProjectCategory::with('user')->whereHas('translations', function ($query1) use ($q) {
+                $query1->where('locale', app()->getLocale());
+                $query1->where('name', 'like', '%' . $q . '%');
+            });
+            $project_categories = $query->orderBy('id', 'DESC')
                 ->paginate(25);
             $project_categories->appends(['q' => $q]);
         } else {
@@ -56,11 +58,6 @@ class ProjectCategoryController extends BaseCustomController
                 'name.required' => 'Tên loại hình không được phép bỏ trống',
                 'name.max' => 'Tên loại hình không được vượt quá 350 ký tự'
             ]);
-
-        $count_exist = ProjectCategory::where('name', $request->name)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên loại hình đã tồn tại')->withInput();
-        }
 
         $name = $request->input('name');
         $project_category = [
@@ -129,11 +126,6 @@ class ProjectCategoryController extends BaseCustomController
                 'name.required' => 'Tên loại hình không được phép bỏ trống',
                 'name.max' => 'Tên loại hình không được vượt quá 350 ký tự'
             ]);
-
-        $count_exist = ProjectCategory::where('name', $request->name)->where('id', '<>', $id)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên loại hình đã tồn tại')->withInput();
-        }
 
         $project_category->name = $request->input('name');
         $project_category->priority = $request->input('priority');

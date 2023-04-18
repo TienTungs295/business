@@ -19,9 +19,11 @@ class PostCategoryController extends BaseCustomController
     {
         $q = $request->input('q');
         if ($q != "") {
-            $post_categories = PostCategory::with('user')->where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
-            })->orderBy('id', 'DESC')
+            $query = PostCategory::with('user')->whereHas('translations', function ($query1) use ($q) {
+                $query1->where('locale', app()->getLocale());
+                $query1->where('name', 'like', '%' . $q . '%');
+            });
+            $post_categories = $query->orderBy('id', 'DESC')
                 ->paginate(25);
             $post_categories->appends(['q' => $q]);
         } else {
@@ -56,11 +58,6 @@ class PostCategoryController extends BaseCustomController
                 'name.required' => 'Tên danh mục không được phép bỏ trống',
                 'name.max' => 'Tên danh mục không được vượt quá 350 ký tự'
             ]);
-
-        $count_exist = PostCategory::where('name', $request->name)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục bài viết đã tồn tại')->withInput();
-        }
 
         $name = $request->input('name');
         $post_category = [
@@ -127,11 +124,6 @@ class PostCategoryController extends BaseCustomController
                 'name.required' => 'Tên danh mục bài viết không được phép bỏ trống',
                 'name.max' => 'Tên danh mục bài viết không được vượt quá 350 ký tự'
             ]);
-
-        $count_exist = PostCategory::where('name', $request->name)->where('id', '<>', $id)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên danh mục bài viết đã tồn tại')->withInput();
-        }
 
         $post_category->name = $request->input('name');
         $post_category->priority = $request->input('priority');

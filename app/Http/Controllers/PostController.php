@@ -22,15 +22,16 @@ class PostController extends BaseCustomController
     {
         $q = $request->input('q');
         if ($q != "") {
-            $posts = Post::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
-            })->orderBy('id', 'DESC')
+            $query = Post::whereHas('translations', function ($query1) use ($q) {
+                $query1->where('locale', app()->getLocale());
+                $query1->where('name', 'like', '%' . $q . '%');
+            });
+            $posts = $query->orderBy('id', 'DESC')
                 ->paginate(25);
             $posts->appends(['q' => $q]);
         } else {
             $posts = Post::orderBy('id', 'DESC')->paginate(25);
         }
-
         return View('backend.post.index', compact("posts", "q"));
     }
 

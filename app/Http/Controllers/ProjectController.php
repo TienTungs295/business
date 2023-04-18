@@ -26,9 +26,11 @@ class ProjectController extends BaseCustomController
     {
         $q = $request->input('q');
         if ($q != "") {
-            $projects = Project::where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
-            })->orderBy('id', 'DESC')
+            $query = Project::whereHas('translations', function ($query1) use ($q) {
+                $query1->where('locale', app()->getLocale());
+                $query1->where('name', 'like', '%' . $q . '%');
+            });
+            $projects = $query->orderBy('id', 'DESC')
                 ->paginate(25);
             $projects->appends(['q' => $q]);
         } else {

@@ -19,9 +19,11 @@ class ProjectFieldController extends BaseCustomController
     {
         $q = $request->input('q');
         if ($q != "") {
-            $project_fields = ProjectField::with('user')->where(function ($query) use ($q) {
-                $query->where('name', 'like', '%' . $q . '%');
-            })->orderBy('id', 'DESC')
+            $query = ProjectField::with('user')->whereHas('translations', function ($query1) use ($q) {
+                $query1->where('locale', app()->getLocale());
+                $query1->where('name', 'like', '%' . $q . '%');
+            });
+            $project_fields = $query->orderBy('id', 'DESC')
                 ->paginate(25);
             $project_fields->appends(['q' => $q]);
         } else {
@@ -56,11 +58,6 @@ class ProjectFieldController extends BaseCustomController
                 'name.required' => 'Tên lĩnh vực không được phép bỏ trống',
                 'name.max' => 'Tên lĩnh vực không được vượt quá 350 ký tự'
             ]);
-
-        $count_exist = ProjectField::where('name', $request->name)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên lĩnh vực đã tồn tại')->withInput();
-        }
 
         $name = $request->input('name');
         $project_field = [
@@ -127,11 +124,6 @@ class ProjectFieldController extends BaseCustomController
                 'name.required' => 'Tên lĩnh vực không được phép bỏ trống',
                 'name.max' => 'Tên lĩnh vực không được vượt quá 350 ký tự'
             ]);
-
-        $count_exist = ProjectField::where('name', $request->name)->where('id', '<>', $id)->count();
-        if ($count_exist >= 1) {
-            return redirect()->back()->with('error', 'Tên lĩnh vực đã tồn tại')->withInput();
-        }
 
         $project_field->name = $request->input('name');
         $project_field->priority = $request->input('priority');
