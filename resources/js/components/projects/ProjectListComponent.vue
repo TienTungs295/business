@@ -254,6 +254,7 @@ export default {
         },
         changeOrder($event) {
             this.param.sort = $event.target.value;
+            this.param.page = 1;
             this.changeRouter();
         }
     },
