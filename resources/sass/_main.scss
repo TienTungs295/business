@@ -467,10 +467,7 @@ body .body {
 
 .slick-wrapper {
     .slick-inner {
-        height: 100vh;
-    }
-    .slick-inner-2 {
-        height: 550px;
+        height: 450px;
         @media (min-width: 992px) {
             height: 100vh;
         }
@@ -484,6 +481,7 @@ body .body {
             button:before {
                 color: #fff;
                 border-radius: 50%;
+                border: 1px solid #fff;
                 opacity: 1;
             }
 

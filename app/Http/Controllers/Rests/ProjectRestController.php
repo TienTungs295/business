@@ -26,7 +26,7 @@ class ProjectRestController extends BaseCustomController
         $page_size_param = $request->input("page_size");
         if (!is_null($page_size_param)) $page_size = $page_size_param;
         $ajax_response = new AjaxResponse();
-        $query = Project::where('id', '>', 1)->with(["projectArea","projectFields","projectCategories"]);
+        $query = Project::where('id', '>', 0)->with(["projectArea","projectFields","projectCategories"]);
         if (!is_null($category_id)) {
             try {
                 ProjectCategory::findOrFail($category_id);

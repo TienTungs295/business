@@ -2,7 +2,7 @@
     <div role="main" class="main">
         <section v-if="sliders.length">
             <VueSlickCarousel v-bind="settings" class="slick-wrapper style-1">
-                <div class="slick-inner-2" v-for="(item,i) in sliders"
+                <div class="slick-inner" v-for="(item,i) in sliders"
                      :style="{'background-image': 'url(' + `/uploads/images/`+`${item.image}`+ ')','background-size': 'cover', 'background-position': 'center center'}"
                      :key="i">
                     <div class="container position-relative z-index-1 h-100">
